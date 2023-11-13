@@ -1,0 +1,19 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://bgc5kcge7nbxf"]
+
+[ext_resource type="Script" path="res://Items/Classes/ItemClass.cs" id="1_al8f2"]
+[ext_resource type="Texture2D" uid="uid://cg0rrofao4u73" path="res://Art/shotgun1.png" id="1_elokh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cftgk"]
+atlas = ExtResource("1_elokh")
+region = Rect2(0, 0, 40, 35.5)
+
+[resource]
+script = ExtResource("1_al8f2")
+ITEM_NAME = "Shotgun"
+ITEM_ID = 4
+CustomResourcePath = ""
+ITEM_TEXTURE = SubResource("AtlasTexture_cftgk")
+IS_STACKABLE = false
+HOVER_TEXT = "test"
+ITEM_COUNT = 0
+MAX_STACK = 0

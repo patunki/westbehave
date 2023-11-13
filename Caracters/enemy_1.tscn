@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0ee1c8t1mqth"]
+
+[ext_resource type="Script" path="res://Caracters/enemy_1.cs" id="1_agk53"]
+[ext_resource type="Texture2D" uid="uid://dqvi8g480x8s4" path="res://Art/ZombieToast.png" id="1_klj16"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_it5mh"]
+size = Vector2(20, 26)
+
+[node name="Enemy_1" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_agk53")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_klj16")
+offset = Vector2(0, -15)
+hframes = 25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_it5mh")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_it5mh")

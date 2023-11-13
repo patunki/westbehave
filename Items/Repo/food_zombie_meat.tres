@@ -1,0 +1,20 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://c2ny56p74de4q"]
+
+[ext_resource type="Script" path="res://Items/Classes/ItemClass_Food.cs" id="1_7v2w2"]
+[ext_resource type="Texture2D" uid="uid://dh1tbtmge2pdi" path="res://Art/zombiemeat.png" id="1_clam0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02gns"]
+atlas = ExtResource("1_clam0")
+region = Rect2(32.785, 15.6147, 26.1613, 23.6343)
+
+[resource]
+script = ExtResource("1_7v2w2")
+HEALTH_RESTORED = 1
+ITEM_NAME = "zombi meat"
+ITEM_ID = 1
+CustomResourcePath = ""
+ITEM_TEXTURE = SubResource("AtlasTexture_02gns")
+IS_STACKABLE = false
+HOVER_TEXT = ""
+ITEM_COUNT = 0
+MAX_STACK = 0

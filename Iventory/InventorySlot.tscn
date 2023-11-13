@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://dky21my4jcyrg"]
+
+[ext_resource type="Texture2D" uid="uid://cqe6f7ouobnji" path="res://Art/slotbg.jpg" id="1_fd01j"]
+[ext_resource type="Script" path="res://Iventory/InventorySlot.cs" id="2_kw67a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ylou"]
+texture = ExtResource("1_fd01j")
+
+[node name="InventorySlot" type="Panel"]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_5ylou")
+script = ExtResource("2_kw67a")
+
+[node name="ItemTexture" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 4

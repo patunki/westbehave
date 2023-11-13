@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1d3ju81qjhuv"]
+
+[ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
+[ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="2_1r5pt"]
+[ext_resource type="Texture2D" uid="uid://dfunl64enieph" path="res://Art/itch light atk sheet-Sheet.png" id="2_gp4n6"]
+[ext_resource type="PackedScene" uid="uid://dt1b6lylrg8bv" path="res://Iventory/inventory.tscn" id="4_n828g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cjjd"]
+radius = 5.0
+height = 20.0
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(150, 67)
+motion_mode = 1
+script = ExtResource("1_2273y")
+PlayerInventory = ExtResource("2_1r5pt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(12, 2)
+texture = ExtResource("2_gp4n6")
+offset = Vector2(10, -5)
+hframes = 26
+frame = 24
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(11, 6)
+shape = SubResource("CapsuleShape2D_4cjjd")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
+
+[node name="Inventory" parent="." instance=ExtResource("4_n828g")]
+position = Vector2(-107, -23)
