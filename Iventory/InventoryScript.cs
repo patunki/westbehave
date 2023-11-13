@@ -16,7 +16,7 @@ public partial class InventoryScript : Node2D
         for (int i = 0; i < playerInventory.InventoryItems.Count; i++){
             if (playerInventory.InventoryItems[i] != null){
                 inventorySlot[i].Call("Update", playerInventory.InventoryItems[i]);
-                GD.Print(playerInventory.InventoryItems[i].ITEM_NAME);
+                //GD.Print(playerInventory.InventoryItems[i].ITEM_NAME);
             }
         }
     }

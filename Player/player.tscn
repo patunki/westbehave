@@ -23,7 +23,7 @@ frame = 24
 [node name="HandItem" type="TextureRect" parent="Sprite2D"]
 offset_left = 2.0
 offset_top = -2.0
-offset_right = 27.0
+offset_right = 31.0
 offset_bottom = 11.0
 expand_mode = 1
 stretch_mode = 4

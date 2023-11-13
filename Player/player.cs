@@ -10,7 +10,6 @@ public partial class player : CharacterBody2D
 	public InventoryClass playerInventory;
 	public Vector2 heading;
 	public Sprite2D sprite;
-
 	public TextureRect heldItem;
 	public TextureRect hand;
 
@@ -44,7 +43,7 @@ public partial class player : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta){
 		if (heldItem.Texture != null){
-			hand.Texture = heldItem.Texture;
+			hand.Texture = heldItem.Texture; //temp
 		}
 		else{
 			hand.Texture = null;

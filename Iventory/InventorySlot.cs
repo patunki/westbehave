@@ -40,7 +40,7 @@ public partial class InventorySlot : Panel
         return data;
     }
 
-    public override bool _CanDropData(Vector2 atPosition, Variant data)
+    public override bool _CanDropData(Vector2 atPosition, Variant data) //kun tähän yrittää laskea
     {
         if (playerInventory.InventoryItems[lastNum] != null){
             return false;
