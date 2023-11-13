@@ -13,16 +13,27 @@ public partial class InventorySlot : Panel
     private int lastNum;
 
     public Variant MakeData(){
-        var data = playerInventory.InventoryItems[lastNum]; //se mikä nostetaan item
-        return data;
+        if (playerInventory.InventoryItems[lastNum] != null){
+            var data = playerInventory.InventoryItems[lastNum]; //se mikä nostetaan item
+            return data;
+        } 
+        else{
+            return 0000;
+        }
+        
     }
 
     public override Variant _GetDragData(Vector2 atPosition)
     {   
         var data = MakeData();
-        TextureRect previewTexture = new TextureRect();
+        var previewTexture = new TextureRect();
         previewTexture.Texture = itemTexture.Texture;
-        SetDragPreview(previewTexture);
+        previewTexture.Size = new Vector2(32,32);
+
+        var container = new Control();
+        container.AddChild(previewTexture);
+        previewTexture.Position = previewTexture.Size * -1;
+        SetDragPreview(container);
         playerInventory.InventoryItems[lastNum] = null;
         itemTexture.Texture = null;
         return data;
