@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://Items/Classes/ItemClass.cs" id="1_al8f2"]
 [ext_resource type="Texture2D" uid="uid://cg0rrofao4u73" path="res://Art/shotgun1.png" id="1_elokh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cftgk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_784i8"]
 atlas = ExtResource("1_elokh")
-region = Rect2(0, 0, 40, 35.5)
+region = Rect2(-0.126442, 2.74243, 39.7668, 32.2487)
 
 [resource]
 script = ExtResource("1_al8f2")
 ITEM_NAME = "Shotgun"
 ITEM_ID = 4
 CustomResourcePath = ""
-ITEM_TEXTURE = SubResource("AtlasTexture_cftgk")
+ITEM_TEXTURE = SubResource("AtlasTexture_784i8")
 IS_STACKABLE = false
 HOVER_TEXT = "test"
 ITEM_COUNT = 0

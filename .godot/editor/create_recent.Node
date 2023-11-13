@@ -1,7 +1,7 @@
+TextureRect
 Control
 TileMap
 Sprite2D
-TextureRect
 Panel
 GridContainer
 CollisionShape2D

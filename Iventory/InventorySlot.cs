@@ -32,7 +32,8 @@ public partial class InventorySlot : Panel
 
         var container = new Control();
         container.AddChild(previewTexture);
-        previewTexture.Position = previewTexture.Size * -1;
+        previewTexture.Position = previewTexture.Size * -1; //fix this
+        
         SetDragPreview(container);
         playerInventory.InventoryItems[lastNum] = null;
         itemTexture.Texture = null;
@@ -55,7 +56,7 @@ public partial class InventorySlot : Panel
     {
         
         ItemClass dropItem = (ItemClass)data;
-        playerInventory.InventoryItems[lastNum] = dropItem.Copy(); //slotti mihin lasketaan
+        playerInventory.InventoryItems[lastNum] = dropItem; //slotti mihin lasketaan
         Update(dropItem);
     }
 

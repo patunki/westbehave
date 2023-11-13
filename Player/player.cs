@@ -1,22 +1,29 @@
 using Godot;
 using System;
+using System.ComponentModel.Design;
 
 public partial class player : CharacterBody2D
 {	
 	[Export]
 	public int moveSpeed { get; set; } = 150;
 	[Export]
-	public InventoryClass PlayerInventory;
+	public InventoryClass playerInventory;
 	public Vector2 heading;
 	public Sprite2D sprite;
+
+	public TextureRect heldItem;
+	public TextureRect hand;
 
 
 	public override void _Ready(){
 		sprite = GetNode<Sprite2D>("Sprite2D");
+		heldItem = GetNode<TextureRect>("Inventory/TextureRect/GridContainer/InventorySlot0/ItemTexture");
+		hand = GetNode<TextureRect>("Sprite2D/HandItem");
+
 		
 	}
 
-
+	
 
 	public void GetInput(){
 		
@@ -36,8 +43,15 @@ public partial class player : CharacterBody2D
 	}
 
 	public override void _PhysicsProcess(double delta){
+		if (heldItem.Texture != null){
+			hand.Texture = heldItem.Texture;
+		}
+		else{
+			hand.Texture = null;
+		}
 		GetInput();
 		MoveAndSlide();
+
 	}
 	
 }
