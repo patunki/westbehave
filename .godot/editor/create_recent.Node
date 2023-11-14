@@ -1,7 +1,11 @@
+Sprite2D
+Node2D
+RichTextLabel
 TextureRect
+CanvasModulate
+PointLight2D
 Control
 TileMap
-Sprite2D
 Panel
 GridContainer
 CollisionShape2D
@@ -12,7 +16,6 @@ ResourcePreloader
 NinePatchRect
 ColorRect
 CharacterBody2D
-Node2D
 AnimationTree
 AnimationPlayer
 Camera2D

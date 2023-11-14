@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dky21my4jcyrg"]
 
 [ext_resource type="Texture2D" uid="uid://cqe6f7ouobnji" path="res://Art/slotbg.jpg" id="1_fd01j"]
-[ext_resource type="Script" path="res://Iventory/InventorySlot.cs" id="2_kw67a"]
+[ext_resource type="Script" path="res://Iventory/Classes/InventorySlot.cs" id="2_kw67a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ylou"]
 texture = ExtResource("1_fd01j")

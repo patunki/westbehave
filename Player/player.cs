@@ -49,9 +49,10 @@ public partial class player : CharacterBody2D
 			hand.Texture = null;
 		}
 		GetInput();
-		MoveAndSlide();
+		MoveAndSlide(); //Godot method
 
 	}
 	
 }
 
+//lisää kaupunki ihan missä väkeä

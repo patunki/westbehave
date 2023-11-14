@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dt1b6lylrg8bv"]
 
 [ext_resource type="Texture2D" uid="uid://nea0emmu35rh" path="res://Art/invback.jpg" id="1_kgs87"]
-[ext_resource type="Script" path="res://Iventory/InventoryScript.cs" id="1_mhshb"]
+[ext_resource type="Script" path="res://Iventory/Classes/InventoryScript.cs" id="1_mhshb"]
 [ext_resource type="PackedScene" uid="uid://dky21my4jcyrg" path="res://Iventory/InventorySlot.tscn" id="3_a1i2p"]
 
 [node name="Inventory" type="Node2D"]

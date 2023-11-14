@@ -5,12 +5,12 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02gns"]
 atlas = ExtResource("1_clam0")
-region = Rect2(32.785, 15.6147, 26.1613, 23.6343)
+region = Rect2(32.7273, 16.1614, 25.5397, 25.4045)
 
 [resource]
 script = ExtResource("1_7v2w2")
 HEALTH_RESTORED = 1
-ITEM_NAME = "zombi meat"
+ITEM_NAME = "Zombie meat"
 ITEM_ID = 1
 CustomResourcePath = ""
 ITEM_TEXTURE = SubResource("AtlasTexture_02gns")

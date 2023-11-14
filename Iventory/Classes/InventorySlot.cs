@@ -30,11 +30,9 @@ public partial class InventorySlot : Panel
         previewTexture.Texture = itemTexture.Texture;
         previewTexture.Size = new Vector2(32,32);
 
-        var container = new Control();
-        container.AddChild(previewTexture);
-        previewTexture.Position = previewTexture.Size * -1; //fix this
-        
-        SetDragPreview(container);
+
+
+        SetDragPreview(previewTexture);
         playerInventory.InventoryItems[lastNum] = null;
         itemTexture.Texture = null;
         return data;

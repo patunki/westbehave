@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+//Handles the players inventory spesifically
+
 public partial class InventoryScript : Node2D
 {   
 
@@ -49,16 +51,20 @@ public partial class InventoryScript : Node2D
     public override void _Process(double delta)
     {
         if (Input.IsActionJustPressed("inventory")){
-            if (isOpen){
-                Close();
-            }
-            else {
-                Open();
-            }
-        }       
+          if (isOpen){
+            Close();
+          }
+          else {
+            Open();
+          }
+            
+            
+        }   
+        if (Input.IsActionJustPressed("exit")){
+            Close();
+        }
 
     }
-
 
 
 }

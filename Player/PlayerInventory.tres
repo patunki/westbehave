@@ -1,10 +1,10 @@
 [gd_resource type="Resource" load_steps=6 format=3 uid="uid://bhu2d3rrkh8b1"]
 
 [ext_resource type="Script" path="res://Iventory/Classes/InventoryClass.cs" id="1_47qd4"]
-[ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/TestItem.tres" id="1_g3scx"]
-[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/TestFood.tres" id="1_p35kx"]
+[ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/item_shotgun.tres" id="1_g3scx"]
+[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="1_p35kx"]
 [ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/food_zombie_meat.tres" id="2_n53xe"]
-[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/NEWTESTITEM.tres" id="3_t2711"]
+[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/food_cooked_meat.tres" id="3_t2711"]
 
 [resource]
 script = ExtResource("1_47qd4")
