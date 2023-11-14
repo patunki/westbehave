@@ -1,12 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dhjqwk8y142vs"]
 
-[ext_resource type="Script" path="res://ItemSprite.cs" id="1_b63pd"]
+[ext_resource type="Script" path="res://Items/ItemSprite.cs" id="1_r4npu"]
 [ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="2_msb72"]
 
 [node name="ItemSprite" type="Sprite2D"]
-script = ExtResource("1_b63pd")
+script = ExtResource("1_r4npu")
 ItemResource = ExtResource("2_msb72")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+scale = Vector2(0.429473, 0.32196)

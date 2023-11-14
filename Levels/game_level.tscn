@@ -115,3 +115,11 @@ color = Color(0.117647, 0.137255, 1, 1)
 
 [node name="ItemSprite" parent="." instance=ExtResource("3_j32mj")]
 position = Vector2(100, 50)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

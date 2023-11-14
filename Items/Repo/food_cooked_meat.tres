@@ -16,5 +16,5 @@ CustomResourcePath = ""
 ITEM_TEXTURE = SubResource("AtlasTexture_14jnj")
 IS_STACKABLE = true
 HOVER_TEXT = "asdas"
-ITEM_QUANTATY = 0
+ITEM_QUANTATY = 5
 MAX_STACK = 5

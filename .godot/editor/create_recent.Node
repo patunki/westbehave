@@ -1,10 +1,12 @@
+Label
+Control
+CanvasLayer
 Sprite2D
 Node2D
 RichTextLabel
 TextureRect
 CanvasModulate
 PointLight2D
-Control
 TileMap
 Panel
 GridContainer

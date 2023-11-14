@@ -11,6 +11,8 @@ public partial class InventorySlot : Panel
     private int index;
     private InventoryClass playerInventory;
     private int lastNum;
+    private Label label;
+    
 
     public Variant MakeData(){
         if (playerInventory.InventoryItems[lastNum] != null){
@@ -18,7 +20,7 @@ public partial class InventorySlot : Panel
             return data;
         } 
         else{
-            return 0000;
+            return 00001;
         }
         
     }
@@ -29,10 +31,12 @@ public partial class InventorySlot : Panel
         var previewTexture = new TextureRect();
         previewTexture.Texture = itemTexture.Texture;
         previewTexture.Size = new Vector2(32,32);
+        previewTexture.ZIndex = 5;
 
 
 
         SetDragPreview(previewTexture);
+        label.Text = "";
         playerInventory.InventoryItems[lastNum] = null;
         itemTexture.Texture = null;
         return data;
@@ -67,12 +71,19 @@ public partial class InventorySlot : Panel
         lastNum = lastChar - '0';
         itemTexture = GetNode<TextureRect>("ItemTexture");
         playerInventory = (InventoryClass)ResourceLoader.Load("res://Player/PlayerInventory.tres");
+        label = GetNode<Label>("Label");
 
     }
 
     public void Update(ItemClass item){
         itemTexture.Texture = item.ITEM_TEXTURE;
         
+        if (playerInventory.InventoryItems[lastNum] != null && playerInventory.InventoryItems[lastNum].ITEM_QUANTATY > 1){
+            label.Text = playerInventory.InventoryItems[lastNum].ITEM_QUANTATY.ToString();
+        }
+        else {
+            label.Text = "";
+        }
     }
 
 

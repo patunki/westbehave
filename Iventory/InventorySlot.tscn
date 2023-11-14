@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dky21my4jcyrg"]
+[gd_scene load_steps=5 format=3 uid="uid://dky21my4jcyrg"]
 
 [ext_resource type="Texture2D" uid="uid://cqe6f7ouobnji" path="res://Art/slotbg.jpg" id="1_fd01j"]
 [ext_resource type="Script" path="res://Iventory/Classes/InventorySlot.cs" id="2_kw67a"]
@@ -6,12 +6,28 @@
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ylou"]
 texture = ExtResource("1_fd01j")
 
+[sub_resource type="LabelSettings" id="LabelSettings_5dfnd"]
+font_size = 10
+font_color = Color(1, 0.854902, 0.615686, 1)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="InventorySlot" type="Panel"]
 custom_minimum_size = Vector2(16, 16)
 offset_right = 16.0
 offset_bottom = 16.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_5ylou")
 script = ExtResource("2_kw67a")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+layout_mode = 0
+offset_left = -2.0
+offset_top = 4.0
+offset_right = 17.0
+offset_bottom = 30.0
+label_settings = SubResource("LabelSettings_5dfnd")
+horizontal_alignment = 2
 
 [node name="ItemTexture" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(16, 16)

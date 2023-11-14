@@ -16,5 +16,5 @@ CustomResourcePath = ""
 ITEM_TEXTURE = SubResource("AtlasTexture_02gns")
 IS_STACKABLE = false
 HOVER_TEXT = ""
-ITEM_COUNT = 0
+ITEM_QUANTATY = 1
 MAX_STACK = 0

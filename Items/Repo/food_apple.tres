@@ -12,5 +12,5 @@ CustomResourcePath = ""
 ITEM_TEXTURE = ExtResource("1_8rsge")
 IS_STACKABLE = false
 HOVER_TEXT = "voi syödä"
-ITEM_COUNT = 0
+ITEM_QUANTATY = 3
 MAX_STACK = 0

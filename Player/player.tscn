@@ -13,14 +13,14 @@ position = Vector2(150, 67)
 motion_mode = 1
 script = ExtResource("1_2273y")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(12, 2)
 texture = ExtResource("2_gp4n6")
 offset = Vector2(10, -5)
 hframes = 26
 frame = 24
 
-[node name="HandItem" type="TextureRect" parent="Sprite2D"]
+[node name="HandItem" type="TextureRect" parent="PlayerSprite"]
 offset_left = 2.0
 offset_top = -2.0
 offset_right = 31.0

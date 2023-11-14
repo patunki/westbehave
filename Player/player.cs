@@ -12,12 +12,13 @@ public partial class player : CharacterBody2D
 	public Sprite2D sprite;
 	public TextureRect heldItem;
 	public TextureRect hand;
+	private string spritePath = "PlayerSprite";
 
 
 	public override void _Ready(){
-		sprite = GetNode<Sprite2D>("Sprite2D");
+		sprite = GetNode<Sprite2D>(spritePath);
 		heldItem = GetNode<TextureRect>("Inventory/TextureRect/GridContainer/InventorySlot0/ItemTexture");
-		hand = GetNode<TextureRect>("Sprite2D/HandItem");
+		hand = GetNode<TextureRect>("PlayerSprite/HandItem");
 
 		
 	}

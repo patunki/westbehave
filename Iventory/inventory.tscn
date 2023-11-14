@@ -4,7 +4,8 @@
 [ext_resource type="Script" path="res://Iventory/Classes/InventoryScript.cs" id="1_mhshb"]
 [ext_resource type="PackedScene" uid="uid://dky21my4jcyrg" path="res://Iventory/InventorySlot.tscn" id="3_a1i2p"]
 
-[node name="Inventory" type="Node2D"]
+[node name="PlayerInventory" type="Node2D"]
+scale = Vector2(1.00813, 1)
 script = ExtResource("1_mhshb")
 
 [node name="TextureRect" type="TextureRect" parent="."]

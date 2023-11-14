@@ -1,5 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1699912166
+::res://::1699980964
+ItemSprite.cs::CSharpScript::-1::1699921941::0::1::::<><>::
 paska.txt::TextFile::-1::1699890901::0::1::::<><>::
 ::res://Art/::1699907639
 idle sheet-Sheet.png::CompressedTexture2D::2144094826089087726::1699604186::1699604186::1::::<><>::
@@ -15,31 +16,33 @@ slotbg.jpg::CompressedTexture2D::5906013235658182486::1699810994::1699810996::1:
 veetintilemap2fix.png::CompressedTexture2D::1037196350118266986::1699823410::1699823415::1::::<><>::
 zombiemeat.png::CompressedTexture2D::7705414203567894018::1699820062::1699820064::1::::<><>::
 ZombieToast.png::CompressedTexture2D::8326180510737218989::1699604186::1699604186::1::::<><>::
+::res://Autoload/::1699980964
 ::res://Caracters/::1699810103
 enemy_1.cs::CSharpScript::-1::1699604186::0::1::::<><>::
 enemy_1.tscn::PackedScene::8922530108582699629::1699810103::0::1::::<><>::res://Caracters/enemy_1.cs<>uid://dqvi8g480x8s4
 ::res://Items/::1699807688
 ::res://Items/Classes/::1699808593
-ItemClass.cs::CSharpScript::-1::1699906146::0::1::::<><>::
+ItemClass.cs::CSharpScript::-1::1699921292::0::1::::<><>::
 ItemClass_Food.cs::CSharpScript::-1::1699894749::0::1::::<><>::
-::res://Items/Repo/::1699912166
-food_apple.tres::Resource::4896434334717560865::1699899091::0::1::::<><>::uid://nkwiw25vbbgi::::res://Art/pixil-frame-0.png<>res://Items/Classes/ItemClass_Food.cs
-food_cooked_meat.tres::Resource::4997783525889521760::1699912187::0::1::::<><>::uid://dh1tbtmge2pdi::::res://Art/zombiemeat.png<>res://Items/Classes/ItemClass.cs
-food_zombie_meat.tres::Resource::6696289490948127138::1699912187::0::1::::<><>::res://Items/Classes/ItemClass_Food.cs<>uid://dh1tbtmge2pdi::::res://Art/zombiemeat.png
-TestItem.tres::Resource::2813521983292001919::1699912187::0::1::::<><>::res://Items/Classes/ItemClass.cs<>uid://cg0rrofao4u73::::res://Art/shotgun1.png
+::res://Items/Repo/::1699922405
+food_apple.tres::Resource::4896434334717560865::1699899091::0::1::::<><>::uid://nkwiw25vbbgi
+food_cooked_meat.tres::Resource::4997783525889521760::1699922405::0::1::::<><>::uid://dh1tbtmge2pdi
+food_zombie_meat.tres::Resource::6696289490948127138::1699917067::0::1::::<><>::res://Items/Classes/ItemClass_Food.cs<>uid://dh1tbtmge2pdi
+item_shotgun.tres::Resource::2813521983292001919::1699912187::0::1::::<><>::res://Items/Classes/ItemClass.cs<>uid://cg0rrofao4u73
 ::res://Items/Repo/Assets/::1699809058
-::res://Iventory/::1699906714
+::res://Iventory/::1699980748
 inventory.tscn::PackedScene::8546640593766229851::1699906714::0::1::::<><>::uid://nea0emmu35rh
 InventorySlot.tscn::PackedScene::7912382011688552424::1699906710::0::1::::<><>::uid://cqe6f7ouobnji
+item_sprite.tscn::PackedScene::7670174693020652816::1699980993::0::1::::<><>::res://ItemSprite.cs<>uid://cb04s8ge5cvob::::res://Items/Repo/food_apple.tres
 ::res://Iventory/Classes/::1699906714
 InventoryClass.cs::CSharpScript::-1::1699906262::0::1::::<><>::
-InventoryScript.cs::CSharpScript::-1::1699906240::0::1::::<><>::
+InventoryScript.cs::CSharpScript::-1::1699922381::0::1::::<><>::
 InventorySlot.cs::CSharpScript::-1::1699906600::0::1::::<><>::
-::res://Levels/::1699911895
-game_level.tscn::PackedScene::5661102121632484050::1699912187::0::1::::<><>::uid://o1oqcbisahk1::::res://Art/veetintilemap2fix.png<>uid://d1d3ju81qjhuv::::res://Player/player.tscn
+::res://Levels/::1699980748
+game_level.tscn::PackedScene::5661102121632484050::1699980748::0::1::::<><>::uid://o1oqcbisahk1::::res://Art/veetintilemap2fix.png<>uid://d1d3ju81qjhuv::::res://Player/player.tscn<>uid://dhjqwk8y142vs::::res://Iventory/item_sprite.tscn
 ::res://Notes/::1699806359
 ideas.txt::TextFile::-1::1699749207::0::1::::<><>::
-::res://Player/::1699912166
-player.cs::CSharpScript::-1::1699906755::0::1::::<><>::
-player.tscn::PackedScene::8992082369521543073::1699911911::0::1::::<><>::res://Player/player.cs<>uid://dfunl64enieph::::res://Art/itch light atk sheet-Sheet.png<>uid://b432tosrs1v4y::::res://Art/light.png<>uid://dt1b6lylrg8bv::::res://Iventory/inventory.tscn
-PlayerInventory.tres::Resource::2920676358128490488::1699912166::0::1::::<><>::res://Iventory/Classes/InventoryClass.cs<>uid://bgc5kcge7nbxf::::res://Items/Repo/TestItem.tres<>uid://cb04s8ge5cvob::::res://Items/Repo/food_apple.tres<>uid://c2ny56p74de4q::::res://Items/Repo/food_zombie_meat.tres<>uid://cdg7080mjujy3::::res://Items/Repo/food_cooked_meat.tres
+::res://Player/::1699980748
+player.cs::CSharpScript::-1::1699978518::0::1::::<><>::
+player.tscn::PackedScene::8992082369521543073::1699980748::0::1::::<><>::res://Player/player.cs<>uid://dfunl64enieph::::res://Art/itch light atk sheet-Sheet.png<>uid://dt1b6lylrg8bv::::res://Iventory/inventory.tscn
+PlayerInventory.tres::Resource::2920676358128490488::1699912250::0::1::::<><>::res://Iventory/Classes/InventoryClass.cs<>uid://bgc5kcge7nbxf

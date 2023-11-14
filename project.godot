@@ -26,6 +26,10 @@ window/stretch/scale=4.0
 
 project/assembly_name="Demo 1"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 move_right={
