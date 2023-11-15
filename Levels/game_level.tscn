@@ -1,9 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=6 format=3 uid="uid://cmwjr3ysqyvhq"]
 
 [ext_resource type="Texture2D" uid="uid://o1oqcbisahk1" path="res://Art/veetintilemap2fix.png" id="2_kohib"]
 [ext_resource type="PackedScene" uid="uid://d1d3ju81qjhuv" path="res://Player/player.tscn" id="3_3qdg6"]
-[ext_resource type="PackedScene" uid="uid://c8n32n04ay72c" path="res://Scenes/CollectableItems/3_apple_collectable.tscn" id="3_pwwwr"]
-[ext_resource type="PackedScene" uid="uid://es17f22t57y5" path="res://Scenes/CollectableItems/4_shotgun_collectable.tscn" id="4_p0nss"]
 [ext_resource type="PackedScene" uid="uid://cxop6hfc3oa8x" path="res://Scenes/interact_test.tscn" id="5_ww4k7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg8m4"]
@@ -82,15 +80,9 @@ texture_region_size = Vector2i(32, 32)
 8:4/0 = 0
 8:7/0 = 0
 
-[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_rccmy"]
-resource_name = "Collectables"
-scenes/4/scene = ExtResource("3_pwwwr")
-scenes/5/scene = ExtResource("4_p0nss")
-
 [sub_resource type="TileSet" id="TileSet_263h2"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_yg8m4")
-sources/1 = SubResource("TileSetScenesCollectionSource_rccmy")
 
 [node name="GameLevel" type="Node2D"]
 
