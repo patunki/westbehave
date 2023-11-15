@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bw7l3ltk0yqyb"]
+
+[ext_resource type="Script" path="res://Scenes/Collectable.cs" id="1_yps75"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1y6u"]
+resource_local_to_scene = true
+size = Vector2(16, 15)
+
+[node name="Collectable" type="Area2D"]
+script = ExtResource("1_yps75")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_j1y6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

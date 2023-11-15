@@ -11,14 +11,13 @@ public partial class InventoryScript : Node2D
     Boolean isOpen;
     Node[] inventorySlot;
     InventoryClass playerInventory;
-    public List<ItemClass> itemClasses = new List<ItemClass>();
 
     public void UpdateInventory(){
         
         for (int i = 0; i < playerInventory.InventoryItems.Count; i++){
             if (playerInventory.InventoryItems[i] != null){
                 inventorySlot[i].Call("Update", playerInventory.InventoryItems[i]);
-                //GD.Print(playerInventory.InventoryItems[i].ITEM_NAME);
+                
             }
         }
     }

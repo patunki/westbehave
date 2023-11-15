@@ -19,16 +19,20 @@ public partial class ItemClass : Resource
     [Export(PropertyHint.MultilineText)]
     public String HOVER_TEXT {get; set;}
     [Export]
-    public int ITEM_QUANTATY {get; set;}
+    public int ITEM_QUANTITY {get; set;}
     [Export]
     public int MAX_STACK {get; set;}
     
     public ItemClass Copy() => MemberwiseClone() as ItemClass;
 
-    public void AddQuant(int Quant){
+    public void AddQuant(int quant){
 
-        ITEM_QUANTATY++;
+        ITEM_QUANTITY += quant;
 
+    }
+
+    public void DecQuant(){
+        ITEM_QUANTITY--;
     }
 
     //jos id sama nii saa droppaa ja add

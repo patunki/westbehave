@@ -1,17 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=7 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
 [ext_resource type="Texture2D" uid="uid://dfunl64enieph" path="res://Art/itch light atk sheet-Sheet.png" id="2_gp4n6"]
+[ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="4_g3461"]
 [ext_resource type="PackedScene" uid="uid://dt1b6lylrg8bv" path="res://Iventory/inventory.tscn" id="4_n828g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cjjd"]
 radius = 5.0
 height = 20.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s25qn"]
+radius = 6.0
+height = 26.0
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(150, 67)
 motion_mode = 1
 script = ExtResource("1_2273y")
+playerInventory = ExtResource("4_g3461")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(12, 2)
@@ -21,12 +27,20 @@ hframes = 26
 frame = 24
 
 [node name="HandItem" type="TextureRect" parent="PlayerSprite"]
-offset_left = 2.0
-offset_top = -2.0
-offset_right = 31.0
-offset_bottom = 11.0
+anchors_preset = -1
+anchor_left = 0.762
+anchor_top = 0.619
+anchor_right = 0.762
+anchor_bottom = 0.619
+offset_left = -62.96
+offset_top = -51.52
+offset_right = -33.96
+offset_bottom = -38.52
 expand_mode = 1
 stretch_mode = 4
+
+[node name="Marker2D" type="Marker2D" parent="PlayerSprite"]
+position = Vector2(25, 4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -39,4 +53,13 @@ zoom = Vector2(0.7, 0.7)
 [node name="Inventory" parent="." instance=ExtResource("4_n828g")]
 visible = false
 z_index = 4
-position = Vector2(-107, -16)
+position = Vector2(-146, -43)
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+visible = false
+position = Vector2(11, 4)
+shape = SubResource("CapsuleShape2D_s25qn")
+
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

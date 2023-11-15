@@ -78,8 +78,8 @@ public partial class InventorySlot : Panel
     public void Update(ItemClass item){
         itemTexture.Texture = item.ITEM_TEXTURE;
         
-        if (playerInventory.InventoryItems[lastNum] != null && playerInventory.InventoryItems[lastNum].ITEM_QUANTATY > 1){
-            label.Text = playerInventory.InventoryItems[lastNum].ITEM_QUANTATY.ToString();
+        if (playerInventory.InventoryItems[lastNum] != null && playerInventory.InventoryItems[lastNum].ITEM_QUANTITY > 1){
+            label.Text = playerInventory.InventoryItems[lastNum].ITEM_QUANTITY.ToString();
         }
         else {
             label.Text = "";

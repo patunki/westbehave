@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dky21my4jcyrg"]
+[gd_scene load_steps=6 format=3 uid="uid://dky21my4jcyrg"]
 
-[ext_resource type="Texture2D" uid="uid://cqe6f7ouobnji" path="res://Art/slotbg.jpg" id="1_fd01j"]
+[ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="1_u5ype"]
 [ext_resource type="Script" path="res://Iventory/Classes/InventorySlot.cs" id="2_kw67a"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlmgq"]
+atlas = ExtResource("1_u5ype")
+region = Rect2(116.348, 6.13428, 8.3781, 8.64835)
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ylou"]
-texture = ExtResource("1_fd01j")
+texture = SubResource("AtlasTexture_rlmgq")
 
 [sub_resource type="LabelSettings" id="LabelSettings_5dfnd"]
 font_size = 10

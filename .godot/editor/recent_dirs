@@ -1,3 +1,6 @@
+res://Scenes/CollectableItems
+res://Scenes
+res://
 res://Iventory
 res://Items/Repo/
 res://Items/Repo
@@ -5,7 +8,6 @@ res://Player
 res://Iventory/Classes
 res://Items/Classes
 res://Items/Classes/
-res://
 res://Items
 res://Caracters
 res://Levels
