@@ -7,7 +7,7 @@ public partial class Collectable : Area2D
 {
 
 	[Export]
-	public ItemClass itemResource;
+	private ItemClass itemResource;
 	public Sprite2D itemSprite;
 
 	public override void _Ready()
@@ -22,7 +22,7 @@ public partial class Collectable : Area2D
 
 	public ItemClass Give(){
 
-		return itemResource;
+		return itemResource.Copy();
 	}
 
 

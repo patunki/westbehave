@@ -2,6 +2,7 @@ using Godot;
 using System;
 using System.ComponentModel.Design;
 using System.Dynamic;
+using System.Reflection;
 using System.Xml.Resolvers;
 
 public partial class player : CharacterBody2D
@@ -43,7 +44,9 @@ public partial class player : CharacterBody2D
 				sprite.Scale = new Vector2(1,1);
 			}
 		}
+		if (Input.IsActionJustPressed("interact")){
 
+		}
 		//temporary shooting logiv.
 		if (Input.IsActionJustPressed("attack")){
 			ItemClass hand = playerInventory.InventoryItems[0];
@@ -54,7 +57,6 @@ public partial class player : CharacterBody2D
 				var barrel = GetNode<Marker2D>("PlayerSprite/Marker2D");
 				barrel.AddChild(instance);
 				
-				GD.Print("pew pew pew");
 			}
 		}
 		
@@ -62,15 +64,20 @@ public partial class player : CharacterBody2D
 	}
 
 	//Called When an area2D enters HurtBox
-	private void _on_hurt_box_area_entered(Area2D area){
+	private async void _on_hurt_box_area_entered(Area2D area){
 		
 		if (area.HasMethod("Collect")){ 					//picking up collectibles logic
-			area.Call("Collect");
 			ItemClass item = (ItemClass)area.Call("Give");
-			playerInventory.AddItem(item, item.ITEM_QUANTITY);
+			bool success = playerInventory.AddItem(item, item.ITEM_QUANTITY);
+			if (success){
+			area.Call("Collect");
 			inventoryScript.UpdateInventory();
+			}
+			
+
 			
 		}
+
 	}
 
 	public override void _PhysicsProcess(double delta){

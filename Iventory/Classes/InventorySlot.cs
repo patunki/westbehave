@@ -31,7 +31,7 @@ public partial class InventorySlot : Panel
         var previewTexture = new TextureRect();
         previewTexture.Texture = itemTexture.Texture;
         previewTexture.Size = new Vector2(32,32);
-        previewTexture.ZIndex = 5;
+        previewTexture.Position = GetGlobalMousePosition();
 
 
 
@@ -54,7 +54,7 @@ public partial class InventorySlot : Panel
 
     }
 
-    public override void _DropData(Vector2 atPosition, Variant data)
+    public override void _DropData(Vector2 atPosition, Variant data) //kun tähän lasketaan
     {
         
         ItemClass dropItem = (ItemClass)data;
@@ -66,9 +66,11 @@ public partial class InventorySlot : Panel
 
 
     public override void _Ready(){
+        //gets the slot number as an int
         String slotName = this.Name;
         char lastChar = slotName[slotName.Length - 1];
         lastNum = lastChar - '0';
+        //initialisations
         itemTexture = GetNode<TextureRect>("ItemTexture");
         playerInventory = (InventoryClass)ResourceLoader.Load("res://Player/PlayerInventory.tres");
         label = GetNode<Label>("Label");
@@ -78,7 +80,7 @@ public partial class InventorySlot : Panel
     public void Update(ItemClass item){
         itemTexture.Texture = item.ITEM_TEXTURE;
         
-        if (playerInventory.InventoryItems[lastNum] != null && playerInventory.InventoryItems[lastNum].ITEM_QUANTITY > 1){
+        if (playerInventory.InventoryItems[lastNum] != null && playerInventory.InventoryItems[lastNum].ITEM_QUANTITY > 1){ //changes label to item quantity
             label.Text = playerInventory.InventoryItems[lastNum].ITEM_QUANTITY.ToString();
         }
         else {

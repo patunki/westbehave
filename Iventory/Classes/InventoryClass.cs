@@ -9,11 +9,18 @@ public partial class InventoryClass : Resource
     [Export]
 	public Godot.Collections.Array<ItemClass> InventoryItems { get; set; }
 
-    public void AddItem(ItemClass item, int quant){ //Checks if you have thi item and can stack it, if not puts it in the first free spot;
+    public bool AddItem(ItemClass item, int quant){ //Checks if you have thi item and can stack it, if not puts it in the first free spot;
+        //GD.Print(item.ITEM_QUANTITY);
         bool hasItem = CheckSame(item, quant);
-        int emptySpot = GetSpot(item,quant);
-        if (emptySpot > -1 && !hasItem){
+        if (!hasItem){
+            int emptySpot = GetSpot(item,quant);
             InventoryItems[emptySpot] = item;
+            return true;
+        }
+        else if (hasItem){
+            return true;
+        }else{
+            return false;
         }
     }
 
@@ -34,7 +41,9 @@ public partial class InventoryClass : Resource
     private bool CheckSame(ItemClass item, int quant){ //checks if you aleady have the item && its stackable
         if (item.IS_STACKABLE) {
             for (int i = 0; i < InventoryItems.Count; i++){
-                if (InventoryItems[i] == item){
+                if (InventoryItems[i] != null && InventoryItems[i].ITEM_ID == item.ITEM_ID){             //if (InventoryItems[i].ITEM_ID == item.ITEM_ID){ ei toimi
+                    GD.Print(InventoryItems[i].ITEM_ID);
+                    GD.Print(item.ITEM_ID);
                     InventoryItems[i].AddQuant(quant);
                     return true;
                 }
