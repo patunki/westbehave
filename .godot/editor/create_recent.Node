@@ -1,9 +1,11 @@
-CanvasLayer
 CollisionShape2D
-Area2D
+ShapeCast2D
 Sprite2D
-Timer
 CharacterBody2D
+Label
+Area2D
+CanvasLayer
+Timer
 Marker2D
 Node
 RigidBody2D
@@ -11,7 +13,6 @@ Panel
 GridContainer
 AnimationPlayer
 AnimatedSprite2D
-Label
 Control
 Node2D
 RichTextLabel

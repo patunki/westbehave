@@ -15,6 +15,8 @@ height = 26.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(150, 67)
+collision_layer = 3
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_2273y")
 playerInventory = ExtResource("4_g3461")

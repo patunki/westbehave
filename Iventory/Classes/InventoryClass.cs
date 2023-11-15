@@ -44,7 +44,7 @@ public partial class InventoryClass : Resource
                 if (InventoryItems[i] != null && InventoryItems[i].ITEM_ID == item.ITEM_ID){             //if (InventoryItems[i].ITEM_ID == item.ITEM_ID){ ei toimi
                     GD.Print(InventoryItems[i].ITEM_ID);
                     GD.Print(item.ITEM_ID);
-                    InventoryItems[i].AddQuant(1);
+                    InventoryItems[i].AddQuant(quant);
                     return true;
                 }
           
