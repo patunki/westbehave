@@ -16,6 +16,7 @@ public partial class player : CharacterBody2D
 	public TextureRect heldItem;
 	public TextureRect hand;
 	private InventoryScript inventoryScript;
+	private ItemDatabase itemDatabase;
 	private string spritePath = "PlayerSprite";
 	
 
@@ -25,6 +26,7 @@ public partial class player : CharacterBody2D
 		heldItem = GetNode<TextureRect>("Inventory/TextureRect/GridContainer/InventorySlot0/ItemTexture");
 		hand = GetNode<TextureRect>("PlayerSprite/HandItem");
 		inventoryScript = GetNode<InventoryScript>("Inventory");
+		itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
 		
 		
 	}
@@ -44,6 +46,14 @@ public partial class player : CharacterBody2D
 				sprite.Scale = new Vector2(1,1);
 			}
 		}
+
+		if (Input.IsActionJustPressed("interact")){
+			
+			/*int slot = itemDatabase.GetItem(4);
+			ItemClass itum = itemDatabase.itemDatabase[slot];
+			GD.Print(itum.ITEM_NAME);*/
+		}
+
 		//temporary eat
 		/*if (Input.IsActionJustPressed("interact")){
 			int quant = playerInventory.InventoryItems[0].DecQuant();

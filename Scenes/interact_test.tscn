@@ -19,6 +19,7 @@ scale = Vector2(0.0065, 0.0053125)
 texture = ExtResource("1_stpae")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_4k07h")]
+actionName = "PICK UP"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_ns0nw")
