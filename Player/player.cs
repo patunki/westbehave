@@ -44,9 +44,27 @@ public partial class player : CharacterBody2D
 				sprite.Scale = new Vector2(1,1);
 			}
 		}
+		//temporary eat
 		if (Input.IsActionJustPressed("interact")){
-
+			int quant = playerInventory.InventoryItems[0].DecQuant();
+			if (quant <= 0){
+				playerInventory.InventoryItems[0] = null;
+			}
+			inventoryScript.UpdateInventory();
+			
 		}
+		//temporary drop logic
+		if (Input.IsActionJustPressed("drop")){
+			int quant = playerInventory.InventoryItems[0].DecQuant();
+			inventoryScript.UpdateInventory();
+			PackedScene scene = GD.Load<PackedScene>("res://Scenes/CollectableItems/3_apple_collectable.tscn"); //VERY TEMP ONLY APPLE!
+			var instance = scene.Instantiate();
+			Node2D location = new Node2D();
+			GetTree().Root.AddChild(location);
+			location.AddChild(instance);
+			location.Position = new Vector2(80,80);
+		}
+
 		//temporary shooting logiv.
 		if (Input.IsActionJustPressed("attack")){
 			ItemClass hand = playerInventory.InventoryItems[0];
@@ -93,5 +111,3 @@ public partial class player : CharacterBody2D
 	}
 	
 }
-
-//lisää kaupunki ihan missä väkeä

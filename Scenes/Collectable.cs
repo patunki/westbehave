@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Security.Cryptography.X509Certificates;
 
+
 public partial class Collectable : Area2D
 {
 

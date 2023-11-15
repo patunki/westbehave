@@ -1,3 +1,4 @@
+CanvasLayer
 CollisionShape2D
 Area2D
 Sprite2D
@@ -7,7 +8,6 @@ Marker2D
 Node
 RigidBody2D
 Panel
-CanvasLayer
 GridContainer
 AnimationPlayer
 AnimatedSprite2D

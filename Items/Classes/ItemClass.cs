@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections;
 using System.ComponentModel;
 
 public partial class ItemClass : Resource
@@ -31,8 +32,9 @@ public partial class ItemClass : Resource
 
     }
 
-    public void DecQuant(){
+    public int DecQuant(){
         ITEM_QUANTITY--;
+        return ITEM_QUANTITY;
     }
 
     //jos id sama nii saa droppaa ja add
