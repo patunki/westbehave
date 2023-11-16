@@ -17,6 +17,7 @@ public partial class player : CharacterBody2D
 	public TextureRect hand;
 	private InventoryScript inventoryScript;
 	private ItemDatabase itemDatabase;
+	private GameManager gameManager;
 	private string spritePath = "PlayerSprite";
 	
 
@@ -27,9 +28,11 @@ public partial class player : CharacterBody2D
 		hand = GetNode<TextureRect>("PlayerSprite/HandItem");
 		inventoryScript = GetNode<InventoryScript>("Inventory");
 		itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
-		
-		
+		gameManager = GetNode<GameManager>("/root/GameManager");
+
 	}
+
+
 
 	
 
@@ -50,7 +53,7 @@ public partial class player : CharacterBody2D
 		if (Input.IsActionJustPressed("interact")){
 			
 			ItemClass item = itemDatabase.GetItem(3);
-			playerInventory.AddItem(item,5);
+			playerInventory.AddItem(item,1);
 			inventoryScript.UpdateInventory();
 		}
 

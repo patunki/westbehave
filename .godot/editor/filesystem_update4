@@ -24,3 +24,7 @@ res://Scenes/interact_test.cs
 res://Managers/ItemDatabase.tscn
 res://Items/Repo/food_zombie_meat.tres
 res://Items/Repo/food_apple.tres
+res://Iventory/inventory.tscn
+res://Iventory/InventorySlot.tscn
+res://Managers/GameManager.tscn
+res://Managers/GameManager.cs

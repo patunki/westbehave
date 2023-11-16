@@ -13,4 +13,4 @@ ITEM_TEXTURE = ExtResource("1_8rsge")
 IS_STACKABLE = true
 HOVER_TEXT = "voi syödä"
 ITEM_QUANTITY = 1
-MAX_STACK = 0
+MAX_STACK = 10

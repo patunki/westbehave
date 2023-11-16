@@ -17,4 +17,4 @@ ITEM_TEXTURE = SubResource("AtlasTexture_8fpan")
 IS_STACKABLE = false
 HOVER_TEXT = ""
 ITEM_QUANTITY = 1
-MAX_STACK = 0
+MAX_STACK = 1

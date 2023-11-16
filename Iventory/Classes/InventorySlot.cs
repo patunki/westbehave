@@ -10,13 +10,15 @@ public partial class InventorySlot : Panel
     private TextureRect itemTexture;
     private int index;
     private InventoryClass playerInventory;
-    private int lastNum;
     private Label label;
+    private GameManager gameManager;
+    private int originIndex;
+    
     
 
     public Variant MakeData(){
-        if (playerInventory.InventoryItems[lastNum] != null){
-            var data = playerInventory.InventoryItems[lastNum]; //se mikä nostetaan item
+        if (playerInventory.InventoryItems[index] != null){
+            var data = playerInventory.InventoryItems[index]; //se mikä nostetaan item
             return data;
         } 
         else{
@@ -36,15 +38,15 @@ public partial class InventorySlot : Panel
 
 
         SetDragPreview(previewTexture);
+        gameManager.EmitSignal(nameof(GameManager.ItemLifted),index);
         label.Text = "";
-        playerInventory.InventoryItems[lastNum] = null;
-        itemTexture.Texture = null;
+        
         return data;
     }
 
     public override bool _CanDropData(Vector2 atPosition, Variant data) //kun tähän yrittää laskea
     {
-        if (playerInventory.InventoryItems[lastNum] != null){
+        if (playerInventory.InventoryItems[index] != null){
             return false;
         }
         else {
@@ -58,30 +60,43 @@ public partial class InventorySlot : Panel
     {
         
         ItemClass dropItem = (ItemClass)data;
-        playerInventory.InventoryItems[lastNum] = dropItem; //slotti mihin lasketaan
+        playerInventory.InventoryItems[index] = dropItem; //slotti mihin lasketaan
+        gameManager.EmitSignal(nameof(GameManager.ItemLanded),index);
         Update(dropItem);
     }
 
-
+    
 
 
     public override void _Ready(){
-        //gets the slot number as an int
-        String slotName = this.Name;
-        char lastChar = slotName[slotName.Length - 1];
-        lastNum = lastChar - '0';
         //initialisations
+        index = GetIndex();
         itemTexture = GetNode<TextureRect>("ItemTexture");
         playerInventory = (InventoryClass)ResourceLoader.Load("res://Player/PlayerInventory.tres");
         label = GetNode<Label>("Label");
+        gameManager = GetNode<GameManager>("/root/GameManager");
+        gameManager.ItemLanded += Landed;
+        gameManager.ItemLifted += Lifted;
 
+    }
+
+    void Landed(int sourceIndex){
+        InventorySlot slot = GetNode<InventorySlot>("../InventorySlot"+originIndex);
+        slot.Delete();
+    }
+    void Lifted(int sourceIndex){
+        originIndex = sourceIndex;
+    }
+    public void Delete(){
+        playerInventory.InventoryItems[index] = null;
+        itemTexture.Texture = null;
     }
 
     public void Update(ItemClass item){
         itemTexture.Texture = item.ITEM_TEXTURE;
         
-        if (playerInventory.InventoryItems[lastNum] != null && playerInventory.InventoryItems[lastNum].ITEM_QUANTITY > 1){ //changes label to item quantity
-            label.Text = playerInventory.InventoryItems[lastNum].ITEM_QUANTITY.ToString();
+        if (playerInventory.InventoryItems[index] != null && playerInventory.InventoryItems[index].ITEM_QUANTITY > 1){ //changes label to item quantity
+            label.Text = playerInventory.InventoryItems[index].ITEM_QUANTITY.ToString();
         }
         else {
             label.Text = "";
