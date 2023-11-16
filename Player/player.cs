@@ -49,7 +49,9 @@ public partial class player : CharacterBody2D
 
 		if (Input.IsActionJustPressed("interact")){
 			
-			playerInventory.AddItem(4,1);
+			ItemClass item = itemDatabase.GetItem(3);
+			playerInventory.AddItem(item,5);
+			inventoryScript.UpdateInventory();
 		}
 
 		//temporary eat

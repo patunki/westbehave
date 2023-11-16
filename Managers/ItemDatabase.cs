@@ -25,13 +25,13 @@ public partial class ItemDatabase : Node
         
     }
 
-    public int GetItem(int id){
+    public ItemClass GetItem(int id){
         for (int i = 0; i < itemDatabase.Count; i++){
             if (itemDatabase[i] != null && itemDatabase[i].ITEM_ID == id){
-                return i;
+                return itemDatabase[i];
             }
         }
-        return -1;
+        return null;
     }
 
 }
