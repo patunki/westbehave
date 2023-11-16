@@ -1,3 +1,4 @@
+AnimationPlayer
 ColorRect
 RichTextLabel
 CollisionShape2D
@@ -13,7 +14,6 @@ Node
 RigidBody2D
 Panel
 GridContainer
-AnimationPlayer
 AnimatedSprite2D
 Control
 Node2D

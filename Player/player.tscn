@@ -1,17 +1,55 @@
-[gd_scene load_steps=7 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=10 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
-[ext_resource type="Texture2D" uid="uid://dfunl64enieph" path="res://Art/itch light atk sheet-Sheet.png" id="2_gp4n6"]
+[ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
 [ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="4_g3461"]
 [ext_resource type="PackedScene" uid="uid://dt1b6lylrg8bv" path="res://Iventory/inventory.tscn" id="4_n828g"]
 
+[sub_resource type="Animation" id="Animation_vp0ho"]
+resource_name = "IdleAnimation"
+length = 1.7
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_vssut"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2eogn"]
+_data = {
+"IdleAnimation": SubResource("Animation_vp0ho"),
+"RESET": SubResource("Animation_vssut")
+}
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cjjd"]
-radius = 5.0
-height = 20.0
+radius = 6.0
+height = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s25qn"]
-radius = 6.0
-height = 26.0
+radius = 7.0
+height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(150, 67)
@@ -23,10 +61,10 @@ playerInventory = ExtResource("4_g3461")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(12, 2)
-texture = ExtResource("2_gp4n6")
+texture = ExtResource("3_56kbu")
 offset = Vector2(10, -5)
-hframes = 26
-frame = 24
+hframes = 18
+frame = 1
 
 [node name="HandItem" type="TextureRect" parent="PlayerSprite"]
 anchors_preset = -1
@@ -44,15 +82,21 @@ stretch_mode = 4
 [node name="Marker2D" type="Marker2D" parent="PlayerSprite"]
 position = Vector2(25, 4)
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
+libraries = {
+"": SubResource("AnimationLibrary_2eogn")
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(11, 6)
+position = Vector2(10, 8)
 shape = SubResource("CapsuleShape2D_4cjjd")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="PlayerCamera" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
 
 [node name="Inventory" parent="." instance=ExtResource("4_n828g")]
+visible = false
 z_index = 4
 position = Vector2(91, -124)
 
@@ -60,7 +104,7 @@ position = Vector2(91, -124)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 visible = false
-position = Vector2(11, 4)
+position = Vector2(10, 3)
 shape = SubResource("CapsuleShape2D_s25qn")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

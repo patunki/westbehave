@@ -52,6 +52,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
 z_index = 5
 layout_mode = 0
 offset_left = -69.0

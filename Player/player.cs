@@ -18,6 +18,7 @@ public partial class player : CharacterBody2D
 	private InventoryScript inventoryScript;
 	private ItemDatabase itemDatabase;
 	private GameManager gameManager;
+	private AnimationPlayer animationPlayer;
 	private string spritePath = "PlayerSprite";
 	
 
@@ -29,7 +30,9 @@ public partial class player : CharacterBody2D
 		inventoryScript = GetNode<InventoryScript>("Inventory");
 		itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
 		gameManager = GetNode<GameManager>("/root/GameManager");
+		animationPlayer = GetNode<AnimationPlayer>("PlayerSprite/AnimationPlayer");
 
+		animationPlayer.Play("IdleAnimation");
 	}
 
 
