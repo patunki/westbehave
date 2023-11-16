@@ -12,7 +12,6 @@ public partial class ItemDatabase : Node
     public override void _Ready()
     {   
         string folderPath = "Items/Repo/"; //should be res://Items/Repo/. FIX THIS!
-        GD.Print("ready");
         LoadItems(folderPath);
         
         
@@ -21,9 +20,9 @@ public partial class ItemDatabase : Node
     public void LoadItems(string folderPath){
         string[] files = Directory.GetFiles(folderPath, "*.tres");
         foreach (string file in files){
-
-            itemDatabase.Add(GD.Load<ItemClass>(file));
+            itemDatabase.Add(GD.Load<ItemClass>(file));    
         }
+        
     }
 
     public int GetItem(int id){

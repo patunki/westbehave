@@ -49,9 +49,7 @@ public partial class player : CharacterBody2D
 
 		if (Input.IsActionJustPressed("interact")){
 			
-			/*int slot = itemDatabase.GetItem(4);
-			ItemClass itum = itemDatabase.itemDatabase[slot];
-			GD.Print(itum.ITEM_NAME);*/
+			playerInventory.AddItem(4,1);
 		}
 
 		//temporary eat
@@ -64,11 +62,11 @@ public partial class player : CharacterBody2D
 			
 		}*/
 		//temporary drop logic
-		if (Input.IsActionJustPressed("drop")){
+	/*	if (Input.IsActionJustPressed("drop")){
 			int quant = playerInventory.InventoryItems[0].DecQuant();
 			inventoryScript.UpdateInventory();
 			
-		}
+		}*/
 
 		//temporary shooting logiv.
 		if (Input.IsActionJustPressed("attack")){
@@ -87,11 +85,11 @@ public partial class player : CharacterBody2D
 	}
 
 	//Called When an area2D enters HurtBox
-	private void _on_hurt_box_area_entered(Area2D area){
+	/*private void _on_hurt_box_area_entered(Area2D area){
 		
 		if (area.HasMethod("Collect")){ 					//picking up collectibles logic
 			ItemClass item = (ItemClass)area.Call("Give");
-			bool success = playerInventory.AddItem(item, item.ITEM_QUANTITY);
+			bool success = playerInventory.AddItem(1, item.ITEM_QUANTITY);
 			if (success){
 			area.Call("Collect");
 			inventoryScript.UpdateInventory();
@@ -101,7 +99,7 @@ public partial class player : CharacterBody2D
 			
 		}
 
-	}
+	}*/
 
 	public override void _PhysicsProcess(double delta){
 		if (heldItem.Texture != null){

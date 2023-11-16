@@ -16,8 +16,8 @@ config/features=PackedStringArray("4.1", "C#", "GL Compatibility")
 
 [autoload]
 
+ItemDatabase="*res://Managers/ItemDatabase.tscn"
 InteractionManager="*res://Managers/InteractionManager.tscn"
-ItemDatabase="*res://Managers/ItemDatabase.cs"
 
 [display]
 

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnmh0873545sg"]
+
+[ext_resource type="Script" path="res://Managers/ItemDatabase.cs" id="1_2nhsn"]
+
+[node name="ItemDatabase" type="Node2D"]
+script = ExtResource("1_2nhsn")

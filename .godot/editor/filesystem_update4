@@ -21,5 +21,5 @@ res://Managers/ItemDatabase.cs
 res://Player/player.cs
 res://Scenes/bullet.cs
 res://Scenes/interact_test.cs
-res://Items/Repo/food_apple.tres
+res://Managers/ItemDatabase.tscn
 res://Items/Repo/food_zombie_meat.tres

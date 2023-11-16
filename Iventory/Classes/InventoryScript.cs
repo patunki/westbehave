@@ -11,6 +11,7 @@ public partial class InventoryScript : Node2D
     Boolean isOpen;
     Node[] inventorySlot;
     InventoryClass playerInventory;
+    ItemDatabase itemDatabase;
 
     public void UpdateInventory(){
         
@@ -43,6 +44,7 @@ public partial class InventoryScript : Node2D
         playerInventory = (InventoryClass)ResourceLoader.Load("res://Player/PlayerInventory.tres");
         var containerNode = GetNode<GridContainer>("TextureRect/GridContainer");
         inventorySlot = containerNode.GetChildren().ToArray();
+        itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
         Close();
 
     }
