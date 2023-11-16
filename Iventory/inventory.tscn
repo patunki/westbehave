@@ -51,3 +51,12 @@ layout_mode = 2
 
 [node name="InventorySlot7" parent="TextureRect/GridContainer" instance=ExtResource("3_a1i2p")]
 layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 136.0
+offset_bottom = 80.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

@@ -28,3 +28,5 @@ res://Iventory/inventory.tscn
 res://Iventory/InventorySlot.tscn
 res://Managers/GameManager.tscn
 res://Managers/GameManager.cs
+res://Iventory/SlotLabel.cs
+res://Items/Repo/food_eggplant.tres

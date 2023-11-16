@@ -11,9 +11,11 @@ public partial class InventorySlot : Panel
     private int index;
     private InventoryClass playerInventory;
     private Label label;
+    private RichTextLabel richTextLabel;
     private GameManager gameManager;
     private int originIndex;
-    
+    private ItemClass thisItem;
+    private InventoryScript inventoryScript;
     
 
     public Variant MakeData(){
@@ -39,7 +41,6 @@ public partial class InventorySlot : Panel
 
         SetDragPreview(previewTexture);
         gameManager.EmitSignal(nameof(GameManager.ItemLifted),index);
-        label.Text = "";
         
         return data;
     }
@@ -75,14 +76,22 @@ public partial class InventorySlot : Panel
         playerInventory = (InventoryClass)ResourceLoader.Load("res://Player/PlayerInventory.tres");
         label = GetNode<Label>("Label");
         gameManager = GetNode<GameManager>("/root/GameManager");
+        richTextLabel = GetNode<RichTextLabel>("RichTextLabel");
         gameManager.ItemLanded += Landed;
         gameManager.ItemLifted += Lifted;
+        richTextLabel.Hide();
+        thisItem = playerInventory.InventoryItems[index];
+        inventoryScript = GetParent().GetParent().GetParent().GetParent().GetNode<InventoryScript>("Inventory");
+        if (thisItem != null){
+            richTextLabel.Text = thisItem.HOVER_TEXT;
+        }
 
     }
 
     void Landed(int sourceIndex){
         InventorySlot slot = GetNode<InventorySlot>("../InventorySlot"+originIndex);
         slot.Delete();
+        inventoryScript.UpdateInventory();
     }
     void Lifted(int sourceIndex){
         originIndex = sourceIndex;
@@ -90,10 +99,25 @@ public partial class InventorySlot : Panel
     public void Delete(){
         playerInventory.InventoryItems[index] = null;
         itemTexture.Texture = null;
+        label.Text = "";
+        inventoryScript.UpdateInventory();
+    }
+    void _on_mouse_entered(){
+        if (thisItem != null){
+            richTextLabel.Show();
+        }
+        inventoryScript.UpdateInventory();
+        
+    }
+    void _on_mouse_exited(){
+        richTextLabel.Hide();
+
     }
 
     public void Update(ItemClass item){
         itemTexture.Texture = item.ITEM_TEXTURE;
+        thisItem = item;
+        richTextLabel.Text = item.HOVER_TEXT;
         
         if (playerInventory.InventoryItems[index] != null && playerInventory.InventoryItems[index].ITEM_QUANTITY > 1){ //changes label to item quantity
             label.Text = playerInventory.InventoryItems[index].ITEM_QUANTITY.ToString();

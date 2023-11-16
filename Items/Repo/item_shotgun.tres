@@ -15,6 +15,6 @@ ITEM_ID = 4
 CustomResourcePath = ""
 ITEM_TEXTURE = SubResource("AtlasTexture_8fpan")
 IS_STACKABLE = false
-HOVER_TEXT = ""
+HOVER_TEXT = "This is a shotgun"
 ITEM_QUANTITY = 1
 MAX_STACK = 1

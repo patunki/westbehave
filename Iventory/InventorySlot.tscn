@@ -50,3 +50,26 @@ grow_vertical = 2
 mouse_filter = 2
 expand_mode = 1
 stretch_mode = 4
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 5
+layout_mode = 0
+offset_left = -69.0
+offset_right = 68.0
+offset_bottom = 87.0
+scale = Vector2(0.4, 0.4)
+mouse_filter = 1
+text = "asdasd"
+
+[node name="ColorRect" type="ColorRect" parent="RichTextLabel"]
+z_index = -1
+layout_mode = 0
+offset_left = -76.0
+offset_top = -36.0
+offset_right = 196.0
+offset_bottom = 108.0
+mouse_filter = 1
+color = Color(0.192157, 0.0352941, 0, 1)
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
