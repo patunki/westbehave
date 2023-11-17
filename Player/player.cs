@@ -93,11 +93,11 @@ public partial class player : CharacterBody2D
 	}
 
 	//Called When an area2D enters HurtBox
-	/*private void _on_hurt_box_area_entered(Area2D area){
+	private void _on_hurt_box_area_entered(Area2D area){
 		
 		if (area.HasMethod("Collect")){ 					//picking up collectibles logic
 			ItemClass item = (ItemClass)area.Call("Give");
-			bool success = playerInventory.AddItem(1, item.ITEM_QUANTITY);
+			bool success = playerInventory.AddItem(item,item.ITEM_QUANTITY);
 			if (success){
 			area.Call("Collect");
 			inventoryScript.UpdateInventory();
@@ -107,7 +107,7 @@ public partial class player : CharacterBody2D
 			
 		}
 
-	}*/
+	}
 
 	public override void _PhysicsProcess(double delta){
 		if (heldItem.Texture != null){

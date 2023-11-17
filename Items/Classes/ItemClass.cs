@@ -3,6 +3,19 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 
+public enum ItemType
+{
+    FOOD,
+    WEAPON,
+    ARMOR,
+    TOOL,
+    CONSUBLE,
+    MATERIAL,
+    MISC,
+    SEED
+
+}
+
 public partial class ItemClass : Resource
 {
 
@@ -14,7 +27,6 @@ public partial class ItemClass : Resource
     public string CustomResourcePath {get; set;}
     [Export]
     public Texture2D ITEM_TEXTURE {get; set;}
-
     [Export]
     public Boolean IS_STACKABLE {get; set;}
     [Export(PropertyHint.MultilineText)]
@@ -23,7 +35,9 @@ public partial class ItemClass : Resource
     public int ITEM_QUANTITY {get; set;}
     [Export]
     public int MAX_STACK {get; set;}
-    
+    [Export]
+    public ItemType ITEM_TYPE = ItemType.MISC;
+     
     public ItemClass Copy() => MemberwiseClone() as ItemClass;
 
     public void AddQuant(int quant){

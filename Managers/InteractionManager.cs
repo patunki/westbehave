@@ -60,9 +60,3 @@ public partial class InteractionManager : Node2D
 
 
 }
-
-//activeAreas.Sort((area1,area2) => {
-//                float dist1 = area1.GlobalPosition.DistanceTo(player.GlobalPosition);
-//                float dist2 = area2.GlobalPosition.DistanceTo(player.GlobalPosition);
-//                return dist1.CompareTo(dist2);
-//            });

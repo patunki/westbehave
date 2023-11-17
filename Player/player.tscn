@@ -1,9 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=13 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
 [ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="4_g3461"]
 [ext_resource type="PackedScene" uid="uid://dt1b6lylrg8bv" path="res://Iventory/inventory.tscn" id="4_n828g"]
+[ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="5_r6xtp"]
+[ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="5_sjabt"]
+[ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="7_ptokh"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
 resource_name = "IdleAnimation"
@@ -47,14 +50,12 @@ _data = {
 radius = 6.0
 height = 16.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s25qn"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g78q"]
 radius = 7.0
-height = 28.0
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(150, 67)
-collision_layer = 3
-collision_mask = 3
+collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_2273y")
 playerInventory = ExtResource("4_g3461")
@@ -100,11 +101,14 @@ visible = false
 z_index = 4
 position = Vector2(91, -124)
 
-[node name="HurtBox" type="Area2D" parent="."]
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_r6xtp")]
+healthComponent = NodePath("../HealthComponent")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
 visible = false
-position = Vector2(10, 3)
-shape = SubResource("CapsuleShape2D_s25qn")
+position = Vector2(10, 2)
+shape = SubResource("CapsuleShape2D_5g78q")
 
-[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[node name="HealthComponent" parent="." instance=ExtResource("5_sjabt")]
+
+[node name="StateMachine" parent="." instance=ExtResource("7_ptokh")]
