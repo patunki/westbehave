@@ -21,10 +21,14 @@ public partial class InteractionArea : Area2D
     }
 
     void _on_body_entered(Node2D body){
-        interactionManager.RegisterArea(this);
+        if (body.IsInGroup("Player")){
+            interactionManager.RegisterArea(this);
+        }
     }
     void _on_body_exited(Node2D body){
-        interactionManager.UnregisterArea(this);
+        if (body.IsInGroup("Player")){
+            interactionManager.UnregisterArea(this);
+        }
         
 
     }

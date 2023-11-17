@@ -15,7 +15,6 @@ public partial class InteractionManager : Node2D
     {
         player = (player)GetTree().GetFirstNodeInGroup("Player");
         label = GetNode<Label>("Label");
-        GD.Print("singleton lataa");
 
     }
 

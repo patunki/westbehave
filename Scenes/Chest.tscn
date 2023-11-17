@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnph3rig8hw82"]
+
+[ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
+[ext_resource type="Script" path="res://Scenes/Chest.cs" id="1_57fgj"]
+[ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
+atlas = ExtResource("1_55djk")
+region = Rect2(163.664, 174.956, 25.5397, 18.2426)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31k48"]
+atlas = ExtResource("1_55djk")
+region = Rect2(195.42, 171.713, 24.4586, 20.675)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g7tgj"]
+radius = 41.5933
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2q1d"]
+size = Vector2(21, 14)
+
+[node name="Chest" type="StaticBody2D"]
+script = ExtResource("1_57fgj")
+
+[node name="ChestClosed" type="Sprite2D" parent="."]
+position = Vector2(0, 2)
+texture = SubResource("AtlasTexture_bjq1p")
+
+[node name="ChestOpen" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(1.04167, 1)
+texture = SubResource("AtlasTexture_31k48")
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_tsoul")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_g7tgj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_n2q1d")

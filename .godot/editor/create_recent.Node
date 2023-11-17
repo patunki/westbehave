@@ -1,14 +1,15 @@
-Node
 CollisionShape2D
-Node2D
+Area2D
 Sprite2D
+StaticBody2D
+Node
+Node2D
 AnimationPlayer
 ColorRect
 RichTextLabel
 ShapeCast2D
 CharacterBody2D
 Label
-Area2D
 CanvasLayer
 Timer
 Marker2D
@@ -21,7 +22,6 @@ TextureRect
 CanvasModulate
 PointLight2D
 TileMap
-StaticBody2D
 ResourcePreloader
 NinePatchRect
 AnimationTree
