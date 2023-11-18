@@ -30,3 +30,6 @@ res://Scenes/interact_test.cs
 res://Scripts/Attack.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
+res://Items/Classes/ItemClass_Tool.cs
+res://Items/Repo/tool_hoe.tres
+res://Items/Repo/seed_eggplant_seed.tres

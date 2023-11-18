@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://7360gotmfs3h"]
+
+[ext_resource type="Texture2D" uid="uid://ohtnepd47qwr" path="res://Art/kuokka.png" id="1_1fbrf"]
+[ext_resource type="Script" path="res://Items/Classes/ItemClass_Tool.cs" id="1_63nld"]
+
+[resource]
+script = ExtResource("1_63nld")
+ITEM_NAME = "Hoe"
+ITEM_ID = 7
+CustomResourcePath = "res://Items/Repo/tool_hoe.tres"
+ITEM_TEXTURE = ExtResource("1_1fbrf")
+IS_STACKABLE = false
+HOVER_TEXT = "A tool used for planting seeds."
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 3

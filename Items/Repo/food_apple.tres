@@ -12,6 +12,6 @@ CustomResourcePath = "res://Items/Repo/food_apple.tres"
 ITEM_TEXTURE = ExtResource("1_8rsge")
 IS_STACKABLE = true
 HOVER_TEXT = "A nice looking apple"
-ITEM_QUANTITY = 1
+ITEM_QUANTITY = 3
 MAX_STACK = 10
 ITEM_TYPE = 0

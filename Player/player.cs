@@ -71,9 +71,9 @@ public partial class player : CharacterBody2D
 		}*/
 		//temporary drop logic
 		if (Input.IsActionJustPressed("drop")){
-			int quant = playerInventory.InventoryItems[0].DecQuant();
+			int quant = playerInventory.InventoryItems[0].DecQuant(); //LEAVES TEXTURE / NULL ITEM!
 			if (quant <= 0){
-				playerInventory.InventoryItems[0].Dispose();
+				playerInventory.InventoryItems[0] = null;
 			}
 			inventoryScript.UpdateInventory();
 			

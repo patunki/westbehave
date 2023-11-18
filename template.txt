@@ -100,3 +100,9 @@ public partial class interact_test : CharacterBody2D
     public void SetItems(Variant newItems){
 
     }
+    -----------------------------------------------------------
+    GET MANAGER FROM RESOURCE!!!!!!!!!!!
+    -------------------------------------------------------------
+        var tree = (SceneTree)Engine.GetMainLoop();
+        var itemDatabase = tree.Root.GetNode<ItemDatabase>("ItemDatabase");  
+---------------------------------------------------------------------

@@ -7,7 +7,7 @@
 script = ExtResource("2_cvajb")
 ITEM_NAME = "Eggplant Seeds"
 ITEM_ID = 5
-CustomResourcePath = "res://Items/Repo/item_eggplant_seed.tres"
+CustomResourcePath = "res://Items/Repo/seed_eggplant_seed.tres"
 ITEM_TEXTURE = ExtResource("1_qcljc")
 IS_STACKABLE = true
 HOVER_TEXT = "Can be used to plant eggplants."

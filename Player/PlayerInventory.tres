@@ -1,11 +1,13 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bhu2d3rrkh8b1"]
+[gd_resource type="Resource" load_steps=8 format=3 uid="uid://bhu2d3rrkh8b1"]
 
 [ext_resource type="Script" path="res://Iventory/Classes/InventoryClass.cs" id="1_47qd4"]
 [ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/weapon_shotgun.tres" id="1_g3scx"]
 [ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="1_p35kx"]
+[ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/tool_hoe.tres" id="1_tdw8e"]
 [ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="2_hjkt0"]
 [ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/food_cooked_meat.tres" id="3_t2711"]
+[ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/seed_eggplant_seed.tres" id="6_fw4qd"]
 
 [resource]
 script = ExtResource("1_47qd4")
-InventoryItems = [null, ExtResource("3_t2711"), ExtResource("2_hjkt0"), ExtResource("1_g3scx"), ExtResource("1_p35kx"), null, null, null]
+InventoryItems = [ExtResource("1_tdw8e"), ExtResource("3_t2711"), ExtResource("2_hjkt0"), ExtResource("1_g3scx"), ExtResource("1_p35kx"), ExtResource("6_fw4qd"), null, null]

@@ -141,13 +141,14 @@ public partial class InventorySlot : Panel
     //Updates the invventory visuals. Usually called from InventoryScript.
     public void Update(ItemClass item){
         if (item != null){
+        itemTexture.Show();     //TEMPORARY
         thisItem = item;
         itemTexture.Texture = item.ITEM_TEXTURE;
         richTextLabel.Text = item.HOVER_TEXT;
         }
         else {
             thisItem = null;
-
+            itemTexture.Hide(); //TEMPORARY, LEAVES THE TEXTURE
         }
         
         if (thisItem != null && thisItem.ITEM_QUANTITY > 1){ //changes label to item quantity
