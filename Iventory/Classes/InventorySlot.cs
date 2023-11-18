@@ -147,8 +147,8 @@ public partial class InventorySlot : Panel
         }
         else {
             thisItem = null;
+
         }
-        
         
         if (thisItem != null && thisItem.ITEM_QUANTITY > 1){ //changes label to item quantity
             label.Text = thisItem.ITEM_QUANTITY.ToString();

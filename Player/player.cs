@@ -70,11 +70,14 @@ public partial class player : CharacterBody2D
 			
 		}*/
 		//temporary drop logic
-	/*	if (Input.IsActionJustPressed("drop")){
+		if (Input.IsActionJustPressed("drop")){
 			int quant = playerInventory.InventoryItems[0].DecQuant();
+			if (quant <= 0){
+				playerInventory.InventoryItems[0].Dispose();
+			}
 			inventoryScript.UpdateInventory();
 			
-		}*/
+		}
 
 		//temporary shooting logiv.
 		if (Input.IsActionJustPressed("attack")){
@@ -95,17 +98,7 @@ public partial class player : CharacterBody2D
 	//Called When an area2D enters HurtBox
 	private void _on_hurt_box_area_entered(Area2D area){
 		
-		if (area.HasMethod("Collect")){ 					//picking up collectibles logic
-			ItemClass item = (ItemClass)area.Call("Give");
-			bool success = playerInventory.AddItem(item,item.ITEM_QUANTITY);
-			if (success){
-			area.Call("Collect");
-			inventoryScript.UpdateInventory();
-			}
-			
 
-			
-		}
 
 	}
 
