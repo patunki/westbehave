@@ -3,66 +3,63 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-//Handles the players inventory spesifically
 
-public partial class InventoryScript : Node2D
-{   
+public partial class InventoryScript : Control
+{
 
-    Boolean isOpen;
-    Node[] inventorySlot;
-    InventoryClass playerInventory;
-    ItemDatabase itemDatabase;
-
-    public void UpdateInventory(){
-        
-        for (int i = 0; i < playerInventory.InventoryItems.Count; i++){
-           inventorySlot[i].Call("Update", playerInventory.InventoryItems[i]); //FIX NULL EXEPTION AND ADD CLEAR METHOD!
-        }
-    }
-    
+	bool isOpen;
+	[Export]
+	InventoryClass inventory;
+	PackedScene invetorySlot;
+	GridContainer gridContainer;
 
 
+	public void Close (){
+		Visible = false;
+		isOpen = false;
+	}
 
-    public void Close (){
-        Visible = false;
-        isOpen = false;
-    }
+	public void Open(){
+		Visible = true;
+		isOpen = true;
 
-    public void Open(){
-        Visible = true;
-        isOpen = true;
-        UpdateInventory();
+	}
 
-    }
+	public void PopulateInv(Godot.Collections.Array<ItemClass> invSlots){
+		foreach(InventorySlot child in gridContainer.GetChildren()){
+			child.QueueFree();
+		}
 
+		foreach(ItemClass slotInv in invSlots){
+			var slot = invetorySlot.Instantiate();
+			gridContainer.AddChild(slot);
+			
+			if (slotInv != null){
+				slot.Call("Update",slotInv);
+				
+			}
+		}
+	}
 
+	public override void _Ready(){
+		invetorySlot = GD.Load<PackedScene>("res://Iventory/InventorySlot.tscn");
+		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
 
-    public override void _Ready(){
-        playerInventory = (InventoryClass)ResourceLoader.Load("res://Player/PlayerInventory.tres");
-        var containerNode = GetNode<GridContainer>("TextureRect/GridContainer");
-        inventorySlot = containerNode.GetChildren().ToArray();
-        itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
-        Close();
+		PopulateInv(inventory.InventoryItems);
+		Close();
 
-    }
+	}
 
-    public override void _Process(double delta)
-    {
-        if (Input.IsActionJustPressed("inventory")){
-          if (isOpen){
-            Close();
-          }
-          else {
-            Open();
-          }
-            
-            
-        }   
-        if (Input.IsActionJustPressed("exit")){
-            Close();
-        }
+	public void ToggleInventory()
+	{
+		if (isOpen){
+			Close();
+		}
+		else {
+			Open();
+		}   
 
-    }
+	}
 
 
 }

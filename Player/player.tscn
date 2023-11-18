@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
 [ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="4_g3461"]
-[ext_resource type="PackedScene" uid="uid://dt1b6lylrg8bv" path="res://Iventory/inventory.tscn" id="4_n828g"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="5_r6xtp"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="5_sjabt"]
+[ext_resource type="PackedScene" uid="uid://md2rsghxb265" path="res://Iventory/InventoryInterface.tscn" id="7_n0kb1"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="7_ptokh"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
@@ -96,11 +96,6 @@ shape = SubResource("CapsuleShape2D_4cjjd")
 [node name="PlayerCamera" type="Camera2D" parent="."]
 zoom = Vector2(0.7, 0.7)
 
-[node name="Inventory" parent="." instance=ExtResource("4_n828g")]
-visible = false
-z_index = 4
-position = Vector2(91, -124)
-
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_r6xtp")]
 healthComponent = NodePath("../HealthComponent")
 
@@ -112,3 +107,7 @@ shape = SubResource("CapsuleShape2D_5g78q")
 [node name="HealthComponent" parent="." instance=ExtResource("5_sjabt")]
 
 [node name="StateMachine" parent="." instance=ExtResource("7_ptokh")]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InventoryInterface" parent="UI" instance=ExtResource("7_n0kb1")]

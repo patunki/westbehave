@@ -1,3 +1,8 @@
+Control
+CanvasLayer
+Label
+GridContainer
+TextureRect
 CollisionShape2D
 Area2D
 Sprite2D
@@ -9,16 +14,11 @@ ColorRect
 RichTextLabel
 ShapeCast2D
 CharacterBody2D
-Label
-CanvasLayer
 Timer
 Marker2D
 RigidBody2D
 Panel
-GridContainer
 AnimatedSprite2D
-Control
-TextureRect
 CanvasModulate
 PointLight2D
 TileMap

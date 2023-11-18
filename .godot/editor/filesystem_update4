@@ -5,17 +5,18 @@ res://Items/Repo/food_eggplant.tres
 res://Items/Repo/food_cooked_meat.tres
 res://Player/PlayerInventory.tres
 res://Player/player.tscn
-res://Iventory/inventory.tscn
 res://Iventory/InventorySlot.tscn
 res://Components/health_component.tscn
 res://Components/HurtBoxComponent.tscn
 res://Scenes/interact_test.tscn
 res://Scenes/Chest.tscn
+res://Iventory/Inventory.tscn
 res://Components/HealthComponent.cs
 res://Components/HurtBoxComponent.cs
 res://Interaction/InteractionArea/InteractionArea.cs
 res://Items/Classes/ItemClass.cs
 res://Items/Classes/ItemClass_Food.cs
+res://Items/Classes/ItemClass_Tool.cs
 res://Items/Classes/ItemClass_Weapon.cs
 res://Iventory/Classes/InventoryClass.cs
 res://Iventory/Classes/InventoryScript.cs
@@ -30,6 +31,4 @@ res://Scenes/interact_test.cs
 res://Scripts/Attack.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
-res://Items/Classes/ItemClass_Tool.cs
-res://Items/Repo/tool_hoe.tres
-res://Items/Repo/seed_eggplant_seed.tres
+res://Iventory/InventoryInterface.tscn

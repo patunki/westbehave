@@ -13,8 +13,7 @@ public partial class player : CharacterBody2D
 	public InventoryClass playerInventory;
 	public Vector2 heading;
 	public Sprite2D sprite;
-	public TextureRect heldItem;
-	public TextureRect hand;
+
 	private InventoryScript inventoryScript;
 	private ItemDatabase itemDatabase;
 	private GameManager gameManager;
@@ -25,9 +24,7 @@ public partial class player : CharacterBody2D
 
 	public override void _Ready(){
 		sprite = GetNode<Sprite2D>(spritePath);
-		heldItem = GetNode<TextureRect>("Inventory/TextureRect/GridContainer/InventorySlot0/ItemTexture");
-		hand = GetNode<TextureRect>("PlayerSprite/HandItem");
-		inventoryScript = GetNode<InventoryScript>("Inventory");
+		inventoryScript = GetNode<InventoryScript>("UI/InventoryInterface/PlayerInventory");
 		itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
 		gameManager = GetNode<GameManager>("/root/GameManager");
 		animationPlayer = GetNode<AnimationPlayer>("PlayerSprite/AnimationPlayer");
@@ -57,26 +54,19 @@ public partial class player : CharacterBody2D
 			
 			ItemClass item = itemDatabase.GetItem(3);
 			playerInventory.AddItem(item,1);
-			inventoryScript.UpdateInventory();
+			inventoryScript.PopulateInv(playerInventory.InventoryItems);
 		}
 
-		//temporary eat
-		/*if (Input.IsActionJustPressed("interact")){
-			int quant = playerInventory.InventoryItems[0].DecQuant();
-			if (quant <= 0){
-				playerInventory.InventoryItems[0] = null;
-			}
-			inventoryScript.UpdateInventory();
-			
-		}*/
-		//temporary drop logic
 		if (Input.IsActionJustPressed("drop")){
 			int quant = playerInventory.InventoryItems[0].DecQuant(); //LEAVES TEXTURE / NULL ITEM!
 			if (quant <= 0){
 				playerInventory.InventoryItems[0] = null;
 			}
-			inventoryScript.UpdateInventory();
+			inventoryScript.PopulateInv(playerInventory.InventoryItems);
 			
+		}
+		if (Input.IsActionJustPressed("inventory")){
+			inventoryScript.ToggleInventory();
 		}
 
 		//temporary shooting logiv.
@@ -103,12 +93,7 @@ public partial class player : CharacterBody2D
 	}
 
 	public override void _PhysicsProcess(double delta){
-		if (heldItem.Texture != null){
-			hand.Texture = heldItem.Texture; //temp
-		}
-		else{
-			hand.Texture = null;
-		}
+
 		GetInput();
 		MoveAndSlide(); //Godot method
 
