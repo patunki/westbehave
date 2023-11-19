@@ -8,15 +8,11 @@ public partial class InventoryClass : Resource
 
     [Export]
 	public Godot.Collections.Array<ItemClass> InventoryItems { get; set; }
-    //GameManager gameManager;
-     public InventoryClass(){
-        var tree = (SceneTree)Engine.GetMainLoop();
-        var gameManager = tree.Root.GetNode<GameManager>("GameManager");
-     }
+
 
     //Checks if you have the item and can stack it, if not puts it in the first free spot;
     public bool AddItem(ItemClass item, int quant){
-
+        GD.Print("giveitem called ",item.ITEM_NAME, quant);
         bool hasItem = CheckSame(item, quant);
         if (!hasItem){
             int emptySpot = GetSpot(item,quant);

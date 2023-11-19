@@ -1,10 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://bnph3rig8hw82"]
+[gd_scene load_steps=16 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scenes/Chest.cs" id="1_57fgj"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
 [ext_resource type="PackedScene" uid="uid://by8lovrluq1ry" path="res://ExternalInventory.tscn" id="4_ysmki"]
+[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="5_gsr3i"]
 [ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="6_2oxb0"]
+[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/food_cooked_meat.tres" id="7_vwq4n"]
+[ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/food_zombie_meat.tres" id="8_le2mp"]
+[ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/seed_eggplant_seed.tres" id="9_sbo0b"]
+[ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/tool_hoe.tres" id="10_007wo"]
+[ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/weapon_shotgun.tres" id="11_aadpa"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -50,4 +56,4 @@ offset_left = -66.0
 offset_top = -78.0
 offset_right = 66.0
 offset_bottom = -13.0
-InventoryItems = Array[Resource]([null, ExtResource("6_2oxb0"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+InventoryItems = Array[Resource]([ExtResource("5_gsr3i"), ExtResource("6_2oxb0"), ExtResource("7_vwq4n"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("10_007wo"), ExtResource("11_aadpa"), null, null, null, null, null, null, null, null, null, null, null])

@@ -42,10 +42,10 @@ public partial class ExternalInventorySlot : Panel
 
 
     void _on_gui_input(InputEvent @event){
-        if (@event is InputEventMouseButton mouseEvent){
+        if (@event is InputEventMouseButton mouseEvent && thisItem != null){
           if (mouseEvent.ButtonIndex == MouseButton.Left && @event.IsPressed() || mouseEvent.ButtonIndex == MouseButton.Right && @event.IsPressed()){
 
-            GD.Print("KLICKED  ", mouseEvent.ButtonIndex,"  ", GetIndex());
+            gameManager.EmitSignal(nameof(SlotClicked),thisItem,thisItem.ITEM_QUANTITY);
 
           }
            
@@ -73,7 +73,7 @@ public partial class ExternalInventorySlot : Panel
     }
     //Updates the invventory visuals. Usually called from InventoryScript.
     public void Update(ItemClass item){
-        thisItem = item;
+        thisItem = item.Copy();
         itemTexture.Texture = item.ITEM_TEXTURE;
         richTextLabel.Text = item.HOVER_TEXT;
         itemTexture.Show();

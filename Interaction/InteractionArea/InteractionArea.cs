@@ -6,6 +6,8 @@ public partial class InteractionArea : Area2D
 {
     [Export]
     public string actionName = "interact";
+    [Signal]
+    public delegate void PlayerExitedEventHandler();
     private InteractionManager interactionManager;
     public Callable callable;
     
@@ -28,6 +30,7 @@ public partial class InteractionArea : Area2D
     void _on_body_exited(Node2D body){
         if (body.IsInGroup("Player")){
             interactionManager.UnregisterArea(this);
+            EmitSignal(SignalName.PlayerExited);
         }
         
 

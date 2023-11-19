@@ -18,6 +18,7 @@ public partial class Chest : StaticBody2D
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnInteract"));
         spriteClosed = GetNode<Sprite2D>("ChestClosed");
         spriteOpen = GetNode<Sprite2D>("ChestOpen");
+        interactionArea.PlayerExited += Close;
 
     }
 
@@ -28,18 +29,17 @@ public partial class Chest : StaticBody2D
             Open();
         }
 
-        externalInventory.ToggleInventory();
-
-
     }
 
     public void Close(){
         spriteOpen.Hide();
         isOpen = false;
+        externalInventory.Close();
     }
     public void Open(){
         spriteOpen.Show();
         isOpen = true;
+        externalInventory.Open();
     }
 
 }
