@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=8 format=3 uid="uid://cmwjr3ysqyvhq"]
 
+[ext_resource type="Script" path="res://Levels/GameLevel.cs" id="1_gq7yk"]
 [ext_resource type="Texture2D" uid="uid://o1oqcbisahk1" path="res://Art/veetintilemap2fix.png" id="2_kohib"]
 [ext_resource type="PackedScene" uid="uid://d1d3ju81qjhuv" path="res://Player/player.tscn" id="3_3qdg6"]
 [ext_resource type="PackedScene" uid="uid://cxop6hfc3oa8x" path="res://Scenes/interact_test.tscn" id="4_18vsd"]
@@ -9,8 +10,11 @@
 texture = ExtResource("2_kohib")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/custom_data_0 = true
 1:0/0 = 0
+1:0/0/custom_data_0 = true
 2:0/0 = 0
+2:0/0/custom_data_0 = true
 3:0/0 = 0
 4:0/0 = 0
 5:0/0 = 0
@@ -83,9 +87,12 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_263h2"]
 tile_size = Vector2i(32, 32)
+custom_data_layer_0/name = "CanPlant"
+custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_yg8m4")
 
 [node name="GameLevel" type="Node2D"]
+script = ExtResource("1_gq7yk")
 
 [node name="Player" parent="." instance=ExtResource("3_3qdg6")]
 

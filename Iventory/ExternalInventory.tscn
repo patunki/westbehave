@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://by8lovrluq1ry"]
 
-[ext_resource type="Script" path="res://ExternalInventory.cs" id="1_b02a5"]
+[ext_resource type="Script" path="res://Iventory/Classes/ExternalInventory.cs" id="1_b02a5"]
 
 [node name="ExternalInventory" type="Control"]
 z_index = 7
