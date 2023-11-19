@@ -18,7 +18,7 @@ radius = 41.5933
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n2q1d"]
 size = Vector2(21, 14)
 
-[node name="Chest" type="StaticBody2D"]
+[node name="Chest" type="StaticBody2D" groups=["ExternalInventory"]]
 script = ExtResource("1_57fgj")
 
 [node name="ChestClosed" type="Sprite2D" parent="."]

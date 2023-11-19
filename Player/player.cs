@@ -9,8 +9,6 @@ public partial class player : CharacterBody2D
 {	
 	[Export]
 	public int moveSpeed { get; set; } = 150;
-	[Export]
-	public InventoryClass playerInventory;
 	public Vector2 heading;
 	public Sprite2D sprite;
 
@@ -24,7 +22,7 @@ public partial class player : CharacterBody2D
 
 	public override void _Ready(){
 		sprite = GetNode<Sprite2D>(spritePath);
-		inventoryScript = GetNode<InventoryScript>("UI/InventoryInterface/PlayerInventory");
+		inventoryScript = GetNode<InventoryScript>("UI/PlayerInventory");
 		itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
 		gameManager = GetNode<GameManager>("/root/GameManager");
 		animationPlayer = GetNode<AnimationPlayer>("PlayerSprite/AnimationPlayer");
@@ -51,18 +49,10 @@ public partial class player : CharacterBody2D
 		}
 
 		if (Input.IsActionJustPressed("interact")){
-			
-			ItemClass item = itemDatabase.GetItem(3);
-			playerInventory.AddItem(item,1);
-			inventoryScript.PopulateInv(playerInventory.InventoryItems);
+
 		}
 
 		if (Input.IsActionJustPressed("drop")){
-			int quant = playerInventory.InventoryItems[0].DecQuant(); //LEAVES TEXTURE / NULL ITEM!
-			if (quant <= 0){
-				playerInventory.InventoryItems[0] = null;
-			}
-			inventoryScript.PopulateInv(playerInventory.InventoryItems);
 			
 		}
 		if (Input.IsActionJustPressed("inventory")){
@@ -70,7 +60,7 @@ public partial class player : CharacterBody2D
 		}
 
 		//temporary shooting logiv.
-		if (Input.IsActionJustPressed("attack")){
+		/*if (Input.IsActionJustPressed("attack")){
 			ItemClass hand = playerInventory.InventoryItems[0];
 			if (hand is ItemClass_Weapon){
 				ItemClass_Weapon handWep = (ItemClass_Weapon)hand;
@@ -81,7 +71,7 @@ public partial class player : CharacterBody2D
 				
 			}
 		}
-		
+		*/
 
 	}
 

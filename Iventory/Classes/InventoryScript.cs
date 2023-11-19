@@ -12,6 +12,7 @@ public partial class InventoryScript : Control
 	InventoryClass inventory;
 	PackedScene invetorySlot;
 	GridContainer gridContainer;
+    GameManager gameManager;
 
 
 	public void Close (){
@@ -28,27 +29,48 @@ public partial class InventoryScript : Control
 	public void PopulateInv(Godot.Collections.Array<ItemClass> invSlots){
 		foreach(InventorySlot child in gridContainer.GetChildren()){
 			child.QueueFree();
+            GD.Print("Deleted:;", child);
 		}
 
 		foreach(ItemClass slotInv in invSlots){
 			var slot = invetorySlot.Instantiate();
 			gridContainer.AddChild(slot);
 			
-			if (slotInv != null){
-				slot.Call("Update",slotInv);
-				
-			}
 		}
 	}
+
+    public void UpdateInventory(){
+        var slots = gridContainer.GetChildren();
+        for (int i = 0; i < inventory.InventoryItems.Count; i++){
+            if (inventory.InventoryItems[i] != null){
+                slots[i].Call("Update", inventory.InventoryItems[i]);
+            }
+            else {
+                slots[i].Call("Empty");
+            }
+        }
+    }
+
+
 
 	public override void _Ready(){
 		invetorySlot = GD.Load<PackedScene>("res://Iventory/InventorySlot.tscn");
 		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
+        GD.Print("GOT NODE: ", gridContainer);
+        gameManager = GetNode<GameManager>("/root/GameManager");
+        gameManager.ItemLanded += SetItem;
 
 		PopulateInv(inventory.InventoryItems);
+        UpdateInventory();
 		Close();
 
 	}
+
+    void SetItem(int originIndex, int index, ItemClass item){
+        inventory.InventoryItems[originIndex] = null;
+        inventory.InventoryItems[index] = item;
+        UpdateInventory();
+    }
 
 	public void ToggleInventory()
 	{
@@ -60,6 +82,7 @@ public partial class InventoryScript : Control
 		}   
 
 	}
+    
 
 
 }

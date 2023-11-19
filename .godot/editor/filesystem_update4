@@ -11,6 +11,7 @@ res://Components/HurtBoxComponent.tscn
 res://Scenes/interact_test.tscn
 res://Scenes/Chest.tscn
 res://Iventory/Inventory.tscn
+res://Iventory/InventoryInterface.tscn
 res://Components/HealthComponent.cs
 res://Components/HurtBoxComponent.cs
 res://Interaction/InteractionArea/InteractionArea.cs
@@ -31,4 +32,4 @@ res://Scenes/interact_test.cs
 res://Scripts/Attack.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
-res://Iventory/InventoryInterface.tscn
+res://Scenes/ChestInv.tres

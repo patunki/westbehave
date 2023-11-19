@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=6 format=3 uid="uid://cmwjr3ysqyvhq"]
 
 [ext_resource type="Texture2D" uid="uid://o1oqcbisahk1" path="res://Art/veetintilemap2fix.png" id="2_kohib"]
 [ext_resource type="PackedScene" uid="uid://d1d3ju81qjhuv" path="res://Player/player.tscn" id="3_3qdg6"]
 [ext_resource type="PackedScene" uid="uid://cxop6hfc3oa8x" path="res://Scenes/interact_test.tscn" id="4_18vsd"]
-[ext_resource type="PackedScene" uid="uid://bnph3rig8hw82" path="res://Scenes/Chest.tscn" id="4_r41p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg8m4"]
 texture = ExtResource("2_kohib")
@@ -120,9 +119,6 @@ layer_3/tile_data = PackedInt32Array(-786427, 458752, 3, -524283, 262144, 4, -91
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false
 color = Color(0.117647, 0.137255, 1, 1)
-
-[node name="Chest" parent="." instance=ExtResource("4_r41p6")]
-position = Vector2(243, 81)
 
 [node name="interactTest" parent="." instance=ExtResource("4_18vsd")]
 position = Vector2(126, -18)

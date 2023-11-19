@@ -8,6 +8,7 @@ public partial class InventoryClass : Resource
 
     [Export]
 	public Godot.Collections.Array<ItemClass> InventoryItems { get; set; }
+    
 
     //Checks if you have the item and can stack it, if not puts it in the first free spot;
     public bool AddItem(ItemClass item, int quant){
@@ -27,7 +28,7 @@ public partial class InventoryClass : Resource
 
 
 
-    public int GetSpot(ItemClass item, int quant){ //Checks for the first empty slot
+    private int GetSpot(ItemClass item, int quant){ //Checks for the first empty slot
         
             for (int i = 0; i < InventoryItems.Count; i++){
               if (InventoryItems[i] == null){

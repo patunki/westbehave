@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="4_g3461"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="5_r6xtp"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="5_sjabt"]
-[ext_resource type="PackedScene" uid="uid://md2rsghxb265" path="res://Iventory/InventoryInterface.tscn" id="7_n0kb1"]
+[ext_resource type="PackedScene" uid="uid://d2elxbrt2et40" path="res://Iventory/Inventory.tscn" id="7_ldv2h"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="7_ptokh"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
@@ -58,7 +58,6 @@ position = Vector2(150, 67)
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_2273y")
-playerInventory = ExtResource("4_g3461")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 position = Vector2(12, 2)
@@ -110,4 +109,10 @@ shape = SubResource("CapsuleShape2D_5g78q")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
-[node name="InventoryInterface" parent="UI" instance=ExtResource("7_n0kb1")]
+[node name="PlayerInventory" parent="UI" instance=ExtResource("7_ldv2h")]
+visible = false
+offset_left = 913.0
+offset_top = 363.0
+offset_right = -826.0
+offset_bottom = -612.0
+inventory = ExtResource("4_g3461")
