@@ -33,3 +33,4 @@ res://Scripts/Attack.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Scenes/ChestInv.tres
+res://Iventory/TEST.tscn

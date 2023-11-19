@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnph3rig8hw82"]
+[gd_scene load_steps=10 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scenes/Chest.cs" id="1_57fgj"]
+[ext_resource type="Resource" uid="uid://dctkwy7nw0d16" path="res://Scenes/ChestInv.tres" id="2_2i0sh"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
+[ext_resource type="PackedScene" uid="uid://lfhsokawyeqb" path="res://Iventory/TEST.tscn" id="4_eoabe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -42,3 +44,10 @@ shape = SubResource("CircleShape2D_g7tgj")
 visible = false
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_n2q1d")
+
+[node name="Inventory" parent="." instance=ExtResource("4_eoabe")]
+offset_left = -229.0
+offset_top = -96.0
+offset_right = -229.0
+offset_bottom = -96.0
+inventory = ExtResource("2_2i0sh")
