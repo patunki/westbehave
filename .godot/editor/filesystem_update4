@@ -30,3 +30,7 @@ res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://ExternalInventory.tscn
 res://ExternalInventory.cs
+res://Player/PlayerInventory/InventorySlot.tscn
+res://Player/PlayerInventory/InventorySlot.cs
+res://Iventory/ExternalInventorySlot.tscn
+res://Iventory/Classes/ExternalInventorySlot.cs

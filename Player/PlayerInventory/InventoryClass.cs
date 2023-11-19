@@ -8,7 +8,11 @@ public partial class InventoryClass : Resource
 
     [Export]
 	public Godot.Collections.Array<ItemClass> InventoryItems { get; set; }
-    
+    //GameManager gameManager;
+     public InventoryClass(){
+        var tree = (SceneTree)Engine.GetMainLoop();
+        var gameManager = tree.Root.GetNode<GameManager>("GameManager");
+     }
 
     //Checks if you have the item and can stack it, if not puts it in the first free spot;
     public bool AddItem(ItemClass item, int quant){
@@ -40,7 +44,7 @@ public partial class InventoryClass : Resource
         return -1;
     }
 
-    private bool CheckSame(ItemClass item, int quant){                                                      //checks if you aleady have the item && its stackable
+    public bool CheckSame(ItemClass item, int quant){                                                      //checks if you aleady have the item && its stackable
         if (item.IS_STACKABLE) {
             for (int i = 0; i < InventoryItems.Count; i++){
                 if (InventoryItems[i] != null && InventoryItems[i].ITEM_ID == item.ITEM_ID){             //if (InventoryItems[i].ITEM_ID == item.ITEM_ID){ ei toimi

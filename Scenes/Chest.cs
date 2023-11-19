@@ -8,12 +8,12 @@ public partial class Chest : StaticBody2D
     private Sprite2D spriteClosed;
     private Sprite2D spriteOpen;
     InteractionArea interactionArea;
-    //ExternalInventory externalInventory;
+    ExternalInventory externalInventory;
 
 
     public override void _Ready()
     {   
-        //externalInventory = GetNode<ExternalInventory>("ExternalInventory");
+        externalInventory = GetNode<ExternalInventory>("ExternalInventory");
         interactionArea = GetNode<InteractionArea>("InteractionArea");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnInteract"));
         spriteClosed = GetNode<Sprite2D>("ChestClosed");
@@ -28,7 +28,7 @@ public partial class Chest : StaticBody2D
             Open();
         }
 
-        //externalInventory.DeclareInventory();
+        externalInventory.ToggleInventory();
 
 
     }

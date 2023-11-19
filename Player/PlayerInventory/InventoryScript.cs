@@ -54,7 +54,7 @@ public partial class InventoryScript : Control
 
 
 	public override void _Ready(){
-		invetorySlot = GD.Load<PackedScene>("res://Iventory/InventorySlot.tscn");
+		invetorySlot = GD.Load<PackedScene>("res://Player/PlayerInventory/InventorySlot.tscn");
 		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         GD.Print("GOT NODE: ", gridContainer);
         gameManager = GetNode<GameManager>("/root/GameManager");

@@ -46,4 +46,8 @@ position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_n2q1d")
 
 [node name="ExternalInventory" parent="." instance=ExtResource("4_ysmki")]
+offset_left = -66.0
+offset_top = -78.0
+offset_right = 66.0
+offset_bottom = -13.0
 InventoryItems = Array[Resource]([null, ExtResource("6_2oxb0"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
