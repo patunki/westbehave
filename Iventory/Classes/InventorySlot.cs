@@ -103,7 +103,7 @@ public partial class InventorySlot : Panel
     }
     //Updates the invventory visuals. Usually called from InventoryScript.
     public void Update(ItemClass item){
-
+        GD.Print(index, " Kutsuttu update ");
         thisItem = item;
         itemTexture.Texture = item.ITEM_TEXTURE;
         richTextLabel.Text = item.HOVER_TEXT;
@@ -117,6 +117,7 @@ public partial class InventorySlot : Panel
         }
     }
     public void Empty(){
+        GD.Print(index, " KUTSUTTU EMPTY ");
         thisItem = null;
         itemTexture.Texture = null;
         itemTexture.Hide();

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2elxbrt2et40"]
 
-[ext_resource type="Script" path="res://Iventory/Classes/InventoryScript.cs" id="1_4606k"]
-[ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="2_bf13v"]
+[ext_resource type="Script" path="res://Player/PlayerInventory/InventoryScript.cs" id="1_7pwgt"]
+[ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="2_icul6"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -10,13 +10,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_4606k")
+script = ExtResource("1_7pwgt")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 180.0
 offset_bottom = 103.0
-texture = ExtResource("2_bf13v")
+texture = ExtResource("2_icul6")
 expand_mode = 1
 
 [node name="GridContainer" type="GridContainer" parent="TextureRect"]

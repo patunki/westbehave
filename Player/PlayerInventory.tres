@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=8 format=3 uid="uid://bhu2d3rrkh8b1"]
 
-[ext_resource type="Script" path="res://Iventory/Classes/InventoryClass.cs" id="1_47qd4"]
+[ext_resource type="Script" path="res://Player/PlayerInventory/InventoryClass.cs" id="1_47qd4"]
 [ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/weapon_shotgun.tres" id="1_g3scx"]
 [ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="1_p35kx"]
 [ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="2_hjkt0"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://by8lovrluq1ry"]
+
+[ext_resource type="Script" path="res://ExternalInventory.cs" id="1_b02a5"]
+
+[node name="ExternalInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 132.0
+offset_bottom = 65.0
+script = ExtResource("1_b02a5")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 131.0
+offset_bottom = 64.0
+color = Color(0.341176, 0.117647, 0, 1)
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 123.0
+offset_bottom = 60.0
+columns = 6
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0

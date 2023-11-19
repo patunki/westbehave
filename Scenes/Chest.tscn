@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnph3rig8hw82"]
+[gd_scene load_steps=10 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scenes/Chest.cs" id="1_57fgj"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
+[ext_resource type="PackedScene" uid="uid://by8lovrluq1ry" path="res://ExternalInventory.tscn" id="4_ysmki"]
+[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="6_2oxb0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -42,3 +44,6 @@ shape = SubResource("CircleShape2D_g7tgj")
 visible = false
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_n2q1d")
+
+[node name="ExternalInventory" parent="." instance=ExtResource("4_ysmki")]
+InventoryItems = Array[Resource]([null, ExtResource("6_2oxb0"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

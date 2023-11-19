@@ -4,15 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="5_r6xtp"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="5_sjabt"]
-[ext_resource type="PackedScene" uid="uid://d2elxbrt2et40" path="res://Iventory/Inventory.tscn" id="7_ldv2h"]
+[ext_resource type="PackedScene" uid="uid://d2elxbrt2et40" path="res://Player/PlayerInventory/Inventory.tscn" id="7_ldv2h"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="7_ptokh"]
 [ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/food_cooked_meat.tres" id="8_jky0o"]
 [ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="9_47odw"]
 [ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/weapon_shotgun.tres" id="10_ohgdf"]
 [ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="11_w27wx"]
 [ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/seed_eggplant_seed.tres" id="12_a2yue"]
-[ext_resource type="Script" path="res://Iventory/Classes/InventoryClass.cs" id="13_7g8rn"]
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/tool_hoe.tres" id="13_mibue"]
+[ext_resource type="Script" path="res://Player/PlayerInventory/InventoryClass.cs" id="13_p7sva"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
 resource_name = "IdleAnimation"
@@ -61,7 +61,7 @@ radius = 7.0
 
 [sub_resource type="Resource" id="Resource_bonl0"]
 resource_local_to_scene = true
-script = ExtResource("13_7g8rn")
+script = ExtResource("13_p7sva")
 InventoryItems = [null, ExtResource("8_jky0o"), ExtResource("9_47odw"), ExtResource("10_ohgdf"), ExtResource("11_w27wx"), ExtResource("12_a2yue"), null, null, ExtResource("13_mibue"), null, null, null, null, null, null]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]

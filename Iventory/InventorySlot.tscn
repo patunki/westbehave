@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dky21my4jcyrg"]
+[gd_scene load_steps=6 format=3 uid="uid://qawaqd2jpmio"]
 
 [ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="1_u5ype"]
 [ext_resource type="Script" path="res://Iventory/Classes/InventorySlot.cs" id="2_kw67a"]

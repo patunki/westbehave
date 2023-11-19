@@ -59,6 +59,7 @@ public partial class InventoryScript : Control
         GD.Print("GOT NODE: ", gridContainer);
         gameManager = GetNode<GameManager>("/root/GameManager");
         gameManager.ItemLanded += SetItem;
+		//gameManager.ExternalInventory += GetExternal;
 
 		PopulateInv(inventory.InventoryItems);
         UpdateInventory();
@@ -71,6 +72,10 @@ public partial class InventoryScript : Control
         inventory.InventoryItems[index] = item;
         UpdateInventory();
     }
+
+	//void GetExternal(ExternalInventory extInv){
+		
+	//}
 
 	public void ToggleInventory()
 	{

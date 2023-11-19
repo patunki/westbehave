@@ -7,9 +7,6 @@ public partial class GameManager : Node2D
     public delegate void ItemLiftedEventHandler(int index);
     [Signal]
     public delegate void ItemLandedEventHandler(int originIndex, int index, ItemClass item); 
-
-
-    public override void _Ready()
-    {
-    }
+    //[Signal]
+    //public delegate void ExternalInventoryEventHandler(ExternalInventory inventory);
 }
