@@ -93,11 +93,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/paulus/godotProjects/trynewinv/Demo 1.csproj",
+      "projectUniqueName": "/home/paulus/godotProjects/westbehave/Demo 1.csproj",
       "projectName": "Demo 1",
-      "projectPath": "/home/paulus/godotProjects/trynewinv/Demo 1.csproj",
+      "projectPath": "/home/paulus/godotProjects/westbehave/Demo 1.csproj",
       "packagesPath": "/home/paulus/.nuget/packages/",
-      "outputPath": "/home/paulus/godotProjects/trynewinv/.godot/mono/temp/obj/",
+      "outputPath": "/home/paulus/godotProjects/westbehave/.godot/mono/temp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/paulus/.nuget/NuGet/NuGet.Config"

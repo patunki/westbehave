@@ -59,7 +59,7 @@ height = 16.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g78q"]
 radius = 7.0
 
-[sub_resource type="Resource" id="Resource_q4hsp"]
+[sub_resource type="Resource" id="Resource_bonl0"]
 resource_local_to_scene = true
 script = ExtResource("13_7g8rn")
 InventoryItems = [null, ExtResource("8_jky0o"), ExtResource("9_47odw"), ExtResource("10_ohgdf"), ExtResource("11_w27wx"), ExtResource("12_a2yue"), null, null, ExtResource("13_mibue"), null, null, null, null, null, null]
@@ -126,4 +126,4 @@ offset_left = 913.0
 offset_top = 363.0
 offset_right = -826.0
 offset_bottom = -612.0
-inventory = SubResource("Resource_q4hsp")
+inventory = SubResource("Resource_bonl0")

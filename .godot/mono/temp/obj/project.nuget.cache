@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ts7OsHHdLUf1MRjuPcXRAVm+mnXxHKzYwjmmNrCPiuG35gBt309ypG+11X3ofrgKpNyFbv+plXCGGp3gHdukoQ==",
+  "dgSpecHash": "KsWnIWtDxBoC0Ex4Ov1a2vJDeH1fu9KGOd02M/XKlytMbAQwPZUpMxIM/uV2mZS1v8po2wRujpM2n+hWbmDGCA==",
   "success": true,
-  "projectFilePath": "/home/paulus/godotProjects/trynewinv/Demo 1.csproj",
+  "projectFilePath": "/home/paulus/godotProjects/westbehave/Demo 1.csproj",
   "expectedPackageFiles": [
     "/home/paulus/.nuget/packages/godot.sourcegenerators/4.1.3/godot.sourcegenerators.4.1.3.nupkg.sha512",
     "/home/paulus/.nuget/packages/godotsharp/4.1.3/godotsharp.4.1.3.nupkg.sha512",
