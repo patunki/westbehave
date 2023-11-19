@@ -25,8 +25,3 @@ offset_top = 4.0
 offset_right = 131.0
 offset_bottom = 64.0
 columns = 6
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
