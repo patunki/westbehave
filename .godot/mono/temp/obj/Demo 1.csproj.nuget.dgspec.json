@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/paulus/godotProjects/westbehave/Demo 1.csproj": {}
+    "/home/paulus/godotProjects/westbehave_dev5/Demo 1.csproj": {}
   },
   "projects": {
-    "/home/paulus/godotProjects/westbehave/Demo 1.csproj": {
+    "/home/paulus/godotProjects/westbehave_dev5/Demo 1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/paulus/godotProjects/westbehave/Demo 1.csproj",
+        "projectUniqueName": "/home/paulus/godotProjects/westbehave_dev5/Demo 1.csproj",
         "projectName": "Demo 1",
-        "projectPath": "/home/paulus/godotProjects/westbehave/Demo 1.csproj",
+        "projectPath": "/home/paulus/godotProjects/westbehave_dev5/Demo 1.csproj",
         "packagesPath": "/home/paulus/.nuget/packages/",
-        "outputPath": "/home/paulus/godotProjects/westbehave/.godot/mono/temp/obj/",
+        "outputPath": "/home/paulus/godotProjects/westbehave_dev5/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/paulus/.nuget/NuGet/NuGet.Config"
@@ -40,15 +40,15 @@
           "dependencies": {
             "Godot.SourceGenerators": {
               "target": "Package",
-              "version": "[4.1.3, )"
+              "version": "[4.2.0-dev.5, )"
             },
             "GodotSharp": {
               "target": "Package",
-              "version": "[4.1.3, )"
+              "version": "[4.2.0-dev.5, )"
             },
             "GodotSharpEditor": {
               "target": "Package",
-              "version": "[4.1.3, )"
+              "version": "[4.2.0-dev.5, )"
             }
           },
           "imports": [

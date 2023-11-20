@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=17 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
@@ -7,8 +7,9 @@
 [ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="7_5e1ld"]
 [ext_resource type="PackedScene" uid="uid://d2elxbrt2et40" path="res://Player/PlayerInventory/Inventory.tscn" id="7_ldv2h"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="7_ptokh"]
-[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="11_w27wx"]
 [ext_resource type="PackedScene" uid="uid://cbsp4b4r8ij6g" path="res://Player/EquippedItems.tscn" id="14_igl1t"]
+[ext_resource type="Texture2D" uid="uid://nkwiw25vbbgi" path="res://Art/pixil-frame-0.png" id="15_efl05"]
+[ext_resource type="Script" path="res://Items/Classes/ItemClass_Food.cs" id="16_7bpu1"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
 resource_name = "IdleAnimation"
@@ -54,6 +55,20 @@ height = 16.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g78q"]
 radius = 7.0
+
+[sub_resource type="Resource" id="Resource_2q5x6"]
+resource_local_to_scene = true
+script = ExtResource("16_7bpu1")
+HEALTH_RESTORED = 1
+ITEM_NAME = "Apple"
+ITEM_ID = 3
+CustomResourcePath = "res://Items/Repo/food_apple.tres"
+ITEM_TEXTURE = ExtResource("15_efl05")
+IS_STACKABLE = true
+HOVER_TEXT = "A nice looking apple"
+ITEM_QUANTITY = 1
+MAX_STACK = 10
+ITEM_TYPE = 0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(150, 67)
@@ -120,4 +135,4 @@ offset_bottom = -612.0
 inventory = ExtResource("7_5e1ld")
 
 [node name="EquippedItem" parent="." instance=ExtResource("14_igl1t")]
-item = ExtResource("11_w27wx")
+item = SubResource("Resource_2q5x6")

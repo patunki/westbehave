@@ -40,6 +40,7 @@ public partial class InventoryScript : Control
 	}
 
     public void UpdateInventory(){
+		
         var slots = gridContainer.GetChildren();
         for (int i = 0; i < inventory.InventoryItems.Count; i++){
             if (inventory.InventoryItems[i] != null){
@@ -66,6 +67,7 @@ public partial class InventoryScript : Control
 		Close();
 
 	}
+
 
 	public void GiveItem(ItemClass item, int quant){
 		inventory.AddItem(item, quant);

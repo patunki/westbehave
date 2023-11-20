@@ -38,7 +38,7 @@ public partial class TestPlant : Node2D
         sprite.Frame++;
         state = (PlantState)(((int)state + 1) % Enum.GetValues(typeof(PlantState)).Length); //SWITCHES TO THE NEXT STATE!
         if (state == PlantState.ripe){
-            timer.QueueFree();
+            timer.Stop();
             interactionArea.Monitoring = true;
         }
         
@@ -49,7 +49,13 @@ public partial class TestPlant : Node2D
         if (state == PlantState.ripe){ 
             Vector2I tilePos = tileMap.LocalToMap(GlobalPosition);
             playerInventory.AddItem(yeld, 2);
-            QueueFree();
+            
+            state = PlantState.seed;
+            sprite.Frame = 0;
+            timer.Start();
+            //tileMap.EraseCell(0,tilePos);
+            //QueueFree();
+
             
         } 
         else {
