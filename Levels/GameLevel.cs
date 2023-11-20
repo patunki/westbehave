@@ -5,11 +5,15 @@ public partial class GameLevel : Node2D
 {
     TileMap tileMap;
 
+
     public override void _Ready(){
 
         tileMap = GetNode<TileMap>("TileMap");
+  
         
     }
+
+
 
     public override void _Input(InputEvent @event)
     {   
@@ -21,8 +25,10 @@ public partial class GameLevel : Node2D
             if (tileData != null && canPlant){
                 
                 tileMap.SetCell(0,tilePos,1,atlasCoord,1);
+            }else{
+                GD.Print("Can't plant here or there is no tiledata");
             }
-            GD.PrintT(tileData);
+
             
         }
     }

@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 
 //can be used by any inventory
 public partial class InventoryClass : Resource
@@ -8,19 +9,23 @@ public partial class InventoryClass : Resource
 
     [Export]
 	public Godot.Collections.Array<ItemClass> InventoryItems { get; set; }
+    [Signal]
+    public delegate void InventoryChangedEventHandler();
 
 
 
     //Checks if you have the item and can stack it, if not puts it in the first free spot;
     public bool AddItem(ItemClass item, int quant){
-        GD.Print("giveitem called ",item.ITEM_NAME, quant);
+        GD.Print("giveitem called ",item.ITEM_NAME, " quant: ",quant);
         bool hasItem = CheckSame(item, quant);
         if (!hasItem){
             int emptySpot = GetSpot(item,quant);
             InventoryItems[emptySpot] = item;
+            EmitSignal(SignalName.InventoryChanged);
             return true;
         }
         else if (hasItem){
+            EmitSignal(SignalName.InventoryChanged);
             return true;
         }else{
             return false;

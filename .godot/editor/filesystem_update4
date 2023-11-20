@@ -37,3 +37,4 @@ res://Scripts/Attack.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Farming/Scenes/TestPlant.cs
+res://Player/PlayerInventory.tres

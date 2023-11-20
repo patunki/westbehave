@@ -59,7 +59,7 @@ public partial class InventoryScript : Control
         gameManager = GetNode<GameManager>("/root/GameManager");
         gameManager.ItemLanded += SetItem;
 		gameManager.SlotClicked += GiveItem;
-		//gameManager.ExternalInventory += GetExternal;
+		inventory.InventoryChanged += UpdateInventory;
 
 		PopulateInv(inventory.InventoryItems);
         UpdateInventory();

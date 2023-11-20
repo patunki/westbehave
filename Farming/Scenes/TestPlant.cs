@@ -16,6 +16,8 @@ public partial class TestPlant : Node2D
     public PlantState state;
     InteractionArea interactionArea;
     player nearestPlayer;
+    InventoryClass playerInventory;
+    TileMap tileMap;
 
 
     public override void _Ready(){
@@ -26,6 +28,9 @@ public partial class TestPlant : Node2D
         state = PlantState.seed;
         timer.Timeout += GrowPlant;
         interactionArea.PlayerEntered += GetPlayer;
+        playerInventory = GD.Load<InventoryClass>("res://Player/PlayerInventory.tres");
+        tileMap = GetParent<TileMap>();
+        
     }
 
     void GrowPlant(){
@@ -38,16 +43,22 @@ public partial class TestPlant : Node2D
     }
 
     private void OnCollect(){
-        if (state == PlantState.ripe){ //Add && has plant
-            QueueFree();
+        if (state == PlantState.ripe){ 
+            var tilePos = tileMap.LocalToMap(GlobalPosition);
+            tileMap.EraseCell(0,tilePos);  //Add && has plant
+            GD.Print("erased cell ", this);
+            GD.Print("if not worked, queue free;");
+            QueueFree(); //ei poista tileä; 
+            playerInventory.AddItem(yeld, 2);
         } 
         else {
             GD.Print("ei oo vielä valmis");
         }
     }
 
-    private void GetPlayer(Node2D player){
-        GD.Print(player.Name);
+    private void GetPlayer(Node2D player){ //USELESS ATM
+        nearestPlayer = (player)player;
+
     }
 
 }
