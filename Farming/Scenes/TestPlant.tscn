@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyua0kinoksxl"]
+[gd_scene load_steps=6 format=3 uid="uid://cyua0kinoksxl"]
 
-[ext_resource type="Texture2D" uid="uid://brovh5apqgq4b" path="res://Art/testplant.png" id="1_e5dne"]
+[ext_resource type="Script" path="res://Farming/Scenes/TestPlant.cs" id="1_2r77d"]
+[ext_resource type="Texture2D" uid="uid://bwmt2ctvb3815" path="res://Art/KASVIMANN.png" id="1_v7ge1"]
+[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="2_wu2i1"]
+[ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="4_tkypk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mj7vd"]
+radius = 13.0384
 
 [node name="TestPlant" type="Node2D"]
+script = ExtResource("1_2r77d")
+yeld = ExtResource("2_wu2i1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_e5dne")
+texture = ExtResource("1_v7ge1")
 hframes = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="InteractionArea" parent="." instance=ExtResource("4_tkypk")]
+actionName = "COLLECT"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_mj7vd")

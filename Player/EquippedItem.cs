@@ -31,7 +31,7 @@ public partial class EquippedItem : Node2D
     }
 
     void OnItemInteract(){
-        GD.Print("heloutoimiisignal");
+        
     }
 
 

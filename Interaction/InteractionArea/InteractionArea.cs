@@ -8,6 +8,8 @@ public partial class InteractionArea : Area2D
     public string actionName = "interact";
     [Signal]
     public delegate void PlayerExitedEventHandler();
+    [Signal]
+    public delegate void PlayerEnteredEventHandler(Node2D body);
     private InteractionManager interactionManager;
     public Callable callable;
     
@@ -25,6 +27,7 @@ public partial class InteractionArea : Area2D
     void _on_body_entered(Node2D body){
         if (body.IsInGroup("Player")){
             interactionManager.RegisterArea(this);
+            EmitSignal(SignalName.PlayerEntered, body);
         }
     }
     void _on_body_exited(Node2D body){

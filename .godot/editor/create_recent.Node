@@ -1,3 +1,5 @@
+CollisionShape2D
+Timer
 Node2D
 Sprite2D
 Panel
@@ -7,7 +9,6 @@ Label
 GridContainer
 TextureRect
 CanvasLayer
-CollisionShape2D
 Area2D
 StaticBody2D
 Node
@@ -15,7 +16,6 @@ AnimationPlayer
 RichTextLabel
 ShapeCast2D
 CharacterBody2D
-Timer
 Marker2D
 RigidBody2D
 AnimatedSprite2D
