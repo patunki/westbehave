@@ -14,3 +14,4 @@ HOVER_TEXT = "Eggplant seeds"
 ITEM_QUANTITY = 1
 MAX_STACK = 10
 ITEM_TYPE = 7
+useName = "plant"

@@ -5,7 +5,7 @@
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fpan"]
 atlas = ExtResource("1_eccei")
-region = Rect2(0.135983, 10.0676, 38.6473, 13.9184)
+region = Rect2(0.135983, 10.0676, 38.6473, 21.0135)
 
 [resource]
 script = ExtResource("2_rwi84")
@@ -19,3 +19,4 @@ HOVER_TEXT = "This is a shotgun"
 ITEM_QUANTITY = 1
 MAX_STACK = 1
 ITEM_TYPE = 1
+useName = "shoot"

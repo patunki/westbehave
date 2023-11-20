@@ -10,4 +10,4 @@
 
 [resource]
 script = ExtResource("1_47qd4")
-InventoryItems = [null, ExtResource("3_t2711"), ExtResource("2_hjkt0"), ExtResource("1_g3scx"), ExtResource("1_p35kx"), ExtResource("6_fw4qd"), null, null, ExtResource("6_h3wgg"), null, null, null, null, null, null]
+InventoryItems = [null, ExtResource("3_t2711"), ExtResource("2_hjkt0"), ExtResource("1_g3scx"), ExtResource("1_p35kx"), ExtResource("6_fw4qd"), null, null, ExtResource("6_h3wgg"), null, null, null, null, null, null, null, null, null, null, null]

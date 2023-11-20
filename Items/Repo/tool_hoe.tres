@@ -14,3 +14,4 @@ HOVER_TEXT = "A tool used for planting seeds."
 ITEM_QUANTITY = 1
 MAX_STACK = 1
 ITEM_TYPE = 3
+useName = "plough"

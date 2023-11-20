@@ -18,8 +18,6 @@ public enum ItemType
 
 public partial class ItemClass : Resource
 {
-    [Signal]
-    public delegate void ItemInteractedEventHandler();
 
 
     [Export]
@@ -40,6 +38,8 @@ public partial class ItemClass : Resource
     public int MAX_STACK {get; set;}
     [Export]
     public ItemType ITEM_TYPE = ItemType.MISC;
+    [Export]
+    public string useName;
      
     public ItemClass Copy() => MemberwiseClone() as ItemClass;
 
@@ -54,9 +54,10 @@ public partial class ItemClass : Resource
         return ITEM_QUANTITY;
     }
 
-    public void OnInteract(){
+    /*public void OnUse(Node2D user){
         EmitSignal(SignalName.ItemInteracted);
-    }
+        GD.Print("tamaki pyyorii");
+    }*/
 
 
     //jos id sama nii saa droppaa ja add

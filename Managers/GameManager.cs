@@ -10,6 +10,7 @@ public partial class GameManager : Node2D
     [Signal]
     public delegate void SlotClickedEventHandler(ItemClass item, int quant);
     [Signal]
-    public delegate void TileRemoveRequestEventHandler(Node2D tile);
+    public delegate void ExternalInventoryRecieveEventHandler(ExternalInventory inv, ItemClass item, int quant);
+
 
 }

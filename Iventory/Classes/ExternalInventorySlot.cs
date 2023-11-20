@@ -71,6 +71,24 @@ public partial class ExternalInventorySlot : Panel
         richTextLabel.Hide();
 
     }
+
+    /*public override bool _CanDropData(Vector2 atPosition, Variant data)
+    {   
+        ItemClass dropItem = (ItemClass)data;
+        if (thisItem == null || dropItem.ITEM_ID == thisItem.ITEM_ID){
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    public override void _DropData(Vector2 atPosition, Variant data)
+    {
+        ItemClass dropItem = (ItemClass)data;
+        externalInventory.AddItem(dropItem, dropItem.ITEM_QUANTITY);
+    }*/
+
     //Updates the invventory visuals. Usually called from InventoryScript.
     public void Update(ItemClass item){
         thisItem = item.Copy();

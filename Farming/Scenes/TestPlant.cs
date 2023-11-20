@@ -24,7 +24,7 @@ public partial class TestPlant : Node2D
         timer = GetNode<Timer>("Timer");
         sprite = GetNode<Sprite2D>("Sprite2D");
         interactionArea = GetNode<InteractionArea>("InteractionArea");
-        interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnCollect"));
+        interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnHarvest"));
         state = PlantState.seed;
         timer.Timeout += GrowPlant;
         interactionArea.PlayerEntered += GetPlayer;
@@ -44,7 +44,7 @@ public partial class TestPlant : Node2D
         
     }
     //Add && has plant
-    private void OnCollect(){
+    private void OnHarvest(){
         
         if (state == PlantState.ripe){ 
             Vector2I tilePos = tileMap.LocalToMap(GlobalPosition);
@@ -53,6 +53,7 @@ public partial class TestPlant : Node2D
             state = PlantState.seed;
             sprite.Frame = 0;
             timer.Start();
+            interactionArea.Monitoring = false;
             //tileMap.EraseCell(0,tilePos);
             //QueueFree();
 

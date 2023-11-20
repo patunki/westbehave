@@ -19,3 +19,4 @@ HOVER_TEXT = "Cooked meat you can eat"
 ITEM_QUANTITY = 1
 MAX_STACK = 5
 ITEM_TYPE = 0
+useName = "eat"

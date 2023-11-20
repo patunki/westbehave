@@ -38,3 +38,6 @@ res://Scenes/interact_test.cs
 res://Scripts/Attack.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
+res://Player/EquippedItems.tscn
+res://Items/Repo/seed_eggplant_seed.tres
+res://Items/Repo/tool_hoe.tres

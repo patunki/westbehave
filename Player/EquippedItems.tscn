@@ -4,3 +4,10 @@
 
 [node name="EquippedItem" type="Node2D"]
 script = ExtResource("1_rp6ud")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -4.0
+offset_top = -7.0
+offset_right = 13.0
+offset_bottom = 11.0
+expand_mode = 1

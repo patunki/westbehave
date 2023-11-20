@@ -19,3 +19,4 @@ HOVER_TEXT = "A tasty eggplant"
 ITEM_QUANTITY = 1
 MAX_STACK = 10
 ITEM_TYPE = 0
+useName = "eat"
