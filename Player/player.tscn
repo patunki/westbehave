@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=21 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/seed_eggplant_seed.tres" id="12_a2yue"]
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/tool_hoe.tres" id="13_mibue"]
 [ext_resource type="Script" path="res://Player/PlayerInventory/InventoryClass.cs" id="13_p7sva"]
+[ext_resource type="PackedScene" uid="uid://cbsp4b4r8ij6g" path="res://Player/EquippedItems.tscn" id="14_igl1t"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
 resource_name = "IdleAnimation"
@@ -127,3 +128,6 @@ offset_top = 363.0
 offset_right = -826.0
 offset_bottom = -612.0
 inventory = SubResource("Resource_bonl0")
+
+[node name="EquippedItem" parent="." instance=ExtResource("14_igl1t")]
+item = ExtResource("11_w27wx")

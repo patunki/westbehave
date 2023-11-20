@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=10 format=3 uid="uid://cmwjr3ysqyvhq"]
 
 [ext_resource type="Script" path="res://Levels/GameLevel.cs" id="1_gq7yk"]
 [ext_resource type="Texture2D" uid="uid://o1oqcbisahk1" path="res://Art/veetintilemap2fix.png" id="2_kohib"]
 [ext_resource type="PackedScene" uid="uid://d1d3ju81qjhuv" path="res://Player/player.tscn" id="3_3qdg6"]
 [ext_resource type="PackedScene" uid="uid://cxop6hfc3oa8x" path="res://Scenes/interact_test.tscn" id="4_18vsd"]
+[ext_resource type="PackedScene" uid="uid://cyua0kinoksxl" path="res://Farming/Scenes/TestPlant.tscn" id="4_f2a7o"]
 [ext_resource type="PackedScene" uid="uid://bnph3rig8hw82" path="res://Scenes/Chest.tscn" id="4_r41p6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg8m4"]
@@ -85,11 +86,15 @@ texture_region_size = Vector2i(32, 32)
 8:4/0 = 0
 8:7/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_t0ni4"]
+scenes/1/scene = ExtResource("4_f2a7o")
+
 [sub_resource type="TileSet" id="TileSet_263h2"]
 tile_size = Vector2i(32, 32)
 custom_data_layer_0/name = "CanPlant"
 custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_yg8m4")
+sources/1 = SubResource("TileSetScenesCollectionSource_t0ni4")
 
 [node name="GameLevel" type="Node2D"]
 script = ExtResource("1_gq7yk")
@@ -100,14 +105,14 @@ script = ExtResource("1_gq7yk")
 position = Vector2(0, 1)
 tile_set = SubResource("TileSet_263h2")
 format = 2
-layer_0/name = "collectables"
+layer_0/name = "plants"
 layer_1/name = "trees"
 layer_1/enabled = true
 layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 2
-layer_1/tile_data = PackedInt32Array(-786427, 458752, 3, -524283, 262144, 4, -917498, 327680, 3, 393223, 393216, 4, 11, 458752, 4, -720879, 262144, 4, -196588, 262144, 3, 28, 327680, 4, -262161, 393216, 3, -655373, 458752, 4, -589834, 393216, 4, -589822, 262144, 4, 1179624, 458752, 3, 196586, 393216, 4, -65549, 458752, 3, 983052, 327680, 3, 1114131, 262144, 4, -327679, 262144, 4, -589815, 262144, 3, -393224, 458752, 4, -131058, 262144, 4)
+layer_1/tile_data = PackedInt32Array(-786427, 458752, 3, -524283, 262144, 4, -917498, 327680, 3, 11, 458752, 4, -720879, 262144, 4, -196588, 262144, 3, 28, 327680, 4, -262161, 393216, 3, -655373, 458752, 4, -589834, 393216, 4, -589822, 262144, 4, 1179624, 458752, 3, 196586, 393216, 4, -65549, 458752, 3, 983052, 327680, 3, 1114131, 262144, 4, -327679, 262144, 4, -589815, 262144, 3, -393224, 458752, 4, -131058, 262144, 4, 393223, 393216, 4)
 layer_2/name = "Decal"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)

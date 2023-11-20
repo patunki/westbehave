@@ -18,6 +18,9 @@ public enum ItemType
 
 public partial class ItemClass : Resource
 {
+    [Signal]
+    public delegate void ItemInteractedEventHandler();
+
 
     [Export]
     public String ITEM_NAME {get; set;}
@@ -50,6 +53,11 @@ public partial class ItemClass : Resource
         ITEM_QUANTITY--;
         return ITEM_QUANTITY;
     }
+
+    public void OnInteract(){
+        EmitSignal(SignalName.ItemInteracted);
+    }
+
 
     //jos id sama nii saa droppaa ja add
 }

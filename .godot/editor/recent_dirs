@@ -1,3 +1,6 @@
+res://Player
+res://Items/ItemNodes
+res://Farming/Scenes
 res://Managers
 res://Iventory/Classes
 res://Iventory
@@ -10,7 +13,6 @@ res://StateMachine
 res://Components
 res://Interaction
 res://Items/Repo
-res://Player
 res://Items/Classes
 res://Items/Classes/
 res://Items

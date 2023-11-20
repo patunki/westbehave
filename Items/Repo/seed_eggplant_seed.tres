@@ -1,16 +1,16 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://b230h8iamftfg"]
 
 [ext_resource type="Texture2D" uid="uid://bpqkgny60myy6" path="res://Art/munakoisosiemen.png" id="1_qcljc"]
-[ext_resource type="Script" path="res://Items/Classes/ItemClass.cs" id="2_cvajb"]
+[ext_resource type="Script" path="res://Items/Classes/ItemClass_Seed.cs" id="2_grjtw"]
 
 [resource]
-script = ExtResource("2_cvajb")
+script = ExtResource("2_grjtw")
 ITEM_NAME = "Eggplant Seeds"
 ITEM_ID = 5
 CustomResourcePath = "res://Items/Repo/seed_eggplant_seed.tres"
 ITEM_TEXTURE = ExtResource("1_qcljc")
 IS_STACKABLE = true
-HOVER_TEXT = "Can be used to plant eggplants."
+HOVER_TEXT = "Eggplant seeds"
 ITEM_QUANTITY = 1
 MAX_STACK = 10
 ITEM_TYPE = 7
