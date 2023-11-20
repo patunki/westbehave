@@ -30,6 +30,7 @@ public partial class TestPlant : Node2D
         interactionArea.PlayerEntered += GetPlayer;
         playerInventory = GD.Load<InventoryClass>("res://Player/PlayerInventory.tres");
         tileMap = GetParent<TileMap>();
+        interactionArea.Monitoring = false;
         
     }
 
@@ -38,23 +39,24 @@ public partial class TestPlant : Node2D
         state = (PlantState)(((int)state + 1) % Enum.GetValues(typeof(PlantState)).Length); //SWITCHES TO THE NEXT STATE!
         if (state == PlantState.ripe){
             timer.QueueFree();
+            interactionArea.Monitoring = true;
         }
         
     }
-
+    //Add && has plant
     private void OnCollect(){
+        
         if (state == PlantState.ripe){ 
-            var tilePos = tileMap.LocalToMap(GlobalPosition);
-            tileMap.EraseCell(0,tilePos);  //Add && has plant
-            GD.Print("erased cell ", this);
-            GD.Print("if not worked, queue free;");
-            QueueFree(); //ei poista tileä; 
+            Vector2I tilePos = tileMap.LocalToMap(GlobalPosition);
             playerInventory.AddItem(yeld, 2);
+            QueueFree();
+            
         } 
         else {
             GD.Print("ei oo vielä valmis");
         }
     }
+
 
     private void GetPlayer(Node2D player){ //USELESS ATM
         nearestPlayer = (player)player;
