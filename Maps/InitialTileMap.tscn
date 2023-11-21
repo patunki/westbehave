@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://b1l3deayvp2gh"]
+[gd_scene load_steps=11 format=3 uid="uid://b1l3deayvp2gh"]
 
 [ext_resource type="Texture2D" uid="uid://o1oqcbisahk1" path="res://Art/veetintilemap2fix.png" id="1_l743i"]
 [ext_resource type="PackedScene" uid="uid://cyua0kinoksxl" path="res://Farming/Scenes/TestPlant.tscn" id="2_70ycu"]
 [ext_resource type="Texture2D" uid="uid://drjbn7owwkmqf" path="res://Art/veetintilemap3fix.png" id="3_8s8nj"]
+[ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="4_1plrs"]
 [ext_resource type="Script" path="res://Scripts/InitialTileMap.cs" id="4_6rsr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg8m4"]
@@ -91,8 +92,11 @@ scenes/1/scene = ExtResource("2_70ycu")
 texture = ExtResource("3_8s8nj")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/custom_data_0 = true
 1:0/0 = 0
+1:0/0/custom_data_0 = true
 2:0/0 = 0
+2:0/0/custom_data_0 = true
 4:0/0 = 0
 5:0/0 = 0
 6:0/0 = 0
@@ -118,7 +122,6 @@ texture_region_size = Vector2i(32, 32)
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
-3:2/0 = 0
 7:2/0 = 0
 8:2/0 = 0
 10:2/0 = 0
@@ -133,8 +136,11 @@ texture_region_size = Vector2i(32, 32)
 6:3/0 = 0
 7:3/0 = 0
 10:3/0 = 0
+10:3/0/custom_data_0 = true
 11:3/0 = 0
+11:3/0/custom_data_0 = true
 12:3/0 = 0
+12:3/0/custom_data_0 = true
 0:4/0 = 0
 1:4/0 = 0
 2:4/0 = 0
@@ -143,7 +149,6 @@ texture_region_size = Vector2i(32, 32)
 5:4/0 = 0
 6:4/0 = 0
 7:4/0 = 0
-11:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -169,6 +174,13 @@ texture_region_size = Vector2i(32, 32)
 11:7/0 = 0
 12:7/0 = 0
 13:7/0 = 0
+3:2/0 = 0
+3:2/0/custom_data_0 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jvc0j"]
+texture = ExtResource("4_1plrs")
+texture_region_size = Vector2i(32, 32)
+3:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_263h2"]
 tile_size = Vector2i(32, 32)
@@ -177,6 +189,7 @@ custom_data_layer_0/type = 1
 sources/0 = SubResource("TileSetAtlasSource_yg8m4")
 sources/1 = SubResource("TileSetScenesCollectionSource_t0ni4")
 sources/2 = SubResource("TileSetAtlasSource_1mb3e")
+sources/3 = SubResource("TileSetAtlasSource_jvc0j")
 
 [node name="TileMap" type="TileMap"]
 position = Vector2(0, 1)

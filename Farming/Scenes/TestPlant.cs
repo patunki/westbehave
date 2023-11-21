@@ -73,6 +73,8 @@ public partial class TestPlant : Node2D
     //Add && has plant
     private void OnHarvest(){
         
+        int plantLayer = 4;
+
         if (state == PlantState.ripe){
             playerInventory.AddItem(yeld, 2);
             state = PlantState.grown;
@@ -83,7 +85,7 @@ public partial class TestPlant : Node2D
         }
         if (state == PlantState.dead){
             Vector2I tilePos = tileMap.LocalToMap(GlobalPosition);
-            tileMap.EraseCell(3,tilePos);
+            tileMap.EraseCell(plantLayer,tilePos);
         }
             
             //tileMap.EraseCell(0,tilePos);

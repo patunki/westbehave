@@ -50,8 +50,18 @@ public partial class EquippedItem : Node2D
 
     void OnItemInteract(){
        ItemType itemType = item.ITEM_TYPE;
-       string method = itemType.ToString();
-       Call(method);
+       string method = item.useName;
+       if (item.HasMethod("Plant")){
+        item.Call("Plant",GlobalPosition);
+       }
+       if (item.HasMethod("Plough")){
+        item.Call("Plough",GlobalPosition);
+       }
+       if (item.HasMethod("Eat")){
+        item.Call("Eat");
+       }
+       //Call(method);
+
     }
     
     void GetItem(){
@@ -67,7 +77,7 @@ public partial class EquippedItem : Node2D
 
 // ITEM USES
 
-   void FOOD(){
+   /*void FOOD(){
        ItemClass_Food foodItem = (ItemClass_Food)item;
        GD.Print("Ate ",foodItem.ITEM_NAME, ". +",foodItem.HEALTH_RESTORED,"hp");
        foodItem.DecQuant();
@@ -107,22 +117,9 @@ public partial class EquippedItem : Node2D
         ItemClass_Seed seedItem = (ItemClass_Seed)item;
 
         if (seedItem.HasMethod("Plant")){
-            GD.Print("calling plant at: ", GlobalPosition);
             seedItem.Call("Plant",GlobalPosition);
         }
-   }
-
-
-
-
-
-
-
-
-
-
-
-
+   }*/
 
 
 

@@ -67,23 +67,6 @@ offset = Vector2(12, -16)
 hframes = 18
 frame = 1
 
-[node name="HandItem" type="TextureRect" parent="PlayerSprite"]
-anchors_preset = -1
-anchor_left = 0.762
-anchor_top = 0.619
-anchor_right = 0.762
-anchor_bottom = 0.619
-offset_left = -61.96
-offset_top = -60.52
-offset_right = -32.96
-offset_bottom = -47.52
-expand_mode = 1
-stretch_mode = 4
-metadata/_edit_use_anchors_ = true
-
-[node name="Marker2D" type="Marker2D" parent="PlayerSprite"]
-position = Vector2(26, -5)
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
 libraries = {
 "": SubResource("AnimationLibrary_2eogn")

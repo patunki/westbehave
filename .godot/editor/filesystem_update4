@@ -45,3 +45,7 @@ res://Scenes/House1.tscn
 res://Maps/InitialTileMap.tscn
 res://Scripts/InitialTileMap.cs
 res://Items/Classes/seed_eggplant_seed.cs
+res://Scenes/TestWorld.tscn
+res://Items/Classes/tool_hoe.cs
+res://Scripts/House1.cs
+res://Scripts/TestWorld.cs
