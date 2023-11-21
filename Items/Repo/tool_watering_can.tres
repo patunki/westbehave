@@ -1,14 +1,28 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bhxcyh16b7lhp"]
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://bhxcyh16b7lhp"]
 
-[ext_resource type="Texture2D" uid="uid://diw0ncxdyuttr" path="res://Art/stardew-valley-watering-can.png" id="1_7phta"]
 [ext_resource type="Script" path="res://Items/Classes/tool_watering_can.cs" id="1_s1xn8"]
+[ext_resource type="Texture2D" uid="uid://cwyldqc28wgn0" path="res://Art/kastelukannu_tekstuuri.png" id="1_sl0ip"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yppbo"]
+atlas = ExtResource("1_sl0ip")
+region = Rect2(28.2681, 3.21589, 28.1071, 25.2694)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xwv7"]
+atlas = ExtResource("1_sl0ip")
+region = Rect2(-1.37725, 0, 28.3774, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydhmh"]
+atlas = ExtResource("1_sl0ip")
+region = Rect2(30.3214, 0, 29.7287, 32)
 
 [resource]
 script = ExtResource("1_s1xn8")
+textureFull = SubResource("AtlasTexture_ydhmh")
+textureEmpty = SubResource("AtlasTexture_8xwv7")
 ITEM_NAME = "Watering can"
 ITEM_ID = 8
 CustomResourcePath = "res://Items/Repo/tool_watering_can.tres"
-ITEM_TEXTURE = ExtResource("1_7phta")
+ITEM_TEXTURE = SubResource("AtlasTexture_yppbo")
 IS_STACKABLE = false
 HOVER_TEXT = "Kastelukannu"
 ITEM_QUANTITY = 1

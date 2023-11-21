@@ -1,14 +1,14 @@
 CollisionShape2D
+Sprite2D
+AnimationPlayer
 Area2D
 Label
 ColorRect
 TileMap
 CollisionPolygon2D
 StaticBody2D
-Sprite2D
 Node2D
 Timer
 TextureRect
 Panel
 Control
-GridContainer

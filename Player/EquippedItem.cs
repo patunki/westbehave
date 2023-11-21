@@ -7,12 +7,14 @@ public partial class EquippedItem : Node2D
     ItemClass item;
     InventoryClass playerInventory;
     TextureRect textureRect;
+    AnimationPlayer animationPlayer;
 
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
     {   
         playerInventory = GD.Load<InventoryClass>("res://Player/PlayerInventory.tres");
         textureRect = GetNode<TextureRect>("TextureRect");
+        animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
     }
 
     public override void _Process(double delta)
@@ -33,9 +35,8 @@ public partial class EquippedItem : Node2D
                 OnItemInteract();
                 
                 if (item.ITEM_QUANTITY <= 0){
-                        if (item.ITEM_QUANTITY < 0){
-                            item.ITEM_QUANTITY = 0;
-                        }
+                    
+                    item.ITEM_QUANTITY = 1;
                     playerInventory.InventoryItems[15] = null;
                     item = null;
                     textureRect.Texture = null;
@@ -44,6 +45,28 @@ public partial class EquippedItem : Node2D
 
                 playerInventory.EmitSignal(nameof(InventoryClass.InventoryChanged));
             }
+        }
+
+        if (Input.IsActionJustPressed("drop") && item != null){
+                
+                PackedScene dropItem = GD.Load("res://Scenes/DroppedItem.tscn") as PackedScene;
+                DroppedItem instance = (DroppedItem)dropItem.Instantiate();
+                instance.item = item;
+                instance.Position = GlobalPosition;
+                GetParent().GetParent().GetParent().AddChild(instance);
+
+                item.DecQuant();
+                if (item.ITEM_QUANTITY <= 0){
+                    
+                    item.ITEM_QUANTITY = 1;
+                    playerInventory.InventoryItems[15] = null;
+                    item = null;
+                    textureRect.Texture = null;
+                    
+                }
+                
+                playerInventory.EmitSignal(nameof(InventoryClass.InventoryChanged));
+            
         }
 
     }
@@ -60,8 +83,10 @@ public partial class EquippedItem : Node2D
        if (item.HasMethod("Eat")){
         item.Call("Eat");
        }
-       if (item.HasMethod("UseItem")){
-        item.Call("UseItem",GlobalPosition);
+       if (item.HasMethod("Water")){
+        item.Call("Water",GlobalPosition);
+        animationPlayer.Play("kastelu");
+
        }
        
        //Call(method);
@@ -78,7 +103,7 @@ public partial class EquippedItem : Node2D
             textureRect.Texture = null;
     }
 
-
+}
 // ITEM USES
 
    /*void FOOD(){
@@ -124,8 +149,23 @@ public partial class EquippedItem : Node2D
             seedItem.Call("Plant",GlobalPosition);
         }
    }*/
+               /* DroppedItem droppedItem = new DroppedItem();
+                droppedItem.item = item;
+                InteractionArea interactionArea = new InteractionArea();
+                CollisionShape2D coller = new CollisionShape2D();
+                CircleShape2D circle = new CircleShape2D();
+                interactionArea.Name = "InteractionArea";
+                circle.Radius = 32;
+                coller.Shape = circle;
+                interactionArea.AddChild(coller);
+                interactionArea.actionName = "TO COLLECT";
+                Sprite2D sprite2D = new Sprite2D();
+                sprite2D.Name = "ItemTexture";
+                droppedItem.AddChild(interactionArea);
+                droppedItem.AddChild(sprite2D);
+                droppedItem.Position = GlobalPosition;
+                GetParent().GetParent().GetParent().AddChild(droppedItem);*/
 
 
 
 
-}

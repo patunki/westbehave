@@ -22,6 +22,7 @@ public partial class TestPlant : Node2D
     player nearestPlayer;
     InventoryClass playerInventory;
     TileMap tileMap;
+    GameManager gameManager;
 
 
     public override void _Ready(){
@@ -29,6 +30,7 @@ public partial class TestPlant : Node2D
         dryTimer = GetNode<Timer>("DryTimer");
         fruitTimer = GetNode<Timer>("FruitTimer");
         sprite = GetNode<Sprite2D>("Sprite2D");
+        gameManager = GetNode<GameManager>("/root/GameManager");
         interactionArea = GetNode<InteractionArea>("InteractionArea");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnHarvest"));
         interactionArea.actionName = "HARVEST";
@@ -36,13 +38,20 @@ public partial class TestPlant : Node2D
         interactionArea.PlayerEntered += GetPlayer;
         playerInventory = GD.Load<InventoryClass>("res://Player/PlayerInventory.tres");
         tileMap = GetParent<TileMap>();
-
         interactionArea.Monitoring = false;
-
+        gameManager.PlantWatered += WaterPlant;
         growTimer.Timeout += GrowPlant;
         fruitTimer.Timeout += GrowFruit;
         dryTimer.Timeout += KillPlant;
         
+    }
+
+    void WaterPlant(Vector2I pos){
+        var tilePos = tileMap.LocalToMap(Position);
+        if (pos == tilePos){
+            dryTimer.Start();
+            GD.Print(dryTimer.TimeLeft);
+        }
     }
 
     void GrowFruit(){

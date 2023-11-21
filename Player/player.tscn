@@ -55,13 +55,12 @@ height = 10.5
 radius = 7.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-position = Vector2(-10, -13)
+position = Vector2(0, -1)
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_2273y")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(10, 13)
 texture = ExtResource("3_56kbu")
 offset = Vector2(12, -16)
 hframes = 18
@@ -77,15 +76,15 @@ position = Vector2(6, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(10, 12.75)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_to5rj")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2(10, 5)
+position = Vector2(0, -8)
 zoom = Vector2(0.7, 0.7)
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_r6xtp")]
-position = Vector2(10, 5)
+position = Vector2(0, -8)
 healthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
@@ -94,7 +93,6 @@ position = Vector2(10, 2)
 shape = SubResource("CapsuleShape2D_5g78q")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_sjabt")]
-position = Vector2(10, 13)
 
 [node name="StateMachine" parent="." instance=ExtResource("7_ptokh")]
 

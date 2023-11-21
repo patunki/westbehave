@@ -14,6 +14,8 @@ public partial class GameManager : Node2D
     public delegate void HasTileMapEventHandler(TileMap tileMap);
     [Signal]
     public delegate void ExternalInventoryRecieveEventHandler(ExternalInventory inv, ItemClass item, int quant);
+    [Signal]
+    public delegate void PlantWateredEventHandler(Vector2I tilepos);
     public TileMap tileMap;
 
     public void SetTileMap(TileMap map){

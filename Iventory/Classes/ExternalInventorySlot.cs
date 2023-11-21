@@ -46,7 +46,7 @@ public partial class ExternalInventorySlot : Panel
           if (mouseEvent.ButtonIndex == MouseButton.Left && @event.IsPressed() || mouseEvent.ButtonIndex == MouseButton.Right && @event.IsPressed()){
 
             gameManager.EmitSignal(nameof(SlotClicked),thisItem,thisItem.ITEM_QUANTITY);
-
+            
           }
            
         }

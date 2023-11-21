@@ -1,6 +1,8 @@
-res://Items/Repo
+res://Scenes/
 res://Scripts
+res://Sprites
 res://Art
+res://Items/Repo
 res://Scenes
 res://
 res://Maps
@@ -10,7 +12,6 @@ res://Farming/Scenes
 res://Managers
 res://Iventory/Classes
 res://Iventory
-res://Scenes/
 /home/paulus/godotProjects/trynewinv/Iventory/Classes
 res://Items/Repo/
 res://StateMachine
@@ -19,4 +20,3 @@ res://Interaction
 res://Items/Classes
 res://Items/Classes/
 res://Items
-res://Levels

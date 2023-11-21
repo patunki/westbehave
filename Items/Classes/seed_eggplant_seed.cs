@@ -15,7 +15,6 @@ public partial class seed_eggplant_seed : ItemClass_Seed
 
     void GetTileMap(TileMap map){
         tileMap = map;
-        GD.Print(tileMap);
     }
 
     public void Plant(Vector2 globalPosition){
@@ -27,7 +26,8 @@ public partial class seed_eggplant_seed : ItemClass_Seed
         var tilePos = tileMap.LocalToMap(globalPosition);
         var atlasCoord = new Vector2I(0,0);
         TileData tileData = tileMap.GetCellTileData(groundLayer, tilePos);
-        if (tileData != null){
+        var hasPlant = tileMap.GetCellAlternativeTile(flowerLayer,tilePos);
+        if (tileData != null && hasPlant == -1){
             bool canPlant = (bool)tileData.GetCustomData("CanPlant");
                 if (canPlant){
                     
