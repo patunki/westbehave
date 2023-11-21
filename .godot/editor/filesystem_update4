@@ -49,3 +49,5 @@ res://Scenes/TestWorld.tscn
 res://Items/Classes/tool_hoe.cs
 res://Scripts/House1.cs
 res://Scripts/TestWorld.cs
+res://Items/Classes/tool_watering_can.cs
+res://Items/Repo/tool_watering_can.tres

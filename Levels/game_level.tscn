@@ -31,7 +31,7 @@ layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array()
+layer_4/tile_data = PackedInt32Array(458748, 1, 65536)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

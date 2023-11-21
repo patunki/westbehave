@@ -60,6 +60,10 @@ public partial class EquippedItem : Node2D
        if (item.HasMethod("Eat")){
         item.Call("Eat");
        }
+       if (item.HasMethod("UseItem")){
+        item.Call("UseItem",GlobalPosition);
+       }
+       
        //Call(method);
 
     }

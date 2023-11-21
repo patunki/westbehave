@@ -1,3 +1,4 @@
+res://Items/Repo
 res://Scripts
 res://Art
 res://Scenes
@@ -15,7 +16,6 @@ res://Items/Repo/
 res://StateMachine
 res://Components
 res://Interaction
-res://Items/Repo
 res://Items/Classes
 res://Items/Classes/
 res://Items
