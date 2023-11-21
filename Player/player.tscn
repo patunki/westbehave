@@ -47,23 +47,23 @@ _data = {
 "RESET": SubResource("Animation_vssut")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4cjjd"]
-radius = 6.0
-height = 16.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5rj"]
+radius = 5.0
+height = 10.5
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g78q"]
 radius = 7.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-position = Vector2(150, 67)
+position = Vector2(-10, -13)
 collision_layer = 2
 motion_mode = 1
 script = ExtResource("1_2273y")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-position = Vector2(12, 2)
+position = Vector2(10, 13)
 texture = ExtResource("3_56kbu")
-offset = Vector2(10, -5)
+offset = Vector2(12, -16)
 hframes = 18
 frame = 1
 
@@ -73,15 +73,16 @@ anchor_left = 0.762
 anchor_top = 0.619
 anchor_right = 0.762
 anchor_bottom = 0.619
-offset_left = -62.96
-offset_top = -51.52
-offset_right = -33.96
-offset_bottom = -38.52
+offset_left = -61.96
+offset_top = -60.52
+offset_right = -32.96
+offset_bottom = -47.52
 expand_mode = 1
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Marker2D" type="Marker2D" parent="PlayerSprite"]
-position = Vector2(25, 4)
+position = Vector2(26, -5)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
 libraries = {
@@ -89,17 +90,19 @@ libraries = {
 }
 
 [node name="EquippedItem" parent="PlayerSprite" instance=ExtResource("14_igl1t")]
-position = Vector2(-12, -2)
+position = Vector2(6, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(10, 8)
-shape = SubResource("CapsuleShape2D_4cjjd")
+position = Vector2(10, 12.75)
+shape = SubResource("CapsuleShape2D_to5rj")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
+position = Vector2(10, 5)
 zoom = Vector2(0.7, 0.7)
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_r6xtp")]
+position = Vector2(10, 5)
 healthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
@@ -108,6 +111,7 @@ position = Vector2(10, 2)
 shape = SubResource("CapsuleShape2D_5g78q")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_sjabt")]
+position = Vector2(10, 13)
 
 [node name="StateMachine" parent="." instance=ExtResource("7_ptokh")]
 

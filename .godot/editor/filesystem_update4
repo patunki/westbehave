@@ -41,3 +41,7 @@ res://StateMachine/States/State.cs
 res://Player/EquippedItems.tscn
 res://Items/Repo/seed_eggplant_seed.tres
 res://Items/Repo/tool_hoe.tres
+res://Scenes/House1.tscn
+res://Maps/InitialTileMap.tscn
+res://Scripts/InitialTileMap.cs
+res://Items/Classes/seed_eggplant_seed.cs
