@@ -18,8 +18,17 @@ public partial class bullet : CharacterBody2D
 		MoveAndCollide(velocity.Normalized() * speed);
 	}
 
-		private void _on_timer_timeout(){
+	private void _on_timer_timeout(){
 			this.QueueFree();
+	}
+
+
+	void _on_area_2d_area_entered(Area2D area){
+		if (area is HurtBoxComponent){
+			Attack attack = new Attack();
+			attack.Damage = 5;
+			area.Call("Damage",attack);
+		}
 	}
 
 

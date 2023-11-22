@@ -9,6 +9,7 @@ public partial class seed_eggplant_seed : ItemClass_Seed
     public seed_eggplant_seed(){
         var tree = (SceneTree)Engine.GetMainLoop();
         gameManager = tree.Root.GetNode<GameManager>("GameManager");
+        tileMap = gameManager.tileMap;
         gameManager.HasTileMap += GetTileMap;
         
     }

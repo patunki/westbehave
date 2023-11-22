@@ -16,6 +16,7 @@ public partial class tool_watering_can : ItemClass_Tool
     public tool_watering_can(){
         var tree = (SceneTree)Engine.GetMainLoop();
         gameManager = tree.Root.GetNode<GameManager>("GameManager");
+        tileMap = gameManager.tileMap;
         gameManager.HasTileMap += GetTileMap;
         waterLevel = 1;
     }

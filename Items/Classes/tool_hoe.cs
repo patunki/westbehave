@@ -10,13 +10,13 @@ public partial class tool_hoe : ItemClass_Tool
     public tool_hoe(){
         var tree = (SceneTree)Engine.GetMainLoop();
         gameManager = tree.Root.GetNode<GameManager>("GameManager");
+        tileMap = gameManager.tileMap;
         gameManager.HasTileMap += GetTileMap;
         
     }
 
     void GetTileMap(TileMap map){
         tileMap = map;
-        GD.Print(tileMap);
     }
 
     public void Plough(Vector2 globalPosition){

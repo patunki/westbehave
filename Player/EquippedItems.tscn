@@ -1,11 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbsp4b4r8ij6g"]
+[gd_scene load_steps=5 format=3 uid="uid://cbsp4b4r8ij6g"]
 
 [ext_resource type="Script" path="res://Player/EquippedItem.cs" id="1_rp6ud"]
-[ext_resource type="Texture2D" uid="uid://cwyldqc28wgn0" path="res://Art/kastelukannu_tekstuuri.png" id="2_4epwp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ij75t"]
-atlas = ExtResource("2_4epwp")
-region = Rect2(25.3786, 0, 33.3772, 32)
 
 [sub_resource type="Animation" id="Animation_j17pc"]
 resource_name = "kastelu"
@@ -52,10 +47,12 @@ offset_left = -4.0
 offset_top = -7.0
 offset_right = 13.0
 offset_bottom = 11.0
-texture = SubResource("AtlasTexture_ij75t")
 expand_mode = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wo4ei")
 }
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(24, 0)

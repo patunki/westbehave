@@ -89,6 +89,14 @@ public partial class EquippedItem : Node2D
         animationPlayer.Play("kastelu");
 
        }
+       if (item.HasMethod("Shoot")){
+        
+				PackedScene bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+				var instance = bullet.Instantiate();
+				var barrel = GetNode<Marker2D>("Marker2D");
+				barrel.AddChild(instance);
+
+       }
        
        //Call(method);
 
