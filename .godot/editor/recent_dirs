@@ -1,5 +1,6 @@
-res://Scenes/
 res://Scripts
+res://Components
+res://Scenes/
 res://Sprites
 res://Art
 res://Items/Repo
@@ -15,7 +16,6 @@ res://Iventory
 /home/paulus/godotProjects/trynewinv/Iventory/Classes
 res://Items/Repo/
 res://StateMachine
-res://Components
 res://Interaction
 res://Items/Classes
 res://Items/Classes/

@@ -54,3 +54,7 @@ res://Scenes/DroppedItem.tscn
 res://Scripts/DroppedItem.cs
 res://Database/ItemDB.json
 res://Items/Repo/tool_hoe.tres
+res://Scenes/Zombie.tscn
+res://Scenes/LootComponent.cs
+res://Scripts/Zombie.cs
+res://Scripts/ItemListTest.cs

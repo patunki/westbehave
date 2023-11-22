@@ -51,6 +51,7 @@ public partial class EquippedItem : Node2D
                 
                 PackedScene dropItem = GD.Load("res://Scenes/DroppedItem.tscn") as PackedScene;
                 DroppedItem instance = (DroppedItem)dropItem.Instantiate();
+
                 instance.item = item;
                 instance.Position = GlobalPosition;
                 GetParent().GetParent().GetParent().AddChild(instance);

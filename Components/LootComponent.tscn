@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu7dg71taagi4"]
+
+[ext_resource type="Script" path="res://Scenes/LootComponent.cs" id="1_2hqny"]
+
+[node name="LootComponent" type="Node2D"]
+script = ExtResource("1_2hqny")
