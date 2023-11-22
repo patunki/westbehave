@@ -16,3 +16,4 @@ HOVER_TEXT = "A nice looking apple"
 ITEM_QUANTITY = 1
 MAX_STACK = 10
 ITEM_TYPE = 0
+useName = "eat"

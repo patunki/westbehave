@@ -11,7 +11,6 @@ public partial class player : CharacterBody2D
 	public int moveSpeed { get; set; } = 150;
 	public Vector2 heading;
 	public Sprite2D sprite;
-
 	private InventoryScript inventoryScript;
 	private ItemDatabase itemDatabase;
 	private GameManager gameManager;
@@ -26,10 +25,9 @@ public partial class player : CharacterBody2D
 		itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
 		gameManager = GetNode<GameManager>("/root/GameManager");
 		animationPlayer = GetNode<AnimationPlayer>("PlayerSprite/AnimationPlayer");
-
 		animationPlayer.Play("IdleAnimation");
-	}
 
+	}
 
 
 	

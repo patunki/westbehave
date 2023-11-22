@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://crm07hvhi2kk2"]
+
+[ext_resource type="Script" path="res://Scripts/DroppedItem.cs" id="1_xnqso"]
+[ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_6t45i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_si40p"]
+radius = 25.0799
+
+[node name="DroppedItem" type="Node2D"]
+script = ExtResource("1_xnqso")
+
+[node name="ItemTexture" type="Sprite2D" parent="."]
+
+[node name="InteractionArea" parent="." instance=ExtResource("2_6t45i")]
+actionName = "PICK UP"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_si40p")

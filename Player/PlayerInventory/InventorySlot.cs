@@ -47,6 +47,7 @@ public partial class InventorySlot : Panel
     //Triggered when an item is dropped into this slot.
     public override void _DropData(Vector2 atPosition, Variant data)
     {   
+        
         ItemClass dropItem = (ItemClass)data;
         gameManager.EmitSignal(nameof(GameManager.ItemLanded),originIndex, index, dropItem);
 
