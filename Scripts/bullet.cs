@@ -6,14 +6,15 @@ public partial class bullet : CharacterBody2D
 
 	Vector2 velocity;
 	[Export]
-	int speed = 10;
-    public override void _Ready()
-    {
-    }
-
-    public override void _PhysicsProcess(double delta)
+	int speed = 50;
+	public override void _Ready()
 	{
-		MoveAndCollide(velocity.Normalized() * speed * (int)delta);
+		velocity = GetLocalMousePosition();
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		MoveAndCollide(velocity.Normalized() * speed);
 	}
 
 	private void _on_timer_timeout(){

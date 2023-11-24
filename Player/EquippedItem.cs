@@ -24,9 +24,10 @@ public partial class EquippedItem : Node2D
         barrel = GetNode<Marker2D>("Node2D/Marker2D");
         node2D = GetNode<Node2D>("Node2D");
         bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+
     }
 
-    public override void _Process(double delta)
+    public override void _PhysicsProcess(double delta)
     {
         if (playerInventory.InventoryItems[15] != null){
            GetItem();
@@ -41,6 +42,9 @@ public partial class EquippedItem : Node2D
 			textureRect.Scale = new Vector2(1,1);
 		}
         node2D.LookAt(GetGlobalMousePosition());
+        
+        
+
     }
 
 
@@ -110,8 +114,8 @@ public partial class EquippedItem : Node2D
        if (item.HasMethod("Shoot")){
         
 			bullet instance = (bullet)bullet.Instantiate();
-            instance.Position = GlobalPosition;
-            instance.Velocity = _player.heading;
+            instance.Position = barrel.GlobalPosition;
+            //instance.Velocity = GetGlobalMousePosition();
 			GetParent().GetParent().AddChild(instance);
 
        }
@@ -126,7 +130,7 @@ public partial class EquippedItem : Node2D
     }
     void _on_hit_area_entered(Area2D area){
         if (area is HurtBoxComponent){
-            area.CallDeferred("Hit",attack);
+            area.CallDeferred("Damage",attack);
         }
 
     }

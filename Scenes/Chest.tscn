@@ -58,4 +58,4 @@ offset_left = -65.0
 offset_top = -89.0
 offset_right = 67.0
 offset_bottom = -24.0
-InventoryItems = Array[Resource]([ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("6_2oxb0"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("10_007wo"), ExtResource("11_aadpa"), ExtResource("12_grjlt"), ExtResource("13_oi8wu"), null, null, null, null, null, null, null, null, null])
+InventoryItems = Array[Resource]([ExtResource("6_2oxb0"), ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("13_oi8wu"), ExtResource("10_007wo"), ExtResource("12_grjlt"), ExtResource("11_aadpa"), null, null, null, null, null, null, null, null])

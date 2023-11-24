@@ -1,16 +1,16 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://gia3bjsi5c6j"]
 
-[ext_resource type="Texture2D" uid="uid://3a33l0m35j4c" path="res://Art/GreatAxe.png" id="1_43exp"]
-[ext_resource type="Script" path="res://Items/Classes/tool_axe.cs" id="2_lnpaf"]
+[ext_resource type="Texture2D" uid="uid://3a33l0m35j4c" path="res://Art/GreatAxe.png" id="1_w5ygk"]
+[ext_resource type="Script" path="res://Items/Classes/tool_axe.cs" id="2_5oxp3"]
 
 [resource]
-script = ExtResource("2_lnpaf")
+script = ExtResource("2_5oxp3")
 ITEM_NAME = "Axe"
 ITEM_ID = 9
-CustomResourcePath = "res://Items/Repo/tool_axe.tres"
-ITEM_TEXTURE = ExtResource("1_43exp")
+CustomResourcePath = "res://Items/Repo/tool_hoe.tres"
+ITEM_TEXTURE = ExtResource("1_w5ygk")
 IS_STACKABLE = false
-HOVER_TEXT = "Axe"
+HOVER_TEXT = "axe"
 ITEM_QUANTITY = 1
 MAX_STACK = 1
 ITEM_TYPE = 3
