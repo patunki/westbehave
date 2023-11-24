@@ -5,14 +5,14 @@ public partial class EquippedItem : Node2D
 {
     [Export]
     Item item;
-    InventoryClass playerInventory;
+    Inventory playerInventory;
     TextureRect textureRect;
     AnimationPlayer animationPlayer;
 
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
     {   
-        playerInventory = GD.Load<InventoryClass>("res://Player/PlayerInventory.tres");
+        playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
         textureRect = GetNode<TextureRect>("TextureRect");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
     }
@@ -43,7 +43,7 @@ public partial class EquippedItem : Node2D
                     
                 }
 
-                playerInventory.EmitSignal(nameof(InventoryClass.InventoryChanged));
+                playerInventory.EmitSignal(nameof(Inventory.InventoryChanged));
             }
         }
 
@@ -66,7 +66,7 @@ public partial class EquippedItem : Node2D
                     
                 }
                 
-                playerInventory.EmitSignal(nameof(InventoryClass.InventoryChanged));
+                playerInventory.EmitSignal(nameof(Inventory.InventoryChanged));
             
         }
 

@@ -9,7 +9,7 @@ public partial class InventoryScript : Control
 
 	bool isOpen;
 	[Export]
-	InventoryClass inventory;
+	Inventory inventory;
 	PackedScene invetorySlot;
 	GridContainer gridContainer;
     GameManager gameManager;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Security.Cryptography.X509Certificates;
 
 //can be used by any inventory
-public partial class InventoryClass : Resource
+public partial class Inventory : Resource
 {
 
     [Export]
