@@ -27,7 +27,8 @@ public partial class bullet : CharacterBody2D
 		if (area is HurtBoxComponent){
 			Attack attack = new Attack();
 			attack.Damage = 5;
-			area.Call("Damage",attack);
+			area.CallDeferred("Damage",attack);
+			QueueFree();
 		}
 	}
 

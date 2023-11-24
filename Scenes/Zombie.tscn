@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxeckinxh1j7l"]
+[gd_scene load_steps=12 format=3 uid="uid://cxeckinxh1j7l"]
 
 [ext_resource type="Script" path="res://Scripts/Zombie.cs" id="1_58gj6"]
 [ext_resource type="Texture2D" uid="uid://drjbn7owwkmqf" path="res://Art/veetintilemap3fix.png" id="1_tes36"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="4_drmct"]
 [ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="5_vmjpe"]
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/tool_hoe.tres" id="6_bt0rl"]
+[ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="8_k3bgx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pxrd"]
 atlas = ExtResource("1_tes36")
@@ -47,5 +48,7 @@ shape = SubResource("CapsuleShape2D_odb3b")
 
 [node name="LootComponent" parent="." instance=ExtResource("4_drmct")]
 ItemsToDrop = Array[Resource]([ExtResource("5_vmjpe"), ExtResource("6_bt0rl")])
+
+[node name="StateMachine" parent="." instance=ExtResource("8_k3bgx")]
 
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

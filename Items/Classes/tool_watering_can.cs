@@ -3,6 +3,7 @@ using System;
 
 public partial class tool_watering_can : ItemClass_Tool
 {
+    [Export]
     float waterLevel;
     GameManager gameManager;
     TileMap tileMap;

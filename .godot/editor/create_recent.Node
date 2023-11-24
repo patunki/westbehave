@@ -1,4 +1,9 @@
+ColorRect
+CanvasLayer
 CollisionShape2D
+LightOccluder2D
+DirectionalLight2D
+CanvasModulate
 Marker2D
 Area2D
 ItemList
@@ -7,8 +12,3 @@ CharacterBody2D
 Sprite2D
 AnimationPlayer
 Label
-ColorRect
-TileMap
-CollisionPolygon2D
-StaticBody2D
-Timer
