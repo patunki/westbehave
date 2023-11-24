@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/food_zombie_meat.tres" id="6_rumnb"]
 [ext_resource type="PackedScene" uid="uid://cxeckinxh1j7l" path="res://Scenes/Zombie.tscn" id="7_mxngg"]
 
-[node name="GameLevel" type="Node2D"]
+[node name="Game" type="Node2D"]
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("1_8wig1")]

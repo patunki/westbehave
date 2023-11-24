@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "i1HmQI0NKb6e8WXu+lBAReyDZY1gFvKxDfKybuFp7H/bhCEWIhdQD4MstzdZ1YSGh0kF3/F4mMyYhIugi965Bg==",
+  "dgSpecHash": "j6A3lFYFaJqfA9YIOPtjMetfWzZSUDmLw6L7O5tDooSNdTdYiWxG3HAkwmvdAAaT2xWh+XmqDpyvhTxzU4Ql6g==",
   "success": true,
-  "projectFilePath": "/home/paulus/godotProjects/TryFixItemClass/Demo 1.csproj",
+  "projectFilePath": "/home/paulus/godotProjects/westbehave/Demo 1.csproj",
   "expectedPackageFiles": [
     "/home/paulus/.nuget/packages/godot.sourcegenerators/4.2.0-dev.5/godot.sourcegenerators.4.2.0-dev.5.nupkg.sha512",
     "/home/paulus/.nuget/packages/godotsharp/4.2.0-dev.5/godotsharp.4.2.0-dev.5.nupkg.sha512",
