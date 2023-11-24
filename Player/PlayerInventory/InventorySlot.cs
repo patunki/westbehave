@@ -12,7 +12,7 @@ public partial class InventorySlot : Panel
     private Label label;
     private RichTextLabel richTextLabel;
     private GameManager gameManager;
-    private ItemClass thisItem;   
+    private Item thisItem;   
     public int index;
     private int originIndex;
 
@@ -33,7 +33,7 @@ public partial class InventorySlot : Panel
     //Triggered when a dragged item is hovered above this slot. Data is the item that is being dragged. If it returns false, item will not be dropped.
     public override bool _CanDropData(Vector2 atPosition, Variant data)
     {   
-        ItemClass dropItem = (ItemClass)data;
+        Item dropItem = (Item)data;
         if (thisItem != null && thisItem.ITEM_ID != dropItem.ITEM_ID){
             return false;
         }
@@ -48,7 +48,7 @@ public partial class InventorySlot : Panel
     public override void _DropData(Vector2 atPosition, Variant data)
     {   
         
-        ItemClass dropItem = (ItemClass)data;
+        Item dropItem = (Item)data;
         gameManager.EmitSignal(nameof(GameManager.ItemLanded),originIndex, index, dropItem);
 
     }
@@ -104,7 +104,7 @@ public partial class InventorySlot : Panel
 
     }
     //Updates the invventory visuals. Usually called from InventoryScript.
-    public void Update(ItemClass item){
+    public void Update(Item item){
         thisItem = item;
         itemTexture.Texture = item.ITEM_TEXTURE;
         richTextLabel.Text = item.HOVER_TEXT;

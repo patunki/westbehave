@@ -4,7 +4,7 @@ using System;
 public partial class LootComponent : Node2D
 {
     [Export]
-    public Godot.Collections.Array<ItemClass> ItemsToDrop { get; set; }
+    public Godot.Collections.Array<Item> ItemsToDrop { get; set; }
     public void DropItems(){
 
         for (int i = 0; i < ItemsToDrop.Count; i++){

@@ -26,13 +26,13 @@ public partial class InventoryScript : Control
 
 	}
 
-	public void PopulateInv(Godot.Collections.Array<ItemClass> invSlots){
+	public void PopulateInv(Godot.Collections.Array<Item> invSlots){
 		foreach(InventorySlot child in gridContainer.GetChildren()){
 			child.QueueFree();
             GD.Print("Deleted:;", child);
 		}
 
-		foreach(ItemClass slotInv in invSlots){
+		foreach(Item slotInv in invSlots){
 			var slot = invetorySlot.Instantiate();
 			gridContainer.AddChild(slot);
 			
@@ -69,12 +69,12 @@ public partial class InventoryScript : Control
 	}
 
 
-	public void GiveItem(ItemClass item, int quant){
+	public void GiveItem(Item item, int quant){
 		inventory.AddItem(item, quant);
 		UpdateInventory();
 	}
 
-    void SetItem(int originIndex, int index, ItemClass item){
+    void SetItem(int originIndex, int index, Item item){
         inventory.InventoryItems[originIndex] = null;
         inventory.InventoryItems[index] = item;
         UpdateInventory();

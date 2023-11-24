@@ -16,7 +16,7 @@ public enum ItemType
 
 }
 
-public partial class ItemClass : Resource
+public partial class Item : Resource
 {
 
 
@@ -41,7 +41,7 @@ public partial class ItemClass : Resource
     [Export]
     public string useName;
      
-    public ItemClass Copy() => MemberwiseClone() as ItemClass;
+    public Item Copy() => MemberwiseClone() as Item;
 
     public void AddQuant(int quant){
 

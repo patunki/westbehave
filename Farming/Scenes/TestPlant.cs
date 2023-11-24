@@ -12,7 +12,7 @@ public enum PlantState {
 public partial class TestPlant : Node2D
 {
     [Export]
-    ItemClass yeld;
+    Item yeld;
     Timer growTimer;
     Timer dryTimer;
     Timer fruitTimer;

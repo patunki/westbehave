@@ -1,4 +1,4 @@
-res://Levels/game_level.tscn
+res://Game/Game.tscn
 res://Player/PlayerInventory.tres
 res://Items/Repo/food_eggplant.tres
 res://Items/Repo/food_apple.tres
@@ -20,16 +20,15 @@ res://Scenes/DroppedItem.tscn
 res://Scenes/Zombie.tscn
 res://Scenes/bullet.tscn
 res://Components/LootComponent.tscn
-res://Database/ItemDB.json
 res://Components/HealthComponent.cs
 res://Components/HurtBoxComponent.cs
 res://Farming/Scenes/TestPlant.cs
 res://Interaction/InteractionArea/InteractionArea.cs
-res://Items/Classes/ItemClass.cs
-res://Items/Classes/ItemClass_Food.cs
-res://Items/Classes/ItemClass_Seed.cs
-res://Items/Classes/ItemClass_Tool.cs
-res://Items/Classes/ItemClass_Weapon.cs
+res://Items/Classes/Item.cs
+res://Items/Classes/Item_Food.cs
+res://Items/Classes/Item_Seed.cs
+res://Items/Classes/Item_Tool.cs
+res://Items/Classes/Item_Weapon.cs
 res://Items/Classes/seed_eggplant_seed.cs
 res://Items/Classes/tool_hoe.cs
 res://Items/Classes/tool_watering_can.cs
@@ -37,7 +36,6 @@ res://Items/Classes/weapon_shotgun.cs
 res://Items/ItemNodes/ItemNode.cs
 res://Iventory/Classes/ExternalInventory.cs
 res://Iventory/Classes/ExternalInventorySlot.cs
-res://Levels/GameLevel.cs
 res://Managers/GameManager.cs
 res://Managers/InteractionManager.cs
 res://Managers/ItemDatabase.cs
@@ -58,3 +56,4 @@ res://Scripts/TestWorld.cs
 res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
+res://Database/ItemDB.json

@@ -4,7 +4,7 @@ using System;
 public partial class EquippedItem : Node2D
 {
     [Export]
-    ItemClass item;
+    Item item;
     InventoryClass playerInventory;
     TextureRect textureRect;
     AnimationPlayer animationPlayer;
@@ -116,43 +116,43 @@ public partial class EquippedItem : Node2D
 // ITEM USES
 
    /*void FOOD(){
-       ItemClass_Food foodItem = (ItemClass_Food)item;
+       Item_Food foodItem = (Item_Food)item;
        GD.Print("Ate ",foodItem.ITEM_NAME, ". +",foodItem.HEALTH_RESTORED,"hp");
        foodItem.DecQuant();
    }
 
     void ARMOR(){
-        ItemClass armorItem = (ItemClass)item; //Make armor class!
+        Item armorItem = (Item)item; //Make armor class!
 
    }
 
    void WEAPON(){
-        ItemClass_Weapon weaponItem = (ItemClass_Weapon)item;
+        Item_Weapon weaponItem = (Item_Weapon)item;
         GD.Print(weaponItem.ITEM_NAME);
    }
 
    void TOOL(){
-        ItemClass_Tool toolItem = (ItemClass_Tool)item;
+        Item_Tool toolItem = (Item_Tool)item;
         GD.Print(toolItem.ITEM_NAME);
    }
 
    void CONSUBLE(){
-        ItemClass consumableItem = (ItemClass)item; //Make consumable class!
+        Item consumableItem = (Item)item; //Make consumable class!
         GD.Print(consumableItem.ITEM_NAME);
    }
 
    void MATERIAL(){
-        ItemClass materialItem = (ItemClass)item; //Make material class!
+        Item materialItem = (Item)item; //Make material class!
         GD.Print(materialItem.ITEM_NAME);
    }
 
    void MISC(){
-        ItemClass miscItem = (ItemClass)item; //Make material class!
+        Item miscItem = (Item)item; //Make material class!
         GD.Print(miscItem.ITEM_NAME);
    }
 
    void SEED(){
-        ItemClass_Seed seedItem = (ItemClass_Seed)item;
+        Item_Seed seedItem = (Item_Seed)item;
 
         if (seedItem.HasMethod("Plant")){
             seedItem.Call("Plant",GlobalPosition);

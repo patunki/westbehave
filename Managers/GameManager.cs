@@ -7,13 +7,13 @@ public partial class GameManager : Node2D
     [Signal]
     public delegate void ItemLiftedEventHandler(int index);
     [Signal]
-    public delegate void ItemLandedEventHandler(int originIndex, int index, ItemClass item); 
+    public delegate void ItemLandedEventHandler(int originIndex, int index, Item item); 
     [Signal]
-    public delegate void SlotClickedEventHandler(ItemClass item, int quant);
+    public delegate void SlotClickedEventHandler(Item item, int quant);
     [Signal]
     public delegate void HasTileMapEventHandler(TileMap tileMap);
     [Signal]
-    public delegate void ExternalInventoryRecieveEventHandler(ExternalInventory inv, ItemClass item, int quant);
+    public delegate void ExternalInventoryRecieveEventHandler(ExternalInventory inv, Item item, int quant);
     [Signal]
     public delegate void PlantWateredEventHandler(Vector2I tilepos);
     public TileMap tileMap;

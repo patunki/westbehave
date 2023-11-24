@@ -4,7 +4,7 @@ using System;
 public partial class DroppedItem : Node2D
 {
     [Export]
-    public ItemClass item;
+    public Item item;
     InteractionArea interactionArea;
     public Sprite2D itemTexture;
     InventoryClass inventoryClass;
@@ -26,4 +26,4 @@ public partial class DroppedItem : Node2D
 
 }
 
-//player1.GetNode<ItemClass>("PlayerInventory");
+//player1.GetNode<Item>("PlayerInventory");

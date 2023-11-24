@@ -17,6 +17,7 @@ region = Rect2(30.3214, 0, 29.7287, 32)
 
 [resource]
 script = ExtResource("1_s1xn8")
+waterLevel = 1.0
 textureFull = SubResource("AtlasTexture_ydhmh")
 textureEmpty = SubResource("AtlasTexture_8xwv7")
 ITEM_NAME = "Watering can"

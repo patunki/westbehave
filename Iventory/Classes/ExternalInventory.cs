@@ -4,7 +4,7 @@ using System;
 public partial class ExternalInventory : Control
 {
     [Export]
-    public Godot.Collections.Array<ItemClass> InventoryItems { get; set; }
+    public Godot.Collections.Array<Item> InventoryItems { get; set; }
     PackedScene inventorySlot;
     GridContainer gridContainer;
     GameManager gameManager;
@@ -24,11 +24,11 @@ public partial class ExternalInventory : Control
 	}
 
 
-	public void PopulateInv(Godot.Collections.Array<ItemClass> invSlots){
+	public void PopulateInv(Godot.Collections.Array<Item> invSlots){
 	    foreach(InventorySlot child in gridContainer.GetChildren()){
 	        child.QueueFree();
 	    }
-	    foreach(ItemClass slotInv in invSlots){
+	    foreach(Item slotInv in invSlots){
 	    	var slot = inventorySlot.Instantiate();
             slot.Call("GetInventory",this);
 	    	gridContainer.AddChild(slot);
@@ -69,7 +69,7 @@ public partial class ExternalInventory : Control
 
 	}
 
-	public bool AddItem(ItemClass item, int quant){
+	public bool AddItem(Item item, int quant){
         
         GD.Print("Add item called ",item.ITEM_NAME, " quant: ",quant);
         bool hasItem = CheckSame(item, quant);
@@ -89,7 +89,7 @@ public partial class ExternalInventory : Control
 
 
 
-    private int GetSpot(ItemClass item, int quant){ //Checks for the first empty slot
+    private int GetSpot(Item item, int quant){ //Checks for the first empty slot
         
             for (int i = 0; i < InventoryItems.Count; i++){
               if (InventoryItems[i] == null){
@@ -101,7 +101,7 @@ public partial class ExternalInventory : Control
         return -1;
     }
 
-    public bool CheckSame(ItemClass item, int quant){                                                      //checks if you aleady have the item && its stackable
+    public bool CheckSame(Item item, int quant){                                                      //checks if you aleady have the item && its stackable
         if (item.IS_STACKABLE) {
             for (int i = 0; i < InventoryItems.Count; i++){
                 if (InventoryItems[i] != null && InventoryItems[i].ITEM_ID == item.ITEM_ID){             //if (InventoryItems[i].ITEM_ID == item.ITEM_ID){ ei toimi

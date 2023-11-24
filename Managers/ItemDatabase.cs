@@ -9,8 +9,8 @@ using System.Text.Json.Nodes;
 public partial class ItemDatabase : Node
 {   
 
-    public Godot.Collections.Array<ItemClass> itemDatabase = new Godot.Collections.Array<ItemClass>();
-    public Godot.Collections.Dictionary<int, ItemClass> dictionary = new Godot.Collections.Dictionary<int, ItemClass>();
+    public Godot.Collections.Array<Item> itemDatabase = new Godot.Collections.Array<Item>();
+    public Godot.Collections.Dictionary<int, Item> dictionary = new Godot.Collections.Dictionary<int, Item>();
     public override void _Ready()
     {   
         string folderPath = "Items/Repo/"; //should be "res://Items/Repo/"? FIX THIS?
@@ -22,13 +22,13 @@ public partial class ItemDatabase : Node
     public void LoadItems(string folderPath){
         string[] files = Directory.GetFiles(folderPath, "*.tres");
         foreach (string file in files){
-            itemDatabase.Add(GD.Load<ItemClass>(file));    
+            itemDatabase.Add(GD.Load<Item>(file));    
         }
         
         WriteToFile();
     }
 
-    public ItemClass GetItem(int id){
+    public Item GetItem(int id){
         for (int i = 0; i < itemDatabase.Count; i++){
             if (itemDatabase[i] != null && itemDatabase[i].ITEM_ID == id){
                 return itemDatabase[i];
@@ -40,7 +40,7 @@ public partial class ItemDatabase : Node
     public void WriteToFile(){
 
 
-        foreach (ItemClass item in itemDatabase){
+        foreach (Item item in itemDatabase){
             dictionary[item.ITEM_ID] = item;
         }
         Json json = new Json();

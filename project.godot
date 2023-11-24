@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Project Westbaehave"
-run/main_scene="res://Levels/game_level.tscn"
+config/name="Project Westbaehave Item"
+run/main_scene="res://Game/Game.tscn"
 config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
 
 [autoload]

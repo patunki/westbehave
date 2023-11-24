@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ItemClass_Weapon : ItemClass
+public partial class Item_Weapon : Item
 {
     [Export]
     public bool IS_RANGED;

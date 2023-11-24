@@ -43,7 +43,7 @@ public partial class interact_test : CharacterBody2D
             GD.Print("Cant add less than 1 items at a time");
             return false;
         }
-        ItemClass item = itemDatabase.itemDatabase[itemDatabase.GetItem(id)];
+        Item item = itemDatabase.itemDatabase[itemDatabase.GetItem(id)];
             if (item == null){
                 GD.Print("no such item in database");
                 return false;
@@ -57,7 +57,7 @@ public partial class interact_test : CharacterBody2D
                 break;
                }
 
-               ItemClass currentItem = InventoryItems[i];
+               Item currentItem = InventoryItems[i];
 
                if (currentItem.ITEM_ID == item.ITEM_ID){
                     continue;
@@ -76,7 +76,7 @@ public partial class interact_test : CharacterBody2D
             maxStack = 1;
         }
         while (quantLeft > 0){
-            ItemClass newItem = item;
+            Item newItem = item;
             newItem.ITEM_QUANTITY = Math.Min(quantLeft,maxStack);
 
             InventoryItems.Add(newItem);
@@ -91,7 +91,7 @@ public partial class interact_test : CharacterBody2D
     public Variant GetItems(){
         return InventoryItems;
     }
-    public ItemClass GetItem(int index){
+    public Item GetItem(int index){
         return InventoryItems[index];
     }
     public void OnInventoryChanged(){
