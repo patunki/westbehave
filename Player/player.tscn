@@ -68,10 +68,7 @@ libraries = {
 "": SubResource("AnimationLibrary_2eogn")
 }
 
-[node name="EquippedItem" parent="PlayerSprite" instance=ExtResource("14_igl1t")]
-position = Vector2(6, -6)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_to5rj")
@@ -89,3 +86,6 @@ position = Vector2(10, 2)
 shape = SubResource("CapsuleShape2D_5g78q")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_sjabt")]
+
+[node name="EquippedItem" parent="." instance=ExtResource("14_igl1t")]
+position = Vector2(6, -7)

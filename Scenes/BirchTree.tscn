@@ -28,6 +28,7 @@ texture = SubResource("AtlasTexture_8q5xw")
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(1, -3.625)
 shape = SubResource("RectangleShape2D_w8y7t")
 

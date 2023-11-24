@@ -48,6 +48,7 @@ texture = SubResource("AtlasTexture_wplth")
 metadata/_edit_use_anchors_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(-0.5, -3.25)
 shape = SubResource("RectangleShape2D_vxcpm")
 
@@ -55,6 +56,7 @@ shape = SubResource("RectangleShape2D_vxcpm")
 healthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+visible = false
 position = Vector2(-0.5, -4)
 shape = SubResource("RectangleShape2D_sti3v")
 

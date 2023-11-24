@@ -9,6 +9,10 @@ public partial class EquippedItem : Node2D
     TextureRect textureRect;
     AnimationPlayer animationPlayer;
     Attack attack;
+    player _player;
+    Marker2D barrel;
+    Node2D node2D;
+    PackedScene bullet;
 
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
@@ -16,6 +20,10 @@ public partial class EquippedItem : Node2D
         playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
         textureRect = GetNode<TextureRect>("TextureRect");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
+        _player = (player)GetParent();
+        barrel = GetNode<Marker2D>("Node2D/Marker2D");
+        node2D = GetNode<Node2D>("Node2D");
+        bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
     }
 
     public override void _Process(double delta)
@@ -26,6 +34,13 @@ public partial class EquippedItem : Node2D
         else {
             DiscardItem();
         }
+        if (_player.heading == new Vector2(-1,0)){
+            textureRect.Scale = new Vector2(-1,1);
+        }
+		if (_player.heading == new Vector2(1,0)){
+			textureRect.Scale = new Vector2(1,1);
+		}
+        node2D.LookAt(GetGlobalMousePosition());
     }
 
 
@@ -94,10 +109,10 @@ public partial class EquippedItem : Node2D
        }
        if (item.HasMethod("Shoot")){
         
-			PackedScene bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
-			var instance = bullet.Instantiate();
-			var barrel = GetNode<Marker2D>("Marker2D");
-			barrel.AddChild(instance);
+			bullet instance = (bullet)bullet.Instantiate();
+            instance.Position = GlobalPosition;
+            instance.Velocity = _player.heading;
+			GetParent().GetParent().AddChild(instance);
 
        }
        if (item is tool_axe){
@@ -111,7 +126,7 @@ public partial class EquippedItem : Node2D
     }
     void _on_hit_area_entered(Area2D area){
         if (area is HurtBoxComponent){
-            area.CallDeferred("Damage",attack);
+            area.CallDeferred("Hit",attack);
         }
 
     }
