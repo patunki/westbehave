@@ -80,11 +80,18 @@ public partial class InventoryUi : Control
         UpdateInventory();
     }
 
-	//void GetExternal(ExternalInventory extInv){
-		
-	//}
+    //void GetExternal(ExternalInventory extInv){
 
-	public void ToggleInventory()
+    //}
+
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsActionJustPressed("inventory")){
+			ToggleInventory();
+		}
+    }
+
+    public void ToggleInventory()
 	{
 		if (isOpen){
 			Close();

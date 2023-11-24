@@ -76,25 +76,30 @@ public partial class EquippedItem : Node2D
        ItemType itemType = item.ITEM_TYPE;
        string method = item.useName;
        if (item.HasMethod("Plant")){
-        item.Call("Plant",GlobalPosition);
+            item.Call("Plant",GlobalPosition);
        }
        if (item.HasMethod("Plough")){
-        item.Call("Plough",GlobalPosition);
+            item.Call("Plough",GlobalPosition);
        }
        if (item.HasMethod("Eat")){
-        item.Call("Eat");
+            item.Call("Eat");
        }
        if (item.HasMethod("Water")){
-        item.Call("Water",GlobalPosition);
-        animationPlayer.Play("kastelu");
+            item.Call("Water",GlobalPosition);
+            animationPlayer.Play("kastelu");
 
        }
        if (item.HasMethod("Shoot")){
         
-				PackedScene bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
-				var instance = bullet.Instantiate();
-				var barrel = GetNode<Marker2D>("Marker2D");
-				barrel.AddChild(instance);
+			PackedScene bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+			var instance = bullet.Instantiate();
+			var barrel = GetNode<Marker2D>("Marker2D");
+			barrel.AddChild(instance);
+
+       }
+       if (item.HasMethod("Hit")){
+            item.Call("Hit");
+            animationPlayer.Play("hit");
 
        }
        

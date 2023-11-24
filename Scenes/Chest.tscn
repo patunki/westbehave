@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bnph3rig8hw82"]
+[gd_scene load_steps=18 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scenes/Chest.cs" id="1_57fgj"]
@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/tool_hoe.tres" id="10_007wo"]
 [ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/weapon_shotgun.tres" id="11_aadpa"]
 [ext_resource type="Resource" uid="uid://bhxcyh16b7lhp" path="res://Items/Repo/tool_watering_can.tres" id="12_grjlt"]
+[ext_resource type="Resource" uid="uid://gia3bjsi5c6j" path="res://Items/Repo/tool_axe.tres" id="13_oi8wu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -57,4 +58,4 @@ offset_left = -65.0
 offset_top = -89.0
 offset_right = 67.0
 offset_bottom = -24.0
-InventoryItems = Array[Resource]([ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("6_2oxb0"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("10_007wo"), ExtResource("11_aadpa"), ExtResource("12_grjlt"), null, null, null, null, null, null, null, null, null, null])
+InventoryItems = Array[Resource]([ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("6_2oxb0"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("10_007wo"), ExtResource("11_aadpa"), ExtResource("12_grjlt"), ExtResource("13_oi8wu"), null, null, null, null, null, null, null, null, null])

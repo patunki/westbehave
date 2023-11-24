@@ -1,6 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cbsp4b4r8ij6g"]
+[gd_scene load_steps=7 format=3 uid="uid://cbsp4b4r8ij6g"]
 
 [ext_resource type="Script" path="res://Player/EquippedItem.cs" id="1_rp6ud"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ixmfq"]
+radius = 6.0
 
 [sub_resource type="Animation" id="Animation_2f5ao"]
 length = 0.001
@@ -15,6 +18,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Axe/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_j17pc"]
@@ -33,9 +48,37 @@ tracks/0/keys = {
 "values": [0.0, 0.975639, 1.09956, 0.0]
 }
 
+[sub_resource type="Animation" id="Animation_myyoc"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.51669, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect/Axe/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_wo4ei"]
 _data = {
 "RESET": SubResource("Animation_2f5ao"),
+"hit": SubResource("Animation_myyoc"),
 "kastelu": SubResource("Animation_j17pc")
 }
 
@@ -44,10 +87,18 @@ script = ExtResource("1_rp6ud")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = -4.0
-offset_top = -7.0
+offset_top = -9.0
 offset_right = 13.0
-offset_bottom = 11.0
+offset_bottom = 9.0
 expand_mode = 1
+
+[node name="Axe" type="Area2D" parent="TextureRect"]
+position = Vector2(4, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Axe"]
+position = Vector2(7, -2)
+shape = SubResource("CircleShape2D_ixmfq")
+disabled = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

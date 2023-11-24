@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://gia3bjsi5c6j"]
+
+[ext_resource type="Texture2D" uid="uid://3a33l0m35j4c" path="res://Art/GreatAxe.png" id="1_43exp"]
+[ext_resource type="Script" path="res://Items/Classes/tool_axe.cs" id="2_lnpaf"]
+
+[resource]
+script = ExtResource("2_lnpaf")
+ITEM_NAME = "Axe"
+ITEM_ID = 9
+CustomResourcePath = "res://Items/Repo/tool_axe.tres"
+ITEM_TEXTURE = ExtResource("1_43exp")
+IS_STACKABLE = false
+HOVER_TEXT = "Axe"
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 3
+useName = "Hit"

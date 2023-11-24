@@ -1,11 +1,12 @@
+res://Items/Repo/
+res://Game
+res://
 res://Scripts
 res://Components
 res://Scenes/
-res://Sprites
 res://Art
 res://Items/Repo
 res://Scenes
-res://
 res://Maps
 res://Player
 res://Items/ItemNodes
@@ -14,7 +15,6 @@ res://Managers
 res://Iventory/Classes
 res://Iventory
 /home/paulus/godotProjects/trynewinv/Iventory/Classes
-res://Items/Repo/
 res://StateMachine
 res://Interaction
 res://Items/Classes

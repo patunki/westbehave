@@ -1,12 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=11 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="5_r6xtp"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="5_sjabt"]
-[ext_resource type="Resource" uid="uid://bhu2d3rrkh8b1" path="res://Player/PlayerInventory.tres" id="7_5e1ld"]
-[ext_resource type="PackedScene" uid="uid://d2elxbrt2et40" path="res://Player/PlayerInventory/Inventory.tscn" id="7_ldv2h"]
-[ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="7_ptokh"]
 [ext_resource type="PackedScene" uid="uid://cbsp4b4r8ij6g" path="res://Player/EquippedItems.tscn" id="14_igl1t"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
@@ -80,8 +77,7 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_to5rj")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-position = Vector2(0, -8)
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(3, 3)
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("5_r6xtp")]
 position = Vector2(0, -8)
@@ -93,15 +89,3 @@ position = Vector2(10, 2)
 shape = SubResource("CapsuleShape2D_5g78q")
 
 [node name="HealthComponent" parent="." instance=ExtResource("5_sjabt")]
-
-[node name="StateMachine" parent="." instance=ExtResource("7_ptokh")]
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="PlayerInventory" parent="UI" instance=ExtResource("7_ldv2h")]
-visible = false
-offset_left = 913.0
-offset_top = 363.0
-offset_right = -826.0
-offset_bottom = -612.0
-inventory = ExtResource("7_5e1ld")
