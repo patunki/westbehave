@@ -22,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect/Axe/CollisionShape2D:disabled")
+tracks/1/path = NodePath("TextureRect/Hit/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -65,7 +65,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect/Axe/CollisionShape2D:disabled")
+tracks/1/path = NodePath("TextureRect/Hit/CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -92,10 +92,10 @@ offset_right = 13.0
 offset_bottom = 9.0
 expand_mode = 1
 
-[node name="Axe" type="Area2D" parent="TextureRect"]
+[node name="Hit" type="Area2D" parent="TextureRect"]
 position = Vector2(4, 7)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Axe"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TextureRect/Hit"]
 position = Vector2(7, -2)
 shape = SubResource("CircleShape2D_ixmfq")
 disabled = true
@@ -107,3 +107,5 @@ libraries = {
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(24, 0)
+
+[connection signal="area_entered" from="TextureRect/Hit" to="." method="_on_hit_area_entered"]

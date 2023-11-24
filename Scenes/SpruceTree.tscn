@@ -1,0 +1,46 @@
+[gd_scene load_steps=9 format=3 uid="uid://csv68vb0hhetl"]
+
+[ext_resource type="Script" path="res://Scripts/Tree.cs" id="1_kgn8e"]
+[ext_resource type="Texture2D" uid="uid://b2nu5iw8i1dv1" path="res://Art/puita.png" id="2_37p2b"]
+[ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="3_7mwa7"]
+[ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="4_rtqee"]
+[ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="5_i0444"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvvif"]
+atlas = ExtResource("2_37p2b")
+region = Rect2(303.46, 19.0454, 53.0122, 94.115)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u8j2o"]
+size = Vector2(12.75, 15.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx2le"]
+size = Vector2(13, 17)
+
+[node name="SpruceTree" type="StaticBody2D"]
+script = ExtResource("1_kgn8e")
+
+[node name="TreeTexture" type="TextureRect" parent="."]
+offset_left = -51.0
+offset_top = -127.0
+offset_right = 50.0
+offset_bottom = 1.0
+texture = SubResource("AtlasTexture_lvvif")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -8)
+shape = SubResource("RectangleShape2D_u8j2o")
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("3_7mwa7")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+position = Vector2(0.5, -8.5)
+shape = SubResource("RectangleShape2D_cx2le")
+
+[node name="HealthComponent" parent="." instance=ExtResource("4_rtqee")]
+
+[node name="LootComponent" parent="." instance=ExtResource("5_i0444")]
+ItemsToDrop = Array[Resource]([])
+
+[connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

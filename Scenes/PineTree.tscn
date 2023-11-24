@@ -1,0 +1,66 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3uoupuv02r8n"]
+
+[ext_resource type="Script" path="res://Scripts/Tree.cs" id="1_lhbdu"]
+[ext_resource type="Texture2D" uid="uid://b2nu5iw8i1dv1" path="res://Art/puita.png" id="1_y0vp5"]
+[ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="2_dlng4"]
+[ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="3_qt8dn"]
+[ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="5_sv10v"]
+[ext_resource type="Texture2D" uid="uid://5elr7hmnaqcx" path="res://Art/sprite_vihannekset.png" id="6_fokdq"]
+[ext_resource type="Script" path="res://Items/Classes/Food.cs" id="7_wlo7t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wplth"]
+atlas = ExtResource("1_y0vp5")
+region = Rect2(9.13542, 24.5585, 82.699, 88.2123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vxcpm"]
+size = Vector2(7, 11.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sti3v"]
+size = Vector2(7, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drbtk"]
+atlas = ExtResource("6_fokdq")
+region = Rect2(47.449, 46.6195, 26.3331, 28.1764)
+
+[sub_resource type="Resource" id="Resource_iimtm"]
+script = ExtResource("7_wlo7t")
+HEALTH_RESTORED = 1
+ITEM_NAME = "Eggplant"
+ITEM_ID = 6
+CustomResourcePath = "res://Items/Repo/food_eggplant.tres"
+ITEM_TEXTURE = SubResource("AtlasTexture_drbtk")
+IS_STACKABLE = true
+HOVER_TEXT = "A tasty eggplant"
+ITEM_QUANTITY = 3
+MAX_STACK = 10
+ITEM_TYPE = 0
+useName = "eat"
+
+[node name="PineTree" type="StaticBody2D"]
+script = ExtResource("1_lhbdu")
+
+[node name="TreeTexture" type="TextureRect" parent="."]
+offset_left = -48.0
+offset_top = -124.0
+offset_right = 53.0
+offset_bottom = 4.0
+texture = SubResource("AtlasTexture_wplth")
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -3.25)
+shape = SubResource("RectangleShape2D_vxcpm")
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("2_dlng4")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+position = Vector2(-0.5, -4)
+shape = SubResource("RectangleShape2D_sti3v")
+
+[node name="HealthComponent" parent="." instance=ExtResource("3_qt8dn")]
+
+[node name="LootComponent" parent="." instance=ExtResource("5_sv10v")]
+ItemsToDrop = Array[Resource]([SubResource("Resource_iimtm")])
+
+[connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

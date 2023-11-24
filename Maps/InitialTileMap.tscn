@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1l3deayvp2gh"]
+[gd_scene load_steps=17 format=3 uid="uid://b1l3deayvp2gh"]
 
 [ext_resource type="Texture2D" uid="uid://o1oqcbisahk1" path="res://Art/veetintilemap2fix.png" id="1_l743i"]
 [ext_resource type="PackedScene" uid="uid://cyua0kinoksxl" path="res://Farming/Scenes/TestPlant.tscn" id="2_70ycu"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="4_1plrs"]
 [ext_resource type="Script" path="res://Scripts/InitialTileMap.cs" id="4_6rsr7"]
 [ext_resource type="Texture2D" uid="uid://b2nu5iw8i1dv1" path="res://Art/puita.png" id="5_1tosx"]
+[ext_resource type="PackedScene" uid="uid://ddppovbj2786w" path="res://Scenes/BirchTree.tscn" id="5_vv0m4"]
+[ext_resource type="PackedScene" uid="uid://c3uoupuv02r8n" path="res://Scenes/PineTree.tscn" id="6_84nl7"]
+[ext_resource type="PackedScene" uid="uid://csv68vb0hhetl" path="res://Scenes/SpruceTree.tscn" id="7_efrva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yg8m4"]
 texture = ExtResource("1_l743i")
@@ -485,6 +488,11 @@ texture_region_size = Vector2i(32, 32)
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_jeix2"]
+scenes/1/scene = ExtResource("5_vv0m4")
+scenes/2/scene = ExtResource("6_84nl7")
+scenes/3/scene = ExtResource("7_efrva")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_op81f"]
 texture = ExtResource("5_1tosx")
 margins = Vector2i(0, 20)
@@ -524,6 +532,7 @@ sources/1 = SubResource("TileSetScenesCollectionSource_t0ni4")
 sources/2 = SubResource("TileSetAtlasSource_1mb3e")
 sources/3 = SubResource("TileSetAtlasSource_jvc0j")
 sources/6 = SubResource("TileSetAtlasSource_op81f")
+sources/4 = SubResource("TileSetScenesCollectionSource_jeix2")
 
 [node name="TileMap" type="TileMap"]
 y_sort_enabled = true

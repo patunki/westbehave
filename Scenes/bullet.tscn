@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c6sm8xactp0m6"]
 
 [ext_resource type="Texture2D" uid="uid://nea0emmu35rh" path="res://Art/invback.jpg" id="1_2exab"]
-[ext_resource type="Script" path="res://Scenes/bullet.cs" id="1_bcjky"]
+[ext_resource type="Script" path="res://Scripts/bullet.cs" id="1_bcjky"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ad7nx"]
 size = Vector2(10, 6)

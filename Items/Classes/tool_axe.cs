@@ -3,7 +3,10 @@ using System;
 
 public partial class tool_axe : Tool
 {
-    public void Hit(){
-        GD.Print("dasjlkjasldkjasdljkdsa");
+    public Attack Attack(){
+        Attack attack = new Attack();
+        attack.Damage = 5;
+        attack.attackType = AttackType.axe;
+        return attack;
     }
 }

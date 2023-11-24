@@ -61,3 +61,13 @@ res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Items/Classes/tool_axe.cs
 res://Items/Repo/tool_axe.tres
+res://Scripts/Hit.cs
+res://Scenes/PineTree.tscn
+res://Scripts/bullet.cs
+res://Scripts/Chest.cs
+res://Scripts/interact_test.cs
+res://Scripts/LootComponent.cs
+res://Scripts/PineTree.cs
+res://Scripts/Tree.cs
+res://Scenes/BirchTree.tscn
+res://Scenes/SpruceTree.tscn

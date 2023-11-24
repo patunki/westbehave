@@ -11,11 +11,12 @@ public partial class HealthComponent : Node2D
     public delegate void HealthDepletedEventHandler();
 
     public void Damage(Attack attack){
-        health -= attack.Damage;
-        if (health <= 0 ){
-            EmitSignal(SignalName.HealthDepleted);
+        
+            health -= attack.Damage;
+            if (health <= 0 ){
+                EmitSignal(SignalName.HealthDepleted);
             
-        }
+            }
     }
 
 }

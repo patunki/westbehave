@@ -8,6 +8,7 @@ public partial class EquippedItem : Node2D
     Inventory playerInventory;
     TextureRect textureRect;
     AnimationPlayer animationPlayer;
+    Attack attack;
 
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
@@ -72,6 +73,8 @@ public partial class EquippedItem : Node2D
 
     }
 
+
+
     void OnItemInteract(){
        ItemType itemType = item.ITEM_TYPE;
        string method = item.useName;
@@ -97,13 +100,19 @@ public partial class EquippedItem : Node2D
 			barrel.AddChild(instance);
 
        }
-       if (item.HasMethod("Hit")){
-            item.Call("Hit");
+       if (item is tool_axe){
+            tool_axe axe = (tool_axe)item;
+            attack = axe.Attack();
             animationPlayer.Play("hit");
 
        }
        
-       //Call(method);
+
+    }
+    void _on_hit_area_entered(Area2D area){
+        if (area is HurtBoxComponent){
+            area.CallDeferred("Damage",attack);
+        }
 
     }
     

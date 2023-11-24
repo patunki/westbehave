@@ -1,7 +1,7 @@
 [gd_scene load_steps=18 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
-[ext_resource type="Script" path="res://Scenes/Chest.cs" id="1_57fgj"]
+[ext_resource type="Script" path="res://Scripts/Chest.cs" id="1_sxx0p"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
 [ext_resource type="PackedScene" uid="uid://by8lovrluq1ry" path="res://Iventory/ExternalInventory.tscn" id="4_ah6qq"]
 [ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="5_gsr3i"]
@@ -29,7 +29,7 @@ radius = 41.5933
 size = Vector2(21, 14)
 
 [node name="Chest" type="StaticBody2D" groups=["ExternalInventory"]]
-script = ExtResource("1_57fgj")
+script = ExtResource("1_sxx0p")
 
 [node name="ChestClosed" type="Sprite2D" parent="."]
 position = Vector2(0, 2)

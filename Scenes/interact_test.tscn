@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxop6hfc3oa8x"]
 
-[ext_resource type="Script" path="res://Scenes/interact_test.cs" id="1_6wmgp"]
-[ext_resource type="Texture2D" uid="uid://cqe6f7ouobnji" path="res://Art/slotbg.jpg" id="1_stpae"]
+[ext_resource type="Script" path="res://Scripts/interact_test.cs" id="1_6wmgp"]
+[ext_resource type="Texture2D" path="res://Art/slotbg.jpg" id="1_stpae"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_4k07h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ns0nw"]
