@@ -89,7 +89,7 @@ public partial class ExternalInventorySlot : Panel
         externalInventory.AddItem(dropItem, dropItem.ITEM_QUANTITY);
     }*/
 
-    //Updates the invventory visuals. Usually called from InventoryScript.
+    //Updates the invventory visuals. Usually called from InventoryUi.
     public void Update(Item item){
         thisItem = item.Copy();
         itemTexture.Texture = item.ITEM_TEXTURE;

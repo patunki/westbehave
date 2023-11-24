@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d2elxbrt2et40"]
 
-[ext_resource type="Script" path="res://Player/PlayerInventory/InventoryScript.cs" id="1_7pwgt"]
+[ext_resource type="Script" path="res://Player/PlayerInventory/InventoryUi.cs" id="1_dhd0r"]
 [ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="2_icul6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fnb1m"]
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_7pwgt")
+script = ExtResource("1_dhd0r")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

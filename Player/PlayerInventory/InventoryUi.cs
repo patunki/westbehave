@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-public partial class InventoryScript : Control
+public partial class InventoryUi : Control
 {
 
 	bool isOpen;

@@ -103,7 +103,7 @@ public partial class InventorySlot : Panel
         richTextLabel.Hide();
 
     }
-    //Updates the invventory visuals. Usually called from InventoryScript.
+    //Updates the invventory visuals. Usually called from InventoryUi.
     public void Update(Item item){
         thisItem = item;
         itemTexture.Texture = item.ITEM_TEXTURE;

@@ -58,3 +58,4 @@ res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
 res://Player/PlayerInventory/Inventory.cs
+res://Player/PlayerInventory/InventoryUi.cs
