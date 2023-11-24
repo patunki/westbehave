@@ -11,7 +11,7 @@ public partial class player : CharacterBody2D
 	public int moveSpeed { get; set; } = 150;
 	public Vector2 heading;
 	public Sprite2D sprite;
-	private InventoryScript inventoryScript;
+	private InventoryUi InventoryUi;
 	private ItemDatabase itemDatabase;
 	private GameManager gameManager;
 	private AnimationPlayer animationPlayer;
@@ -21,7 +21,7 @@ public partial class player : CharacterBody2D
 
 	public override void _Ready(){
 		sprite = GetNode<Sprite2D>(spritePath);
-		inventoryScript = GetNode<InventoryScript>("UI/PlayerInventory");
+		InventoryUi = GetNode<InventoryUi>("UI/PlayerInventory");
 		itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
 		gameManager = GetNode<GameManager>("/root/GameManager");
 		animationPlayer = GetNode<AnimationPlayer>("PlayerSprite/AnimationPlayer");
@@ -54,14 +54,14 @@ public partial class player : CharacterBody2D
 			
 		}
 		if (Input.IsActionJustPressed("inventory")){
-			inventoryScript.ToggleInventory();
+			InventoryUi.ToggleInventory();
 		}
 
 		//temporary shooting logiv.
 		/*if (Input.IsActionJustPressed("attack")){
-			ItemClass hand = playerInventory.InventoryItems[0];
-			if (hand is ItemClass_Weapon){
-				ItemClass_Weapon handWep = (ItemClass_Weapon)hand;
+			Item hand = playerInventory.InventoryItems[0];
+			if (hand is Weapon){
+				Weapon handWep = (Weapon)hand;
 				PackedScene bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
 				var instance = bullet.Instantiate();
 				var barrel = GetNode<Marker2D>("PlayerSprite/Marker2D");

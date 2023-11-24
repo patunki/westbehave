@@ -4,15 +4,15 @@ using System;
 public partial class EquippedItem : Node2D
 {
     [Export]
-    ItemClass item;
-    InventoryClass playerInventory;
+    Item item;
+    Inventory playerInventory;
     TextureRect textureRect;
     AnimationPlayer animationPlayer;
 
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
     {   
-        playerInventory = GD.Load<InventoryClass>("res://Player/PlayerInventory.tres");
+        playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
         textureRect = GetNode<TextureRect>("TextureRect");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
     }
@@ -43,7 +43,7 @@ public partial class EquippedItem : Node2D
                     
                 }
 
-                playerInventory.EmitSignal(nameof(InventoryClass.InventoryChanged));
+                playerInventory.EmitSignal(nameof(Inventory.InventoryChanged));
             }
         }
 
@@ -66,7 +66,7 @@ public partial class EquippedItem : Node2D
                     
                 }
                 
-                playerInventory.EmitSignal(nameof(InventoryClass.InventoryChanged));
+                playerInventory.EmitSignal(nameof(Inventory.InventoryChanged));
             
         }
 
@@ -116,43 +116,43 @@ public partial class EquippedItem : Node2D
 // ITEM USES
 
    /*void FOOD(){
-       ItemClass_Food foodItem = (ItemClass_Food)item;
+       Food foodItem = (Food)item;
        GD.Print("Ate ",foodItem.ITEM_NAME, ". +",foodItem.HEALTH_RESTORED,"hp");
        foodItem.DecQuant();
    }
 
     void ARMOR(){
-        ItemClass armorItem = (ItemClass)item; //Make armor class!
+        Item armorItem = (Item)item; //Make armor class!
 
    }
 
    void WEAPON(){
-        ItemClass_Weapon weaponItem = (ItemClass_Weapon)item;
+        Weapon weaponItem = (Weapon)item;
         GD.Print(weaponItem.ITEM_NAME);
    }
 
    void TOOL(){
-        ItemClass_Tool toolItem = (ItemClass_Tool)item;
+        Tool toolItem = (Tool)item;
         GD.Print(toolItem.ITEM_NAME);
    }
 
    void CONSUBLE(){
-        ItemClass consumableItem = (ItemClass)item; //Make consumable class!
+        Item consumableItem = (Item)item; //Make consumable class!
         GD.Print(consumableItem.ITEM_NAME);
    }
 
    void MATERIAL(){
-        ItemClass materialItem = (ItemClass)item; //Make material class!
+        Item materialItem = (Item)item; //Make material class!
         GD.Print(materialItem.ITEM_NAME);
    }
 
    void MISC(){
-        ItemClass miscItem = (ItemClass)item; //Make material class!
+        Item miscItem = (Item)item; //Make material class!
         GD.Print(miscItem.ITEM_NAME);
    }
 
    void SEED(){
-        ItemClass_Seed seedItem = (ItemClass_Seed)item;
+        Seed seedItem = (Seed)item;
 
         if (seedItem.HasMethod("Plant")){
             seedItem.Call("Plant",GlobalPosition);

@@ -8,12 +8,12 @@ using System.IO;
 public partial class ExternalInventorySlot : Panel
 {
     [Signal]
-    public delegate  void SlotClickedEventHandler(ItemClass item);
+    public delegate  void SlotClickedEventHandler(Item item);
     private TextureRect itemTexture;
     private Label label;
     private RichTextLabel richTextLabel;
     private GameManager gameManager;
-    private ItemClass thisItem;   
+    private Item thisItem;   
     public int index;
     private int originIndex;
     private ExternalInventory externalInventory;
@@ -74,7 +74,7 @@ public partial class ExternalInventorySlot : Panel
 
     /*public override bool _CanDropData(Vector2 atPosition, Variant data)
     {   
-        ItemClass dropItem = (ItemClass)data;
+        Item dropItem = (Item)data;
         if (thisItem == null || dropItem.ITEM_ID == thisItem.ITEM_ID){
             return true;
         }
@@ -85,12 +85,12 @@ public partial class ExternalInventorySlot : Panel
 
     public override void _DropData(Vector2 atPosition, Variant data)
     {
-        ItemClass dropItem = (ItemClass)data;
+        Item dropItem = (Item)data;
         externalInventory.AddItem(dropItem, dropItem.ITEM_QUANTITY);
     }*/
 
-    //Updates the invventory visuals. Usually called from InventoryScript.
-    public void Update(ItemClass item){
+    //Updates the invventory visuals. Usually called from InventoryUi.
+    public void Update(Item item){
         thisItem = item.Copy();
         itemTexture.Texture = item.ITEM_TEXTURE;
         richTextLabel.Text = item.HOVER_TEXT;

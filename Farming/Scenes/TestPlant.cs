@@ -12,7 +12,7 @@ public enum PlantState {
 public partial class TestPlant : Node2D
 {
     [Export]
-    ItemClass yeld;
+    Item yeld;
     Timer growTimer;
     Timer dryTimer;
     Timer fruitTimer;
@@ -20,7 +20,7 @@ public partial class TestPlant : Node2D
     public PlantState state;
     InteractionArea interactionArea;
     player nearestPlayer;
-    InventoryClass playerInventory;
+    Inventory playerInventory;
     TileMap tileMap;
     GameManager gameManager;
 
@@ -36,7 +36,7 @@ public partial class TestPlant : Node2D
         interactionArea.actionName = "HARVEST";
         state = PlantState.seed;
         interactionArea.PlayerEntered += GetPlayer;
-        playerInventory = GD.Load<InventoryClass>("res://Player/PlayerInventory.tres");
+        playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
         tileMap = GetParent<TileMap>();
         interactionArea.Monitoring = false;
         gameManager.PlantWatered += WaterPlant;

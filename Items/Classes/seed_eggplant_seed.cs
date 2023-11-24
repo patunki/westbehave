@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class seed_eggplant_seed : ItemClass_Seed
+public partial class seed_eggplant_seed : Seed
 {
     GameManager gameManager;
     TileMap tileMap;

@@ -1,14 +1,14 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://c2ny56p74de4q"]
 
-[ext_resource type="Script" path="res://Items/Classes/ItemClass_Food.cs" id="1_7v2w2"]
 [ext_resource type="Texture2D" uid="uid://dh1tbtmge2pdi" path="res://Art/zombiemeat.png" id="1_clam0"]
+[ext_resource type="Script" path="res://Items/Classes/Food.cs" id="2_mtni8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02gns"]
 atlas = ExtResource("1_clam0")
 region = Rect2(32.7273, 16.1614, 25.5397, 25.4045)
 
 [resource]
-script = ExtResource("1_7v2w2")
+script = ExtResource("2_mtni8")
 HEALTH_RESTORED = 1
 ITEM_NAME = "Zombie meat"
 ITEM_ID = 1

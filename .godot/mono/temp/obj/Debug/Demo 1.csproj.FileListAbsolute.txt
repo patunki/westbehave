@@ -134,3 +134,20 @@
 /home/paulus/godotProjects/westbehave_dev5/.godot/mono/temp/obj/Debug/Demo 1.pdb
 /home/paulus/godotProjects/westbehave_dev5/.godot/mono/temp/obj/Debug/Demo 1.genruntimeconfig.cache
 /home/paulus/godotProjects/westbehave_dev5/.godot/mono/temp/obj/Debug/ref/Demo 1.dll
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/bin/Debug/Demo 1.deps.json
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/bin/Debug/Demo 1.runtimeconfig.json
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/bin/Debug/Demo 1.dll
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/bin/Debug/Demo 1.pdb
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/bin/Debug/GodotSharp.dll
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.csproj.AssemblyReference.cache
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.GeneratedMSBuildEditorConfig.editorconfig
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.AssemblyInfoInputs.cache
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.AssemblyInfo.cs
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.csproj.CoreCompileInputs.cache
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.csproj.CopyComplete
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.dll
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/refint/Demo 1.dll
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.pdb
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/Demo 1.genruntimeconfig.cache
+/home/paulus/godotProjects/TryFixItemClass/.godot/mono/temp/obj/Debug/ref/Demo 1.dll

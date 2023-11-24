@@ -1,11 +1,11 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://cb04s8ge5cvob"]
 
 [ext_resource type="Texture2D" uid="uid://nkwiw25vbbgi" path="res://Art/pixil-frame-0.png" id="1_8rsge"]
-[ext_resource type="Script" path="res://Items/Classes/ItemClass_Food.cs" id="1_omhur"]
+[ext_resource type="Script" path="res://Items/Classes/Food.cs" id="2_fg0bk"]
 
 [resource]
 resource_local_to_scene = true
-script = ExtResource("1_omhur")
+script = ExtResource("2_fg0bk")
 HEALTH_RESTORED = 1
 ITEM_NAME = "Apple"
 ITEM_ID = 3
