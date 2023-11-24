@@ -116,7 +116,7 @@ public partial class EquippedItem : Node2D
 // ITEM USES
 
    /*void FOOD(){
-       Item_Food foodItem = (Item_Food)item;
+       Food foodItem = (Food)item;
        GD.Print("Ate ",foodItem.ITEM_NAME, ". +",foodItem.HEALTH_RESTORED,"hp");
        foodItem.DecQuant();
    }
@@ -127,12 +127,12 @@ public partial class EquippedItem : Node2D
    }
 
    void WEAPON(){
-        Item_Weapon weaponItem = (Item_Weapon)item;
+        Weapon weaponItem = (Weapon)item;
         GD.Print(weaponItem.ITEM_NAME);
    }
 
    void TOOL(){
-        Item_Tool toolItem = (Item_Tool)item;
+        Tool toolItem = (Tool)item;
         GD.Print(toolItem.ITEM_NAME);
    }
 
@@ -152,7 +152,7 @@ public partial class EquippedItem : Node2D
    }
 
    void SEED(){
-        Item_Seed seedItem = (Item_Seed)item;
+        Seed seedItem = (Seed)item;
 
         if (seedItem.HasMethod("Plant")){
             seedItem.Call("Plant",GlobalPosition);

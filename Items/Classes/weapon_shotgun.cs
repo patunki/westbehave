@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class weapon_shotgun : Item_Weapon
+public partial class weapon_shotgun : Weapon
 {
     public void Shoot(){
         

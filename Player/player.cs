@@ -60,8 +60,8 @@ public partial class player : CharacterBody2D
 		//temporary shooting logiv.
 		/*if (Input.IsActionJustPressed("attack")){
 			Item hand = playerInventory.InventoryItems[0];
-			if (hand is Item_Weapon){
-				Item_Weapon handWep = (Item_Weapon)hand;
+			if (hand is Weapon){
+				Weapon handWep = (Weapon)hand;
 				PackedScene bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
 				var instance = bullet.Instantiate();
 				var barrel = GetNode<Marker2D>("PlayerSprite/Marker2D");

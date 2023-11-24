@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class tool_watering_can : Item_Tool
+public partial class tool_watering_can : Tool
 {
     [Export]
     float waterLevel = 1;

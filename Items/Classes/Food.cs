@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections;
 
-public partial class Item_Food : Item
+public partial class Food : Item
 {
     [Export]
     public int HEALTH_RESTORED = 1;

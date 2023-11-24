@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Linq;
 
-public partial class tool_hoe : Item_Tool
+public partial class tool_hoe : Tool
 {
     GameManager gameManager;
     TileMap tileMap;

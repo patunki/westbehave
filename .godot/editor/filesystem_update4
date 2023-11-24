@@ -59,3 +59,7 @@ res://StateMachine/States/State.cs
 res://Database/ItemDB.json
 res://Player/PlayerInventory/Inventory.cs
 res://Player/PlayerInventory/InventoryUi.cs
+res://Items/Classes/Food.cs
+res://Items/Classes/Seed.cs
+res://Items/Classes/Tool.cs
+res://Items/Classes/Weapon.cs

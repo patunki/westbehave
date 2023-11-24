@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=4 format=3 uid="uid://c2ny56p74de4q"]
 
 [ext_resource type="Texture2D" uid="uid://dh1tbtmge2pdi" path="res://Art/zombiemeat.png" id="1_clam0"]
-[ext_resource type="Script" path="res://Items/Classes/Item_Food.cs" id="2_mtni8"]
+[ext_resource type="Script" path="res://Items/Classes/Food.cs" id="2_mtni8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_02gns"]
 atlas = ExtResource("1_clam0")
