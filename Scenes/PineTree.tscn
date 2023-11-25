@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3uoupuv02r8n"]
+[gd_scene load_steps=17 format=3 uid="uid://c3uoupuv02r8n"]
 
-[ext_resource type="Script" path="res://Scripts/Tree.cs" id="1_lhbdu"]
+[ext_resource type="Script" path="res://Scripts/PineTree.cs" id="1_08d1i"]
 [ext_resource type="Texture2D" uid="uid://b2nu5iw8i1dv1" path="res://Art/puita.png" id="1_y0vp5"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="2_dlng4"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="3_qt8dn"]
+[ext_resource type="Texture2D" uid="uid://d1ehp8yqasrmc" path="res://Art/puunkaatoanimaatio-Sheet.png" id="3_wr28d"]
 [ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="5_sv10v"]
 [ext_resource type="Texture2D" uid="uid://5elr7hmnaqcx" path="res://Art/sprite_vihannekset.png" id="6_fokdq"]
 [ext_resource type="Script" path="res://Items/Classes/Food.cs" id="7_wlo7t"]
@@ -13,7 +14,7 @@ atlas = ExtResource("1_y0vp5")
 region = Rect2(9.13542, 24.5585, 82.699, 88.2123)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxcpm"]
-size = Vector2(7, 11.5)
+size = Vector2(7, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sti3v"]
 size = Vector2(7, 14)
@@ -24,7 +25,8 @@ region = Rect2(47.449, 46.6195, 26.3331, 28.1764)
 
 [sub_resource type="Resource" id="Resource_iimtm"]
 script = ExtResource("7_wlo7t")
-HEALTH_RESTORED = 1
+FoodValue = 0
+WaterValue = 0
 ITEM_NAME = "Eggplant"
 ITEM_ID = 6
 CustomResourcePath = "res://Items/Repo/food_eggplant.tres"
@@ -34,10 +36,97 @@ HOVER_TEXT = "A tasty eggplant"
 ITEM_QUANTITY = 3
 MAX_STACK = 10
 ITEM_TYPE = 0
-useName = "eat"
+Action = ""
+DevNotes = ""
+
+[sub_resource type="Animation" id="Animation_j5evc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TreeTexture:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TreeFalling:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TreeFalling:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_7wq0q"]
+resource_name = "PineFall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TreeTexture:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TreeFalling:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TreeFalling:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qfrt0"]
+_data = {
+"PineFall": SubResource("Animation_7wq0q"),
+"RESET": SubResource("Animation_j5evc")
+}
 
 [node name="PineTree" type="StaticBody2D"]
-script = ExtResource("1_lhbdu")
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_08d1i")
 
 [node name="TreeTexture" type="TextureRect" parent="."]
 offset_left = -48.0
@@ -47,9 +136,15 @@ offset_bottom = 4.0
 texture = SubResource("AtlasTexture_wplth")
 metadata/_edit_use_anchors_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="TreeFalling" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-0.5, -3.25)
+position = Vector2(-59.0234, -66.875)
+scale = Vector2(1.32998, 1.45573)
+texture = ExtResource("3_wr28d")
+hframes = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -1.5)
 shape = SubResource("RectangleShape2D_vxcpm")
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("2_dlng4")]
@@ -64,5 +159,10 @@ shape = SubResource("RectangleShape2D_sti3v")
 
 [node name="LootComponent" parent="." instance=ExtResource("5_sv10v")]
 ItemsToDrop = Array[Resource]([SubResource("Resource_iimtm")])
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qfrt0")
+}
 
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

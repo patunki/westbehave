@@ -4,7 +4,7 @@ using System;
 public partial class tool_watering_can : Tool
 {
     [Export]
-    float waterLevel = 1;
+    public float waterLevel = 1;
     GameManager gameManager;
     TileMap tileMap;
     [Export]
@@ -24,7 +24,7 @@ public partial class tool_watering_can : Tool
         tileMap = _tileMap;
     }
 
-    public void Water(Vector2 globalPosition){
+    public bool Water(Vector2 globalPosition){
         var tilePos = tileMap.LocalToMap(globalPosition);
         int flowerLayer = 4;
         var hasPlant = tileMap.GetCellAlternativeTile(flowerLayer,tilePos);
@@ -42,11 +42,13 @@ public partial class tool_watering_can : Tool
                 else {
                     ITEM_TEXTURE = textureFull;
                 }
+                return true;
             }
-
+            
         }
-
+        
         GD.Print(waterLevel);
+        return false;
     }
 }
 //hasplantistä id ja korditaaleilla ehkä pystyy kutsua methodin

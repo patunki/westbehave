@@ -11,9 +11,10 @@ public partial class EquippedItem : Node2D
     Attack attack;
     player _player;
     Marker2D barrel;
-    Node2D node2D;
+    Node2D radius;
     PackedScene bullet;
-
+    Sprite2D anims;
+    HungerComponent hungerComponent;
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
     {   
@@ -21,9 +22,11 @@ public partial class EquippedItem : Node2D
         textureRect = GetNode<TextureRect>("TextureRect");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         _player = (player)GetParent();
-        barrel = GetNode<Marker2D>("Node2D/Marker2D");
-        node2D = GetNode<Node2D>("Node2D");
+        barrel = GetNode<Marker2D>("Radius/Marker2D");
+        radius = GetNode<Node2D>("Radius");
         bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+        anims = GetNode<Sprite2D>("Anims");
+        hungerComponent = GetNode<HungerComponent>("%HungerComponent");
 
     }
 
@@ -37,11 +40,13 @@ public partial class EquippedItem : Node2D
         }
         if (_player.heading == new Vector2(-1,0)){
             textureRect.Scale = new Vector2(-1,1);
+            anims.Scale = new Vector2(-1,1);
         }
 		if (_player.heading == new Vector2(1,0)){
 			textureRect.Scale = new Vector2(1,1);
+            anims.Scale = new Vector2(1,1);
 		}
-        node2D.LookAt(GetGlobalMousePosition());
+        radius.LookAt(GetGlobalMousePosition());
         
         
 
@@ -95,20 +100,25 @@ public partial class EquippedItem : Node2D
 
 
     void OnItemInteract(){
-       ItemType itemType = item.ITEM_TYPE;
-       string method = item.useName;
+       //ItemType itemType = item.ITEM_TYPE;
+       //string method = item.Action;
        if (item.HasMethod("Plant")){
             item.Call("Plant",GlobalPosition);
        }
        if (item.HasMethod("Plough")){
             item.Call("Plough",GlobalPosition);
        }
-       if (item.HasMethod("Eat")){
-            item.Call("Eat");
+       if (item.ITEM_TYPE == ItemType.FOOD){
+            Food food = (Food)item;
+            hungerComponent.FoodAdd(food.Eat());
+            hungerComponent.WaterAdd(food.Drink());
        }
        if (item.HasMethod("Water")){
-            item.Call("Water",GlobalPosition);
-            animationPlayer.Play("kastelu");
+            tool_watering_can can = (tool_watering_can)item;
+
+            if (can.Water(GlobalPosition)){
+                animationPlayer.Play("Water");
+            }
 
        }
        if (item.HasMethod("Shoot")){
@@ -122,7 +132,7 @@ public partial class EquippedItem : Node2D
        if (item is tool_axe){
             tool_axe axe = (tool_axe)item;
             attack = axe.Attack();
-            animationPlayer.Play("hit");
+            animationPlayer.Play("AxeHit");
 
        }
        
@@ -130,7 +140,12 @@ public partial class EquippedItem : Node2D
     }
     void _on_hit_area_entered(Area2D area){
         if (area is HurtBoxComponent){
-            area.CallDeferred("Damage",attack);
+            if (area.GetParent() is Tree){
+                area.CallDeferred("Hit",attack);
+            }
+            else {
+                area.CallDeferred("Damage",attack);
+            }
         }
 
     }

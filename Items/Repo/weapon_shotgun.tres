@@ -15,4 +15,5 @@ HOVER_TEXT = "shotgun"
 ITEM_QUANTITY = 1
 MAX_STACK = 1
 ITEM_TYPE = 1
-useName = "Shoot"
+Action = "Shoot"
+DevNotes = "Also expects a bullet as an exported PackedScene."

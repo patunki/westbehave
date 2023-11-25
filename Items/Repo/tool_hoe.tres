@@ -14,4 +14,5 @@ HOVER_TEXT = "A useful tool"
 ITEM_QUANTITY = 1
 MAX_STACK = 1
 ITEM_TYPE = 3
-useName = "Plough"
+Action = "Plough"
+DevNotes = ""

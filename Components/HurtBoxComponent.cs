@@ -7,8 +7,13 @@ public partial class HurtBoxComponent : Area2D
     public HealthComponent healthComponent;
 
     public void Damage(Attack attack){
+        if (GetParent() is not Tree){
+            
+            healthComponent.Damage(attack);
         
-        healthComponent.Damage(attack);
+        
+        
+        }
     }
     public void Hit(Attack attack){
         if (GetParent() is Tree && attack.attackType == AttackType.axe){

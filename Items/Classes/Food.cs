@@ -5,10 +5,16 @@ using System.Collections;
 public partial class Food : Item
 {
     [Export]
-    public int HEALTH_RESTORED = 1;
+    public int FoodValue;
+    [Export]
+    public int WaterValue;
 
-    public void Eat(){
+    public int Eat(){
         DecQuant();
+        return FoodValue;
+    }
+    public int Drink(){
+        return WaterValue;
     }
     
 }

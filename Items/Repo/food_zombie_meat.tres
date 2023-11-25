@@ -9,7 +9,8 @@ region = Rect2(32.7273, 16.1614, 25.5397, 25.4045)
 
 [resource]
 script = ExtResource("2_mtni8")
-HEALTH_RESTORED = 1
+FoodValue = 0
+WaterValue = 0
 ITEM_NAME = "Zombie meat"
 ITEM_ID = 1
 CustomResourcePath = "res://Items/Repo/food_zombie_meat.tres"
@@ -19,4 +20,5 @@ HOVER_TEXT = "Some Tasty Meat"
 ITEM_QUANTITY = 1
 MAX_STACK = 1
 ITEM_TYPE = 0
-useName = "eat"
+Action = "Eat"
+DevNotes = ""

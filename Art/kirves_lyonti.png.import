@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqvi8g480x8s4"
-path="res://.godot/imported/ZombieToast.png-3ef13bc38fcbc771e59ea496e273bfd9.ctex"
+uid="uid://on3ypu4m41ut"
+path="res://.godot/imported/kirves_lyonti.png-c36873fea6ed3bacc90c337bfde71938.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/ZombieToast.png"
-dest_files=["res://.godot/imported/ZombieToast.png-3ef13bc38fcbc771e59ea496e273bfd9.ctex"]
+source_file="res://Art/kirves_lyonti.png"
+dest_files=["res://.godot/imported/kirves_lyonti.png-c36873fea6ed3bacc90c337bfde71938.ctex"]
 
 [params]
 

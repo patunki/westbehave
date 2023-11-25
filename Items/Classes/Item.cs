@@ -39,7 +39,9 @@ public partial class Item : Resource
     [Export]
     public ItemType ITEM_TYPE = ItemType.MISC;
     [Export]
-    public string useName;
+    public string Action;
+    [Export(PropertyHint.MultilineText)]
+    public String DevNotes {get; set;}
      
     public Item Copy() => MemberwiseClone() as Item;
 

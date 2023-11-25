@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ccda2w28vbop1"]
+
+[ext_resource type="Texture2D" uid="uid://on3ypu4m41ut" path="res://Art/kirves_lyonti.png" id="1_5w6lm"]
+
+[node name="AxeHitAnim" type="Sprite2D"]
+texture = ExtResource("1_5w6lm")
+hframes = 5

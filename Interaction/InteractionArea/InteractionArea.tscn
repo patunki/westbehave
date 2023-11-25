@@ -4,7 +4,6 @@
 
 [node name="InteractionArea" type="Area2D"]
 collision_layer = 0
-collision_mask = 2
 script = ExtResource("1_wusy6")
 actionName = "INTERACT"
 

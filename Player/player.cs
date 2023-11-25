@@ -27,7 +27,9 @@ public partial class player : CharacterBody2D
 
 	}
 
-
+	void _on_health_component_health_depleted(){
+		GD.Print("ded");
+	}
 	
 
 	public void GetInput(){

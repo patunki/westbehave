@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3a33l0m35j4c"
-path="res://.godot/imported/GreatAxe.png-9a2956145ca99043d13eac9390b48c41.ctex"
+uid="uid://d1ehp8yqasrmc"
+path="res://.godot/imported/puunkaatoanimaatio-Sheet.png-cb267a02797a2b342a434bc178b6f124.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/GreatAxe.png"
-dest_files=["res://.godot/imported/GreatAxe.png-9a2956145ca99043d13eac9390b48c41.ctex"]
+source_file="res://Art/puunkaatoanimaatio-Sheet.png"
+dest_files=["res://.godot/imported/puunkaatoanimaatio-Sheet.png-cb267a02797a2b342a434bc178b6f124.ctex"]
 
 [params]
 

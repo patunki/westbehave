@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://g6l7jxs5evta"
+
+[deps]
+
+files=["res://Database/CSV/ItemDB.ITEM.translation", "res://Database/CSV/ItemDB.RESOURCE.translation", "res://Database/CSV/ItemDB.IS.translation", "res://Database/CSV/ItemDB.HOVER.translation", "res://Database/CSV/ItemDB.ITEM.translation", "res://Database/CSV/ItemDB.MAX.translation", "res://Database/CSV/ItemDB.ITEM.translation", "res://Database/CSV/ItemDB.Dev nodes.translation"]
+
+source_file="res://Database/CSV/ItemDB.csv"
+dest_files=["res://Database/CSV/ItemDB.ITEM.translation", "res://Database/CSV/ItemDB.RESOURCE.translation", "res://Database/CSV/ItemDB.IS.translation", "res://Database/CSV/ItemDB.HOVER.translation", "res://Database/CSV/ItemDB.ITEM.translation", "res://Database/CSV/ItemDB.MAX.translation", "res://Database/CSV/ItemDB.ITEM.translation", "res://Database/CSV/ItemDB.Dev nodes.translation"]
+
+[params]
+
+compress=true
+delimiter=0

@@ -1,0 +1,10 @@
+ITEM_ID,ITEM_NAME,RESOURCE,IS_STACKABLE,HOVER_TEXT,ITEM_QUANTITY,MAX_SACK,ITEM_TYPE,Dev nodes
+5,Eggplant seed,res://Items/Repo/seed_eggplant_seed.tres,true,Can be used to plant eggplants.,1,19,SEED,
+2,Cooked meat,res://Items/Repo/food_cooked_meat.tres,true,Cooked meat you can eat,1,5,FOOD,
+1,Zombie meat,res://Items/Repo/food_zombie_meat.tres,true,Some Tasty Meat,1,1,FOOD,
+6,Eggplant,res://Items/Repo/food_eggplant.tres,true,A tasty eggplant,1,10,FOOD,
+9,Axe,res://Items/Repo/tool_hoe.tres,false,axe,1,1,TOOL,
+4,Shotgun,res://Items/Repo/weapon_shotgun.tres,false,shotgun,1,1,WEAPON,Also expects a bullet as an exported PackedScene.
+8,Watering can,res://Items/Repo/tool_watering_can.tres,false,Kastelukannu,1,1,TOOL,
+3,Apple,res://Items/Repo/food_apple.tres,true,A nice looking apple,1,10,FOOD,
+7,Hoe,res://Items/Repo/tool_hoe.tres,false,A useful tool,1,1,TOOL,

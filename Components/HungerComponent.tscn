@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bw7uui5vfbhud"]
+
+[ext_resource type="Script" path="res://Components/HungerComponent.cs" id="1_s8e2x"]
+
+[node name="HungerComponent" type="Node2D"]
+script = ExtResource("1_s8e2x")
+
+[node name="HungerTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="ThirstTimer" type="Timer" parent="."]
+autostart = true

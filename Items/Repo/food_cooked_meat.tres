@@ -9,7 +9,8 @@ region = Rect2(65.2162, 22.8523, 26.7558, 18.2426)
 
 [resource]
 script = ExtResource("2_sfvg2")
-HEALTH_RESTORED = 1
+FoodValue = 40
+WaterValue = 20
 ITEM_NAME = "Cooked meat"
 ITEM_ID = 2
 CustomResourcePath = "res://Items/Repo/food_cooked_meat.tres"
@@ -19,4 +20,5 @@ HOVER_TEXT = "Cooked meat you can eat"
 ITEM_QUANTITY = 1
 MAX_STACK = 5
 ITEM_TYPE = 0
-useName = "eat"
+Action = "Eat"
+DevNotes = ""

@@ -64,3 +64,18 @@ res://StateMachine/States/State.cs
 res://Database/ItemDB.json
 res://Scenes/House1.tscn
 res://Scenes/PineTree2.tscn
+res://Items/Repo/seed_eggplant_seed.tres
+res://Items/Repo/tool_axe.tres
+res://Items/Repo/weapon_shotgun.tres
+res://Database/ItemDB.ITEM.translation
+res://Database/CSV/ItemDB.ITEM.translation
+res://Scripts/PineTree.cs
+res://Database/CSV/ItemDB.RESOURCE.translation
+res://Database/CSV/ItemDB.IS.translation
+res://Database/CSV/ItemDB.HOVER.translation
+res://Database/CSV/ItemDB.MAX.translation
+res://Database/CSV/ItemDB.Dev nodes.translation
+res://Items/Animations/AxeHitAnim.tscn
+res://Components/HungerComponent.cs
+res://Components/HungerComponent.tscn
+res://Interaction/InteractionArea/InteractionArea.tscn

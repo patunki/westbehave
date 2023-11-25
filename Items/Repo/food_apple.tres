@@ -5,8 +5,10 @@
 
 [resource]
 resource_local_to_scene = true
+resource_name = "Eat"
 script = ExtResource("2_fg0bk")
-HEALTH_RESTORED = 1
+FoodValue = 10
+WaterValue = 2
 ITEM_NAME = "Apple"
 ITEM_ID = 3
 CustomResourcePath = "res://Items/Repo/food_apple.tres"
@@ -16,4 +18,5 @@ HOVER_TEXT = "A nice looking apple"
 ITEM_QUANTITY = 1
 MAX_STACK = 10
 ITEM_TYPE = 0
-useName = "eat"
+Action = ""
+DevNotes = ""

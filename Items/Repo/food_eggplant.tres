@@ -9,7 +9,8 @@ region = Rect2(47.449, 46.6195, 26.3331, 28.1764)
 
 [resource]
 script = ExtResource("2_10d4s")
-HEALTH_RESTORED = 1
+FoodValue = 10
+WaterValue = 5
 ITEM_NAME = "Eggplant"
 ITEM_ID = 6
 CustomResourcePath = "res://Items/Repo/food_eggplant.tres"
@@ -19,4 +20,5 @@ HOVER_TEXT = "A tasty eggplant"
 ITEM_QUANTITY = 1
 MAX_STACK = 10
 ITEM_TYPE = 0
-useName = "eat"
+Action = "Eat"
+DevNotes = ""
