@@ -61,5 +61,6 @@ res://Scripts/Tree.cs
 res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
-res://Items/Repo/tool_axe.tres
 res://Database/ItemDB.json
+res://Scenes/House1.tscn
+res://Scenes/PineTree2.tscn

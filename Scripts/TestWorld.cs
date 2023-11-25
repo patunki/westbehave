@@ -5,6 +5,6 @@ public partial class TestWorld : Node2D
 {   
 
     public void _on_area_2d_body_entered(Node2D body){
-        GetTree().ChangeSceneToFile("res://Levels/Game.tscn");
+        GetTree().ChangeSceneToFile("res://Game/Game.tscn");
     }
 }
