@@ -17,16 +17,16 @@ public partial class ItemDatabase : Node
     {   
         string folderPath = "Items/Repo/";
         LoadItems(folderPath);
-        //Recipes[resultItem] = requiredItems;
-        //AddCraftingRecipe("Sword", new List<string> { "Iron Ingot", "Wood" });
+        //CRAFTING RECEPIES
         Recipes[1] = new List<string>{"Apple","Eggplant"};
         Recipes[2] = new List<string>{"Apple","Eggplant seed"};
+        Recipes[9] = new List<string>{"Apple","Eggplant seed","Cooked meat"};
 
 
-        Recipes.TryGetValue(1, out var ingerdients);
-        foreach (string ingredient in ingerdients){
-            GD.Print(ingredient);
-        }
+        //Recipes.TryGetValue(1, out var ingerdients);
+        //foreach (string ingredient in ingerdients){
+        //    GD.Print(ingredient);
+        //}
         
     }
 

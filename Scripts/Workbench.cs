@@ -8,7 +8,7 @@ public partial class Workbench : StaticBody2D
     ItemDatabase itemDatabase;
     ItemList itemList;
     Button button;
-    Item testItem;
+    Item itemToCraft;
     int testInput;
 
     public override void _Ready()
@@ -23,10 +23,12 @@ public partial class Workbench : StaticBody2D
         button.Hide();
         interactionArea.BodyExited += Close;
         foreach (Item item in itemDatabase.itemDatabase){
-            itemList.AddItem(item.ITEM_NAME,item.ITEM_TEXTURE,true);
+            if (item.IS_Crafteble){
+                itemList.AddItem(item.ITEM_NAME,item.ITEM_TEXTURE,true);
+            }
         }
-        testInput = 2;
-        testItem = itemDatabase.GetItem(testInput);
+        testInput = 9;
+        itemToCraft = itemDatabase.GetItem(testInput);
         
 
     }
@@ -44,7 +46,7 @@ public partial class Workbench : StaticBody2D
     }
     public void CraftItem(){
         if (CanCraft(testInput)){
-            playerInventory.AddItem(testItem,1);
+            playerInventory.AddItem(itemToCraft,1);
         }
         
     }
@@ -56,22 +58,30 @@ public partial class Workbench : StaticBody2D
             need = ingredients.Count;
             foreach(Item item in playerInventory.InventoryItems){
                 foreach(string ingerdient in ingredients){
-                    if (item != null && item.ITEM_NAME == ingerdient){
+                    if (item != null && item.ITEM_NAME == ingerdient && item.ITEM_QUANTITY > 0){
                         has++;
                     }
                 }   
             }
         }
         else {
-            GD.Print("ei löäyty");
+            GD.Print("Itemiä ei löydu databasesta");
             return false;
         }
-        if (has < need){
-            GD.Print("ei oo tarpeeksi");
+        if (has < need || itemToCraft.IS_Crafteble == false){
+            GD.Print("ei oo tarpeeksi tai ei voi kräftää");
             return false;
         }
         else {
-            GD.Print("on tarpeeksi");
+            GD.Print("viedään maksu");
+            foreach(Item item in playerInventory.InventoryItems){
+                foreach(string ingerdient in ingredients){
+                    if (item != null && item.ITEM_NAME == ingerdient){
+                        item.DecQuant();
+                        playerInventory.NullItemCheck();
+                    }
+                }   
+            }
             return true;
         }
         

@@ -30,6 +30,8 @@ public partial class Item : Resource
     public Texture2D ITEM_TEXTURE {get; set;}
     [Export]
     public Boolean IS_STACKABLE {get; set;}
+    [Export]
+    public Boolean IS_Crafteble {get; set;}
     [Export(PropertyHint.MultilineText)]
     public String HOVER_TEXT {get; set;}
     [Export]

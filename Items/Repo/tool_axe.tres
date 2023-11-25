@@ -9,13 +9,12 @@ region = Rect2(31.036, 31.0362, 33.9278, 32.0001)
 
 [resource]
 script = ExtResource("2_5oxp3")
-animSprite = Object(Sprite2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(0, 0),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"texture":ExtResource("1_rhkju"),"centered":true,"offset":Vector2(0, 0),"flip_h":false,"flip_v":false,"hframes":5,"vframes":1,"frame":0,"region_enabled":false,"region_rect":Rect2(0, 0, 0, 0),"region_filter_clip_enabled":false,"script":null)
-
 ITEM_NAME = "Axe"
 ITEM_ID = 9
 CustomResourcePath = "res://Items/Repo/tool_hoe.tres"
 ITEM_TEXTURE = SubResource("AtlasTexture_y6ex2")
 IS_STACKABLE = false
+IS_Crafteble = true
 HOVER_TEXT = "axe"
 ITEM_QUANTITY = 1
 MAX_STACK = 1
