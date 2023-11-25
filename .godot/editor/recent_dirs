@@ -1,7 +1,8 @@
-res://Components
+/home/paulus/godotProjects/westbehave/Database/
 res://Scripts
-res://Scenes
 res://Scenes/
+res://Components
+res://Scenes
 res://Items/Repo/
 res://Game
 res://
@@ -14,7 +15,6 @@ res://Farming/Scenes
 res://Managers
 res://Iventory/Classes
 res://Iventory
-/home/paulus/godotProjects/trynewinv/Iventory/Classes
 res://StateMachine
 res://Interaction
 res://Items/Classes

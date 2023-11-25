@@ -12,14 +12,24 @@ public partial class ItemDatabase : Node
 
     public Godot.Collections.Array<Item> itemDatabase = new Godot.Collections.Array<Item>();
     public Godot.Collections.Dictionary<int, Item> dictionary = new Godot.Collections.Dictionary<int, Item>();
-    string csvPath = "Database/ItemDB.csv";
+    public Dictionary<int, List<string>> Recipes = new Dictionary<int, List<string>>();
     public override void _Ready()
     {   
-        string folderPath = "Items/Repo/"; //should be "res://Items/Repo/"? FIX THIS?
+        string folderPath = "Items/Repo/";
         LoadItems(folderPath);
-        
+        //Recipes[resultItem] = requiredItems;
+        //AddCraftingRecipe("Sword", new List<string> { "Iron Ingot", "Wood" });
+        Recipes[1] = new List<string>{"Apple","Eggplant"};
+        Recipes[2] = new List<string>{"Apple","Eggplant seed"};
+
+
+        Recipes.TryGetValue(1, out var ingerdients);
+        foreach (string ingredient in ingerdients){
+            GD.Print(ingredient);
+        }
         
     }
+
 
     public void LoadItems(string folderPath){
         string[] files = Directory.GetFiles(folderPath, "*.tres");
@@ -33,9 +43,11 @@ public partial class ItemDatabase : Node
     public Item GetItem(int id){
         for (int i = 0; i < itemDatabase.Count; i++){
             if (itemDatabase[i] != null && itemDatabase[i].ITEM_ID == id){
+                GD.Print("Itemi löytyy databasessa");
                 return itemDatabase[i];
             }
         }
+        GD.Print("itemiä ei databasessa");
         return null;
     }
 
@@ -132,5 +144,6 @@ public partial class ItemDatabase : Node
         return keys;
     }
 
+    
 
 }

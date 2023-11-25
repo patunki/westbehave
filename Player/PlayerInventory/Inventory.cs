@@ -16,7 +16,7 @@ public partial class Inventory : Resource
 
     //Checks if you have the item and can stack it, if not puts it in the first free spot;
     public bool AddItem(Item itemog, int quant){
-        Item item = (Item)itemog.Duplicate();
+        Item item = (Item)itemog.Duplicate(true);
         EmitSignal(SignalName.InventoryChanged);
         GD.Print("Add item called ",item.ITEM_NAME, " quant: ",quant);
         bool hasItem = CheckSame(item, quant);

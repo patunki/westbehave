@@ -42,7 +42,7 @@ public partial class Item : Resource
     public string Action;
     [Export(PropertyHint.MultilineText)]
     public String DevNotes {get; set;}
-     
+    
     public Item Copy() => MemberwiseClone() as Item;
 
     public void AddQuant(int quant){

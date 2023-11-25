@@ -79,3 +79,5 @@ res://Items/Animations/AxeHitAnim.tscn
 res://Components/HungerComponent.cs
 res://Components/HungerComponent.tscn
 res://Interaction/InteractionArea/InteractionArea.tscn
+res://Scenes/Workbench.tscn
+res://Scripts/Workbench.cs

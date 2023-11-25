@@ -69,8 +69,8 @@ public partial class ExternalInventory : Control
 
 	}
 
-	public bool AddItem(Item item, int quant){
-        
+	public bool AddItem(Item itemog, int quant){
+        Item item = (Item)itemog.Duplicate(true);
         GD.Print("Add item called ",item.ITEM_NAME, " quant: ",quant);
         bool hasItem = CheckSame(item, quant);
         if (!hasItem){
