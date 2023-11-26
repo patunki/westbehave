@@ -21,3 +21,5 @@ MAX_STACK = 1
 ITEM_TYPE = 3
 Action = "Hit"
 DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""

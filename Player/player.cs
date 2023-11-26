@@ -9,12 +9,18 @@ public partial class player : CharacterBody2D
 {	
 	[Export]
 	public int moveSpeed { get; set; } = 150;
+	Item equipItem;
 	public Vector2 heading;
 	public Sprite2D sprite;
 	private ItemDatabase itemDatabase;
 	private GameManager gameManager;
 	private AnimationPlayer animationPlayer;
 	private string spritePath = "PlayerSprite";
+	Inventory inventory;
+
+
+	PackedScene itemScene;
+	Node2D itemInstance;
 	
 
 
@@ -24,6 +30,35 @@ public partial class player : CharacterBody2D
 		gameManager = GetNode<GameManager>("/root/GameManager");
 		animationPlayer = GetNode<AnimationPlayer>("PlayerSprite/AnimationPlayer");
 		animationPlayer.Play("IdleAnimation");
+		inventory = GD.Load("res://Player/PlayerInventory.tres") as Inventory;
+		inventory.InventoryChanged += UpdateItem;
+	}
+
+	void UpdateItem(){
+		if (inventory.InventoryItems[15] == null){
+			equipItem = null;
+			if (IsInstanceValid(itemInstance)){
+				itemInstance.QueueFree();
+			}	
+		}
+		equipItem = inventory.InventoryItems[15];
+		if (equipItem != null && equipItem.HAS_SCENE){
+			itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
+			itemInstance = itemScene.Instantiate() as Node2D;
+			AddChild(itemInstance);
+		}
+		else if (equipItem != null && !equipItem.HAS_SCENE){
+			GD.Print(equipItem.ITEM_NAME);
+		}
+		else{
+			GD.Print("tyhjennä");
+		}
+	}
+
+	public override void _PhysicsProcess(double delta){
+
+		GetInput();
+		MoveAndSlide(); //Godot method
 
 	}
 
@@ -46,8 +81,6 @@ public partial class player : CharacterBody2D
 			}
 		}
 
-
-
 	}
 
 	//Called When an area2D enters HurtBox
@@ -57,11 +90,13 @@ public partial class player : CharacterBody2D
 
 	}
 
-	public override void _PhysicsProcess(double delta){
-
-		GetInput();
-		MoveAndSlide(); //Godot method
-
-	}
 	
 }	
+
+
+/*		itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
+		itemInstance = itemScene.Instantiate() as Node2D;
+		AddChild(itemInstance);
+		itemInstance.QueueFree();
+
+*/

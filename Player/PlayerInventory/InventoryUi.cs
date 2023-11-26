@@ -78,7 +78,8 @@ public partial class InventoryUi : Control
     void SetItem(int originIndex, int index, Item item){
         inventory.InventoryItems[originIndex] = null;
         inventory.InventoryItems[index] = item;
-        UpdateInventory();
+        //UpdateInventory();
+		inventory.EmitChange();
     }
 
     //void GetExternal(ExternalInventory extInv){

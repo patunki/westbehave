@@ -1,4 +1,4 @@
-res://Game/Game.tscn
+res://Player/player.tscn
 res://Player/PlayerInventory.tres
 res://Items/Repo/food_eggplant.tres
 res://Scripts/LootComponent.cs
@@ -8,9 +8,6 @@ res://Items/Repo/food_zombie_meat.tres
 res://Items/Repo/tool_hoe.tres
 res://Items/Repo/tool_watering_can.tres
 res://Items/Repo/tool_axe.tres
-res://Player/player.tscn
-res://Player/EquippedItems.tscn
-res://Scenes/Bullet.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -26,7 +23,7 @@ res://Items/Classes/tool_hoe.cs
 res://Items/Classes/tool_watering_can.cs
 res://Items/Classes/Weapon.cs
 res://Items/Classes/weapon_shotgun.cs
-res://Items/ItemNodes/ItemNode.cs
+res://Items/ItemScenes/ItemScripts/WeaponShotgun.cs
 res://Iventory/Classes/ExternalInventory.cs
 res://Iventory/Classes/ExternalInventorySlot.cs
 res://Managers/GameManager.cs
@@ -51,7 +48,8 @@ res://Scripts/Workbench.cs
 res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
-res://Database/ItemDB.json
+res://Game/Game.tscn
+res://Player/EquippedItems.tscn
+res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WeaponShotgun.tscn
-res://Items/ItemScenes/ItemScripts/WeaponShotgun.cs
-res://Items/Repo/weapon_shotgun.tres
+res://Database/ItemDB.json

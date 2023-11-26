@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=12 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="5_sjabt"]
 [ext_resource type="PackedScene" uid="uid://bw7uui5vfbhud" path="res://Components/HungerComponent.tscn" id="6_shx7r"]
 [ext_resource type="PackedScene" uid="uid://dgd2gr1uoibqi" path="res://Game/Ui.tscn" id="7_e671s"]
-[ext_resource type="PackedScene" uid="uid://cbsp4b4r8ij6g" path="res://Player/EquippedItems.tscn" id="14_igl1t"]
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
 resource_name = "IdleAnimation"
@@ -124,8 +123,5 @@ offset_right = 1876.0
 offset_bottom = 64.0
 text = "sadasd"
 horizontal_alignment = 2
-
-[node name="EquippedItem" parent="." instance=ExtResource("14_igl1t")]
-position = Vector2(0, -8)
 
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

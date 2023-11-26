@@ -70,6 +70,9 @@ public partial class Inventory : Resource
         return false;
 
     }
+    public void EmitChange(){
+        EmitSignal(SignalName.InventoryChanged);
+    }
 
 
 

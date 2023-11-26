@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j6A3lFYFaJqfA9YIOPtjMetfWzZSUDmLw6L7O5tDooSNdTdYiWxG3HAkwmvdAAaT2xWh+XmqDpyvhTxzU4Ql6g==",
+  "dgSpecHash": "u/4nbEl1ODln8lB8slzBebTVVDhcLwvZA8Gv8ePLCRvkYo0+IUE94+FtICXN2AFDphUnHIBBNxjnNL7GhEqCmg==",
   "success": true,
-  "projectFilePath": "/home/paulus/godotProjects/westbehave/Demo 1.csproj",
+  "projectFilePath": "/home/paulus/godotProjects/westbehaveREWORKEQUIP/Demo 1.csproj",
   "expectedPackageFiles": [
     "/home/paulus/.nuget/packages/godot.sourcegenerators/4.2.0-dev.5/godot.sourcegenerators.4.2.0-dev.5.nupkg.sha512",
     "/home/paulus/.nuget/packages/godotsharp/4.2.0-dev.5/godotsharp.4.2.0-dev.5.nupkg.sha512",

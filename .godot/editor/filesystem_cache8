@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1701030890
+::res://::1701036474
 template.txt::TextFile::-1::1700789839::0::1::::<><>::
 ::res://Art/::1700937440
 idle sheet-Sheet.png::CompressedTexture2D::2144094826089087726::1700789839::1700789839::1::::<><>::
@@ -38,11 +38,11 @@ HungerComponent.tscn::PackedScene::3997885855084960831::1701025696::0::1::::<><>
 HurtBoxComponent.cs::CSharpScript::-1::1700930375::0::1::::<><>::
 HurtBoxComponent.tscn::PackedScene::1625825654236799197::1700789839::0::1::::<><>::res://Components/HurtBoxComponent.cs
 LootComponent.tscn::PackedScene::3856452232100790053::1700923931::0::1::::<><>::res://Scripts/LootComponent.cs
-::res://Database/::1701030552
-ItemDB.json::JSON::-1::1701030552::0::1::::<><>::
+::res://Database/::1701036010
+ItemDB.json::JSON::-1::1701036010::0::1::::<><>::
 Recepies.txt::TextFile::-1::1700937796::0::1::::<><>::
-::res://Database/CSV/::1701029921
-ItemDB.csv::::-1::1701029921::1700926438::1::::<><>::
+::res://Database/CSV/::1701035981
+ItemDB.csv::::-1::1701035981::1700926438::1::::<><>::
 ItemDB.Dev nodes.translation::OptimizedTranslation::2112963435374831666::1700926438::0::1::::<><>::
 ItemDB.HOVER.translation::OptimizedTranslation::7143858736588208484::1700926438::0::1::::<><>::
 ItemDB.IS.translation::OptimizedTranslation::5264563488406371644::1700926438::0::1::::<><>::
@@ -53,8 +53,8 @@ ItemDB.RESOURCE.translation::OptimizedTranslation::3587564581178468286::17009264
 ::res://Farming/Scenes/::1700923931
 TestPlant.cs::CSharpScript::-1::1700789839::0::1::::<><>::
 TestPlant.tscn::PackedScene::6498706352829517873::1700923931::0::1::::<><>::res://Farming/Scenes/TestPlant.cs<>uid://di1u3y8lpbh4x
-::res://Game/::1701029918
-Game.tscn::PackedScene::5661102121632484050::1701029918::0::1::::<><>::uid://d1d3ju81qjhuv::::res://Player/player.tscn<>uid://b1l3deayvp2gh::::res://Maps/InitialTileMap.tscn<>uid://bnph3rig8hw82::::res://Scenes/Chest.tscn<>uid://bd3ok0jj2joc4::::res://Scenes/House1.tscn<>uid://crm07hvhi2kk2::::res://Scenes/DroppedItem.tscn<>uid://c2ny56p74de4q::::res://Items/Repo/food_zombie_meat.tres<>uid://cxeckinxh1j7l::::res://Scenes/Zombie.tscn<>uid://bj0y7qum0ed1p::::res://Scenes/Workbench.tscn<>uid://c55kflw2tc0dc::::res://Scenes/PineTree2.tscn
+::res://Game/::1701035979
+Game.tscn::PackedScene::5661102121632484050::1701035979::0::1::::<><>::uid://d1d3ju81qjhuv::::res://Player/player.tscn<>uid://b1l3deayvp2gh::::res://Maps/InitialTileMap.tscn<>uid://bnph3rig8hw82::::res://Scenes/Chest.tscn<>uid://bd3ok0jj2joc4::::res://Scenes/House1.tscn<>uid://crm07hvhi2kk2::::res://Scenes/DroppedItem.tscn<>uid://c2ny56p74de4q::::res://Items/Repo/food_zombie_meat.tres<>uid://cxeckinxh1j7l::::res://Scenes/Zombie.tscn<>uid://bj0y7qum0ed1p::::res://Scenes/Workbench.tscn<>uid://c55kflw2tc0dc::::res://Scenes/PineTree2.tscn
 Ui.tscn::PackedScene::7588239253727401292::1701025696::0::1::::<><>::uid://d2elxbrt2et40
 ::res://Interaction/::1700789839
 ::res://Interaction/InteractionArea/::1701025696
@@ -65,7 +65,7 @@ InteractionArea.tscn::PackedScene::1676173682729786558::1701025696::0::1::::<><>
 AxeHitAnim.tscn::PackedScene::4919461603110788872::1701025696::0::1::::<><>::uid://on3ypu4m41ut
 ::res://Items/Classes/::1700793982
 Food.cs::CSharpScript::-1::1700934321::0::1::::<><>::
-Item.cs::CSharpScript::-1::1701023114::0::1::::<><>::
+Item.cs::CSharpScript::-1::1701034080::0::1::::<><>::
 Seed.cs::CSharpScript::-1::1700789839::0::1::::<><>::
 seed_eggplant_seed.cs::CSharpScript::-1::1700917969::0::1::::<><>::
 Tool.cs::CSharpScript::-1::1700789839::0::1::::<><>::
@@ -73,10 +73,12 @@ tool_axe.cs::CSharpScript::-1::1700936729::0::1::::<><>::
 tool_hoe.cs::CSharpScript::-1::1700789839::0::1::::<><>::
 tool_watering_can.cs::CSharpScript::-1::1700929671::0::1::::<><>::
 Weapon.cs::CSharpScript::-1::1700789839::0::1::::<><>::
-weapon_shotgun.cs::CSharpScript::-1::1700789839::0::1::::<><>::
-::res://Items/ItemScenes/::1701030945
-WeaponShotgun.tscn::PackedScene::3090953614709899163::1701031007::0::1::::<><>::
-::res://Items/Repo/::1701028032
+weapon_shotgun.cs::CSharpScript::-1::1701035978::0::1::::<><>::
+::res://Items/ItemScenes/::1701036406
+WeaponShotgun.tscn::PackedScene::3090953614709899163::1701036406::0::1::::<><>::res://Items/ItemScenes/ItemScripts/WeaponShotgun.cs<>uid://b432tosrs1v4y::::res://Art/light.png<>uid://cg0rrofao4u73::::res://Art/shotgun1.png
+::res://Items/ItemScenes/ItemScripts/::1701031085
+WeaponShotgun.cs::CSharpScript::-1::1701033764::0::1::::<><>::
+::res://Items/Repo/::1701034115
 food_apple.tres::Resource::4896434334717560865::1701028032::0::1::::<><>::uid://nkwiw25vbbgi::::res://Art/pixil-frame-0.png<>res://Items/Classes/Food.cs
 food_cooked_meat.tres::Resource::4997783525889521760::1701028032::0::1::::<><>::uid://dh1tbtmge2pdi::::res://Art/zombiemeat.png<>res://Items/Classes/Food.cs
 food_eggplant.tres::Resource::7775712275932615077::1701028032::0::1::::<><>::uid://5elr7hmnaqcx::::res://Art/sprite_vihannekset.png<>res://Items/Classes/Food.cs
@@ -85,7 +87,7 @@ seed_eggplant_seed.tres::Resource::4340854210055389796::1700918799::0::1::::<><>
 tool_axe.tres::Resource::437698153346310303::1701028032::0::1::::<><>::uid://on3ypu4m41ut::::res://Art/kirves_lyonti.png<>res://Items/Classes/tool_axe.cs
 tool_hoe.tres::Resource::2305772782800982863::1701028032::0::1::::<><>::uid://ohtnepd47qwr::::res://Art/kuokka.png<>res://Items/Classes/tool_hoe.cs
 tool_watering_can.tres::Resource::2925387979781424025::1701028032::0::1::::<><>::res://Items/Classes/tool_watering_can.cs<>uid://cwyldqc28wgn0::::res://Art/kastelukannu_tekstuuri.png
-weapon_shotgun.tres::Resource::2813521983292001919::1700922013::0::1::::<><>::uid://cg0rrofao4u73
+weapon_shotgun.tres::Resource::2813521983292001919::1701034115::0::1::::<><>::uid://cg0rrofao4u73::::res://Art/shotgun1.png<>res://Items/Classes/weapon_shotgun.cs
 ::res://Iventory/::1700791573
 ExternalInventory.tscn::PackedScene::4139771414704154530::1700791573::0::1::::<><>::res://Iventory/Classes/ExternalInventory.cs
 ExternalInventorySlot.tscn::PackedScene::1818457779536390293::1700789839::0::1::::<><>::uid://ck7ht0reepem2
@@ -103,21 +105,21 @@ ItemDatabase.tscn::PackedScene::5710540315544081194::1700789839::0::1::::<><>::r
 InitialTileMap.tscn::PackedScene::4235744417968311047::1701025696::0::1::::<><>::uid://cyua0kinoksxl
 ::res://Notes/::1700789839
 ideas.txt::TextFile::-1::1700789839::0::1::::<><>::
-::res://Player/::1701030801
-EquippedItem.cs::CSharpScript::-1::1701029314::0::1::::<><>::
-EquippedItems.tscn::PackedScene::4881151651651554808::1701030801::0::1::::<><>::res://Player/EquippedItem.cs<>uid://b432tosrs1v4y::::res://Art/light.png<>uid://on3ypu4m41ut::::res://Art/kirves_lyonti.png<>uid://cn3r7v7b6ke6::::res://Art/kasteluanimaatio.png
-player.cs::CSharpScript::-1::1701023827::0::1::::<><>::
-player.tscn::PackedScene::8992082369521543073::1701029918::0::1::::<><>::res://Player/player.cs<>uid://5su6tm6ody27::::res://Art/idle sheet-Sheet.png<>uid://xftd1kk3ohcn::::res://Components/HurtBoxComponent.tscn<>uid://cf5yy4jrc6ku7::::res://Components/health_component.tscn<>uid://bw7uui5vfbhud::::res://Components/HungerComponent.tscn<>uid://dgd2gr1uoibqi::::res://Game/Ui.tscn<>uid://cbsp4b4r8ij6g::::res://Player/EquippedItems.tscn
+::res://Player/::1701036021
+EquippedItem.cs::CSharpScript::-1::1701036169::0::1::::<><>::
+EquippedItems.tscn::PackedScene::4881151651651554808::1701036010::0::1::::<><>::res://Player/EquippedItem.cs<>uid://b432tosrs1v4y::::res://Art/light.png<>uid://on3ypu4m41ut::::res://Art/kirves_lyonti.png<>uid://cn3r7v7b6ke6::::res://Art/kasteluanimaatio.png
+player.cs::CSharpScript::-1::1701036066::0::1::::<><>::
+player.tscn::PackedScene::8992082369521543073::1701036021::0::1::::<><>::res://Player/player.cs<>uid://5su6tm6ody27::::res://Art/idle sheet-Sheet.png<>uid://xftd1kk3ohcn::::res://Components/HurtBoxComponent.tscn<>uid://cf5yy4jrc6ku7::::res://Components/health_component.tscn<>uid://bw7uui5vfbhud::::res://Components/HungerComponent.tscn<>uid://dgd2gr1uoibqi::::res://Game/Ui.tscn<>uid://cbsp4b4r8ij6g::::res://Player/EquippedItems.tscn
 PlayerInventory.tres::Resource::2920676358128490488::1701028032::0::1::::<><>::res://Player/PlayerInventory/Inventory.cs
 ::res://Player/PlayerInventory/::1700923931
-Inventory.cs::CSharpScript::-1::1701022884::0::1::::<><>::
+Inventory.cs::CSharpScript::-1::1701034944::0::1::::<><>::
 Inventory.tscn::PackedScene::9063327380187219887::1700923931::0::1::::<><>::res://Player/PlayerInventory/InventoryUi.cs<>uid://ck7ht0reepem2
 InventorySlot.cs::CSharpScript::-1::1700789839::0::1::::<><>::
 InventorySlot.tscn::PackedScene::1124358118296783094::1700923931::0::1::::<><>::uid://ck7ht0reepem2
-InventoryUi.cs::CSharpScript::-1::1701024161::0::1::::<><>::
-::res://Scenes/::1701030893
+InventoryUi.cs::CSharpScript::-1::1701035113::0::1::::<><>::
+::res://Scenes/::1701035979
 BirchTree.tscn::PackedScene::7401731109291916744::1701025696::0::1::::<><>::res://Scripts/Tree.cs<>uid://b2nu5iw8i1dv1
-Bullet.tscn::PackedScene::5633620037807488865::1701030893::0::1::::<><>::res://Scripts/Bullet.cs<>uid://on3ypu4m41ut::::res://Art/kirves_lyonti.png
+Bullet.tscn::PackedScene::5633620037807488865::1701035979::0::1::::<><>::res://Scripts/Bullet.cs<>uid://on3ypu4m41ut::::res://Art/kirves_lyonti.png
 Chest.tscn::PackedScene::3330317244049522141::1700939279::0::1::::<><>::uid://du6so704q72n5
 DroppedItem.tscn::PackedScene::5992399712939743759::1700935399::0::1::::<><>::res://Scripts/DroppedItem.cs<>uid://x47loa4550de
 House1.tscn::PackedScene::2655659014991014641::1701025696::0::1::::<><>::res://Scripts/House1.cs<>uid://bokmdglihf3rr
@@ -130,7 +132,7 @@ Workbench.tscn::PackedScene::3071244945366724415::1701025696::0::1::::<><>::res:
 Zombie.tscn::PackedScene::6395582015326429007::1701025696::0::1::::<><>::res://Scripts/Zombie.cs<>uid://drjbn7owwkmqf
 ::res://Scripts/::1701028032
 Attack.cs::CSharpScript::-1::1700797545::0::1::::<><>::
-Bullet.cs::CSharpScript::-1::1701025306::0::1::::<><>::
+Bullet.cs::CSharpScript::-1::1701033525::0::1::::<><>::
 Chest.cs::CSharpScript::-1::1700789839::0::1::::<><>::
 DroppedItem.cs::CSharpScript::-1::1700789839::0::1::::<><>::
 House1.cs::CSharpScript::-1::1700789839::0::1::::<><>::

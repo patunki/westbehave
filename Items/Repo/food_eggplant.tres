@@ -23,3 +23,5 @@ MAX_STACK = 10
 ITEM_TYPE = 0
 Action = "Eat"
 DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""
