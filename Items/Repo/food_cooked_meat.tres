@@ -16,6 +16,7 @@ ITEM_ID = 2
 CustomResourcePath = "res://Items/Repo/food_cooked_meat.tres"
 ITEM_TEXTURE = SubResource("AtlasTexture_14jnj")
 IS_STACKABLE = true
+IS_CRAFTABLE = false
 HOVER_TEXT = "Cooked meat you can eat"
 ITEM_QUANTITY = 1
 MAX_STACK = 5

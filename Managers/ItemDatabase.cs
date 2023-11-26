@@ -40,11 +40,11 @@ public partial class ItemDatabase : Node
         WriteToFile();
     }
 
-    public Item GetItem(int id){
-        for (int i = 0; i < itemDatabase.Count; i++){
-            if (itemDatabase[i] != null && itemDatabase[i].ITEM_ID == id){
+    public Item GetItemById(int id){
+        foreach (Item item in itemDatabase){
+            if (item != null && item.ITEM_ID == id){
                 GD.Print("Itemi löytyy databasessa");
-                return itemDatabase[i];
+                return item;
             }
         }
         GD.Print("itemiä ei databasessa");

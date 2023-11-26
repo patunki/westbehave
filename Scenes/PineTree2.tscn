@@ -32,7 +32,7 @@ ITEM_ID = 6
 CustomResourcePath = "res://Items/Repo/food_eggplant.tres"
 ITEM_TEXTURE = SubResource("AtlasTexture_drbtk")
 IS_STACKABLE = true
-IS_Crafteble = false
+IS_CRAFTABLE = false
 HOVER_TEXT = "A tasty eggplant"
 ITEM_QUANTITY = 3
 MAX_STACK = 10
@@ -124,7 +124,7 @@ _data = {
 "RESET": SubResource("Animation_j5evc")
 }
 
-[node name="PineTree" type="StaticBody2D"]
+[node name="PineTree2" type="StaticBody2D"]
 script = ExtResource("1_ov0wx")
 
 [node name="TreeTexture" type="TextureRect" parent="."]

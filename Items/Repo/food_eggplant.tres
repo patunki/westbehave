@@ -16,6 +16,7 @@ ITEM_ID = 6
 CustomResourcePath = "res://Items/Repo/food_eggplant.tres"
 ITEM_TEXTURE = SubResource("AtlasTexture_drbtk")
 IS_STACKABLE = true
+IS_CRAFTABLE = false
 HOVER_TEXT = "A tasty eggplant"
 ITEM_QUANTITY = 1
 MAX_STACK = 10

@@ -10,6 +10,7 @@ ITEM_ID = 7
 CustomResourcePath = "res://Items/Repo/tool_hoe.tres"
 ITEM_TEXTURE = ExtResource("1_1fbrf")
 IS_STACKABLE = false
+IS_CRAFTABLE = false
 HOVER_TEXT = "A useful tool"
 ITEM_QUANTITY = 1
 MAX_STACK = 1

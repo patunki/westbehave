@@ -31,7 +31,7 @@ public partial class Item : Resource
     [Export]
     public Boolean IS_STACKABLE {get; set;}
     [Export]
-    public Boolean IS_Crafteble {get; set;}
+    public Boolean IS_CRAFTABLE {get; set;}
     [Export(PropertyHint.MultilineText)]
     public String HOVER_TEXT {get; set;}
     [Export]

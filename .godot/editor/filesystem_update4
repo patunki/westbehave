@@ -49,7 +49,7 @@ res://Player/PlayerInventory/Inventory.cs
 res://Player/PlayerInventory/InventorySlot.cs
 res://Player/PlayerInventory/InventoryUi.cs
 res://Scripts/Attack.cs
-res://Scripts/bullet.cs
+res://Scripts/Bullet.cs
 res://Scripts/Chest.cs
 res://Scripts/DroppedItem.cs
 res://Scripts/House1.cs
@@ -63,3 +63,5 @@ res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
+res://Scripts/Bullet.tscn
+res://Scenes/Bullet.tscn

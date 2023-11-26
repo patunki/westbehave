@@ -89,6 +89,9 @@ public partial class InventoryUi : Control
         if (Input.IsActionJustPressed("inventory")){
 			ToggleInventory();
 		}
+		if (Input.IsActionJustPressed("exit")){
+			Close();
+		}
     }
 
     public void ToggleInventory()

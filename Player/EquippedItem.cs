@@ -24,7 +24,7 @@ public partial class EquippedItem : Node2D
         _player = (player)GetParent();
         barrel = GetNode<Marker2D>("Radius/Marker2D");
         radius = GetNode<Node2D>("Radius");
-        bullet = GD.Load<PackedScene>("res://Scenes/bullet.tscn");
+        bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
         anims = GetNode<Sprite2D>("Anims");
         hungerComponent = GetNode<HungerComponent>("%HungerComponent");
 
@@ -119,11 +119,10 @@ public partial class EquippedItem : Node2D
             if (can.Water(GlobalPosition)){
                 animationPlayer.Play("Water");
             }
-
        }
        if (item.HasMethod("Shoot")){
         
-			bullet instance = (bullet)bullet.Instantiate();
+			Bullet instance = (Bullet)bullet.Instantiate();
             instance.Position = barrel.GlobalPosition;
             //instance.Velocity = GetGlobalMousePosition();
 			GetParent().GetParent().AddChild(instance);

@@ -36,7 +36,7 @@ public partial class Inventory : Resource
 
     public void NullItemCheck(){
         for (int i = 0; i < InventoryItems.Count; i++){
-            if (InventoryItems[i] != null && InventoryItems[i].ITEM_QUANTITY <= 0){
+            if (InventoryItems[i]?.ITEM_QUANTITY <= 0){
                 InventoryItems[i] = null;
                 EmitSignal(SignalName.InventoryChanged);
             }

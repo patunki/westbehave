@@ -25,6 +25,7 @@ ITEM_ID = 8
 CustomResourcePath = "res://Items/Repo/tool_watering_can.tres"
 ITEM_TEXTURE = SubResource("AtlasTexture_yppbo")
 IS_STACKABLE = false
+IS_CRAFTABLE = false
 HOVER_TEXT = "Kastelukannu"
 ITEM_QUANTITY = 1
 MAX_STACK = 1

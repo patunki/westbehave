@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class bullet : CharacterBody2D
+public partial class Bullet : CharacterBody2D
 {
 
 	Vector2 velocity;

@@ -23,12 +23,12 @@ public partial class Workbench : StaticBody2D
         button.Hide();
         interactionArea.BodyExited += Close;
         foreach (Item item in itemDatabase.itemDatabase){
-            if (item.IS_Crafteble){
+            if (item.IS_CRAFTABLE){
                 itemList.AddItem(item.ITEM_NAME,item.ITEM_TEXTURE,true);
             }
         }
         testInput = 9;
-        itemToCraft = itemDatabase.GetItem(testInput);
+        itemToCraft = itemDatabase.GetItemById(testInput);
         
 
     }
@@ -68,7 +68,7 @@ public partial class Workbench : StaticBody2D
             GD.Print("Itemiä ei löydu databasesta");
             return false;
         }
-        if (has < need || itemToCraft.IS_Crafteble == false){
+        if (has < need || itemToCraft.IS_CRAFTABLE == false){
             GD.Print("ei oo tarpeeksi tai ei voi kräftää");
             return false;
         }

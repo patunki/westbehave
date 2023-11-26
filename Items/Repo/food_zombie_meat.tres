@@ -16,6 +16,7 @@ ITEM_ID = 1
 CustomResourcePath = "res://Items/Repo/food_zombie_meat.tres"
 ITEM_TEXTURE = SubResource("AtlasTexture_02gns")
 IS_STACKABLE = true
+IS_CRAFTABLE = false
 HOVER_TEXT = "Some Tasty Meat"
 ITEM_QUANTITY = 1
 MAX_STACK = 1
