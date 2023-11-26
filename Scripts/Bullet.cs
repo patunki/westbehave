@@ -6,7 +6,7 @@ public partial class Bullet : CharacterBody2D
 
 	Vector2 velocity;
 	[Export]
-	int speed = 50;
+	int speed = 10;
 	public override void _Ready()
 	{
 		velocity = GetLocalMousePosition();
@@ -18,6 +18,7 @@ public partial class Bullet : CharacterBody2D
 	}
 
 	private void _on_timer_timeout(){
+			
 			QueueFree();
 	}
 

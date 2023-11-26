@@ -44,6 +44,10 @@ public partial class Item : Resource
     public string Action;
     [Export(PropertyHint.MultilineText)]
     public String DevNotes {get; set;}
+    [Export]
+    public bool HAS_SCENE = false;
+    [Export]
+    public string SCENE_PATH;
     
     public Item Copy() => MemberwiseClone() as Item;
 

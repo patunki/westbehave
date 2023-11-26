@@ -54,3 +54,4 @@ res://StateMachine/States/State.cs
 res://Database/ItemDB.json
 res://Items/ItemScenes/WeaponShotgun.tscn
 res://Items/ItemScenes/ItemScripts/WeaponShotgun.cs
+res://Items/Repo/weapon_shotgun.tres

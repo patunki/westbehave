@@ -50,6 +50,7 @@ public partial class InventoryUi : Control
                 slots[i].Call("Empty");
             }
         }
+		
     }
 
 

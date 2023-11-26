@@ -11,6 +11,7 @@ public partial class WeaponShotgun : Node2D
     Marker2D barrel;
     Sprite2D shotgunSprite;
     PackedScene bullet;
+    Node2D game;
 
     public override void _Ready()
     {
@@ -22,6 +23,7 @@ public partial class WeaponShotgun : Node2D
         radius = GetNode<Node2D>("Radius");
         shotgunSprite = GetNode<Sprite2D>("ShotgunSprite");
         bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
+        game = GetNode<Node2D>("/root/Game");
 
     }
 
@@ -35,7 +37,7 @@ public partial class WeaponShotgun : Node2D
         if (Input.IsActionJustPressed("attack")){
             Bullet instance = (Bullet)bullet.Instantiate();
             instance.Position = barrel.GlobalPosition;
-			GetParent().GetParent().AddChild(instance);
+			game.AddChild(instance);
             shotParticlesRed.Emitting = true;
             shotParticlesWhite.Emitting = true;
             muzzleFlash.Show();

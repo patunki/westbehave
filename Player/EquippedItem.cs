@@ -11,9 +11,13 @@ public partial class EquippedItem : Node2D
     Attack attack;
     player _player;
     Marker2D barrel;
+    Node2D radius;
+    PackedScene bullet;
     Sprite2D anims;
     HungerComponent hungerComponent;
-
+    GpuParticles2D shotParticlesRed;
+    GpuParticles2D shotParticlesWhite;
+    PointLight2D muzzleFlash;
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
     {   
@@ -21,10 +25,14 @@ public partial class EquippedItem : Node2D
         textureRect = GetNode<TextureRect>("TextureRect");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         _player = (player)GetParent();
-        barrel = GetNode<Marker2D>("Radius/Marker2D");
+        barrel = GetNode<Marker2D>("Radius/Barrel");
+        radius = GetNode<Node2D>("Radius");
+        bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
         anims = GetNode<Sprite2D>("Anims");
         hungerComponent = GetNode<HungerComponent>("%HungerComponent");
-
+        shotParticlesWhite = GetNode<GpuParticles2D>("Radius/ShotParticlesWhite");
+        shotParticlesRed = GetNode<GpuParticles2D>("Radius/ShotParticlesRed");
+        muzzleFlash = GetNode<PointLight2D>("Radius/MuzzleFlash");
 
     }
 
@@ -44,6 +52,8 @@ public partial class EquippedItem : Node2D
 			textureRect.Scale = new Vector2(1,1);
             anims.Scale = new Vector2(1,1);
 		}
+
+        radius.LookAt(GetGlobalMousePosition());
         
     }
 
@@ -117,6 +127,18 @@ public partial class EquippedItem : Node2D
        }
        if (item.HasMethod("Shoot")){
         
+			Bullet instance = (Bullet)bullet.Instantiate();
+            instance.Position = barrel.GlobalPosition;
+            //instance.Velocity = GetGlobalMousePosition();
+			GetParent().GetParent().AddChild(instance);
+            shotParticlesRed.Emitting = true;
+            shotParticlesWhite.Emitting = true;
+            muzzleFlash.Show();
+            Timer timer = new Timer();
+            AddChild(timer);
+            timer.Start(0.1);
+            timer.Timeout += muzzleFlash.Hide;
+            timer.Timeout += timer.QueueFree;
 
        }
        if (item is tool_axe){

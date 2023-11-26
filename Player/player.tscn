@@ -70,6 +70,7 @@ libraries = {
 }
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_to5rj")
 
@@ -89,9 +90,6 @@ shape = SubResource("CapsuleShape2D_5g78q")
 
 [node name="HealthComponent" parent="." node_paths=PackedStringArray("label") instance=ExtResource("5_sjabt")]
 label = NodePath("../UI/HealthLabel")
-
-[node name="EquippedItem" parent="." instance=ExtResource("14_igl1t")]
-position = Vector2(6, -7)
 
 [node name="HungerComponent" parent="." node_paths=PackedStringArray("healthComponent", "hLabel", "tLabel") instance=ExtResource("6_shx7r")]
 unique_name_in_owner = true
@@ -126,5 +124,8 @@ offset_right = 1876.0
 offset_bottom = 64.0
 text = "sadasd"
 horizontal_alignment = 2
+
+[node name="EquippedItem" parent="." instance=ExtResource("14_igl1t")]
+position = Vector2(0, -8)
 
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
