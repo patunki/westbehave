@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class tool_watering_can : Tool
+public partial class ToolWateringCan : Tool
 {
     [Export]
     public float waterLevel = 1;
@@ -14,7 +14,7 @@ public partial class tool_watering_can : Tool
 
 
 
-    public tool_watering_can(){
+    public ToolWateringCan(){
         var tree = (SceneTree)Engine.GetMainLoop();
         gameManager = tree.Root.GetNode<GameManager>("GameManager");
         tileMap = gameManager.tileMap;

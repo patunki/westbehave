@@ -1,14 +1,14 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://bgc5kcge7nbxf"]
 
 [ext_resource type="Texture2D" uid="uid://cg0rrofao4u73" path="res://Art/shotgun1.png" id="1_eccei"]
-[ext_resource type="Script" path="res://Items/Classes/weapon_shotgun.cs" id="2_hn7fh"]
+[ext_resource type="Script" path="res://Items/Classes/WeaponShotgun.cs" id="2_hn7fh"]
 
 [resource]
 script = ExtResource("2_hn7fh")
 IS_RANGED = true
 ITEM_NAME = "Shotgun"
 ITEM_ID = 4
-CustomResourcePath = "res://Items/Repo/weapon_shotgun.tres"
+CustomResourcePath = "res://Items/Repo/WeaponShotgun.tres"
 ITEM_TEXTURE = ExtResource("1_eccei")
 IS_STACKABLE = false
 IS_CRAFTABLE = false

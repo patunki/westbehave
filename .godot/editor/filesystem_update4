@@ -53,3 +53,16 @@ res://Player/EquippedItems.tscn
 res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WeaponShotgun.tscn
 res://Database/ItemDB.json
+res://Database/CSV/ItemDB.ITEM.translation
+res://Database/CSV/ItemDB.RESOURCE.translation
+res://Database/CSV/ItemDB.IS.translation
+res://Database/CSV/ItemDB.HOVER.translation
+res://Database/CSV/ItemDB.MAX.translation
+res://Database/CSV/ItemDB.Dev nodes.translation
+res://Items/Repo/ToolAxe.tres
+res://Items/Classes/SeedEggplantSeed.cs
+res://Items/Classes/ToolAxe.cs
+res://Items/Classes/ToolHoe.cs
+res://Items/Classes/ToolWateringCan.cs
+res://Items/Classes/WeaponShotgun.cs
+res://Items/ItemScenes/ItemScripts/WeaponShotgunScene.cs

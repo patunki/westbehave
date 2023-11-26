@@ -1,13 +1,13 @@
 [gd_resource type="Resource" load_steps=3 format=3 uid="uid://7360gotmfs3h"]
 
 [ext_resource type="Texture2D" uid="uid://ohtnepd47qwr" path="res://Art/kuokka.png" id="1_1fbrf"]
-[ext_resource type="Script" path="res://Items/Classes/tool_hoe.cs" id="2_q8a45"]
+[ext_resource type="Script" path="res://Items/Classes/ToolHoe.cs" id="2_q8a45"]
 
 [resource]
 script = ExtResource("2_q8a45")
 ITEM_NAME = "Hoe"
 ITEM_ID = 7
-CustomResourcePath = "res://Items/Repo/tool_hoe.tres"
+CustomResourcePath = "res://Items/Repo/ToolHoe.tres"
 ITEM_TEXTURE = ExtResource("1_1fbrf")
 IS_STACKABLE = false
 IS_CRAFTABLE = false

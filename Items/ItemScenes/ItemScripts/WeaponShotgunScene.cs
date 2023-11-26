@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class WeaponShotgun : Node2D
+public partial class WeaponShotgunScene : Node2D
 {
     Weapon shotgun;
     PointLight2D muzzleFlash;
@@ -15,7 +15,7 @@ public partial class WeaponShotgun : Node2D
 
     public override void _Ready()
     {
-        shotgun = GD.Load<Weapon>("res://Items/Repo/weapon_shotgun.tres");
+        shotgun = GD.Load<Weapon>("res://Items/Repo/WeaponShotgun.tres");
         shotParticlesWhite = GetNode<GpuParticles2D>("Radius/ShotParticlesWhite");
         shotParticlesRed = GetNode<GpuParticles2D>("Radius/ShotParticlesRed");
         muzzleFlash = GetNode<PointLight2D>("Radius/MuzzleFlash");

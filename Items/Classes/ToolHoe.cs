@@ -2,12 +2,12 @@ using Godot;
 using System;
 using System.Linq;
 
-public partial class tool_hoe : Tool
+public partial class ToolHoe : Tool
 {
     GameManager gameManager;
     TileMap tileMap;
 
-    public tool_hoe(){
+    public ToolHoe(){
         var tree = (SceneTree)Engine.GetMainLoop();
         gameManager = tree.Root.GetNode<GameManager>("GameManager");
         tileMap = gameManager.tileMap;

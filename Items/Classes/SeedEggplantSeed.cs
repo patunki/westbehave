@@ -1,12 +1,12 @@
 using Godot;
 using System;
 
-public partial class seed_eggplant_seed : Seed
+public partial class SeedEggplantSeed : Seed
 {
     GameManager gameManager;
     TileMap tileMap;
 
-    public seed_eggplant_seed(){
+    public SeedEggplantSeed(){
         var tree = (SceneTree)Engine.GetMainLoop();
         gameManager = tree.Root.GetNode<GameManager>("GameManager");
         tileMap = gameManager.tileMap;

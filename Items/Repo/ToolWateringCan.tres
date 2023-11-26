@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=6 format=3 uid="uid://bhxcyh16b7lhp"]
 
-[ext_resource type="Script" path="res://Items/Classes/tool_watering_can.cs" id="1_s1xn8"]
+[ext_resource type="Script" path="res://Items/Classes/ToolWateringCan.cs" id="1_s1xn8"]
 [ext_resource type="Texture2D" uid="uid://cwyldqc28wgn0" path="res://Art/kastelukannu_tekstuuri.png" id="1_sl0ip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yppbo"]
@@ -22,7 +22,7 @@ textureFull = SubResource("AtlasTexture_ydhmh")
 textureEmpty = SubResource("AtlasTexture_8xwv7")
 ITEM_NAME = "Watering can"
 ITEM_ID = 8
-CustomResourcePath = "res://Items/Repo/tool_watering_can.tres"
+CustomResourcePath = "res://Items/Repo/ToolWateringCan.tres"
 ITEM_TEXTURE = SubResource("AtlasTexture_yppbo")
 IS_STACKABLE = false
 IS_CRAFTABLE = false

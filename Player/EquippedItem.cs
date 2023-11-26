@@ -119,7 +119,7 @@ public partial class EquippedItem : Node2D
             hungerComponent.WaterAdd(food.Drink());
        }
        if (item.HasMethod("Water")){
-            tool_watering_can can = (tool_watering_can)item;
+            ToolWateringCan can = (ToolWateringCan)item;
 
             if (can.Water(GlobalPosition)){
                 animationPlayer.Play("Water");
@@ -141,8 +141,8 @@ public partial class EquippedItem : Node2D
             timer.Timeout += timer.QueueFree;
 
        }
-       if (item is tool_axe){
-            tool_axe axe = (tool_axe)item;
+       if (item is ToolAxe){
+            ToolAxe axe = (ToolAxe)item;
             attack = axe.Attack();
             animationPlayer.Play("AxeHit");
 

@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class tool_axe : Tool
+public partial class ToolAxe : Tool
 {
     public Attack Attack(){
 
