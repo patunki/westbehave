@@ -1,6 +1,9 @@
+Sprite2D
+PointLight2D
+GPUParticles2D
+CanvasModulate
 CollisionShape2D
 Area2D
-Sprite2D
 CharacterBody2D
 Button
 ItemList
@@ -9,6 +12,3 @@ Node2D
 Label
 CanvasLayer
 Timer
-AnimatedSprite2D
-AnimationPlayer
-RigidBody2D

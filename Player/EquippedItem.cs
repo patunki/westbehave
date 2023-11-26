@@ -11,10 +11,9 @@ public partial class EquippedItem : Node2D
     Attack attack;
     player _player;
     Marker2D barrel;
-    Node2D radius;
-    PackedScene bullet;
     Sprite2D anims;
     HungerComponent hungerComponent;
+
 
     public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
     {   
@@ -23,10 +22,9 @@ public partial class EquippedItem : Node2D
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         _player = (player)GetParent();
         barrel = GetNode<Marker2D>("Radius/Marker2D");
-        radius = GetNode<Node2D>("Radius");
-        bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
         anims = GetNode<Sprite2D>("Anims");
         hungerComponent = GetNode<HungerComponent>("%HungerComponent");
+
 
     }
 
@@ -46,10 +44,7 @@ public partial class EquippedItem : Node2D
 			textureRect.Scale = new Vector2(1,1);
             anims.Scale = new Vector2(1,1);
 		}
-        radius.LookAt(GetGlobalMousePosition());
         
-        
-
     }
 
 
@@ -122,10 +117,6 @@ public partial class EquippedItem : Node2D
        }
        if (item.HasMethod("Shoot")){
         
-			Bullet instance = (Bullet)bullet.Instantiate();
-            instance.Position = barrel.GlobalPosition;
-            //instance.Velocity = GetGlobalMousePosition();
-			GetParent().GetParent().AddChild(instance);
 
        }
        if (item is tool_axe){

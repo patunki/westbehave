@@ -10,18 +10,7 @@ res://Items/Repo/tool_watering_can.tres
 res://Items/Repo/tool_axe.tres
 res://Player/player.tscn
 res://Player/EquippedItems.tscn
-res://Game/Ui.tscn
-res://Scenes/PineTree.tscn
-res://Scenes/BirchTree.tscn
-res://Scenes/SpruceTree.tscn
-res://Maps/InitialTileMap.tscn
-res://Scenes/House1.tscn
-res://Scenes/PineTree2.tscn
-res://Items/Animations/AxeHitAnim.tscn
-res://Components/HungerComponent.tscn
-res://Interaction/InteractionArea/InteractionArea.tscn
-res://Scenes/Zombie.tscn
-res://Scenes/Workbench.tscn
+res://Scenes/Bullet.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -63,5 +52,5 @@ res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Scripts/Bullet.tscn
-res://Scenes/Bullet.tscn
+res://Items/ItemScenes/WeaponShotgun.tscn
+res://Items/ItemScenes/ItemScripts/WeaponShotgun.cs
