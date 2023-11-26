@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://bkbjs36yr8tlb"]
 
-[ext_resource type="Script" path="res://Items/ItemScenes/ItemScripts/WeaponShotgunScene.cs" id="1_2w4l4"]
+[ext_resource type="Script" path="res://Items/ItemScenes/SceneScripts/ShotgunScene.cs" id="1_ah835"]
 [ext_resource type="Texture2D" uid="uid://b432tosrs1v4y" path="res://Art/light.png" id="2_jcaau"]
 [ext_resource type="Texture2D" uid="uid://cg0rrofao4u73" path="res://Art/shotgun1.png" id="2_xx2n8"]
 
@@ -51,7 +51,7 @@ color = Color(0.85098, 0.239216, 0, 1)
 hue_variation_max = 0.15
 
 [node name="WeaponShotgun" type="Node2D"]
-script = ExtResource("1_2w4l4")
+script = ExtResource("1_ah835")
 
 [node name="ShotgunSprite" type="Sprite2D" parent="."]
 position = Vector2(4, -1.5)

@@ -1,9 +1,8 @@
 using Godot;
 using System;
 
-public partial class WeaponShotgunScene : Node2D
+public partial class ShotgunScene : Node2D
 {
-    Weapon shotgun;
     PointLight2D muzzleFlash;
     GpuParticles2D shotParticlesWhite;
     GpuParticles2D shotParticlesRed;
@@ -15,7 +14,6 @@ public partial class WeaponShotgunScene : Node2D
 
     public override void _Ready()
     {
-        shotgun = GD.Load<Weapon>("res://Items/Repo/WeaponShotgun.tres");
         shotParticlesWhite = GetNode<GpuParticles2D>("Radius/ShotParticlesWhite");
         shotParticlesRed = GetNode<GpuParticles2D>("Radius/ShotParticlesRed");
         muzzleFlash = GetNode<PointLight2D>("Radius/MuzzleFlash");
@@ -30,6 +28,10 @@ public partial class WeaponShotgunScene : Node2D
     public override void _PhysicsProcess(double delta)
     {
         radius.LookAt(GetGlobalMousePosition());
+    }
+
+    public void MyItem(Item item){
+        GD.Print(item.ITEM_NAME);
     }
 
     public override void _Input(InputEvent @event)

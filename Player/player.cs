@@ -42,9 +42,10 @@ public partial class player : CharacterBody2D
 			}	
 		}
 		equipItem = inventory.InventoryItems[15];
-		if (equipItem != null && equipItem.HAS_SCENE){
+		if (equipItem != null && equipItem.HAS_SCENE && !IsInstanceValid(itemInstance)){
 			itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
 			itemInstance = itemScene.Instantiate() as Node2D;
+			itemInstance.Call("MyItem",equipItem);
 			AddChild(itemInstance);
 		}
 		else if (equipItem != null && !equipItem.HAS_SCENE){

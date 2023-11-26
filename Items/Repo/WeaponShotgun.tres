@@ -19,4 +19,4 @@ ITEM_TYPE = 1
 Action = "Shoot"
 DevNotes = "Also expects a bullet as an exported PackedScene."
 HAS_SCENE = true
-SCENE_PATH = "res://Items/ItemScenes/WeaponShotgun.tscn"
+SCENE_PATH = "res://Items/ItemScenes/Shotgun.tscn"

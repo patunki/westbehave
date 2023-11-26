@@ -32,5 +32,5 @@ MAX_STACK = 1
 ITEM_TYPE = 3
 Action = "Water"
 DevNotes = ""
-HAS_SCENE = false
-SCENE_PATH = ""
+HAS_SCENE = true
+SCENE_PATH = "res://Items/ItemScenes/WateringCan.tscn"

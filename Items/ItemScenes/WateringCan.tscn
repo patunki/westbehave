@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bi6gk2gk1d0"]
+
+[ext_resource type="Script" path="res://Items/ItemScenes/SceneScripts/WateringCan.cs" id="1_ro7gq"]
+[ext_resource type="Texture2D" uid="uid://cn3r7v7b6ke6" path="res://Art/kasteluanimaatio.png" id="2_8j5vj"]
+
+[node name="WateringCan" type="Node2D"]
+script = ExtResource("1_ro7gq")
+
+[node name="AnimSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_8j5vj")
+hframes = 9
