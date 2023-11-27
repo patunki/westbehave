@@ -115,15 +115,15 @@ public partial class EquippedItem : Node2D
        }
        if (item.ITEM_TYPE == ItemType.FOOD){
             Food food = (Food)item;
-            hungerComponent.FoodAdd(food.Eat());
+            //hungerComponent.FoodAdd(food.Eat());
             hungerComponent.WaterAdd(food.Drink());
        }
        if (item.HasMethod("Water")){
             ToolWateringCan can = (ToolWateringCan)item;
 
-            if (can.Water(GlobalPosition)){
+            /*if (can.Water(GlobalPosition)){
                 animationPlayer.Play("Water");
-            }
+            }*/
        }
        if (item.HasMethod("Shoot")){
         

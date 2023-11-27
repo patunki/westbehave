@@ -17,6 +17,9 @@ public partial class player : CharacterBody2D
 	private AnimationPlayer animationPlayer;
 	private string spritePath = "PlayerSprite";
 	Inventory inventory;
+	private TextureRect equipTexture;
+	HungerComponent hungerComponent;
+	Node2D Game;
 
 
 	PackedScene itemScene;
@@ -31,7 +34,10 @@ public partial class player : CharacterBody2D
 		animationPlayer = GetNode<AnimationPlayer>("PlayerSprite/AnimationPlayer");
 		animationPlayer.Play("IdleAnimation");
 		inventory = GD.Load("res://Player/PlayerInventory.tres") as Inventory;
+		equipTexture = GetNode<TextureRect>("EquipItem");
 		inventory.InventoryChanged += UpdateItem;
+		hungerComponent = GetNode<HungerComponent>("%HungerComponent");
+		Game = GetNode<Node2D>("/root/Game");
 	}
 
 	void UpdateItem(){
@@ -40,6 +46,7 @@ public partial class player : CharacterBody2D
 			if (IsInstanceValid(itemInstance)){
 				itemInstance.QueueFree();
 			}	
+			equipTexture.Texture = null;
 		}
 		equipItem = inventory.InventoryItems[15];
 		if (equipItem != null && equipItem.HAS_SCENE && !IsInstanceValid(itemInstance)){
@@ -47,18 +54,19 @@ public partial class player : CharacterBody2D
 			itemInstance = itemScene.Instantiate() as Node2D;
 			itemInstance.Call("MyItem",equipItem);
 			AddChild(itemInstance);
+			//null the texture
 		}
 		else if (equipItem != null && !equipItem.HAS_SCENE){
-			GD.Print(equipItem.ITEM_NAME);
+			//GD.Print(equipItem.ITEM_NAME);
+			equipTexture.Texture = equipItem.ITEM_TEXTURE;
 		}
 		else{
-			GD.Print("tyhjennä");
+			//GD.Print("tyhjennä");
 		}
 	}
 
 	public override void _PhysicsProcess(double delta){
 
-		GetInput();
 		MoveAndSlide(); //Godot method
 
 	}
@@ -66,11 +74,11 @@ public partial class player : CharacterBody2D
 	void _on_health_component_health_depleted(){
 		GD.Print("ded");
 	}
-	
 
-	public void GetInput(){
-		
-		Vector2 inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down").Normalized();
+
+    public override void _Input(InputEvent @event)
+    {
+        Vector2 inputDirection = Input.GetVector("move_left", "move_right", "move_up", "move_down").Normalized();
 		Velocity = inputDirection * moveSpeed;
 		if (inputDirection != new Vector2(0,0)){
 			heading = inputDirection;
@@ -82,14 +90,42 @@ public partial class player : CharacterBody2D
 			}
 		}
 
-	}
+		if (Input.IsActionJustPressed("interact") && equipItem != null && !equipItem.HAS_SCENE){
+			if (equipItem.ITEM_TYPE == ItemType.FOOD){
+				Food foodItem = (Food)equipItem;
+				int value = foodItem.Eat();
+				hungerComponent.FoodAdd(value);
+				hungerComponent.WaterAdd(value);
 
-	//Called When an area2D enters HurtBox
-	private void _on_hurt_box_area_entered(Area2D area){
-		
+				
+			}
+			else {
+				equipItem.Call("OnInteract", GlobalPosition);
+			}
+
+			inventory.NullItemCheck();
+			inventory.EmitSignal(nameof(Inventory.InventoryChanged));
+
+		}
+
+		if (Input.IsActionJustPressed("drop") && equipItem != null){
+                
+                PackedScene dropItem = GD.Load("res://Scenes/DroppedItem.tscn") as PackedScene;
+                DroppedItem instance = (DroppedItem)dropItem.Instantiate();
+
+                instance.item = equipItem;
+                instance.Position = GlobalPosition;
+                Game.AddChild(instance);
+
+                equipItem.DecQuant();
+                inventory.NullItemCheck();
+                
+                inventory.EmitSignal(nameof(Inventory.InventoryChanged));
+            
+        }
+    }
 
 
-	}
 
 	
 }	

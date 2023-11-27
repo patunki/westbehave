@@ -19,7 +19,7 @@ public partial class ToolHoe : Tool
         tileMap = map;
     }
 
-    public void Plough(Vector2 globalPosition){
+    public void OnInteract(Vector2 globalPosition){
         int groundLayer = 1;
         int sceneId = 2;
 

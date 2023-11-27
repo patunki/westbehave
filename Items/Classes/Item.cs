@@ -57,9 +57,9 @@ public partial class Item : Resource
 
     }
 
-    public int DecQuant(){
+    public void DecQuant(){
         ITEM_QUANTITY--;
-        return ITEM_QUANTITY;
+        //return ITEM_QUANTITY;
     }
 
     /*public void OnUse(Node2D user){

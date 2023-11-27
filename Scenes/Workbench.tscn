@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://bj0y7qum0ed1p"]
 
 [ext_resource type="Script" path="res://Scripts/Workbench.cs" id="1_5pwxr"]
-[ext_resource type="Texture2D" uid="uid://dwbd3npy6mgic" path="res://Art/workbenchminecraft.png" id="1_gs3jx"]
+[ext_resource type="Texture2D" uid="uid://dcppuxaigtqca" path="res://Art/craftingtable.png" id="2_m2s20"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_w3cdy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g5d8v"]
-size = Vector2(14, 5)
+size = Vector2(22, 5)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e6u7l"]
 radius = 25.0
@@ -17,13 +17,12 @@ default_font_size = 7
 script = ExtResource("1_5pwxr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -5)
-scale = Vector2(0.0677777, 0.06)
-texture = ExtResource("1_gs3jx")
+position = Vector2(0, -3)
+scale = Vector2(0.721389, 0.53)
+texture = ExtResource("2_m2s20")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -0.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_g5d8v")
 
 [node name="InteractionArea" parent="." instance=ExtResource("2_w3cdy")]

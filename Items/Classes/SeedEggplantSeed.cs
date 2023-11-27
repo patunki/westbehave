@@ -18,7 +18,7 @@ public partial class SeedEggplantSeed : Seed
         tileMap = map;
     }
 
-    public void Plant(Vector2 globalPosition){
+    public void OnInteract(Vector2 globalPosition){
 
         int groundLayer = 1;
         int flowerLayer = 4;

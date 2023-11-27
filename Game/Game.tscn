@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=11 format=3 uid="uid://cmwjr3ysqyvhq"]
 
 [ext_resource type="PackedScene" uid="uid://d1d3ju81qjhuv" path="res://Player/player.tscn" id="1_8wig1"]
 [ext_resource type="PackedScene" uid="uid://b1l3deayvp2gh" path="res://Maps/InitialTileMap.tscn" id="2_te56d"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cxeckinxh1j7l" path="res://Scenes/Zombie.tscn" id="7_mxngg"]
 [ext_resource type="PackedScene" uid="uid://bj0y7qum0ed1p" path="res://Scenes/Workbench.tscn" id="9_ps17x"]
 [ext_resource type="PackedScene" uid="uid://c55kflw2tc0dc" path="res://Scenes/PineTree2.tscn" id="9_rgp64"]
+[ext_resource type="PackedScene" uid="uid://cevkikf0fro2q" path="res://Items/ItemScenes/FishingRod.tscn" id="10_uj5kc"]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true
@@ -56,3 +57,6 @@ position = Vector2(-42, 264)
 
 [node name="Workbench" parent="." instance=ExtResource("9_ps17x")]
 position = Vector2(-121, 143)
+
+[node name="FishingRod" parent="." instance=ExtResource("10_uj5kc")]
+position = Vector2(46, 193)

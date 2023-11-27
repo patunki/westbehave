@@ -53,3 +53,9 @@ res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
+res://Items/ItemScenes/HoeScene.tscn
+res://Items/Repo/ToolHoe.tres
+res://Items/ItemScenes/AxeScene.tscn
+res://Items/ItemScenes/SceneScripts/AxeScene.cs
+res://Scenes/Workbench.tscn
+res://Items/ItemScenes/FishingRod.tscn
