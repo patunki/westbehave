@@ -17,17 +17,7 @@ public partial class ItemDatabase : Node
     {   
         string folderPath = "Items/Repo/";
         LoadItems(folderPath);
-        //CRAFTING RECEPIES
-        //Recipes[1] = new List<string>{"Apple","Eggplant"};
-        //Recipes[2] = new List<string>{"Apple","Eggplant seed"};
-        Recipes[9] = new List<string>{"Planks", "Iron Ore"};
-        Recipes[13] = new List<string>{"Planks"};
-
-
-        //Recipes.TryGetValue(1, out var ingerdients);
-        //foreach (string ingredient in ingerdients){
-        //    GD.Print(ingredient);
-        //}
+        LoadRecepies();
         
     }
 
@@ -145,6 +135,12 @@ public partial class ItemDatabase : Node
         return keys;
     }
 
+    void LoadRecepies(){
+
+        Recipes[9] = new List<string>{"Planks", "Iron Ore"}; //Axe
+        Recipes[13] = new List<string>{"Planks"};   //Campfire
+        
+    }
     
 
 }

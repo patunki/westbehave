@@ -9,7 +9,9 @@ public partial class Workbench : StaticBody2D
     ItemList itemList;
     Button button;
     Item itemToCraft;
-    public int testInput;
+    public int input;
+    bool isOpen = false;
+
 
     public override void _Ready()
     {
@@ -22,30 +24,39 @@ public partial class Workbench : StaticBody2D
         button = GetNode<Button>("Button");
         button.Hide();
         interactionArea.BodyExited += Close;
+        
+        int i = 0;
         foreach (Item item in itemDatabase.itemDatabase){
             if (item.IS_CRAFTABLE){
                 itemList.AddItem(item.ITEM_NAME,item.ITEM_TEXTURE,true);
+                itemList.SetItemMetadata(i,item.ITEM_ID);
+                i++;
             }
         }
-        testInput = 13;
-        itemToCraft = itemDatabase.GetItemById(testInput);
-        
+
 
     }
 
     public void OnInteract(){
-        Open();
+        if (isOpen){
+            Close(this);
+        }
+        else {
+            Open();
+        }
     }
     void Close(Node2D body){
         itemList.Hide();
         button.Hide();
+        isOpen = false;
     }
     void Open(){
         itemList.Show();
         button.Show();
+        isOpen = true;
     }
     public void CraftItem(){
-        if (CanCraft(testInput)){
+        if (CanCraft(input)){
             playerInventory.AddItem(itemToCraft,1);
         }
         
@@ -86,7 +97,13 @@ public partial class Workbench : StaticBody2D
         }
         
     }
+
+    void _on_item_list_item_selected(int index){
+        input = (int)itemList.GetItemMetadata(index);
+        itemToCraft = itemDatabase.GetItemById(input);
+    }
     void _on_button_button_down(){
+        GD.Print(input);
         CraftItem();
     }
 

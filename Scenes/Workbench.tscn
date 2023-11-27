@@ -49,4 +49,5 @@ offset_right = 5.0
 offset_bottom = 16.0
 text = "Craft"
 
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]

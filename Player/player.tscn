@@ -133,4 +133,6 @@ expand_mode = 1
 
 [node name="HandItem" type="Node2D" parent="."]
 
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

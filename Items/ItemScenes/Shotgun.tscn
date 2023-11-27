@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkbjs36yr8tlb"]
+[gd_scene load_steps=12 format=3 uid="uid://bkbjs36yr8tlb"]
 
 [ext_resource type="Script" path="res://Items/ItemScenes/SceneScripts/ShotgunScene.cs" id="1_ah835"]
 [ext_resource type="Texture2D" uid="uid://b432tosrs1v4y" path="res://Art/light.png" id="2_jcaau"]
 [ext_resource type="Texture2D" uid="uid://cg0rrofao4u73" path="res://Art/shotgun1.png" id="2_xx2n8"]
+[ext_resource type="AudioStream" uid="uid://74w2id1ogufa" path="res://Audio/shotgun-firing-4-6746.mp3" id="4_j8h5e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vqk7a"]
 atlas = ExtResource("2_xx2n8")
@@ -91,3 +92,7 @@ color = Color(0.917647, 1, 0, 1)
 energy = 0.3
 texture = ExtResource("2_jcaau")
 texture_scale = 0.4
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_j8h5e")
+volume_db = -10.475

@@ -11,6 +11,7 @@ public partial class ShotgunScene : Node2D
     Sprite2D shotgunSprite;
     PackedScene bullet;
     Node2D game;
+    AudioStreamPlayer2D audio;
 
     public override void _Ready()
     {
@@ -22,6 +23,7 @@ public partial class ShotgunScene : Node2D
         shotgunSprite = GetNode<Sprite2D>("ShotgunSprite");
         bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
         game = GetNode<Node2D>("/root/Game");
+        audio = GetNode<AudioStreamPlayer2D>("Gunshot");
 
     }
 
@@ -43,6 +45,7 @@ public partial class ShotgunScene : Node2D
             shotParticlesRed.Emitting = true;
             shotParticlesWhite.Emitting = true;
             muzzleFlash.Show();
+            audio.Playing = true;
             Timer timer = new Timer();
             AddChild(timer);
             timer.Start(0.05);
