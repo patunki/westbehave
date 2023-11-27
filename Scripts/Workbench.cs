@@ -9,7 +9,7 @@ public partial class Workbench : StaticBody2D
     ItemList itemList;
     Button button;
     Item itemToCraft;
-    int testInput;
+    public int testInput;
 
     public override void _Ready()
     {

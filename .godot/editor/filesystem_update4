@@ -1,4 +1,4 @@
-res://Items/ItemScenes/WateringCan.tscn
+res://Items/ItemScenes/Shotgun.tscn
 res://Player/PlayerInventory.tres
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
@@ -10,7 +10,10 @@ res://Game/Game.tscn
 res://Player/player.tscn
 res://Player/EquippedItems.tscn
 res://Scenes/Bullet.tscn
-res://Items/ItemScenes/Shotgun.tscn
+res://Items/ItemScenes/WateringCan.tscn
+res://Items/ItemScenes/AxeScene.tscn
+res://Scenes/Workbench.tscn
+res://Items/ItemScenes/FishingRod.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -26,6 +29,7 @@ res://Items/Classes/ToolHoe.cs
 res://Items/Classes/ToolWateringCan.cs
 res://Items/Classes/Weapon.cs
 res://Items/Classes/WeaponShotgun.cs
+res://Items/ItemScenes/SceneScripts/AxeScene.cs
 res://Items/ItemScenes/SceneScripts/ShotgunScene.cs
 res://Items/ItemScenes/SceneScripts/WateringCan.cs
 res://Iventory/Classes/ExternalInventory.cs
@@ -53,9 +57,4 @@ res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Items/ItemScenes/HoeScene.tscn
-res://Items/Repo/ToolHoe.tres
-res://Items/ItemScenes/AxeScene.tscn
-res://Items/ItemScenes/SceneScripts/AxeScene.cs
-res://Scenes/Workbench.tscn
-res://Items/ItemScenes/FishingRod.tscn
+res://Items/ItemScenes/SceneScripts/FishingRod.cs

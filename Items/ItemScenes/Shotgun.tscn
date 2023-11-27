@@ -80,7 +80,6 @@ process_material = SubResource("ParticleProcessMaterial_hvoga")
 lifetime = 0.5
 one_shot = true
 explosiveness = 1.0
-trail_enabled = true
 trail_lifetime = 0.07
 trail_sections = 4
 

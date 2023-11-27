@@ -1,14 +1,11 @@
 [gd_scene load_steps=6 format=3 uid="uid://cevkikf0fro2q"]
 
 [ext_resource type="Texture2D" uid="uid://cpa0mk5cpbwcr" path="res://Art/koho.png" id="1_m3kyh"]
+[ext_resource type="Script" path="res://Items/ItemScenes/SceneScripts/FishingRod.cs" id="1_shnck"]
 [ext_resource type="Texture2D" uid="uid://jft0h57vkqr4" path="res://Art/onki.png" id="2_vmmfw"]
 
-[sub_resource type="Curve" id="Curve_4ncgc"]
-_data = [Vector2(0.444015, 0.0922954), 0.0, 0.0, 0, 0]
-point_count = 1
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3rvx"]
-radius = 3.0
+radius = 2.0
 height = 8.0
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_upjp0"]
@@ -16,36 +13,35 @@ a = Vector2(10, -11)
 b = Vector2(-13, 12)
 
 [node name="FishingRod" type="Node2D"]
-
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(31, 5, 9, -11)
-closed = true
-width_curve = SubResource("Curve_4ncgc")
-default_color = Color(0, 0, 0, 1)
+script = ExtResource("1_shnck")
 
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
 position = Vector2(9, -10)
-node_a = NodePath("../CharacterBody2D2")
-node_b = NodePath("../CharacterBody2D")
+node_a = NodePath("../RodBody")
+node_b = NodePath("../KohoBody")
+length = 1.0
+stiffness = 48.4
 
-[node name="Rod" type="Sprite2D" parent="."]
-texture = ExtResource("2_vmmfw")
+[node name="KohoBody" type="RigidBody2D" parent="."]
+position = Vector2(9, 8)
+mass = 0.03
 
-[node name="CharacterBody2D" type="RigidBody2D" parent="."]
-position = Vector2(9, 39)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-1, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KohoBody"]
+position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_x3rvx")
 
-[node name="Koho" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-1, 0)
+[node name="Koho" type="Sprite2D" parent="KohoBody"]
+position = Vector2(0, 2)
 scale = Vector2(0.71875, 0.6875)
 texture = ExtResource("1_m3kyh")
 
-[node name="CharacterBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-10, -3)
+[node name="RodBody" type="StaticBody2D" parent="."]
+position = Vector2(9, -10)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
-position = Vector2(10, 3)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RodBody"]
+position = Vector2(-9, 10)
 shape = SubResource("SegmentShape2D_upjp0")
+
+[node name="Rod" type="Sprite2D" parent="RodBody"]
+position = Vector2(-9, 10)
+texture = ExtResource("2_vmmfw")

@@ -59,4 +59,4 @@ position = Vector2(-42, 264)
 position = Vector2(-121, 143)
 
 [node name="FishingRod" parent="." instance=ExtResource("10_uj5kc")]
-position = Vector2(46, 193)
+position = Vector2(43, 200)
