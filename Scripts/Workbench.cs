@@ -27,7 +27,7 @@ public partial class Workbench : StaticBody2D
                 itemList.AddItem(item.ITEM_NAME,item.ITEM_TEXTURE,true);
             }
         }
-        testInput = 9;
+        testInput = 13;
         itemToCraft = itemDatabase.GetItemById(testInput);
         
 

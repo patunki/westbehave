@@ -104,7 +104,7 @@ public partial class player : CharacterBody2D
 			}
 
 			inventory.NullItemCheck();
-			inventory.EmitSignal(nameof(Inventory.InventoryChanged));
+			
 
 		}
 
@@ -120,7 +120,7 @@ public partial class player : CharacterBody2D
                 equipItem.DecQuant();
                 inventory.NullItemCheck();
                 
-                inventory.EmitSignal(nameof(Inventory.InventoryChanged));
+                
 
 
         }

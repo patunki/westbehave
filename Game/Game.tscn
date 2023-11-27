@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=9 format=3 uid="uid://cmwjr3ysqyvhq"]
 
 [ext_resource type="PackedScene" uid="uid://d1d3ju81qjhuv" path="res://Player/player.tscn" id="1_8wig1"]
 [ext_resource type="PackedScene" uid="uid://b1l3deayvp2gh" path="res://Maps/InitialTileMap.tscn" id="2_te56d"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://crm07hvhi2kk2" path="res://Scenes/DroppedItem.tscn" id="5_wl565"]
 [ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/FoodZombieMeat.tres" id="6_1r705"]
 [ext_resource type="PackedScene" uid="uid://cxeckinxh1j7l" path="res://Scenes/Zombie.tscn" id="7_mxngg"]
-[ext_resource type="PackedScene" uid="uid://p3bv7fen2s6p" path="res://Scenes/Campfire.tscn" id="9_ft3td"]
 [ext_resource type="PackedScene" uid="uid://bj0y7qum0ed1p" path="res://Scenes/Workbench.tscn" id="9_ps17x"]
 
 [node name="Game" type="Node2D"]
@@ -54,8 +53,6 @@ position = Vector2(40, 179)
 [node name="Workbench" parent="." instance=ExtResource("9_ps17x")]
 position = Vector2(-121, 143)
 
-[node name="Campfire" parent="." instance=ExtResource("9_ft3td")]
-position = Vector2(-57, 170)
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color(0.33708, 0.478317, 0.606587, 1)

@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://con5ed5weoxgv"]
+
+[ext_resource type="Script" path="res://Items/Classes/CampfireItem.cs" id="1_afmhm"]
+[ext_resource type="Texture2D" uid="uid://cual4sdphn5hl" path="res://Art/nuotioded.png" id="1_o54nj"]
+
+[resource]
+script = ExtResource("1_afmhm")
+ITEM_NAME = "Campfire"
+ITEM_ID = 13
+CustomResourcePath = "res://Items/Repo/Campfire.tres"
+ITEM_TEXTURE = ExtResource("1_o54nj")
+IS_STACKABLE = false
+IS_CRAFTABLE = true
+HOVER_TEXT = ""
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 8
+Action = ""
+DevNotes = ""
+HAS_SCENE = true
+SCENE_PATH = "res://Items/ItemScenes/CampfireStruct.tscn"

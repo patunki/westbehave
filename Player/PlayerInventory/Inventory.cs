@@ -37,9 +37,10 @@ public partial class Inventory : Resource
         for (int i = 0; i < InventoryItems.Count; i++){
             if (InventoryItems[i]?.ITEM_QUANTITY <= 0){
                 InventoryItems[i] = null;
-                EmitSignal(SignalName.InventoryChanged);
+                
             }
         }
+        EmitSignal(SignalName.InventoryChanged);
     }
 
 

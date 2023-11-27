@@ -12,7 +12,8 @@ public enum ItemType
     CONSUBLE,
     MATERIAL,
     MISC,
-    SEED
+    SEED,
+    STRUCTURE
 
 }
 

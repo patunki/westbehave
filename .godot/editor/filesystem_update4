@@ -75,3 +75,8 @@ res://Scenes/PineTree2.tscn
 res://Scenes/Campfire.tscn
 res://Scripts/Campfire.cs
 res://Items/Repo/Lighter.tres
+res://Items/Repo/Campfire.tres
+res://Items/Classes/CampfireItem.cs
+res://Items/Classes/Structure.cs
+res://Items/ItemScenes/CampfireStruct.tscn
+res://Items/ItemScenes/SceneScripts/CampfireStruct.cs

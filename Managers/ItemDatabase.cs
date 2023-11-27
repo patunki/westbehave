@@ -21,6 +21,7 @@ public partial class ItemDatabase : Node
         //Recipes[1] = new List<string>{"Apple","Eggplant"};
         //Recipes[2] = new List<string>{"Apple","Eggplant seed"};
         Recipes[9] = new List<string>{"Planks", "Iron Ore"};
+        Recipes[13] = new List<string>{"Planks"};
 
 
         //Recipes.TryGetValue(1, out var ingerdients);
