@@ -1,0 +1,162 @@
+[gd_scene load_steps=11 format=3 uid="uid://p3bv7fen2s6p"]
+
+[ext_resource type="Texture2D" uid="uid://cual4sdphn5hl" path="res://Art/nuotioded.png" id="1_ljxpu"]
+[ext_resource type="Script" path="res://Scripts/Campfire.cs" id="1_ydd7y"]
+[ext_resource type="Texture2D" uid="uid://euqxlilysp0" path="res://Art/nuotioanimaatio.png" id="2_2xk2a"]
+[ext_resource type="Texture2D" uid="uid://b432tosrs1v4y" path="res://Art/light.png" id="2_to7g2"]
+[ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="5_fkgtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5w62n"]
+size = Vector2(9, 4)
+
+[sub_resource type="Animation" id="Animation_w7hh0"]
+resource_name = "Lit"
+length = 2.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lit:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 0, 1, 2, 1, 0, 2, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Out:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lit:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PointLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1, 1.4, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.74, 0.48, 0.31, 0.65, 0.52, 0.15]
+}
+
+[sub_resource type="Animation" id="Animation_n6pov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lit:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Out:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lit:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PointLight2D:energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qiv2q"]
+_data = {
+"Lit": SubResource("Animation_w7hh0"),
+"RESET": SubResource("Animation_n6pov")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lmgn1"]
+radius = 26.0
+
+[node name="Campfire" type="StaticBody2D"]
+script = ExtResource("1_ydd7y")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-1, -2.00001)
+scale = Vector2(0.658203, 0.59375)
+color = Color(0.646249, 0.163317, 0, 1)
+energy = 0.0
+shadow_enabled = true
+shadow_item_cull_mask = 1023
+texture = ExtResource("2_to7g2")
+
+[node name="Out" type="Sprite2D" parent="."]
+position = Vector2(1, -14)
+scale = Vector2(1.59375, 1.42188)
+texture = ExtResource("1_ljxpu")
+
+[node name="Lit" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4.76837e-07, -14)
+scale = Vector2(1.3125, 1.375)
+texture = ExtResource("2_2xk2a")
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_5w62n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qiv2q")
+}
+
+[node name="InteractionArea" parent="." instance=ExtResource("5_fkgtt")]
+actionName = "LIGHT/KILL"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_lmgn1")

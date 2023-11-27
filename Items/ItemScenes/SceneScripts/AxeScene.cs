@@ -5,18 +5,20 @@ public partial class AxeScene : Node2D
 {
     AnimationPlayer animationPlayer;
     Attack attack;
+    ToolAxe axe;
 
     public override void _Ready()
     {
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        attack = new Attack(); attack.Damage = 10; attack.attackType = AttackType.axe; // temp
+        
     }
 
     public void MyItem(Item item){
-
+        axe = (ToolAxe)item;
     }
 
     void _on_hit_area_entered(Area2D area){
+        attack = axe.Attack();
         if (area is HurtBoxComponent){
             if (area.GetParent() is Tree){
                 area.CallDeferred("Hit",attack);

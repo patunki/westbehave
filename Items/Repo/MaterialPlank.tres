@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b525i34k4ot3c"]
+
+[ext_resource type="Texture2D" uid="uid://bu1yxq4om6agt" path="res://Art/plank.png" id="1_ia7bu"]
+[ext_resource type="Script" path="res://Items/Classes/Material.cs" id="2_f86f1"]
+
+[resource]
+script = ExtResource("2_f86f1")
+ITEM_NAME = "Planks"
+ITEM_ID = 10
+CustomResourcePath = "res://Items/Repo/MaterialPlank.tres"
+ITEM_TEXTURE = ExtResource("1_ia7bu")
+IS_STACKABLE = true
+IS_CRAFTABLE = false
+HOVER_TEXT = "Useful material"
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 5
+Action = ""
+DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""

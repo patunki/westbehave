@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dmncox17jpo3y"]
+
+[ext_resource type="Script" path="res://Items/Classes/Tool.cs" id="1_btjnh"]
+[ext_resource type="Texture2D" uid="uid://cbq47ec3w65sk" path="res://Art/sytkäri.png" id="1_t2gf0"]
+
+[resource]
+script = ExtResource("1_btjnh")
+ITEM_NAME = "Lighter"
+ITEM_ID = 12
+CustomResourcePath = "res://Items/Repo/Lighter.tres"
+ITEM_TEXTURE = ExtResource("1_t2gf0")
+IS_STACKABLE = false
+IS_CRAFTABLE = false
+HOVER_TEXT = ""
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 3
+Action = ""
+DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""

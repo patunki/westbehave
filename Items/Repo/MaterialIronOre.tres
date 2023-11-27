@@ -1,0 +1,25 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dhawc8kora7lm"]
+
+[ext_resource type="Texture2D" uid="uid://cwyldqc28wgn0" path="res://Art/kastelukannu_tekstuuri.png" id="1_ty5dl"]
+[ext_resource type="Script" path="res://Items/Classes/Material.cs" id="2_pr35s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2ny8"]
+atlas = ExtResource("1_ty5dl")
+region = Rect2(33.8625, 17.1611, 8.64835, 8.51323)
+
+[resource]
+script = ExtResource("2_pr35s")
+ITEM_NAME = "Iron Ore"
+ITEM_ID = 11
+CustomResourcePath = "res://Items/Repo/MaterialIronOre.tres"
+ITEM_TEXTURE = SubResource("AtlasTexture_u2ny8")
+IS_STACKABLE = true
+IS_CRAFTABLE = false
+HOVER_TEXT = "Useful Material"
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 5
+Action = ""
+DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""

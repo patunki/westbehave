@@ -1,7 +1,10 @@
 ITEM_ID,ITEM_NAME,RESOURCE,IS_STACKABLE,HOVER_TEXT,ITEM_QUANTITY,MAX_SACK,ITEM_TYPE,Dev nodes
+11,Iron Ore,res://Items/Repo/MaterialIronOre.tres,true,Useful Material,1,1,MATERIAL,
 9,Axe,res://Items/Repo/ToolHoe.tres,false,axe,1,1,TOOL,
+10,Planks,res://Items/Repo/MaterialPlank.tres,true,Useful material,1,1,MATERIAL,
 3,Apple,res://Items/Repo/food_apple.tres,true,A nice looking apple,1,10,FOOD,
 8,Watering can,res://Items/Repo/ToolWateringCan.tres,false,Kastelukannu,1,1,TOOL,
+12,Lighter,res://Items/Repo/Lighter.tres,false,,1,1,TOOL,
 1,Zombie meat,res://Items/Repo/food_zombie_meat.tres,true,Some Tasty Meat,1,1,FOOD,
 2,Cooked meat,res://Items/Repo/food_cooked_meat.tres,true,Cooked meat you can eat,1,5,FOOD,
 6,Eggplant,res://Items/Repo/food_eggplant.tres,true,A tasty eggplant,1,10,FOOD,

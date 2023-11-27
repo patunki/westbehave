@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c3uoupuv02r8n"]
+[gd_scene load_steps=16 format=3 uid="uid://c3uoupuv02r8n"]
 
 [ext_resource type="Script" path="res://Scripts/PineTree.cs" id="1_08d1i"]
 [ext_resource type="Texture2D" uid="uid://b2nu5iw8i1dv1" path="res://Art/puita.png" id="1_y0vp5"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="3_qt8dn"]
 [ext_resource type="Texture2D" uid="uid://d1ehp8yqasrmc" path="res://Art/puunkaatoanimaatio-Sheet.png" id="3_wr28d"]
 [ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="5_sv10v"]
-[ext_resource type="Texture2D" uid="uid://5elr7hmnaqcx" path="res://Art/sprite_vihannekset.png" id="6_fokdq"]
-[ext_resource type="Script" path="res://Items/Classes/Food.cs" id="7_wlo7t"]
+[ext_resource type="Texture2D" uid="uid://bu1yxq4om6agt" path="res://Art/plank.png" id="7_gmhvq"]
+[ext_resource type="Script" path="res://Items/Classes/Material.cs" id="8_vlup3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wplth"]
 atlas = ExtResource("1_y0vp5")
@@ -19,26 +19,22 @@ size = Vector2(7, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sti3v"]
 size = Vector2(7, 14)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_drbtk"]
-atlas = ExtResource("6_fokdq")
-region = Rect2(47.449, 46.6195, 26.3331, 28.1764)
-
-[sub_resource type="Resource" id="Resource_iimtm"]
-script = ExtResource("7_wlo7t")
-FoodValue = 0
-WaterValue = 0
-ITEM_NAME = "Eggplant"
-ITEM_ID = 6
-CustomResourcePath = "res://Items/Repo/food_eggplant.tres"
-ITEM_TEXTURE = SubResource("AtlasTexture_drbtk")
+[sub_resource type="Resource" id="Resource_8yuwp"]
+script = ExtResource("8_vlup3")
+ITEM_NAME = "Planks"
+ITEM_ID = 10
+CustomResourcePath = "res://Items/Repo/MaterialPlank.tres"
+ITEM_TEXTURE = ExtResource("7_gmhvq")
 IS_STACKABLE = true
 IS_CRAFTABLE = false
-HOVER_TEXT = "A tasty eggplant"
+HOVER_TEXT = "Useful material"
 ITEM_QUANTITY = 3
-MAX_STACK = 10
-ITEM_TYPE = 0
+MAX_STACK = 1
+ITEM_TYPE = 5
 Action = ""
 DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""
 
 [sub_resource type="Animation" id="Animation_7wq0q"]
 resource_name = "PineFall"
@@ -159,7 +155,7 @@ shape = SubResource("RectangleShape2D_sti3v")
 [node name="HealthComponent" parent="." instance=ExtResource("3_qt8dn")]
 
 [node name="LootComponent" parent="." instance=ExtResource("5_sv10v")]
-ItemsToDrop = Array[Resource]([SubResource("Resource_iimtm")])
+ItemsToDrop = Array[Resource]([SubResource("Resource_8yuwp")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

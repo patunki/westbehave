@@ -1,18 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://bnph3rig8hw82"]
+[gd_scene load_steps=21 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scripts/Chest.cs" id="1_sxx0p"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
 [ext_resource type="PackedScene" uid="uid://by8lovrluq1ry" path="res://Iventory/ExternalInventory.tscn" id="4_ah6qq"]
-[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="5_gsr3i"]
-[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="6_2oxb0"]
-[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/food_cooked_meat.tres" id="7_vwq4n"]
-[ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/food_zombie_meat.tres" id="8_le2mp"]
+[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/FoodApple.tres" id="5_gsr3i"]
+[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/FoodEggplant.tres" id="6_2oxb0"]
+[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/FoodCookedMeat.tres" id="7_vwq4n"]
+[ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/FoodZombieMeat.tres" id="8_le2mp"]
 [ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/SeedEggplantSeed.tres" id="9_sbo0b"]
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/ToolHoe.tres" id="10_007wo"]
 [ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/WeaponShotgun.tres" id="11_aadpa"]
 [ext_resource type="Resource" uid="uid://bhxcyh16b7lhp" path="res://Items/Repo/ToolWateringCan.tres" id="12_grjlt"]
 [ext_resource type="Resource" uid="uid://gia3bjsi5c6j" path="res://Items/Repo/ToolAxe.tres" id="13_oi8wu"]
+[ext_resource type="Resource" uid="uid://b525i34k4ot3c" path="res://Items/Repo/MaterialPlank.tres" id="14_5ahc7"]
+[ext_resource type="Resource" uid="uid://dhawc8kora7lm" path="res://Items/Repo/MaterialIronOre.tres" id="15_a5ggu"]
+[ext_resource type="Resource" uid="uid://dmncox17jpo3y" path="res://Items/Repo/Lighter.tres" id="16_gl8s7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -58,4 +61,4 @@ offset_left = -65.0
 offset_top = -89.0
 offset_right = 67.0
 offset_bottom = -24.0
-InventoryItems = Array[Resource]([ExtResource("6_2oxb0"), ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("13_oi8wu"), ExtResource("10_007wo"), ExtResource("12_grjlt"), ExtResource("11_aadpa"), null, null, null, null, null, null, null, null])
+InventoryItems = Array[Resource]([ExtResource("6_2oxb0"), ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("13_oi8wu"), ExtResource("10_007wo"), ExtResource("12_grjlt"), ExtResource("11_aadpa"), ExtResource("14_5ahc7"), ExtResource("15_a5ggu"), ExtResource("16_gl8s7"), null, null, null, null, null])

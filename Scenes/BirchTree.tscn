@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ddppovbj2786w"]
+[gd_scene load_steps=10 format=3 uid="uid://ddppovbj2786w"]
 
 [ext_resource type="Script" path="res://Scripts/Tree.cs" id="1_3i8ib"]
 [ext_resource type="Texture2D" uid="uid://b2nu5iw8i1dv1" path="res://Art/puita.png" id="1_ali0a"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="2_77at0"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="3_yn0kh"]
 [ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="4_hn35l"]
+[ext_resource type="Resource" uid="uid://b525i34k4ot3c" path="res://Items/Repo/MaterialPlank.tres" id="6_7w5d5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8q5xw"]
 atlas = ExtResource("1_ali0a")
@@ -48,6 +49,6 @@ position = Vector2(0, 3)
 
 [node name="LootComponent" parent="." instance=ExtResource("4_hn35l")]
 position = Vector2(0, 3)
-ItemsToDrop = Array[Resource]([null])
+ItemsToDrop = Array[Resource]([ExtResource("6_7w5d5")])
 
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

@@ -6,7 +6,7 @@ public partial class ToolAxe : Tool
     public Attack Attack(){
 
         Attack attack = new Attack();
-        attack.Damage = 5;
+        attack.Damage = 4;
         attack.attackType = AttackType.axe;
         return attack;
     }

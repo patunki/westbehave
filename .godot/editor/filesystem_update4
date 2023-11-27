@@ -1,4 +1,4 @@
-res://Items/ItemScenes/Shotgun.tscn
+res://Game/Game.tscn
 res://Player/PlayerInventory.tres
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
@@ -6,14 +6,6 @@ res://Items/Repo/FoodCookedMeat.tres
 res://Items/Repo/FoodZombieMeat.tres
 res://Items/Repo/ToolWateringCan.tres
 res://Items/Repo/ToolAxe.tres
-res://Game/Game.tscn
-res://Player/player.tscn
-res://Player/EquippedItems.tscn
-res://Scenes/Bullet.tscn
-res://Items/ItemScenes/WateringCan.tscn
-res://Items/ItemScenes/AxeScene.tscn
-res://Scenes/Workbench.tscn
-res://Items/ItemScenes/FishingRod.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -21,6 +13,7 @@ res://Farming/Scenes/TestPlant.cs
 res://Interaction/InteractionArea/InteractionArea.cs
 res://Items/Classes/Food.cs
 res://Items/Classes/Item.cs
+res://Items/Classes/Material.cs
 res://Items/Classes/Seed.cs
 res://Items/Classes/SeedEggplantSeed.cs
 res://Items/Classes/Tool.cs
@@ -30,6 +23,7 @@ res://Items/Classes/ToolWateringCan.cs
 res://Items/Classes/Weapon.cs
 res://Items/Classes/WeaponShotgun.cs
 res://Items/ItemScenes/SceneScripts/AxeScene.cs
+res://Items/ItemScenes/SceneScripts/FishingRod.cs
 res://Items/ItemScenes/SceneScripts/ShotgunScene.cs
 res://Items/ItemScenes/SceneScripts/WateringCan.cs
 res://Iventory/Classes/ExternalInventory.cs
@@ -56,5 +50,28 @@ res://Scripts/Workbench.cs
 res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
+res://Items/Repo/MaterialPlank.tres
+res://Scenes/Chest.tscn
+res://Player/player.tscn
+res://Player/EquippedItems.tscn
+res://Scenes/Bullet.tscn
+res://Items/ItemScenes/Shotgun.tscn
+res://Items/ItemScenes/WateringCan.tscn
+res://Items/ItemScenes/AxeScene.tscn
+res://Scenes/Workbench.tscn
+res://Items/ItemScenes/FishingRod.tscn
+res://Database/CSV/ItemDB.ITEM.translation
+res://Database/CSV/ItemDB.RESOURCE.translation
+res://Database/CSV/ItemDB.IS.translation
+res://Database/CSV/ItemDB.HOVER.translation
+res://Database/CSV/ItemDB.MAX.translation
+res://Database/CSV/ItemDB.Dev nodes.translation
 res://Database/ItemDB.json
-res://Items/ItemScenes/SceneScripts/FishingRod.cs
+res://Items/Repo/MaterialIronOre.tres
+res://Scenes/PineTree.tscn
+res://Scenes/SpruceTree.tscn
+res://Scenes/BirchTree.tscn
+res://Scenes/PineTree2.tscn
+res://Scenes/Campfire.tscn
+res://Scripts/Campfire.cs
+res://Items/Repo/Lighter.tres

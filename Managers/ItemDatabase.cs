@@ -18,9 +18,9 @@ public partial class ItemDatabase : Node
         string folderPath = "Items/Repo/";
         LoadItems(folderPath);
         //CRAFTING RECEPIES
-        Recipes[1] = new List<string>{"Apple","Eggplant"};
-        Recipes[2] = new List<string>{"Apple","Eggplant seed"};
-        Recipes[9] = new List<string>{"Apple","Eggplant seed","Cooked meat"};
+        //Recipes[1] = new List<string>{"Apple","Eggplant"};
+        //Recipes[2] = new List<string>{"Apple","Eggplant seed"};
+        Recipes[9] = new List<string>{"Planks", "Iron Ore"};
 
 
         //Recipes.TryGetValue(1, out var ingerdients);
