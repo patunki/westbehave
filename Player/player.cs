@@ -5,7 +5,7 @@ using System.Dynamic;
 using System.Reflection;
 using System.Xml.Resolvers;
 
-public partial class player : CharacterBody2D
+public partial class player : Entity
 {	
 	[Export]
 	public int moveSpeed { get; set; } = 150;

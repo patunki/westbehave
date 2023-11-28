@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://cxeckinxh1j7l"]
+[gd_scene load_steps=14 format=3 uid="uid://cxeckinxh1j7l"]
 
 [ext_resource type="Script" path="res://Scripts/Zombie.cs" id="1_58gj6"]
 [ext_resource type="Texture2D" uid="uid://drjbn7owwkmqf" path="res://Art/veetintilemap3fix.png" id="1_tes36"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="2_8wllh"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="3_4t4sa"]
 [ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="4_drmct"]
-[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/food_apple.tres" id="5_vmjpe"]
+[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/FoodApple.tres" id="5_vmjpe"]
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/ToolHoe.tres" id="6_bt0rl"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="8_k3bgx"]
+[ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="9_teojr"]
+[ext_resource type="Script" path="res://StateMachine/States/EnemyFollow.cs" id="10_dxt3d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pxrd"]
 atlas = ExtResource("1_tes36")
@@ -26,7 +28,7 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_58gj6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(-1.5, -13.75)
 scale = Vector2(1.41667, 1.22)
 texture = SubResource("AtlasTexture_4pxrd")
@@ -51,6 +53,16 @@ shape = SubResource("CapsuleShape2D_odb3b")
 [node name="LootComponent" parent="." instance=ExtResource("4_drmct")]
 ItemsToDrop = Array[Resource]([ExtResource("5_vmjpe"), ExtResource("6_bt0rl")])
 
-[node name="StateMachine" parent="." instance=ExtResource("8_k3bgx")]
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initialState") instance=ExtResource("8_k3bgx")]
+initialState = NodePath("EnemyIdle")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("9_teojr")
+enemy = NodePath("../..")
+
+[node name="EnemyFollow" type="Node" parent="StateMachine" node_paths=PackedStringArray("enemy")]
+script = ExtResource("10_dxt3d")
+enemy = NodePath("../..")
+moveSpeed = 20
 
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

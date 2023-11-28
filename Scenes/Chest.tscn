@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bnph3rig8hw82"]
+[gd_scene load_steps=23 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scripts/Chest.cs" id="1_sxx0p"]
@@ -17,6 +17,7 @@
 [ext_resource type="Resource" uid="uid://dhawc8kora7lm" path="res://Items/Repo/MaterialIronOre.tres" id="15_a5ggu"]
 [ext_resource type="Resource" uid="uid://dmncox17jpo3y" path="res://Items/Repo/Lighter.tres" id="16_gl8s7"]
 [ext_resource type="Resource" uid="uid://con5ed5weoxgv" path="res://Items/Repo/Campfire.tres" id="17_0eot0"]
+[ext_resource type="Resource" uid="uid://dhc1a6oacmy3w" path="res://Items/Repo/ToolFishingRod.tres" id="18_xeu1b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -63,4 +64,4 @@ offset_left = -65.0
 offset_top = -89.0
 offset_right = 67.0
 offset_bottom = -24.0
-InventoryItems = Array[Resource]([ExtResource("6_2oxb0"), ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("13_oi8wu"), ExtResource("10_007wo"), ExtResource("12_grjlt"), ExtResource("11_aadpa"), ExtResource("14_5ahc7"), ExtResource("15_a5ggu"), ExtResource("16_gl8s7"), ExtResource("17_0eot0"), null, null, null, null, null])
+InventoryItems = Array[Resource]([ExtResource("6_2oxb0"), ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("13_oi8wu"), ExtResource("10_007wo"), ExtResource("12_grjlt"), ExtResource("11_aadpa"), ExtResource("14_5ahc7"), ExtResource("15_a5ggu"), ExtResource("16_gl8s7"), ExtResource("17_0eot0"), ExtResource("18_xeu1b"), null, null, null, null])

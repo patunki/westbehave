@@ -1,47 +1,133 @@
-[gd_scene load_steps=6 format=3 uid="uid://cevkikf0fro2q"]
+[gd_scene load_steps=7 format=3 uid="uid://cevkikf0fro2q"]
 
 [ext_resource type="Texture2D" uid="uid://cpa0mk5cpbwcr" path="res://Art/koho.png" id="1_m3kyh"]
 [ext_resource type="Script" path="res://Items/ItemScenes/SceneScripts/FishingRod.cs" id="1_shnck"]
 [ext_resource type="Texture2D" uid="uid://jft0h57vkqr4" path="res://Art/onki.png" id="2_vmmfw"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x3rvx"]
-radius = 2.0
-height = 8.0
+[sub_resource type="Animation" id="Animation_4a035"]
+resource_name = "Throw"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rod:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.858702, -1.50273, 0.00174533]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rod:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -6), Vector2(-6, -9), Vector2(-16, -11), Vector2(8, -10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Koho:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(14, -6), Vector2(-9, -33), Vector2(-37, -20), Vector2(34, -31), Vector2(89, -2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Koho:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -3.0072, -4.61814, -2.17294, -0.0244346]
+}
 
-[sub_resource type="SegmentShape2D" id="SegmentShape2D_upjp0"]
-a = Vector2(10, -11)
-b = Vector2(-13, 12)
+[sub_resource type="Animation" id="Animation_e16se"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Rod:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Rod:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, -6)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Koho:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(14, -6)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Koho:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h27pq"]
+_data = {
+"RESET": SubResource("Animation_e16se"),
+"Throw": SubResource("Animation_4a035")
+}
 
 [node name="FishingRod" type="Node2D"]
+position = Vector2(7, -7)
 script = ExtResource("1_shnck")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
-position = Vector2(9, -10)
-node_a = NodePath("../RodBody")
-node_b = NodePath("../KohoBody")
-length = 1.0
-stiffness = 48.4
-
-[node name="KohoBody" type="RigidBody2D" parent="."]
-position = Vector2(9, 8)
-mass = 0.03
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KohoBody"]
-position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_x3rvx")
-
-[node name="Koho" type="Sprite2D" parent="KohoBody"]
-position = Vector2(0, 2)
+[node name="Koho" type="Sprite2D" parent="."]
+position = Vector2(14, -6)
 scale = Vector2(0.71875, 0.6875)
 texture = ExtResource("1_m3kyh")
 
-[node name="RodBody" type="StaticBody2D" parent="."]
-position = Vector2(9, -10)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RodBody"]
-position = Vector2(-9, 10)
-shape = SubResource("SegmentShape2D_upjp0")
-
-[node name="Rod" type="Sprite2D" parent="RodBody"]
-position = Vector2(-9, 10)
+[node name="Rod" type="Sprite2D" parent="."]
+position = Vector2(1, -6)
 texture = ExtResource("2_vmmfw")
+offset = Vector2(-10, 11)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h27pq")
+}

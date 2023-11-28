@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dhc1a6oacmy3w"]
+
+[ext_resource type="Texture2D" uid="uid://caj7dr6kbd2vn" path="res://Art/onkiinventory.png" id="1_no3x5"]
+[ext_resource type="Script" path="res://Items/Classes/ToolFishingRod.cs" id="2_rhvls"]
+
+[resource]
+script = ExtResource("2_rhvls")
+ITEM_NAME = "Fishing Rod"
+ITEM_ID = 14
+CustomResourcePath = "res://Items/Repo/ToolFishingRod.tres"
+ITEM_TEXTURE = ExtResource("1_no3x5")
+IS_STACKABLE = false
+IS_CRAFTABLE = false
+HOVER_TEXT = ""
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 3
+Action = ""
+DevNotes = ""
+HAS_SCENE = true
+SCENE_PATH = "res://Items/ItemScenes/FishingRod.tscn"

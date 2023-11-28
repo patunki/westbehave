@@ -3,18 +3,21 @@ using System;
 
 public partial class State : Node
 {
-    public void Enter(){
+
+    [Signal]
+    public delegate void TransitionedEventHandler(State oldState, String newState);
+    public virtual void Enter(){
 
     }
-    public void Exit(){
+    public virtual void Exit(){
 
     }
-    public override void _Process(double delta)
+    public virtual void Update(double delta)
     {
         
     }
 
-    public override void _PhysicsProcess(double delta)
+    public virtual void PhysicsUpdate(double delta)
     {
         
     }

@@ -1,4 +1,4 @@
-res://Items/ItemScenes/Shotgun.tscn
+res://Items/ItemScenes/FishingRod.tscn
 res://Player/PlayerInventory.tres
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
@@ -7,14 +7,14 @@ res://Items/Repo/FoodZombieMeat.tres
 res://Items/Repo/ToolWateringCan.tres
 res://Items/Repo/ToolAxe.tres
 res://Items/Repo/MaterialIronOre.tres
-res://Player/player.tscn
 res://Game/Game.tscn
+res://Player/player.tscn
 res://Player/EquippedItems.tscn
 res://Scenes/Bullet.tscn
+res://Items/ItemScenes/Shotgun.tscn
 res://Items/ItemScenes/WateringCan.tscn
 res://Items/ItemScenes/AxeScene.tscn
 res://Scenes/Workbench.tscn
-res://Items/ItemScenes/FishingRod.tscn
 res://Scenes/Chest.tscn
 res://Scenes/BirchTree.tscn
 res://Scenes/SpruceTree.tscn
@@ -71,3 +71,17 @@ res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
+res://Items/Classes/ToolFishingRod.cs
+res://Items/Repo/ToolFishingRod.tres
+res://Database/CSV/ItemDB.ITEM.translation
+res://Database/CSV/ItemDB.RESOURCE.translation
+res://Database/CSV/ItemDB.IS.translation
+res://Database/CSV/ItemDB.HOVER.translation
+res://Database/CSV/ItemDB.MAX.translation
+res://Database/CSV/ItemDB.Dev nodes.translation
+res://Scenes/Zombie.tscn
+res://StateMachine/States/ZombieIdle.cs
+res://StateMachine/States/EnemyIdle.cs
+res://Scripts/Entity.cs
+res://StateMachine/States/EnemyFollow.tscn
+res://StateMachine/States/EnemyFollow.cs
