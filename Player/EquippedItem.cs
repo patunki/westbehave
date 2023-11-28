@@ -4,237 +4,85 @@ using System;
 public partial class EquippedItem : Node2D
 {
     [Export]
-    Item item;
-    Inventory playerInventory;
-    TextureRect textureRect;
-    AnimationPlayer animationPlayer;
-    Attack attack;
-    Player _player;
-    Marker2D barrel;
-    Node2D radius;
-    PackedScene bullet;
-    Sprite2D anims;
+    Entity entity;
+    Node2D Game;
+	PackedScene itemScene;
+	Node2D itemInstance;
     HungerComponent hungerComponent;
-    GpuParticles2D shotParticlesRed;
-    GpuParticles2D shotParticlesWhite;
-    PointLight2D muzzleFlash;
+    Inventory inventory;
+    Item equipItem;
+    TextureRect equipTexture;
 
-    public override void _Ready() //kato voiko resurssiin pistää silleen että node.instantiate jolla istten on sen se scripti //kasvin istutus sen perustella mitä on kädessä;
-    {   
-        playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
-        textureRect = GetNode<TextureRect>("TextureRect");
-        animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        _player = (Player)GetParent();
-        barrel = GetNode<Marker2D>("Radius/Barrel");
-        radius = GetNode<Node2D>("Radius");
-        bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
-        anims = GetNode<Sprite2D>("Anims");
-        hungerComponent = GetNode<HungerComponent>("%HungerComponent");
-        shotParticlesWhite = GetNode<GpuParticles2D>("Radius/ShotParticlesWhite");
-        shotParticlesRed = GetNode<GpuParticles2D>("Radius/ShotParticlesRed");
-        muzzleFlash = GetNode<PointLight2D>("Radius/MuzzleFlash");
-
-    }
-
-    public override void _PhysicsProcess(double delta)
+    public override void _Ready()
     {
-        if (playerInventory.InventoryItems[15] != null){
-           GetItem();
-        }
-        else {
-            DiscardItem();
-        }
-        if (_player.heading == new Vector2(-1,0)){
-            textureRect.Scale = new Vector2(-1,1);
-            anims.Scale = new Vector2(-1,1);
-        }
-		if (_player.heading == new Vector2(1,0)){
-			textureRect.Scale = new Vector2(1,1);
-            anims.Scale = new Vector2(1,1);
-		}
-
-        radius.LookAt(GetGlobalMousePosition());
-        
+        Game = GetNode<Node2D>("/root/Game");
+        hungerComponent = GetNode<HungerComponent>("%HungerComponent");
+        inventory = GD.Load("res://Player/PlayerInventory.tres") as Inventory;
+        equipTexture = GetNode<TextureRect>("EquipTexture");
+        inventory.InventoryChanged += UpdateItem;
     }
-
+    void UpdateItem(){
+		if (inventory.InventoryItems[15] == null){
+			equipItem = null;
+			if (IsInstanceValid(itemInstance)){
+				itemInstance.QueueFree();
+			}	
+			equipTexture.Texture = null;
+		}
+		equipItem = inventory.InventoryItems[15];
+		if (equipItem != null && equipItem.HAS_SCENE && !IsInstanceValid(itemInstance)){
+			itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
+			itemInstance = itemScene.Instantiate() as Node2D;
+			itemInstance.Call("MyItem",equipItem);
+			AddChild(itemInstance);
+			//null the texture
+		}
+		else if (equipItem != null && !equipItem.HAS_SCENE){
+			//GD.Print(equipItem.ITEM_NAME);
+			equipTexture.Texture = equipItem.ITEM_TEXTURE;
+		}
+		else{
+			//GD.Print("tyhjennä");
+		}
+	}
 
     public override void _Input(InputEvent @event)
     {
-        if (Input.IsActionJustPressed("interact")){
-            if (item != null){
-                OnItemInteract();
-                
-                if (item.ITEM_QUANTITY <= 0){
-                    
-                    item.ITEM_QUANTITY = 1;
-                    playerInventory.InventoryItems[15] = null;
-                    item = null;
-                    textureRect.Texture = null;
-                    
-                }
+        if (Input.IsActionJustPressed("interact") && equipItem != null && !equipItem.HAS_SCENE){
+			if (equipItem.ITEM_TYPE == ItemType.FOOD){
+				Food foodItem = (Food)equipItem;
+				int value = foodItem.Eat();
+				hungerComponent.FoodAdd(value);
+				hungerComponent.WaterAdd(value);
 
-                playerInventory.EmitSignal(nameof(Inventory.InventoryChanged));
-            }
-        }
+				
+			}
+			else {
+				equipItem.Call("OnInteract", GlobalPosition);
+			}
 
-        if (Input.IsActionJustPressed("drop") && item != null){
+			inventory.NullItemCheck();
+			
+
+		}
+
+		if (Input.IsActionJustPressed("drop") && equipItem != null){
                 
                 PackedScene dropItem = GD.Load("res://Scenes/DroppedItem.tscn") as PackedScene;
                 DroppedItem instance = (DroppedItem)dropItem.Instantiate();
 
-                instance.item = item;
+                instance.item = equipItem;
                 instance.Position = GlobalPosition;
-                GetParent().GetParent().GetParent().AddChild(instance);
+                Game.AddChild(instance);
 
-                item.DecQuant();
-                if (item.ITEM_QUANTITY <= 0){
-                    
-                    item.ITEM_QUANTITY = 1;
-                    playerInventory.InventoryItems[15] = null;
-                    item = null;
-                    textureRect.Texture = null;
-                    
-                }
+                equipItem.DecQuant();
+                inventory.NullItemCheck();
                 
-                playerInventory.EmitSignal(nameof(Inventory.InventoryChanged));
-            
+                
+
+
         }
-
     }
 
-
-
-    void OnItemInteract(){
-       //ItemType itemType = item.ITEM_TYPE;
-       //string method = item.Action;
-       if (item.HasMethod("Plant")){
-            item.Call("Plant",GlobalPosition);
-       }
-       if (item.HasMethod("Plough")){
-            item.Call("Plough",GlobalPosition);
-       }
-       if (item.ITEM_TYPE == ItemType.FOOD){
-            Food food = (Food)item;
-            //hungerComponent.FoodAdd(food.Eat());
-            hungerComponent.WaterAdd(food.Drink());
-       }
-       if (item.HasMethod("Water")){
-            ToolWateringCan can = (ToolWateringCan)item;
-
-            /*if (can.Water(GlobalPosition)){
-                animationPlayer.Play("Water");
-            }*/
-       }
-       if (item.HasMethod("Shoot")){
-        
-			Bullet instance = (Bullet)bullet.Instantiate();
-            instance.Position = barrel.GlobalPosition;
-            //instance.Velocity = GetGlobalMousePosition();
-			GetParent().GetParent().AddChild(instance);
-            shotParticlesRed.Emitting = true;
-            shotParticlesWhite.Emitting = true;
-            muzzleFlash.Show();
-            Timer timer = new Timer();
-            AddChild(timer);
-            timer.Start(0.1);
-            timer.Timeout += muzzleFlash.Hide;
-            timer.Timeout += timer.QueueFree;
-
-       }
-       if (item is ToolAxe){
-            ToolAxe axe = (ToolAxe)item;
-            attack = axe.Attack();
-            animationPlayer.Play("AxeHit");
-
-       }
-       
-
-    }
-    void _on_hit_area_entered(Area2D area){
-        if (area is HurtBoxComponent){
-            if (area.GetParent() is Tree){
-                area.CallDeferred("Hit",attack);
-            }
-            else {
-                area.CallDeferred("Damage",attack);
-            }
-        }
-
-    }
-    
-    void GetItem(){
-            item = playerInventory.InventoryItems[15];
-            textureRect.Texture = item.ITEM_TEXTURE;
-    }
-    
-    void DiscardItem(){
-            item = null;
-            textureRect.Texture = null;
-    }
 
 }
-// ITEM USES
-
-   /*void FOOD(){
-       Food foodItem = (Food)item;
-       GD.Print("Ate ",foodItem.ITEM_NAME, ". +",foodItem.HEALTH_RESTORED,"hp");
-       foodItem.DecQuant();
-   }
-
-    void ARMOR(){
-        Item armorItem = (Item)item; //Make armor class!
-
-   }
-
-   void WEAPON(){
-        Weapon weaponItem = (Weapon)item;
-        GD.Print(weaponItem.ITEM_NAME);
-   }
-
-   void TOOL(){
-        Tool toolItem = (Tool)item;
-        GD.Print(toolItem.ITEM_NAME);
-   }
-
-   void CONSUBLE(){
-        Item consumableItem = (Item)item; //Make consumable class!
-        GD.Print(consumableItem.ITEM_NAME);
-   }
-
-   void MATERIAL(){
-        Item materialItem = (Item)item; //Make material class!
-        GD.Print(materialItem.ITEM_NAME);
-   }
-
-   void MISC(){
-        Item miscItem = (Item)item; //Make material class!
-        GD.Print(miscItem.ITEM_NAME);
-   }
-
-   void SEED(){
-        Seed seedItem = (Seed)item;
-
-        if (seedItem.HasMethod("Plant")){
-            seedItem.Call("Plant",GlobalPosition);
-        }
-   }*/
-               /* DroppedItem droppedItem = new DroppedItem();
-                droppedItem.item = item;
-                InteractionArea interactionArea = new InteractionArea();
-                CollisionShape2D coller = new CollisionShape2D();
-                CircleShape2D circle = new CircleShape2D();
-                interactionArea.Name = "InteractionArea";
-                circle.Radius = 32;
-                coller.Shape = circle;
-                interactionArea.AddChild(coller);
-                interactionArea.actionName = "TO COLLECT";
-                Sprite2D sprite2D = new Sprite2D();
-                sprite2D.Name = "ItemTexture";
-                droppedItem.AddChild(interactionArea);
-                droppedItem.AddChild(sprite2D);
-                droppedItem.Position = GlobalPosition;
-                GetParent().GetParent().GetParent().AddChild(droppedItem);*/
-
-
-
-

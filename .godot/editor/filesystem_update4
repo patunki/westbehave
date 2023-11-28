@@ -89,3 +89,5 @@ res://Player/Player.cs
 res://Player/Player.tscn
 res://Scenes/House1.tscn
 res://StateMachine/States/EnemyPunch.cs
+res://template.txt
+res://Player/EquippedItem.tscn

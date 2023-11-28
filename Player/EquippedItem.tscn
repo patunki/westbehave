@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkaelgou8h2s4"]
+
+[ext_resource type="Script" path="res://Player/EquippedItem.cs" id="1_i20gk"]
+
+[node name="EquippedItem" type="Node2D"]
+position = Vector2(0, -11)
+script = ExtResource("1_i20gk")
+
+[node name="EquipTexture" type="TextureRect" parent="."]
+offset_left = 1.0
+offset_top = -14.0
+offset_right = 11.0
+offset_bottom = -3.0
+expand_mode = 1

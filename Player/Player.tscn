@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=13 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_uvi3w"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="2_6d3or"]
@@ -6,6 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="4_5jm61"]
 [ext_resource type="PackedScene" uid="uid://bw7uui5vfbhud" path="res://Components/HungerComponent.tscn" id="5_5rjth"]
 [ext_resource type="PackedScene" uid="uid://dgd2gr1uoibqi" path="res://Game/Ui.tscn" id="6_ewvtm"]
+[ext_resource type="PackedScene" uid="uid://dkaelgou8h2s4" path="res://Player/EquippedItem.tscn" id="7_ybf6e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5rj"]
+radius = 5.0
+height = 10.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g78q"]
+radius = 7.0
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
 resource_name = "IdleAnimation"
@@ -45,13 +53,6 @@ _data = {
 "RESET": SubResource("Animation_vssut")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_to5rj"]
-radius = 5.0
-height = 10.5
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5g78q"]
-radius = 7.0
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -1)
 motion_mode = 1
@@ -63,11 +64,6 @@ texture = ExtResource("2_6d3or")
 offset = Vector2(12, -16)
 hframes = 18
 frame = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerSprite"]
-libraries = {
-"": SubResource("AnimationLibrary_2eogn")
-}
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 visible = false
@@ -125,15 +121,13 @@ offset_bottom = 64.0
 text = "sadasd"
 horizontal_alignment = 2
 
-[node name="EquipItem" type="TextureRect" parent="."]
-offset_left = 1.0
-offset_top = -14.0
-offset_right = 11.0
-offset_bottom = -3.0
-expand_mode = 1
+[node name="EquippedItem" parent="." node_paths=PackedStringArray("entity") instance=ExtResource("7_ybf6e")]
+entity = NodePath("..")
 
-[node name="HandItem" type="Node2D" parent="."]
-
-[node name="AudioListener2D" type="AudioListener2D" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../PlayerSprite")
+libraries = {
+"": SubResource("AnimationLibrary_2eogn")
+}
 
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
