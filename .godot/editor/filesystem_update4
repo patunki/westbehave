@@ -87,3 +87,5 @@ res://StateMachine/States/EnemyFollow.tscn
 res://StateMachine/States/EnemyFollow.cs
 res://Player/Player.cs
 res://Player/Player.tscn
+res://Scenes/House1.tscn
+res://StateMachine/States/EnemyPunch.cs

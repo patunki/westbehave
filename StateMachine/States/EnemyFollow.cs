@@ -18,15 +18,15 @@ public partial class EnemyFollow : State
     {
         Vector2 direction = player.GlobalPosition - enemy.GlobalPosition;
         float distance = direction.Length();
-
-        if (distance < 100){
+        if (distance < 100 && distance > 20){
             enemy.Velocity = direction.Normalized() * moveSpeed;
         }
-        else {
-            enemy.Velocity = new Vector2(0,0);
+
+        if (distance < 20){
+            EmitSignal("Transitioned",this,"EnemyPunch");
         }
 
-        if (distance > 100){
+        if (distance > 120){
             EmitSignal("Transitioned",this,"EnemyIdle");
         }
     }

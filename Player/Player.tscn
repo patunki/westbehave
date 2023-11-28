@@ -85,7 +85,7 @@ healthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
 visible = false
-position = Vector2(10, 2)
+position = Vector2(1, -4)
 shape = SubResource("CapsuleShape2D_5g78q")
 
 [node name="HealthComponent" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_5jm61")]

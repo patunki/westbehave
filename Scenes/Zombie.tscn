@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxeckinxh1j7l"]
+[gd_scene load_steps=19 format=3 uid="uid://cxeckinxh1j7l"]
 
 [ext_resource type="Script" path="res://Scripts/Zombie.cs" id="1_58gj6"]
 [ext_resource type="Texture2D" uid="uid://drjbn7owwkmqf" path="res://Art/veetintilemap3fix.png" id="1_tes36"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="8_k3bgx"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="9_teojr"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyFollow.cs" id="10_dxt3d"]
+[ext_resource type="Script" path="res://StateMachine/States/EnemyPunch.cs" id="11_b2ikm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pxrd"]
 atlas = ExtResource("1_tes36")
@@ -22,6 +23,69 @@ height = 26.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_odb3b"]
 radius = 3.0
 height = 8.0
+
+[sub_resource type="Animation" id="Animation_qf8ca"]
+resource_name = "Punch"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.429351, -0.329867, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fist/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="Animation" id="Animation_hykmx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fist/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kpimp"]
+_data = {
+"Punch": SubResource("Animation_qf8ca"),
+"RESET": SubResource("Animation_hykmx")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hdhoa"]
+radius = 14.0
 
 [node name="Zombie" type="CharacterBody2D"]
 collision_layer = 3
@@ -36,8 +100,6 @@ texture = SubResource("AtlasTexture_4pxrd")
 [node name="HealthComponent" parent="." instance=ExtResource("2_8wllh")]
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("3_4t4sa")]
-collision_layer = 3
-collision_mask = 3
 healthComponent = NodePath("../HealthComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
@@ -65,4 +127,24 @@ script = ExtResource("10_dxt3d")
 enemy = NodePath("../..")
 moveSpeed = 20
 
+[node name="EnemyPunch" type="Node" parent="StateMachine" node_paths=PackedStringArray("animationPlayer", "enemy")]
+script = ExtResource("11_b2ikm")
+animationPlayer = NodePath("../../AnimationPlayer")
+enemy = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kpimp")
+}
+
+[node name="Fist" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fist"]
+position = Vector2(0, -20)
+shape = SubResource("CircleShape2D_hdhoa")
+disabled = true
+
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
+[connection signal="area_entered" from="Fist" to="." method="_on_fist_area_entered"]

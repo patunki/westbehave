@@ -11,8 +11,6 @@ public partial class HurtBoxComponent : Area2D
             
             healthComponent.Damage(attack);
         
-        
-        
         }
     }
     public void Hit(Attack attack){

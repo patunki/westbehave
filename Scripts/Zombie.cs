@@ -30,6 +30,13 @@ public partial class Zombie : Entity
 
     }
 
+    void _on_fist_area_entered(Area2D area){
+        Attack attack = new Attack(); attack.Damage = 8;
+        if (area is HurtBoxComponent){
+            area.Call("Damage",attack);
+        }
+    }
+
 }
 
 //make entity script and all enteties inherit 

@@ -34,9 +34,6 @@ layer_4/y_sort_origin = 0
 layer_4/z_index = 0
 layer_4/tile_data = PackedInt32Array()
 
-[node name="Chest" parent="." instance=ExtResource("3_vag8b")]
-position = Vector2(329, 103)
-
 [node name="House" parent="." instance=ExtResource("4_p6lbj")]
 position = Vector2(-2, 0)
 
@@ -55,4 +52,7 @@ visible = false
 color = Color(0.33708, 0.478317, 0.606587, 1)
 
 [node name="Player" parent="." instance=ExtResource("8_rfurq")]
-position = Vector2(-18, 185)
+position = Vector2(-60, 189)
+
+[node name="Chest" parent="." instance=ExtResource("3_vag8b")]
+position = Vector2(329, 103)
