@@ -38,6 +38,7 @@ region = Rect2(32.7273, 16.1614, 25.5397, 25.4045)
 script = ExtResource("7_pckdk")
 FoodValue = 0
 WaterValue = 0
+CanCook = false
 ITEM_NAME = "Zombie meat"
 ITEM_ID = 1
 CustomResourcePath = "res://Items/Repo/food_zombie_meat.tres"

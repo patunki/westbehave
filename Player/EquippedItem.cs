@@ -54,6 +54,7 @@ public partial class EquippedItem : Node2D
 				Food foodItem = (Food)equipItem;
 				int value = foodItem.Eat();
 				hungerComponent.FoodAdd(value);
+				value = foodItem.Drink();
 				hungerComponent.WaterAdd(value);
 
 				

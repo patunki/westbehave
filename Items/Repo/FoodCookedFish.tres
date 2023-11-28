@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://beah0mryxggsp"]
+
+[ext_resource type="Script" path="res://Items/Classes/Food.cs" id="1_00s8q"]
+[ext_resource type="Texture2D" uid="uid://bs6e4221xiw6g" path="res://Art/kypsakala.png" id="1_ttgm3"]
+
+[resource]
+script = ExtResource("1_00s8q")
+FoodValue = 100
+WaterValue = 100
+CanCook = false
+ITEM_NAME = "Cooked Fish"
+ITEM_ID = 16
+CustomResourcePath = "res://Items/Repo/FoodCookedFish.tres"
+ITEM_TEXTURE = ExtResource("1_ttgm3")
+IS_STACKABLE = true
+IS_CRAFTABLE = false
+HOVER_TEXT = ""
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 0
+Action = ""
+DevNotes = "A cooked fish"
+HAS_SCENE = false
+SCENE_PATH = ""

@@ -8,6 +8,10 @@ public partial class Food : Item
     public int FoodValue;
     [Export]
     public int WaterValue;
+    [Export]
+    public bool CanCook;
+    [Export]
+    Item CookedItem;
 
     public int Eat(){
         DecQuant();

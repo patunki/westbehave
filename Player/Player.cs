@@ -37,6 +37,10 @@ public partial class Player : Entity
 	void _on_health_component_health_depleted(){
 		Die();
 		Modulate = new Color (1,0,0);
+		Label label = new Label();
+		label.Text = "DEAD";
+		AddChild(label);
+		animationPlayer.Pause();
 	}
 
 	void _on_health_component_damage_taken(){

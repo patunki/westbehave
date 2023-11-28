@@ -11,6 +11,7 @@ region = Rect2(47.449, 46.6195, 26.3331, 28.1764)
 script = ExtResource("2_10d4s")
 FoodValue = 10
 WaterValue = 5
+CanCook = false
 ITEM_NAME = "Eggplant"
 ITEM_ID = 6
 CustomResourcePath = "res://Items/Repo/food_eggplant.tres"

@@ -1,8 +1,11 @@
-res://Scenes/Chest.tscn
+res://Game/Game.tscn
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
 res://Items/Repo/FoodCookedMeat.tres
-res://Game/Game.tscn
+res://Items/Repo/FoodZombieMeat.tres
+res://Items/Repo/MaterialIronOre.tres
+res://Items/Repo/ToolAxe.tres
+res://Items/Repo/ToolWateringCan.tres
 res://Player/Player.tscn
 res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WateringCan.tscn
@@ -11,10 +14,12 @@ res://Items/ItemScenes/FishingRod.tscn
 res://Scenes/Zombie.tscn
 res://Player/EquippedItem.tscn
 res://Player/PlayerInventory/Inventory.tscn
+res://Scenes/Chest.tscn
 res://Iventory/ExternalInventory.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
+res://CraftingRecepies.cs
 res://Farming/Scenes/TestPlant.cs
 res://Interaction/InteractionArea/InteractionArea.cs
 res://Items/Classes/CampfireItem.cs
@@ -68,9 +73,3 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Items/Repo/FoodZombieMeat.tres
-res://Items/Repo/MaterialIronOre.tres
-res://Items/Repo/ToolAxe.tres
-res://Items/Repo/ToolWateringCan.tres
-res://CraftingRecepies.cs
-res://CraftingRecepies.tres

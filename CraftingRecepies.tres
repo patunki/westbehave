@@ -1,7 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://wck7xiqohqro"]
-
-[ext_resource type="Script" path="res://CraftingRecepies.cs" id="1_ep4w2"]
-
-[resource]
-script = ExtResource("1_ep4w2")
-Recipes = null

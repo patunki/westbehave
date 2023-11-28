@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="10_ko0my"]
 [ext_resource type="Script" path="res://StateMachine/States/Fishing.cs" id="11_31v8l"]
 
-[sub_resource type="Resource" id="Resource_a3btc"]
+[sub_resource type="Resource" id="Resource_dxbxf"]
 script = ExtResource("2_g10il")
 InventoryItems = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
 
@@ -69,7 +69,7 @@ script = ExtResource("1_uvi3w")
 EntityName = "Player"
 entityType = 4
 entityGuild = 3
-inventory = SubResource("Resource_a3btc")
+inventory = SubResource("Resource_dxbxf")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_6d3or")
