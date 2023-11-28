@@ -73,3 +73,4 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
+res://Player/PlayerInventory/Inventory.cs
