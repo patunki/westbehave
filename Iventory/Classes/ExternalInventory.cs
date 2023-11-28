@@ -4,19 +4,21 @@ using System;
 public partial class ExternalInventory : Control
 {
     [Export]
-    public Godot.Collections.Array<Item> InventoryItems { get; set; }
+    Storage storage;
+    Inventory inventory;
     PackedScene inventorySlot;
     GridContainer gridContainer;
     GameManager gameManager;
     bool isOpen = true;
 
 	public override void _Ready(){
+        inventory = storage.inventory;
 	    inventorySlot = GD.Load<PackedScene>("res://Iventory/ExternalInventorySlot.tscn");
 	    gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");
         //gameManager.ItemLanded += SetItem;
 	    //gameManager.ExternalInventory += GetExternal;
-        PopulateInv(InventoryItems);
+        PopulateInv(inventory.InventoryItems);
         UpdateInventory();
         Close();
         
@@ -37,9 +39,9 @@ public partial class ExternalInventory : Control
 	}
         public void UpdateInventory(){
         var slots = gridContainer.GetChildren();
-        for (int i = 0; i < InventoryItems.Count; i++){
-            if (InventoryItems[i] != null){
-                slots[i].Call("Update", InventoryItems[i]);
+        for (int i = 0; i < inventory.InventoryItems.Count; i++){
+            if (inventory.InventoryItems[i] != null){
+                slots[i].Call("Update", inventory.InventoryItems[i]);
             }
             else {
                 slots[i].Call("Empty");
@@ -69,53 +71,5 @@ public partial class ExternalInventory : Control
 
 	}
 
-	public bool AddItem(Item itemog, int quant){
-        Item item = (Item)itemog.Duplicate(true);
-        GD.Print("Add item called ",item.ITEM_NAME, " quant: ",quant);
-        bool hasItem = CheckSame(item, quant);
-        if (!hasItem){
-            int emptySpot = GetSpot(item,quant);
-            InventoryItems[emptySpot] = item;
-			UpdateInventory();
-            
-            return true;
-        }
-        else if (hasItem){
-            return true;
-        }else{
-            return false;
-        }
-    }
-
-
-
-    private int GetSpot(Item item, int quant){ //Checks for the first empty slot
-        
-            for (int i = 0; i < InventoryItems.Count; i++){
-              if (InventoryItems[i] == null){
-                return i;
-              }
-          
-            }
-
-        return -1;
-    }
-
-    public bool CheckSame(Item item, int quant){                                                      //checks if you aleady have the item && its stackable
-        if (item.IS_STACKABLE) {
-            for (int i = 0; i < InventoryItems.Count; i++){
-                if (InventoryItems[i] != null && InventoryItems[i].ITEM_ID == item.ITEM_ID){             //if (InventoryItems[i].ITEM_ID == item.ITEM_ID){ ei toimi
-                    InventoryItems[i].AddQuant(quant);
-					UpdateInventory();
-                    return true;
-                }
-          
-            }
-            
-        }
-        return false;
-
-    
-	}
 
 }

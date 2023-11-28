@@ -2,7 +2,7 @@ using Godot;
 using System;
 
 
-public partial class Chest : StaticBody2D
+public partial class Chest : Storage
 {
     public bool isOpen = false;
     private Sprite2D spriteClosed;

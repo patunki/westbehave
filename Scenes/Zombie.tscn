@@ -16,7 +16,7 @@
 
 [sub_resource type="Resource" id="Resource_4xr8t"]
 script = ExtResource("2_roilr")
-InventoryItems = null
+InventoryItems = []
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pxrd"]
 atlas = ExtResource("1_tes36")
@@ -178,6 +178,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fist"]
+visible = false
 position = Vector2(0.925757, -14.5308)
 shape = SubResource("CircleShape2D_hdhoa")
 disabled = true

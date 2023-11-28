@@ -1,24 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnph3rig8hw82"]
+[gd_scene load_steps=11 format=3 uid="uid://bnph3rig8hw82"]
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scripts/Chest.cs" id="1_sxx0p"]
+[ext_resource type="Script" path="res://Scripts/Inventory.cs" id="2_mqx48"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
 [ext_resource type="PackedScene" uid="uid://by8lovrluq1ry" path="res://Iventory/ExternalInventory.tscn" id="4_ah6qq"]
-[ext_resource type="Resource" uid="uid://con5ed5weoxgv" path="res://Items/Repo/Campfire.tres" id="5_0cvek"]
-[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/FoodCookedMeat.tres" id="5_804c4"]
-[ext_resource type="Resource" uid="uid://ciliqbuohl6nr" path="res://Items/Repo/FoodRawFish.tres" id="5_nr1tt"]
-[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/FoodApple.tres" id="6_gisse"]
-[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/FoodEggplant.tres" id="8_k6640"]
-[ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/FoodZombieMeat.tres" id="10_d3ti3"]
-[ext_resource type="Resource" uid="uid://dmncox17jpo3y" path="res://Items/Repo/Lighter.tres" id="11_fujy7"]
-[ext_resource type="Resource" uid="uid://dhawc8kora7lm" path="res://Items/Repo/MaterialIronOre.tres" id="12_6wc0i"]
-[ext_resource type="Resource" uid="uid://b525i34k4ot3c" path="res://Items/Repo/MaterialPlank.tres" id="13_xb72w"]
-[ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/SeedEggplantSeed.tres" id="14_htj20"]
-[ext_resource type="Resource" uid="uid://gia3bjsi5c6j" path="res://Items/Repo/ToolAxe.tres" id="15_2s0rk"]
-[ext_resource type="Resource" uid="uid://dhc1a6oacmy3w" path="res://Items/Repo/ToolFishingRod.tres" id="16_dgc32"]
-[ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/ToolHoe.tres" id="17_odtgj"]
-[ext_resource type="Resource" uid="uid://bhxcyh16b7lhp" path="res://Items/Repo/ToolWateringCan.tres" id="18_vy5kw"]
-[ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/WeaponShotgun.tres" id="19_pulfx"]
+
+[sub_resource type="Resource" id="Resource_i4ct7"]
+script = ExtResource("2_mqx48")
+InventoryItems = []
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -36,6 +26,7 @@ size = Vector2(21, 14)
 
 [node name="Chest" type="StaticBody2D" groups=["ExternalInventory"]]
 script = ExtResource("1_sxx0p")
+inventory = SubResource("Resource_i4ct7")
 
 [node name="ChestClosed" type="Sprite2D" parent="."]
 position = Vector2(0, 2)
@@ -59,10 +50,10 @@ visible = false
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_n2q1d")
 
-[node name="ExternalInventory" parent="." instance=ExtResource("4_ah6qq")]
+[node name="ExternalInventory" parent="." node_paths=PackedStringArray("storage") instance=ExtResource("4_ah6qq")]
 visible = false
 offset_left = -65.0
 offset_top = -89.0
 offset_right = 67.0
 offset_bottom = -24.0
-InventoryItems = Array[Resource]([ExtResource("5_0cvek"), ExtResource("6_gisse"), ExtResource("5_804c4"), ExtResource("8_k6640"), ExtResource("5_nr1tt"), ExtResource("10_d3ti3"), ExtResource("11_fujy7"), ExtResource("12_6wc0i"), ExtResource("13_xb72w"), ExtResource("14_htj20"), ExtResource("15_2s0rk"), ExtResource("16_dgc32"), ExtResource("17_odtgj"), ExtResource("18_vy5kw"), ExtResource("19_pulfx"), null, null, null])
+storage = NodePath("..")

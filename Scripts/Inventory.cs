@@ -8,7 +8,7 @@ public partial class Inventory : Resource
 {
 
     [Export]
-	public Godot.Collections.Array<Item> InventoryItems { get; set; }
+	public Godot.Collections.Array<Item> InventoryItems { get; set; } = new Godot.Collections.Array<Item>();
     [Signal]
     public delegate void InventoryChangedEventHandler();
 
