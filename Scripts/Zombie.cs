@@ -16,7 +16,8 @@ public partial class Zombie : Entity
 
     void _on_health_component_health_depleted(){
         lootComponent.DropItems();
-        QueueFree();
+        Die();
+        //QueueFree();
     }
     public override void _PhysicsProcess(double delta)
     {
@@ -31,7 +32,7 @@ public partial class Zombie : Entity
     }
 
     void _on_fist_area_entered(Area2D area){
-        Attack attack = new Attack(); attack.Damage = 8;
+        Attack attack = new Attack(); attack.Damage = 2;
         if (area is HurtBoxComponent){
             area.Call("Damage",attack);
         }

@@ -32,7 +32,7 @@ public partial class ShotgunScene : Node2D
         radius.LookAt(GetGlobalMousePosition());
     }
 
-    public void MyItem(Item item){
+    public void MyItem(Item item, Entity entity){
         GD.Print(item.ITEM_NAME);
     }
 

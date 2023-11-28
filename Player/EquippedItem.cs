@@ -26,6 +26,7 @@ public partial class EquippedItem : Node2D
 			equipItem = null;
 			if (IsInstanceValid(itemInstance)){
 				itemInstance.QueueFree();
+				entity.EnterFSMState("Idle");
 			}	
 			equipTexture.Texture = null;
 		}
@@ -33,7 +34,7 @@ public partial class EquippedItem : Node2D
 		if (equipItem != null && equipItem.HAS_SCENE && !IsInstanceValid(itemInstance)){
 			itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
 			itemInstance = itemScene.Instantiate() as Node2D;
-			itemInstance.Call("MyItem",equipItem);
+			itemInstance.Call("MyItem",equipItem,entity);
 			AddChild(itemInstance);
 			//null the texture
 		}

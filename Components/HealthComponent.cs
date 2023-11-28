@@ -9,6 +9,8 @@ public partial class HealthComponent : Node2D
     Label label;
     [Signal]
     public delegate void HealthDepletedEventHandler();
+    [Signal]
+    public delegate void DamageTakenEventHandler();
     bool hasLable = true;
 
     public override void _Ready()
@@ -29,6 +31,7 @@ public partial class HealthComponent : Node2D
             
         }
         UpdateLabel();
+        EmitSignal(SignalName.DamageTaken);
     }
 
     public void Starve(int damage){

@@ -6,10 +6,10 @@ public partial class EnemyPunch : State
     Entity player;
     [Export]
     AnimationPlayer animationPlayer;
-    [Export]
     Entity enemy;
-    public override void Enter()
+    public override void Enter(Entity entity)
     {
+        enemy = entity;
         player = (Entity)GetTree().GetFirstNodeInGroup("Player");
         enemy.Velocity = new Vector2(0,0);
         animationPlayer.Play("Punch");
@@ -22,7 +22,7 @@ public partial class EnemyPunch : State
     }
 
     void Follow(){
-        EmitSignal("Transitioned",this,"EnemyFollow");
+        EmitSignal(SignalName.Transitioned,this,"EnemyFollow");
     }
 
 }

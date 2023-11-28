@@ -4,13 +4,12 @@ using System;
 public partial class EnemyFollow : State
 {
     Entity player;
-    [Export]
     Entity enemy;
     [Export]
     int moveSpeed;
-    public override void Enter()
+    public override void Enter(Entity entity)
     {
-        GD.Print("Entered EnemyFollow");
+        enemy = entity;
         player = (Entity)GetTree().GetFirstNodeInGroup("Player");
     }
 
@@ -18,16 +17,18 @@ public partial class EnemyFollow : State
     {
         Vector2 direction = player.GlobalPosition - enemy.GlobalPosition;
         float distance = direction.Length();
+
+        if (distance > 120 || player.entityState == EntityState.Dead){
+            EmitSignal(SignalName.Transitioned,this,"EnemyIdle");
+        }
+
         if (distance < 100 && distance > 20){
             enemy.Velocity = direction.Normalized() * moveSpeed;
         }
 
         if (distance < 20){
-            EmitSignal("Transitioned",this,"EnemyPunch");
+            EmitSignal(SignalName.Transitioned,this,"EnemyPunch");
         }
 
-        if (distance > 120){
-            EmitSignal("Transitioned",this,"EnemyIdle");
-        }
     }
 }

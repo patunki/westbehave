@@ -1,4 +1,6 @@
+TextureRect
 Node
+CanvasModulate
 CollisionShape2D
 Area2D
 AnimationPlayer
@@ -6,7 +8,6 @@ CharacterBody2D
 AudioListener2D
 AudioStreamPlayer2D
 Sprite2D
-CanvasModulate
 PointLight2D
 StaticBody2D
 Node2D

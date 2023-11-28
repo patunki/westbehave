@@ -9,7 +9,7 @@ public partial class CampfireStruct : Node2D
     {
         inventory = GD.Load("res://Player/PlayerInventory.tres") as Inventory;
     }
-    public void MyItem(Item item){
+    public void MyItem(Item item, Entity entity){
         campFire = (CampfireItem)item;
     }
     public override void _Input(InputEvent @event)

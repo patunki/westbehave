@@ -6,7 +6,7 @@ public partial class State : Node
 
     [Signal]
     public delegate void TransitionedEventHandler(State oldState, String newState);
-    public virtual void Enter(){
+    public virtual void Enter(Entity entity){
 
     }
     public virtual void Exit(){

@@ -5,6 +5,8 @@
 
 [resource]
 script = ExtResource("2_rhvls")
+Efficensy = 50
+Quality = 1.0
 ITEM_NAME = "Fishing Rod"
 ITEM_ID = 14
 CustomResourcePath = "res://Items/Repo/ToolFishingRod.tres"

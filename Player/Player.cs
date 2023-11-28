@@ -1,9 +1,6 @@
 using Godot;
-using System;
-using System.ComponentModel.Design;
-using System.Dynamic;
-using System.Reflection;
-using System.Xml.Resolvers;
+
+
 
 public partial class Player : Entity
 {	
@@ -13,7 +10,9 @@ public partial class Player : Entity
 	public Sprite2D sprite;
 	private AnimationPlayer animationPlayer;
 	private string spritePath = "PlayerSprite";
-	HungerComponent hungerComponent;
+	public HungerComponent hungerComponent;
+	StateMachine stateMachine;
+	
 	
 
 
@@ -22,18 +21,41 @@ public partial class Player : Entity
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		animationPlayer.Play("IdleAnimation");
 		hungerComponent = GetNode<HungerComponent>("%HungerComponent");
+		stateMachine = GetNode<StateMachine>("StateMachine");
+		
 	}
 
 
 	public override void _PhysicsProcess(double delta){
 
-		MoveAndSlide(); //Godot method
+		if (canMove){
+			MoveAndSlide();
+		}
 
 	}
 
 	void _on_health_component_health_depleted(){
-		GD.Print("ded");
+		Die();
+		Modulate = new Color (1,0,0);
 	}
+
+	void _on_health_component_damage_taken(){
+		sprite.Modulate = new Color(1,0,0);
+		Timer timer = new Timer();
+		AddChild(timer);
+		timer.Start(0.2);
+		timer.Timeout += ResetColor;
+		timer.Timeout += timer.QueueFree;
+	}
+
+	void ResetColor(){
+		sprite.Modulate = new Color(1,1,1);
+	}
+
+    public override void EnterFSMState(string stateName)
+    {
+        stateMachine.Transitioned(stateMachine.currentState, stateName);
+    }
 
 
     public override void _Input(InputEvent @event)
@@ -52,9 +74,6 @@ public partial class Player : Entity
 
 		
     }
-
-
-
 	
 }	
 

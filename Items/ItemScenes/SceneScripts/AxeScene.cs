@@ -13,7 +13,7 @@ public partial class AxeScene : Node2D
         
     }
 
-    public void MyItem(Item item){
+    public void MyItem(Item item, Entity entity){
         axe = (ToolAxe)item;
     }
 

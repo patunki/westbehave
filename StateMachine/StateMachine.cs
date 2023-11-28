@@ -9,7 +9,10 @@ public partial class StateMachine : Node
     [Export]
     public State initialState;
     public Godot.Collections.Dictionary<string, State> states = new Godot.Collections.Dictionary<string, State>();
-    State currentState;
+    public State currentState;
+    [Export]
+    Entity entity;
+    bool isActive = true;
 
     public override void _Ready()
     {
@@ -20,7 +23,7 @@ public partial class StateMachine : Node
         }
         if (initialState != null){
             currentState = initialState; // temp
-            currentState.Enter();
+            currentState.Enter(entity);
             currentState.Transitioned += Transitioned;
         }
     }
@@ -28,9 +31,19 @@ public partial class StateMachine : Node
     public override void _Process(double delta)
     {
         if (currentState != null){
-            currentState.Call("Update",delta);
+            currentState.Update(delta);
+        }
+        if (entity.entityState == EntityState.Dead){
+            Deactivate();
         }
 
+    }
+
+    void Deactivate(){
+        if (isActive){
+            Transitioned(currentState, "Dead");
+            isActive = false;
+        }
     }
 
     public override void _PhysicsProcess(double delta)
@@ -38,8 +51,7 @@ public partial class StateMachine : Node
         currentState.PhysicsUpdate(delta);
     }
 
-    void Transitioned(State oldState, string newStateName){
-        GD.Print("signal caught ", oldState.Name, " -->> ", newStateName);
+    public void Transitioned(State oldState, string newStateName){
         if (currentState != oldState){
            return;
         }
@@ -48,8 +60,9 @@ public partial class StateMachine : Node
             currentState.Exit();
         }
         
-        newState.Enter();
+        newState.Enter(entity);
         currentState = newState;
+        GD.Print("signal caught ", oldState.Name, " -->> ", newStateName);
         currentState.Transitioned += Transitioned;
     }
 

@@ -19,7 +19,7 @@ size = Vector2(7, 9)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sti3v"]
 size = Vector2(7, 14)
 
-[sub_resource type="Resource" id="Resource_8yuwp"]
+[sub_resource type="Resource" id="Resource_c4np7"]
 script = ExtResource("8_vlup3")
 ITEM_NAME = "Planks"
 ITEM_ID = 10
@@ -155,7 +155,7 @@ shape = SubResource("RectangleShape2D_sti3v")
 [node name="HealthComponent" parent="." instance=ExtResource("3_qt8dn")]
 
 [node name="LootComponent" parent="." instance=ExtResource("5_sv10v")]
-ItemsToDrop = Array[Resource]([SubResource("Resource_8yuwp")])
+ItemsToDrop = Array[Resource]([SubResource("Resource_c4np7")])
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

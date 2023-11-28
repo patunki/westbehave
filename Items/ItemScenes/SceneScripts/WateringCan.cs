@@ -19,7 +19,7 @@ public partial class WateringCan : Node2D
         
     }
 
-    public void MyItem(Item item){
+    public void MyItem(Item item, Entity entity){
         can = (ToolWateringCan)item;
     }
 

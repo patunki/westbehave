@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ciliqbuohl6nr"]
+
+[ext_resource type="Texture2D" uid="uid://dsk0il75b43ft" path="res://Art/kala.png" id="1_0bq23"]
+[ext_resource type="Script" path="res://Items/Classes/Food.cs" id="1_bfued"]
+
+[resource]
+script = ExtResource("1_bfued")
+FoodValue = 30
+WaterValue = 25
+ITEM_NAME = "Raw Fish"
+ITEM_ID = 15
+CustomResourcePath = "res://Items/Repo/FoodRawFish.tres"
+ITEM_TEXTURE = ExtResource("1_0bq23")
+IS_STACKABLE = true
+IS_CRAFTABLE = false
+HOVER_TEXT = ""
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 0
+Action = ""
+DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""
