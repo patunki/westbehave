@@ -77,3 +77,4 @@ res://Database/ItemDB.json
 res://Player/PlayerInventory/HotbarSlot.tscn
 res://Player/PlayerInventory/Hotbar.cs
 res://Player/PlayerInventory/HotbarSlot.cs
+res://Scenes/DroppedItem.tscn

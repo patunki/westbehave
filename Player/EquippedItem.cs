@@ -12,6 +12,9 @@ public partial class EquippedItem : Node2D
     Inventory inventory;
     Item equipItem;
     TextureRect equipTexture;
+	[Export]
+	Hotbar hotbar;
+	bool sceneAlive = false;
 
     public override void _Ready()
     {
@@ -21,29 +24,32 @@ public partial class EquippedItem : Node2D
         equipTexture = GetNode<TextureRect>("EquipTexture");
         inventory.InventoryChanged += UpdateItem;
     }
-    void UpdateItem(){
-		if (inventory.InventoryItems[15] == null){
-			equipItem = null;
-			if (IsInstanceValid(itemInstance)){
-				itemInstance.QueueFree();
-				entity.EnterFSMState("Idle");
-			}	
-			equipTexture.Texture = null;
+    public void UpdateItem(){
+		int selected = hotbar.selected;
+		if (inventory.InventoryItems[selected] == equipItem){
+			return;
 		}
-		equipItem = inventory.InventoryItems[15];
-		if (equipItem != null && equipItem.HAS_SCENE && !IsInstanceValid(itemInstance)){
+		if (IsInstanceValid(itemInstance)){	
+			itemInstance.QueueFree();
+			sceneAlive = false; //Temp
+		}
+		equipTexture.Texture = null;
+		equipItem = inventory.InventoryItems[selected];
+
+		if (equipItem != null && equipItem.HAS_SCENE && sceneAlive == false){
 			itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
 			itemInstance = itemScene.Instantiate() as Node2D;
 			itemInstance.Call("MyItem",equipItem,entity);
 			AddChild(itemInstance);
-			//null the texture
+			sceneAlive = true;
 		}
 		else if (equipItem != null && !equipItem.HAS_SCENE){
-			//GD.Print(equipItem.ITEM_NAME);
 			equipTexture.Texture = equipItem.ITEM_TEXTURE;
+
 		}
 		else{
-			//GD.Print("tyhjennä");
+
+			GD.Print("tyhjennä ");
 		}
 	}
 
@@ -79,7 +85,6 @@ public partial class EquippedItem : Node2D
 
                 equipItem.DecQuant();
                 inventory.NullItemCheck();
-                
                 
 
 

@@ -108,8 +108,9 @@ Water = 100
 hLabel = NodePath("../UI/HungerLabel")
 tLabel = NodePath("../UI/ThirstLabel")
 
-[node name="EquippedItem" parent="." node_paths=PackedStringArray("entity") instance=ExtResource("7_ybf6e")]
+[node name="EquippedItem" parent="." node_paths=PackedStringArray("entity", "hotbar") instance=ExtResource("7_ybf6e")]
 entity = NodePath("..")
+hotbar = NodePath("../UI/Hotbar")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../PlayerSprite")
@@ -164,8 +165,9 @@ offset_right = -5.0
 offset_bottom = -627.0
 entity = NodePath("../..")
 
-[node name="Hotbar" parent="UI" node_paths=PackedStringArray("entity") instance=ExtResource("13_5hng8")]
+[node name="Hotbar" parent="UI" node_paths=PackedStringArray("entity", "equippedItem") instance=ExtResource("13_5hng8")]
 entity = NodePath("../..")
+equippedItem = NodePath("../../EquippedItem")
 
 [connection signal="DamageTaken" from="HealthComponent" to="." method="_on_health_component_damage_taken"]
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

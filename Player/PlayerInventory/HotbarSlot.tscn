@@ -20,6 +20,7 @@ offset_left = 7.0
 offset_top = 7.0
 offset_right = 57.0
 offset_bottom = 59.0
+color = Color(1, 1, 0.137255, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
@@ -28,3 +29,12 @@ offset_top = 7.0
 offset_right = 57.0
 offset_bottom = 59.0
 expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 43.0
+offset_right = 63.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+horizontal_alignment = 2
