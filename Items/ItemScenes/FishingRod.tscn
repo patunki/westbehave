@@ -5,20 +5,19 @@
 [ext_resource type="Texture2D" uid="uid://jft0h57vkqr4" path="res://Art/onki.png" id="2_vmmfw"]
 [ext_resource type="Texture2D" uid="uid://dsk0il75b43ft" path="res://Art/kala.png" id="3_ojmxs"]
 
-[sub_resource type="Animation" id="Animation_4a035"]
-resource_name = "Throw"
-length = 3.0
+[sub_resource type="Animation" id="Animation_sccnc"]
+resource_name = "CatchFish"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Rod:rotation")
+tracks/0/path = NodePath("Koho:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, -0.858702, -1.50273, 0.00174533]
+"values": [Vector2(89, -2), Vector2(37, -8), Vector2(14, -6)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -27,22 +26,22 @@ tracks/1/path = NodePath("Rod:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1, -6), Vector2(-6, -9), Vector2(-16, -11), Vector2(8, -10)]
+"values": [Vector2(8, -10), Vector2(-1, -23), Vector2(8, -17)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Koho:position")
+tracks/2/path = NodePath("Rod:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1, 1.4, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(14, -6), Vector2(-9, -33), Vector2(-37, -20), Vector2(34, -31), Vector2(89, -2)]
+"values": [0.00174533, -0.535816, 0.00174533]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -51,10 +50,22 @@ tracks/3/path = NodePath("Koho:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1, 1.4, 3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.0, -3.0072, -4.61814, -2.17294, -0.0244346]
+"values": [-0.0244346, -0.548033, -0.010472]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Koho/TextureRect:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="Animation" id="Animation_e16se"]
@@ -171,19 +182,20 @@ tracks/3/keys = {
 "values": [-0.0244346, -0.548033, -0.010472]
 }
 
-[sub_resource type="Animation" id="Animation_sccnc"]
-resource_name = "CatchFish"
+[sub_resource type="Animation" id="Animation_4a035"]
+resource_name = "Throw"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Koho:position")
+tracks/0/path = NodePath("Rod:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(89, -2), Vector2(37, -8), Vector2(14, -6)]
+"values": [0.0, -0.858702, -1.50273, 0.00174533]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -192,22 +204,22 @@ tracks/1/path = NodePath("Rod:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(8, -10), Vector2(-1, -23), Vector2(8, -17)]
+"values": [Vector2(1, -6), Vector2(-6, -9), Vector2(-16, -11), Vector2(8, -10)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Rod:rotation")
+tracks/2/path = NodePath("Koho:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.00174533, -0.535816, 0.00174533]
+"values": [Vector2(14, -6), Vector2(-9, -33), Vector2(-37, -20), Vector2(34, -31), Vector2(89, -2)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -216,22 +228,10 @@ tracks/3/path = NodePath("Koho:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 0,
-"values": [-0.0244346, -0.548033, -0.010472]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Koho/TextureRect:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [true, false]
+"values": [0.0, -3.0072, -4.61814, -2.17294, -0.0244346]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h27pq"]

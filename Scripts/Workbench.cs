@@ -3,6 +3,7 @@ using System;
 
 public partial class Workbench : StaticBody2D
 {
+    Entity player;
     InteractionArea interactionArea;
     Inventory playerInventory;
     ItemDatabase itemDatabase;
@@ -15,9 +16,10 @@ public partial class Workbench : StaticBody2D
 
     public override void _Ready()
     {
+        player = GetTree().GetFirstNodeInGroup("Player") as Entity;
         interactionArea = GetNode<InteractionArea>("InteractionArea");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnInteract"));
-        playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
+        playerInventory = player.inventory;
         itemDatabase = GetNode<ItemDatabase>("/root/ItemDatabase");
         itemList = GetNode<ItemList>("ItemList");
         itemList.Hide();

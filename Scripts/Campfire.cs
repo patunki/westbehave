@@ -1,10 +1,12 @@
 using Godot;
 using System;
+using System.Dynamic;
 
 public partial class Campfire : StaticBody2D
 {
     Sprite2D outSprite;
     Sprite2D litSprite;
+    Entity entity;
     AnimationPlayer animationPlayer;
     InteractionArea interactionArea;
     Inventory inventory;
@@ -17,12 +19,18 @@ public partial class Campfire : StaticBody2D
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
         interactionArea = GetNode<InteractionArea>("InteractionArea");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnInteract"));
-        inventory = GD.Load("res://Player/PlayerInventory.tres") as Inventory;
+        interactionArea.PlayerEntered += GetEntity;
+        
     }
 
     void OnInteract(){
         Toggle();
         
+    }
+
+    void GetEntity(Node2D body){
+        entity = body as Entity;
+        inventory = entity.inventory;
     }
     
     void Toggle(){

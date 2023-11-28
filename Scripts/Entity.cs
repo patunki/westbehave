@@ -48,7 +48,8 @@ public partial class Entity : CharacterBody2D
     [Export]
     public EntityActivity entityActivity;
     [Export]
-    public Inventory inventory;
+    public Inventory inventory = new Inventory();
+    
     public bool canMove = true;
 
     public void Die(){

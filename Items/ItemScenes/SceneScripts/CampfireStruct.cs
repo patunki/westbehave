@@ -5,12 +5,12 @@ public partial class CampfireStruct : Node2D
 {   
     CampfireItem campFire;
     Inventory inventory;
-    public override void _Ready()
-    {
-        inventory = GD.Load("res://Player/PlayerInventory.tres") as Inventory;
-    }
-    public void MyItem(Item item, Entity entity){
+    Entity entity;
+
+    public void MyItem(Item item, Entity _entity){
         campFire = (CampfireItem)item;
+        entity = _entity;
+        inventory = entity.inventory;
     }
     public override void _Input(InputEvent @event)
     {

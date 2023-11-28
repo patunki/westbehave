@@ -9,6 +9,7 @@ public partial class InventoryUi : Control
 
 	bool isOpen;
 	[Export]
+	Entity entity;
 	Inventory inventory;
 	PackedScene invetorySlot;
 	GridContainer gridContainer;
@@ -59,6 +60,7 @@ public partial class InventoryUi : Control
 		invetorySlot = GD.Load<PackedScene>("res://Player/PlayerInventory/InventorySlot.tscn");
 		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");
+		inventory = entity.inventory;
         gameManager.ItemLanded += SetItem;
 		gameManager.SlotClicked += GiveItem;
 		inventory.InventoryChanged += UpdateInventory;

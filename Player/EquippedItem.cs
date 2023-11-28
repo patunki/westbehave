@@ -17,7 +17,7 @@ public partial class EquippedItem : Node2D
     {
         Game = GetNode<Node2D>("/root/Game");
         hungerComponent = GetNode<HungerComponent>("%HungerComponent");
-        inventory = GD.Load("res://Player/PlayerInventory.tres") as Inventory;
+        inventory = entity.inventory;
         equipTexture = GetNode<TextureRect>("EquipTexture");
         inventory.InventoryChanged += UpdateItem;
     }

@@ -1,8 +1,9 @@
-[gd_scene load_steps=22 format=3 uid="uid://cxeckinxh1j7l"]
+[gd_scene load_steps=24 format=3 uid="uid://cxeckinxh1j7l"]
 
 [ext_resource type="Script" path="res://Scripts/Zombie.cs" id="1_58gj6"]
 [ext_resource type="Texture2D" uid="uid://drjbn7owwkmqf" path="res://Art/veetintilemap3fix.png" id="1_tes36"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="2_8wllh"]
+[ext_resource type="Script" path="res://Player/PlayerInventory/Inventory.cs" id="2_roilr"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="3_4t4sa"]
 [ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="4_drmct"]
 [ext_resource type="Texture2D" uid="uid://dh1tbtmge2pdi" path="res://Art/zombiemeat.png" id="6_mjhcu"]
@@ -12,6 +13,10 @@
 [ext_resource type="Script" path="res://StateMachine/States/EnemyFollow.cs" id="10_dxt3d"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyPunch.cs" id="11_b2ikm"]
 [ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="12_fuvfb"]
+
+[sub_resource type="Resource" id="Resource_4xr8t"]
+script = ExtResource("2_roilr")
+InventoryItems = []
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4pxrd"]
 atlas = ExtResource("1_tes36")
@@ -119,6 +124,7 @@ EntityName = "Zombie"
 entityType = 1
 entityGuild = 1
 entityBehavior = 1
+inventory = SubResource("Resource_4xr8t")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(-1.5, -13.75)

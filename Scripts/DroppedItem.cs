@@ -7,7 +7,8 @@ public partial class DroppedItem : Node2D
     public Item item;
     InteractionArea interactionArea;
     public Sprite2D itemTexture;
-    Inventory Inventory;
+    Inventory inventory;
+    Entity entity;
 
     public override void _Ready()
     {
@@ -15,12 +16,18 @@ public partial class DroppedItem : Node2D
         itemTexture = GetNode<Sprite2D>("ItemTexture");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnCollect"));
         itemTexture.Texture = item.ITEM_TEXTURE;
-        Inventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
+        interactionArea.PlayerEntered += GetEntity;
+        
+    }
+
+    void GetEntity(Node2D body){
+        entity = body as Entity;
+        inventory = entity.inventory;
     }
 
 
     void OnCollect(){
-        Inventory.AddItem(item,1);
+        inventory.AddItem(item,1);
         QueueFree();
     }
 

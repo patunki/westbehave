@@ -1,7 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bhu2d3rrkh8b1"]
-
-[ext_resource type="Script" path="res://Player/PlayerInventory/Inventory.cs" id="1_47qd4"]
-
-[resource]
-script = ExtResource("1_47qd4")
-InventoryItems = Array[Resource]([null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])

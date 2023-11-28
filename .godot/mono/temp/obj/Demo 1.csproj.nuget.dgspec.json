@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/paulus/godotProjects/westbehaveREWORKEQUIP/Demo 1.csproj": {}
+    "/home/paulus/godotProjects/EntityInventoryTest/Demo 1.csproj": {}
   },
   "projects": {
-    "/home/paulus/godotProjects/westbehaveREWORKEQUIP/Demo 1.csproj": {
+    "/home/paulus/godotProjects/EntityInventoryTest/Demo 1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/paulus/godotProjects/westbehaveREWORKEQUIP/Demo 1.csproj",
+        "projectUniqueName": "/home/paulus/godotProjects/EntityInventoryTest/Demo 1.csproj",
         "projectName": "Demo 1",
-        "projectPath": "/home/paulus/godotProjects/westbehaveREWORKEQUIP/Demo 1.csproj",
+        "projectPath": "/home/paulus/godotProjects/EntityInventoryTest/Demo 1.csproj",
         "packagesPath": "/home/paulus/.nuget/packages/",
-        "outputPath": "/home/paulus/godotProjects/westbehaveREWORKEQUIP/.godot/mono/temp/obj/",
+        "outputPath": "/home/paulus/godotProjects/EntityInventoryTest/.godot/mono/temp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/paulus/.nuget/NuGet/NuGet.Config"

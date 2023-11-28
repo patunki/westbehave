@@ -20,7 +20,6 @@ public partial class TestPlant : Node2D
     public PlantState state;
     InteractionArea interactionArea;
     Player nearestPlayer;
-    Inventory playerInventory;
     TileMap tileMap;
     GameManager gameManager;
 
@@ -36,7 +35,6 @@ public partial class TestPlant : Node2D
         interactionArea.actionName = "HARVEST";
         state = PlantState.seed;
         interactionArea.PlayerEntered += GetPlayer;
-        playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
         tileMap = GetParent<TileMap>();
         interactionArea.Monitoring = false;
         gameManager.PlantWatered += WaterPlant;
@@ -85,7 +83,7 @@ public partial class TestPlant : Node2D
         int plantLayer = 4;
 
         if (state == PlantState.ripe){
-            playerInventory.AddItem(yeld, 2);
+            nearestPlayer.inventory.AddItem(yeld, 2);
             state = PlantState.grown;
             sprite.Frame = 4;
             interactionArea.Monitoring = false;
