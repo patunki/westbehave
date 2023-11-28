@@ -159,7 +159,7 @@ script = ExtResource("9_teojr")
 
 [node name="EnemyFollow" type="Node" parent="StateMachine"]
 script = ExtResource("10_dxt3d")
-moveSpeed = 20
+moveSpeed = 100
 
 [node name="EnemyPunch" type="Node" parent="StateMachine" node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("11_b2ikm")

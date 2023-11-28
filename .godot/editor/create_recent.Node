@@ -1,6 +1,7 @@
+Sprite2D
+TextureRect
 Label
 ColorRect
-TextureRect
 Panel
 GridContainer
 Control
@@ -12,4 +13,3 @@ Area2D
 AnimationPlayer
 CharacterBody2D
 AudioListener2D
-AudioStreamPlayer2D

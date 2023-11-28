@@ -46,7 +46,7 @@ public partial class Hotbar : Control
             if (selected > 4){
                 selected = 4;
             }
-            GD.Print(selected, "  ", last);
+            
             SelectItem(selected);
         }
         if (Input.IsActionJustPressed("scroll_down")){
@@ -56,9 +56,34 @@ public partial class Hotbar : Control
             if (selected < 0){
                 selected = 0;
             }
-            GD.Print(selected, "  ", last);
             SelectItem(selected);
         }
+        if (Input.IsActionJustPressed("1")){
+            last = selected;
+            selected = 0;
+            SelectItem(selected);
+        }
+        if (Input.IsActionJustPressed("2")){
+            last = selected;
+            selected = 1;
+            SelectItem(selected);
+        }
+        if (Input.IsActionJustPressed("3")){
+            last = selected;
+            selected = 2;
+            SelectItem(selected);
+        }
+        if (Input.IsActionJustPressed("4")){
+            last = selected;
+            selected = 3;
+            SelectItem(selected);
+        }
+        if (Input.IsActionJustPressed("5")){
+            last = selected;
+            selected = 4;
+            SelectItem(selected);
+        }
+
     }
 
 }

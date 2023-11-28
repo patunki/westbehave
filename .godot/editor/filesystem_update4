@@ -78,3 +78,6 @@ res://Player/PlayerInventory/HotbarSlot.tscn
 res://Player/PlayerInventory/Hotbar.cs
 res://Player/PlayerInventory/HotbarSlot.cs
 res://Scenes/DroppedItem.tscn
+res://Player/PlayerInventory/Inventory.tscn
+res://Player/PlayerInventory/InventorySlot.tscn
+res://Items/ItemScenes/Shotgun.tscn

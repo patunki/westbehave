@@ -14,6 +14,7 @@ public partial class InventoryUi : Control
 	PackedScene invetorySlot;
 	GridContainer gridContainer;
     GameManager gameManager;
+	TextureRect mirror;
 
 
 	public void Close (){
@@ -60,11 +61,13 @@ public partial class InventoryUi : Control
 		invetorySlot = GD.Load<PackedScene>("res://Player/PlayerInventory/InventorySlot.tscn");
 		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");
+		mirror = GetNode<TextureRect>("Mirror");
 		inventory = entity.inventory;
         gameManager.ItemLanded += SetItem;
 		gameManager.SlotClicked += GiveItem;
 		inventory.InventoryChanged += UpdateInventory;
-
+		Sprite2D test = entity.GetNode<Sprite2D>("MirrorSprite");
+		mirror.Texture = test.Texture;
 		PopulateInv(inventory.InventoryItems);
         UpdateInventory();
 		Close();

@@ -38,7 +38,7 @@ public partial class ShotgunScene : Node2D
 
     public override void _Input(InputEvent @event)
     {
-        if (Input.IsActionJustPressed("attack")){
+        if (Input.IsActionJustPressed("attack") && Input.IsActionPressed("r_click")){
             Bullet instance = (Bullet)bullet.Instantiate();
             instance.Position = barrel.GlobalPosition;
 			game.AddChild(instance);
@@ -52,6 +52,13 @@ public partial class ShotgunScene : Node2D
             timer.Timeout += muzzleFlash.Hide;
             timer.Timeout += timer.QueueFree;
         }
+        if (Input.IsActionPressed("r_click")){
+            LookAt(GetGlobalMousePosition());
+
+        }
+        else {
+                Rotation = 0;
+            }
     }
 
 }
