@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://26c80o12564p"]
+
+[ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="1_dxuk5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74csh"]
+atlas = ExtResource("1_dxuk5")
+region = Rect2(116.078, 6.0534, 8.91861, 8.64835)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1b1ds"]
+texture = SubResource("AtlasTexture_74csh")
+
+[node name="HotbarSlot1" type="Panel"]
+custom_minimum_size = Vector2(64, 64)
+theme_override_styles/panel = SubResource("StyleBoxTexture_1b1ds")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 57.0
+offset_bottom = 59.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 57.0
+offset_bottom = 59.0
+expand_mode = 1

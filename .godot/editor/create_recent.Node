@@ -1,5 +1,9 @@
-CanvasLayer
+ColorRect
 TextureRect
+Panel
+GridContainer
+Control
+CanvasLayer
 Node
 CanvasModulate
 CollisionShape2D
@@ -8,8 +12,3 @@ AnimationPlayer
 CharacterBody2D
 AudioListener2D
 AudioStreamPlayer2D
-Sprite2D
-PointLight2D
-StaticBody2D
-Node2D
-RigidBody2D

@@ -1,3 +1,4 @@
+res://Player/PlayerInventory
 res://Items/Repo/
 res://
 res://Player
@@ -19,4 +20,3 @@ res://StateMachine
 res://Interaction
 res://Items/Classes
 res://Items/Classes/
-res://Items

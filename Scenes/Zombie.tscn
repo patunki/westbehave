@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Zombie.cs" id="1_58gj6"]
 [ext_resource type="Texture2D" uid="uid://drjbn7owwkmqf" path="res://Art/veetintilemap3fix.png" id="1_tes36"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="2_8wllh"]
-[ext_resource type="Script" path="res://Scripts/Inventory.cs" id="2_roilr"]
+[ext_resource type="Script" path="res://Iventory/Inventory.cs" id="2_roilr"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="3_4t4sa"]
 [ext_resource type="PackedScene" uid="uid://bu7dg71taagi4" path="res://Components/LootComponent.tscn" id="4_drmct"]
 [ext_resource type="Texture2D" uid="uid://dh1tbtmge2pdi" path="res://Art/zombiemeat.png" id="6_mjhcu"]
