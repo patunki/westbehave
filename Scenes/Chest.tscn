@@ -4,21 +4,21 @@
 [ext_resource type="Script" path="res://Scripts/Chest.cs" id="1_sxx0p"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
 [ext_resource type="PackedScene" uid="uid://by8lovrluq1ry" path="res://Iventory/ExternalInventory.tscn" id="4_ah6qq"]
-[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/FoodApple.tres" id="5_gsr3i"]
-[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/FoodEggplant.tres" id="6_2oxb0"]
-[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/FoodCookedMeat.tres" id="7_vwq4n"]
-[ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/FoodZombieMeat.tres" id="8_le2mp"]
-[ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/SeedEggplantSeed.tres" id="9_sbo0b"]
-[ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/ToolHoe.tres" id="10_007wo"]
-[ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/WeaponShotgun.tres" id="11_aadpa"]
-[ext_resource type="Resource" uid="uid://bhxcyh16b7lhp" path="res://Items/Repo/ToolWateringCan.tres" id="12_grjlt"]
-[ext_resource type="Resource" uid="uid://gia3bjsi5c6j" path="res://Items/Repo/ToolAxe.tres" id="13_oi8wu"]
-[ext_resource type="Resource" uid="uid://b525i34k4ot3c" path="res://Items/Repo/MaterialPlank.tres" id="14_5ahc7"]
-[ext_resource type="Resource" uid="uid://dhawc8kora7lm" path="res://Items/Repo/MaterialIronOre.tres" id="15_a5ggu"]
-[ext_resource type="Resource" uid="uid://dmncox17jpo3y" path="res://Items/Repo/Lighter.tres" id="16_gl8s7"]
-[ext_resource type="Resource" uid="uid://con5ed5weoxgv" path="res://Items/Repo/Campfire.tres" id="17_0eot0"]
-[ext_resource type="Resource" uid="uid://dhc1a6oacmy3w" path="res://Items/Repo/ToolFishingRod.tres" id="18_xeu1b"]
-[ext_resource type="Resource" uid="uid://ciliqbuohl6nr" path="res://Items/Repo/FoodRawFish.tres" id="19_erva6"]
+[ext_resource type="Resource" uid="uid://con5ed5weoxgv" path="res://Items/Repo/Campfire.tres" id="5_0cvek"]
+[ext_resource type="Resource" uid="uid://cdg7080mjujy3" path="res://Items/Repo/FoodCookedMeat.tres" id="5_804c4"]
+[ext_resource type="Resource" uid="uid://ciliqbuohl6nr" path="res://Items/Repo/FoodRawFish.tres" id="5_nr1tt"]
+[ext_resource type="Resource" uid="uid://cb04s8ge5cvob" path="res://Items/Repo/FoodApple.tres" id="6_gisse"]
+[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/FoodEggplant.tres" id="8_k6640"]
+[ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/FoodZombieMeat.tres" id="10_d3ti3"]
+[ext_resource type="Resource" uid="uid://dmncox17jpo3y" path="res://Items/Repo/Lighter.tres" id="11_fujy7"]
+[ext_resource type="Resource" uid="uid://dhawc8kora7lm" path="res://Items/Repo/MaterialIronOre.tres" id="12_6wc0i"]
+[ext_resource type="Resource" uid="uid://b525i34k4ot3c" path="res://Items/Repo/MaterialPlank.tres" id="13_xb72w"]
+[ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/SeedEggplantSeed.tres" id="14_htj20"]
+[ext_resource type="Resource" uid="uid://gia3bjsi5c6j" path="res://Items/Repo/ToolAxe.tres" id="15_2s0rk"]
+[ext_resource type="Resource" uid="uid://dhc1a6oacmy3w" path="res://Items/Repo/ToolFishingRod.tres" id="16_dgc32"]
+[ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/ToolHoe.tres" id="17_odtgj"]
+[ext_resource type="Resource" uid="uid://bhxcyh16b7lhp" path="res://Items/Repo/ToolWateringCan.tres" id="18_vy5kw"]
+[ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/WeaponShotgun.tres" id="19_pulfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]
 atlas = ExtResource("1_55djk")
@@ -65,4 +65,4 @@ offset_left = -65.0
 offset_top = -89.0
 offset_right = 67.0
 offset_bottom = -24.0
-InventoryItems = Array[Resource]([ExtResource("6_2oxb0"), ExtResource("5_gsr3i"), ExtResource("7_vwq4n"), ExtResource("8_le2mp"), ExtResource("9_sbo0b"), ExtResource("13_oi8wu"), ExtResource("10_007wo"), ExtResource("12_grjlt"), ExtResource("11_aadpa"), ExtResource("14_5ahc7"), ExtResource("15_a5ggu"), ExtResource("16_gl8s7"), ExtResource("17_0eot0"), ExtResource("18_xeu1b"), ExtResource("19_erva6"), null, null, null])
+InventoryItems = Array[Resource]([ExtResource("5_0cvek"), ExtResource("6_gisse"), ExtResource("5_804c4"), ExtResource("8_k6640"), ExtResource("5_nr1tt"), ExtResource("10_d3ti3"), ExtResource("11_fujy7"), ExtResource("12_6wc0i"), ExtResource("13_xb72w"), ExtResource("14_htj20"), ExtResource("15_2s0rk"), ExtResource("16_dgc32"), ExtResource("17_odtgj"), ExtResource("18_vy5kw"), ExtResource("19_pulfx"), null, null, null])

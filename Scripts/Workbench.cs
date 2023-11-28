@@ -12,10 +12,12 @@ public partial class Workbench : StaticBody2D
     Item itemToCraft;
     public int input;
     bool isOpen = false;
+    CraftingRecepies craftingRecepies;
 
 
     public override void _Ready()
     {
+        craftingRecepies = new CraftingRecepies();
         player = GetTree().GetFirstNodeInGroup("Player") as Entity;
         interactionArea = GetNode<InteractionArea>("InteractionArea");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnInteract"));
@@ -35,6 +37,7 @@ public partial class Workbench : StaticBody2D
                 i++;
             }
         }
+            
 
 
     }
@@ -66,12 +69,12 @@ public partial class Workbench : StaticBody2D
     private bool CanCraft(int id){
         int need;
         int has;
-        if (itemDatabase.Recipes.TryGetValue(id, out var ingredients)){
+        if (craftingRecepies.Recipes.TryGetValue(input, out Godot.Collections.Dictionary<string, int> ingredients)){
             has = 0;
             need = ingredients.Count;
             foreach(Item item in playerInventory.InventoryItems){
-                foreach(string ingerdient in ingredients){
-                    if (item != null && item.ITEM_NAME == ingerdient && item.ITEM_QUANTITY > 0){
+                foreach(string material in ingredients.Keys){
+                    if (item != null && item.ITEM_NAME == material && item.ITEM_QUANTITY >= ingredients[material]){
                         has++;
                     }
                 }   
@@ -88,9 +91,9 @@ public partial class Workbench : StaticBody2D
         else {
             GD.Print("viedään maksu");
             foreach(Item item in playerInventory.InventoryItems){
-                foreach(string ingerdient in ingredients){
-                    if (item != null && item.ITEM_NAME == ingerdient){
-                        item.DecQuant();
+                foreach(string material in ingredients.Keys){
+                    if (item != null && item.ITEM_NAME == material){
+                        item.MultiDec(ingredients[material]);
                         playerInventory.NullItemCheck();
                     }
                 }   
@@ -107,6 +110,7 @@ public partial class Workbench : StaticBody2D
     void _on_button_button_down(){
         GD.Print(input);
         CraftItem();
+
     }
 
 }

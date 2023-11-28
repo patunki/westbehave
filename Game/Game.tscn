@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b1l3deayvp2gh" path="res://Maps/InitialTileMap.tscn" id="2_te56d"]
 [ext_resource type="PackedScene" uid="uid://bnph3rig8hw82" path="res://Scenes/Chest.tscn" id="3_vag8b"]
-[ext_resource type="Script" path="res://Player/PlayerInventory/Inventory.cs" id="4_n055c"]
+[ext_resource type="Script" path="res://Scripts/Inventory.cs" id="4_n055c"]
 [ext_resource type="PackedScene" uid="uid://bd3ok0jj2joc4" path="res://Scenes/House1.tscn" id="4_p6lbj"]
 [ext_resource type="PackedScene" uid="uid://cxeckinxh1j7l" path="res://Scenes/Zombie.tscn" id="7_mxngg"]
 [ext_resource type="PackedScene" uid="uid://d1d3ju81qjhuv" path="res://Player/Player.tscn" id="8_rfurq"]

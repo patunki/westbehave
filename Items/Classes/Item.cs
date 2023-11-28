@@ -63,6 +63,10 @@ public partial class Item : Resource
         //return ITEM_QUANTITY;
     }
 
+    public void MultiDec(int quant){
+        ITEM_QUANTITY -= quant;
+    }
+
     /*public void OnUse(Node2D user){
         EmitSignal(SignalName.ItemInteracted);
         GD.Print("tamaki pyyorii");
