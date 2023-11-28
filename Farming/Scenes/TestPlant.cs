@@ -19,7 +19,7 @@ public partial class TestPlant : Node2D
     Sprite2D sprite;
     public PlantState state;
     InteractionArea interactionArea;
-    player nearestPlayer;
+    Player nearestPlayer;
     Inventory playerInventory;
     TileMap tileMap;
     GameManager gameManager;
@@ -105,7 +105,7 @@ public partial class TestPlant : Node2D
 
 
     private void GetPlayer(Node2D player){ //USELESS ATM
-        nearestPlayer = (player)player;
+        nearestPlayer = (Player)player;
 
     }
 

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 public partial class InteractionManager : Node2D
 {
-    private player player;
+    private Player player;
     private Label label;
     const string baseText = "[E] TO ";
     private List<InteractionArea> activeAreas = new List<InteractionArea>();
     bool canInteract = true;
     public override void _Ready()
     {
-        player = (player)GetTree().GetFirstNodeInGroup("Player");
+        player = (Player)GetTree().GetFirstNodeInGroup("Player");
         label = GetNode<Label>("Label");
 
     }

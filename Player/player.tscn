@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://d1d3ju81qjhuv"]
 
-[ext_resource type="Script" path="res://Player/player.cs" id="1_2273y"]
+[ext_resource type="Script" path="res://Player/Player.cs" id="1_x7dyy"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="3_56kbu"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="5_r6xtp"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="5_sjabt"]
@@ -55,7 +55,7 @@ radius = 7.0
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -1)
 motion_mode = 1
-script = ExtResource("1_2273y")
+script = ExtResource("1_x7dyy")
 EntityName = "Player"
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]

@@ -9,7 +9,7 @@ public partial class EquippedItem : Node2D
     TextureRect textureRect;
     AnimationPlayer animationPlayer;
     Attack attack;
-    player _player;
+    Player _player;
     Marker2D barrel;
     Node2D radius;
     PackedScene bullet;
@@ -24,7 +24,7 @@ public partial class EquippedItem : Node2D
         playerInventory = GD.Load<Inventory>("res://Player/PlayerInventory.tres");
         textureRect = GetNode<TextureRect>("TextureRect");
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        _player = (player)GetParent();
+        _player = (Player)GetParent();
         barrel = GetNode<Marker2D>("Radius/Barrel");
         radius = GetNode<Node2D>("Radius");
         bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
