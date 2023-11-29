@@ -30,6 +30,7 @@ public partial class Hotbar : Control
     }
 
     public void SelectItem(int i){
+        
         if (i != last){
             slots[i].Call("Selected");
             slots[last].Call("Deselect");

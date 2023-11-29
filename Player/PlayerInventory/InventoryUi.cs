@@ -9,8 +9,7 @@ public partial class InventoryUi : Control
 
 	bool isOpen;
 	[Export]
-	Player entity;
-	Inventory inventory;
+	Player player;
 	PackedScene invetorySlot;
 	GridContainer gridContainer;
     GameManager gameManager;
@@ -38,16 +37,16 @@ public partial class InventoryUi : Control
 		foreach(Item slotInv in invSlots){
 			var slot = invetorySlot.Instantiate();
 			gridContainer.AddChild(slot);
-			
+			slot.Call("GetInventory",player.inventory);
 		}
 	}
 
     public void UpdateInventory(){
 		
         var slots = gridContainer.GetChildren();
-        for (int i = 0; i < inventory.InventoryItems.Count; i++){
-            if (inventory.InventoryItems[i] != null){
-                slots[i].Call("Update", inventory.InventoryItems[i]);
+        for (int i = 0; i < player.inventory.InventoryItems.Count; i++){
+            if (player.inventory.InventoryItems[i] != null){
+                slots[i].Call("Update", player.inventory.InventoryItems[i]);
             }
             else {
                 slots[i].Call("Empty");
@@ -65,29 +64,28 @@ public partial class InventoryUi : Control
 		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");
 		mirror = GetNode<TextureRect>("Mirror");
-		inventory = entity.inventory;
-        gameManager.ItemLanded += SetItem;
+        //gameManager.ItemLanded += inventory.EmitChanged;
 		gameManager.SlotClicked += GiveItem;
-		inventory.InventoryChanged += UpdateInventory;
-		Sprite2D test = entity.GetNode<Sprite2D>("MirrorSprite");
+		player.inventory.InventoryChanged += UpdateInventory;
+		Sprite2D test = player.GetNode<Sprite2D>("MirrorSprite");
 		mirror.Texture = test.Texture;
-		PopulateInv(inventory.InventoryItems);
+		PopulateInv(player.inventory.InventoryItems);
         UpdateInventory();
 		Close();
 
 	}
 
 
-	public void GiveItem(Item item, int quant){
-		inventory.AddItem(item, quant);
+	public void GiveItem(Item item){
+		player.inventory.AddItem(item, 1);
 		UpdateInventory();
 	}
 
     void SetItem(int originIndex, int index, Item item){
-        inventory.InventoryItems[originIndex] = null;
-        inventory.InventoryItems[index] = item;
+        player.inventory.InventoryItems[originIndex] = null;
+        player.inventory.InventoryItems[index] = item;
         //UpdateInventory();
-		inventory.EmitChange();
+		player.inventory.EmitChange();
     }
 
     //void GetExternal(ExternalInventory extInv){

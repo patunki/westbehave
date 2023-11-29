@@ -13,7 +13,7 @@ public partial class ExternalInventory : Control
 
 	public override void _Ready(){
         inventory = storage.inventory;
-	    inventorySlot = GD.Load<PackedScene>("res://Iventory/ExternalInventorySlot.tscn");
+	    inventorySlot = GD.Load<PackedScene>("res://Player/PlayerInventory/InventorySlot.tscn");
 	    gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");
         //gameManager.ItemLanded += SetItem;
@@ -32,7 +32,7 @@ public partial class ExternalInventory : Control
 	    }
 	    foreach(Item slotInv in invSlots){
 	    	var slot = inventorySlot.Instantiate();
-            slot.Call("GetInventory",this);
+            slot.Call("GetInventory",inventory);
 	    	gridContainer.AddChild(slot);
     
 		}

@@ -1,11 +1,11 @@
+CanvasLayer
+Control
+Label
 TextureRect
 Panel
 GridContainer
 Sprite2D
-Label
 ColorRect
-Control
-CanvasLayer
 Node
 CanvasModulate
 CollisionShape2D

@@ -12,46 +12,14 @@ public partial class InventorySlot : Panel
     private Label label;
     private RichTextLabel richTextLabel;
     private GameManager gameManager;
+    private SlotData slotData;
     private Item thisItem;   
     public int index;
     private int originIndex;
+    private Inventory inventory;
+    bool hasItem;
 
 
-     public override Variant _GetDragData(Vector2 atPosition)
-    {   
-        if (thisItem == null){
-            string noItem = "NO ITEM IN THIS SLOT.";
-            return noItem;
-        }
-        var previewTexture = new TextureRect();
-        previewTexture.Texture = thisItem.ITEM_TEXTURE;
-        SetDragPreview(previewTexture);
-        gameManager.EmitSignal(nameof(GameManager.ItemLifted),index);
-        return thisItem;
-    }
-
-    //Triggered when a dragged item is hovered above this slot. Data is the item that is being dragged. If it returns false, item will not be dropped.
-    public override bool _CanDropData(Vector2 atPosition, Variant data)
-    {   
-        Item dropItem = (Item)data;
-        if (thisItem != null && thisItem.ITEM_ID != dropItem.ITEM_ID){
-            return false;
-        }
-        else {
-            return true;
-        }
-        
-
-    }
-
-    //Triggered when an item is dropped into this slot.
-    public override void _DropData(Vector2 atPosition, Variant data)
-    {   
-        
-        Item dropItem = (Item)data;
-        gameManager.EmitSignal(nameof(GameManager.ItemLanded),originIndex, index, dropItem);
-
-    }
 
     //initialisations
     public override void _Ready(){
@@ -69,6 +37,7 @@ public partial class InventorySlot : Panel
             richTextLabel.Visible = true;
             richTextLabel.Hide();
         }
+        slotData = gameManager.slotData;
 
     }
 
@@ -76,16 +45,95 @@ public partial class InventorySlot : Panel
         originIndex = source;
     }
 
-    /*void _on_gui_input(InputEvent @event){
+    void _on_gui_input(InputEvent @event){
         if (@event is InputEventMouseButton mouseEvent){
-          if (mouseEvent.ButtonIndex == MouseButton.Left && @event.IsPressed() || mouseEvent.ButtonIndex == MouseButton.Right && @event.IsPressed()){
 
-            GD.Print("KLICKED  ", mouseEvent.ButtonIndex,"  ", GetIndex());
+            if (thisItem == null){
+                hasItem = false;
+            } else {
+                hasItem = true;
+             }
 
-          }
-           
+          if (mouseEvent.ButtonIndex == MouseButton.Left && @event.IsPressed()){
+ 
+                switch ((slotData.hasItem,hasItem))
+                {
+                    case (true, true):
+                        if (thisItem.ITEM_ID == slotData.dragItem.ITEM_ID){
+                            inventory.InventoryItems[index].ITEM_QUANTITY += slotData.dragItem.ITEM_QUANTITY;
+                            slotData.DropSlotData();
+                        }
+                        else {
+                            Item temp = thisItem;
+                            inventory.InventoryItems[index] = slotData.dragItem;                       
+                            Update(slotData.dragItem);
+                            slotData.GrabSlotData(temp);
+                        }
+                        inventory.EmitSignal("InventoryChanged"); 
+
+                        break;
+
+                    case (false, true):
+                        slotData.GrabSlotData(thisItem);
+                        inventory.InventoryItems[index] = null;
+                        Empty();
+                        inventory.EmitSignal("InventoryChanged");  
+                        break;
+                    case (true,false):
+                        inventory.InventoryItems[index] = (Item)slotData.dragItem.Duplicate();
+                        Update(slotData.DropSlotData());
+                        inventory.EmitSignal("InventoryChanged");  
+                        break;
+                    case (false,false):
+                        break;
+                    }    
+
+                }
+
+                if (mouseEvent.ButtonIndex == MouseButton.Right && @event.IsPressed()){
+                    switch ((slotData.hasItem,hasItem))
+                    {
+                    case (true, true):
+                        if (thisItem.ITEM_ID == slotData.dragItem.ITEM_ID){ //puottaa yhen
+                            thisItem.ITEM_QUANTITY--;
+                            if (thisItem.ITEM_QUANTITY <= 0){
+                                inventory.InventoryItems[index] = null;
+                            }
+                            slotData.dragItem.ITEM_QUANTITY ++;
+                        }
+                        inventory.EmitSignal("InventoryChanged");
+                        break;
+
+                    case (false, true):
+                        if (thisItem.ITEM_QUANTITY > 1){
+                            thisItem.ITEM_QUANTITY -= 1;
+                            slotData.GrabSlotData((Item)thisItem.Duplicate()); //ottaa yhen;
+                            slotData.dragItem.ITEM_QUANTITY = 1;
+                            inventory.EmitSignal("InventoryChanged");
+                        }
+
+                        break;
+                    case (true,false):
+                        if (slotData.dragItem.ITEM_QUANTITY > 1){
+                            slotData.dragItem.ITEM_QUANTITY --; //puottaa yhen
+                            inventory.InventoryItems[index] = (Item)slotData.dragItem.Duplicate();
+                            inventory.InventoryItems[index].ITEM_QUANTITY = 1;
+                        }
+                        else {
+                            inventory.InventoryItems[index] = slotData.DropSlotData();
+                        }
+                        inventory.EmitSignal("InventoryChanged");
+                        break;
+                    case (false,false):
+                        break;
+                    }
+                }
         }
-    }*/
+    }
+
+    public void GetInventory(Inventory inv){ // itemillä sprtie2d = new
+        inventory = inv;
+    }
 
     //When mouse is hovered here.
     void _on_mouse_entered(){

@@ -7,9 +7,9 @@ public partial class GameManager : Node2D
     [Signal]
     public delegate void ItemLiftedEventHandler(int index);
     [Signal]
-    public delegate void ItemLandedEventHandler(int originIndex, int index, Item item); 
+    public delegate void ItemLandedEventHandler(); 
     [Signal]
-    public delegate void SlotClickedEventHandler(Item item, int quant);
+    public delegate void SlotClickedEventHandler(Item item);
     [Signal]
     public delegate void HasTileMapEventHandler(TileMap tileMap);
     [Signal]
@@ -17,6 +17,13 @@ public partial class GameManager : Node2D
     [Signal]
     public delegate void PlantWateredEventHandler(Vector2I tilepos);
     public TileMap tileMap;
+    public SlotData slotData;
+
+    public override void _Ready()
+    {
+        slotData = GetTree().GetFirstNodeInGroup("SlotData") as SlotData;
+        GD.Print("God Slot data as ", slotData);
+    }
 
     public void SetTileMap(TileMap map){
         tileMap = map;
