@@ -6,6 +6,8 @@ public partial class Player : Entity
 {	
 	[Export]
 	public int moveSpeed { get; set; } = 150;
+	[Export]
+	public Godot.Collections.Array<Item> wornItems { get; set; } = new Godot.Collections.Array<Item>();
 	public Vector2 heading;
 	public Sprite2D sprite;
 	private AnimationPlayer animationPlayer;

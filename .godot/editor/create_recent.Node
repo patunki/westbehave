@@ -1,9 +1,9 @@
-Sprite2D
 TextureRect
-Label
-ColorRect
 Panel
 GridContainer
+Sprite2D
+Label
+ColorRect
 Control
 CanvasLayer
 Node
@@ -12,4 +12,3 @@ CollisionShape2D
 Area2D
 AnimationPlayer
 CharacterBody2D
-AudioListener2D

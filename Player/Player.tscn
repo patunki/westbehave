@@ -71,6 +71,7 @@ _data = {
 position = Vector2(0, -1)
 motion_mode = 1
 script = ExtResource("1_uvi3w")
+wornItems = [null, null, null, null]
 EntityName = "Player"
 entityType = 4
 entityGuild = 3

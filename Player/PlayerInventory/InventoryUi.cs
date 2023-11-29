@@ -9,12 +9,13 @@ public partial class InventoryUi : Control
 
 	bool isOpen;
 	[Export]
-	Entity entity;
+	Player entity;
 	Inventory inventory;
 	PackedScene invetorySlot;
 	GridContainer gridContainer;
     GameManager gameManager;
 	TextureRect mirror;
+	GridContainer equippables;
 
 
 	public void Close (){
@@ -57,7 +58,9 @@ public partial class InventoryUi : Control
 
 
 
+
 	public override void _Ready(){
+		equippables = GetNode<GridContainer>("TextureRect/Equippables");
 		invetorySlot = GD.Load<PackedScene>("res://Player/PlayerInventory/InventorySlot.tscn");
 		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");

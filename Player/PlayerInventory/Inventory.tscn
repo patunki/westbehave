@@ -1,11 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://d2elxbrt2et40"]
+[gd_scene load_steps=3 format=3 uid="uid://d2elxbrt2et40"]
 
 [ext_resource type="Script" path="res://Player/PlayerInventory/InventoryUi.cs" id="1_dhd0r"]
 [ext_resource type="Texture2D" uid="uid://ck7ht0reepem2" path="res://Art/veetininv.png" id="2_icul6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fnb1m"]
-atlas = ExtResource("2_icul6")
-region = Rect2(5.75499, 5.78297, 72.4163, 38.1743)
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -24,26 +20,43 @@ scale = Vector2(3.55615, 3.79106)
 texture = ExtResource("2_icul6")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect"]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 110.0
-offset_bottom = 96.0
-texture = SubResource("AtlasTexture_fnb1m")
-
 [node name="GridContainer" type="GridContainer" parent="TextureRect"]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 11.0
-offset_right = 107.0
-offset_bottom = 92.0
-theme_override_constants/v_separation = 6
+offset_left = 9.8421
+offset_top = 8.70469
+offset_right = 105.842
+offset_bottom = 88.7047
+theme_override_constants/h_separation = 4
+theme_override_constants/v_separation = 5
 columns = 5
+
+[node name="Equippables" type="GridContainer" parent="TextureRect"]
+layout_mode = 0
+offset_left = 158.317
+offset_top = 8.17713
+offset_right = 179.317
+offset_bottom = 87.1771
+theme_override_constants/v_separation = 5
+
+[node name="placeholder" type="Panel" parent="TextureRect/Equippables"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="placeholder2" type="Panel" parent="TextureRect/Equippables"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="placeholder3" type="Panel" parent="TextureRect/Equippables"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+
+[node name="placeholder4" type="Panel" parent="TextureRect/Equippables"]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
 
 [node name="Mirror" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 447.0
-offset_top = 40.0
-offset_right = 565.0
-offset_bottom = 251.0
+offset_left = 422.0
+offset_top = 48.0
+offset_right = 540.0
+offset_bottom = 259.0
