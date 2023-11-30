@@ -89,11 +89,16 @@ public partial class EquippedItem : Node2D
                 Game.AddChild(instance);
 
                 equipItem.DecQuant();
-                inventory.NullItemCheck();
+                
                 
 
 
         }
+    }
+
+    public override void _Process(double delta)
+    {
+        inventory.NullItemCheck();
     }
 
 

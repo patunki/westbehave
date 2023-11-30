@@ -76,3 +76,14 @@ res://StateMachine/States/EnemyPunch.cs
 res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
+res://Database/ItemDB.json
+res://Items/Repo/SeedEggplantSeed.tres
+res://Items/ItemScenes/HoeScene.tscn
+res://Items/Repo/SeedEggplant.tres
+res://Maps/InitialTileMap.tscn
+res://Database/CSV/ItemDB.ITEM.translation
+res://Database/CSV/ItemDB.RESOURCE.translation
+res://Database/CSV/ItemDB.IS.translation
+res://Database/CSV/ItemDB.HOVER.translation
+res://Database/CSV/ItemDB.MAX.translation
+res://Database/CSV/ItemDB.Dev nodes.translation

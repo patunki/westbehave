@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://el3ftpj7ldrd" path="res://Art/metalli.png" id="16_7g7ih"]
 [ext_resource type="Resource" uid="uid://b525i34k4ot3c" path="res://Items/Repo/MaterialPlank.tres" id="17_6s8x6"]
 [ext_resource type="Script" path="res://Items/Classes/Material.cs" id="17_bsqut"]
-[ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/SeedEggplantSeed.tres" id="19_sksam"]
+[ext_resource type="Resource" uid="uid://b230h8iamftfg" path="res://Items/Repo/SeedEggplant.tres" id="19_svy7c"]
 [ext_resource type="Resource" uid="uid://dhc1a6oacmy3w" path="res://Items/Repo/ToolFishingRod.tres" id="20_vovr7"]
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/ToolHoe.tres" id="21_tifgy"]
 [ext_resource type="Resource" uid="uid://bhxcyh16b7lhp" path="res://Items/Repo/ToolWateringCan.tres" id="22_3a2wb"]
@@ -48,7 +48,7 @@ SCENE_PATH = ""
 
 [sub_resource type="Resource" id="Resource_wcdia"]
 script = ExtResource("6_dlntj")
-InventoryItems = [ExtResource("8_kpm75"), ExtResource("9_rwtqo"), ExtResource("10_mwj2a"), ExtResource("11_vf6lo"), ExtResource("12_38djj"), ExtResource("13_uqlce"), ExtResource("14_nptdp"), ExtResource("15_mpa2p"), SubResource("Resource_gclfm"), ExtResource("17_6s8x6"), ExtResource("19_sksam"), ExtResource("8_ps8vm"), ExtResource("20_vovr7"), ExtResource("21_tifgy"), ExtResource("22_3a2wb"), ExtResource("23_agy0p"), null, null]
+InventoryItems = [ExtResource("8_kpm75"), ExtResource("9_rwtqo"), ExtResource("10_mwj2a"), ExtResource("11_vf6lo"), ExtResource("12_38djj"), ExtResource("13_uqlce"), ExtResource("14_nptdp"), ExtResource("15_mpa2p"), SubResource("Resource_gclfm"), ExtResource("17_6s8x6"), ExtResource("19_svy7c"), ExtResource("8_ps8vm"), ExtResource("20_vovr7"), ExtResource("21_tifgy"), ExtResource("22_3a2wb"), ExtResource("23_agy0p"), null, null]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true

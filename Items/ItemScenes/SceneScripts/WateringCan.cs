@@ -37,10 +37,16 @@ public partial class WateringCan : Node2D
     {
         if (Input.IsActionJustPressed("interact")){
         var tilePos = tileMap.LocalToMap(GlobalPosition);
+        int groundLayer = 1;
         int flowerLayer = 4;
+        var isWater = tileMap.GetCellTileData(groundLayer,tilePos);
+        if (isWater == null){
+            can.waterLevel = 1;
+            animationPlayer.Play("RESET");
+            return;
+        }
         var hasPlant = tileMap.GetCellAlternativeTile(flowerLayer,tilePos);
         if (hasPlant != -1){
-
 
             if (can.waterLevel > 0){
                 animationPlayer.Play("Water");

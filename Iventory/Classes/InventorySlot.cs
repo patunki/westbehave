@@ -73,7 +73,7 @@ public partial class InventorySlot : Panel
                             Update(DragData.item);
                             DragData.GrabDragData(temp);
                         }
-                        inventory.EmitSignal("InventoryChanged"); 
+                        //inventory.EmitSignal("InventoryChanged"); 
 
                         break;
 
@@ -81,12 +81,12 @@ public partial class InventorySlot : Panel
                         DragData.GrabDragData(thisItem);
                         inventory.InventoryItems[index] = null;
                         Empty();
-                        inventory.EmitSignal("InventoryChanged");  
+                        //inventory.EmitSignal("InventoryChanged");  
                         break;
                     case (true,false):
                         inventory.InventoryItems[index] = (Item)DragData.item.Duplicate();
                         Update(DragData.DropDragData());
-                        inventory.EmitSignal("InventoryChanged");  
+                        //inventory.EmitSignal("InventoryChanged");  
                         break;
                     case (false,false):
                         break;
@@ -105,7 +105,7 @@ public partial class InventorySlot : Panel
                             }
                             DragData.item.ITEM_QUANTITY ++;
                         }
-                        inventory.EmitSignal("InventoryChanged");
+                        //inventory.EmitSignal("InventoryChanged");
                         break;
 
                     case (false, true):
@@ -113,7 +113,7 @@ public partial class InventorySlot : Panel
                             thisItem.ITEM_QUANTITY -= 1;
                             DragData.GrabDragData((Item)thisItem.Duplicate()); //ottaa yhen;
                             DragData.item.ITEM_QUANTITY = 1;
-                            inventory.EmitSignal("InventoryChanged");
+                            //inventory.EmitSignal("InventoryChanged");
                         }
 
                         break;
@@ -126,7 +126,7 @@ public partial class InventorySlot : Panel
                         else {
                             inventory.InventoryItems[index] = DragData.DropDragData();
                         }
-                        inventory.EmitSignal("InventoryChanged");
+                        //inventory.EmitSignal("InventoryChanged");
                         break;
                     case (false,false):
                         break;
