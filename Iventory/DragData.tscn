@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bskxfdnfkggpb"]
 
-[ext_resource type="Script" path="res://Iventory/Classes/SlotData.cs" id="1_80fjc"]
+[ext_resource type="Script" path="res://Iventory/Classes/DragData.cs" id="1_50s4w"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4b4e3"]
 
-[node name="SlotData" type="Node2D" groups=["SlotData"]]
+[node name="DragData" type="Node2D" groups=["DragData"]]
 z_index = 100
 z_as_relative = false
-script = ExtResource("1_80fjc")
+script = ExtResource("1_50s4w")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 33.0

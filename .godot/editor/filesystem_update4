@@ -84,3 +84,6 @@ res://StateMachine/States/EnemyPunch.cs
 res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
+res://Database/ItemDB.json
+res://Iventory/DragData.tscn
+res://Iventory/Classes/DragData.cs

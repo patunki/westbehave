@@ -1,11 +1,11 @@
 using Godot;
 using System;
 
-public partial class SlotData : Node2D
+public partial class DragData : Node2D
 {
 	TextureRect textureRect;
 	Label label;
-	public Item dragItem;
+	public Item item;
 	public bool hasItem;
 	
 
@@ -20,12 +20,12 @@ public partial class SlotData : Node2D
 	{
 		if (hasItem){
 			Show();
-			if (dragItem.ITEM_QUANTITY > 1){
-				label.Text = dragItem.ITEM_QUANTITY.ToString();
+			if (item.ITEM_QUANTITY > 1){
+				label.Text = item.ITEM_QUANTITY.ToString();
 			}else{
 				label.Text = "";
 			}
-			GD.Print(dragItem.ITEM_QUANTITY);
+			GD.Print(item.ITEM_QUANTITY);
 		} else {
 			Hide();
 		}
@@ -34,19 +34,19 @@ public partial class SlotData : Node2D
 		NullItemCheck();
 	}
 
-	public void GrabSlotData(Item item){
-		dragItem = item;
-		textureRect.Texture = dragItem.ITEM_TEXTURE;
+	public void GrabDragData(Item _item){
+		item = _item;
+		textureRect.Texture = item.ITEM_TEXTURE;
 		hasItem = true;
 	}
-	public Item DropSlotData(){
+	public Item DropDragData(){
 		hasItem = false;
-		return dragItem;
+		return item;
 	}
 
 	public void NullItemCheck(){
-		if (dragItem != null && dragItem.ITEM_QUANTITY <= 0){
-			DropSlotData();
+		if (item != null && item.ITEM_QUANTITY <= 0){
+			DropDragData();
 		}
 	}
 

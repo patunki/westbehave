@@ -12,7 +12,7 @@ public partial class InventorySlot : Panel
     private Label label;
     private RichTextLabel richTextLabel;
     private GameManager gameManager;
-    private SlotData slotData;
+    private DragData DragData;
     private Item thisItem;   
     public int index;
     private int originIndex;
@@ -37,7 +37,7 @@ public partial class InventorySlot : Panel
             richTextLabel.Visible = true;
             richTextLabel.Hide();
         }
-        slotData = gameManager.slotData;
+        DragData = gameManager.DragData;
 
     }
 
@@ -45,7 +45,7 @@ public partial class InventorySlot : Panel
         originIndex = source;
     }
 
-    void _on_gui_input(InputEvent @event){
+    void _on_gui_input(InputEvent @event){                      //mouse interaction logic
         if (@event is InputEventMouseButton mouseEvent){
 
             if (thisItem == null){
@@ -56,32 +56,32 @@ public partial class InventorySlot : Panel
 
           if (mouseEvent.ButtonIndex == MouseButton.Left && @event.IsPressed()){
  
-                switch ((slotData.hasItem,hasItem))
+                switch ((DragData.hasItem,hasItem))
                 {
                     case (true, true):
-                        if (thisItem.ITEM_ID == slotData.dragItem.ITEM_ID){
-                            inventory.InventoryItems[index].ITEM_QUANTITY += slotData.dragItem.ITEM_QUANTITY;
-                            slotData.DropSlotData();
+                        if (thisItem.ITEM_ID == DragData.item.ITEM_ID){
+                            inventory.InventoryItems[index].ITEM_QUANTITY += DragData.item.ITEM_QUANTITY;
+                            DragData.DropDragData();
                         }
                         else {
                             Item temp = thisItem;
-                            inventory.InventoryItems[index] = slotData.dragItem;                       
-                            Update(slotData.dragItem);
-                            slotData.GrabSlotData(temp);
+                            inventory.InventoryItems[index] = DragData.item;                       
+                            Update(DragData.item);
+                            DragData.GrabDragData(temp);
                         }
                         inventory.EmitSignal("InventoryChanged"); 
 
                         break;
 
                     case (false, true):
-                        slotData.GrabSlotData(thisItem);
+                        DragData.GrabDragData(thisItem);
                         inventory.InventoryItems[index] = null;
                         Empty();
                         inventory.EmitSignal("InventoryChanged");  
                         break;
                     case (true,false):
-                        inventory.InventoryItems[index] = (Item)slotData.dragItem.Duplicate();
-                        Update(slotData.DropSlotData());
+                        inventory.InventoryItems[index] = (Item)DragData.item.Duplicate();
+                        Update(DragData.DropDragData());
                         inventory.EmitSignal("InventoryChanged");  
                         break;
                     case (false,false):
@@ -91,15 +91,15 @@ public partial class InventorySlot : Panel
                 }
 
                 if (mouseEvent.ButtonIndex == MouseButton.Right && @event.IsPressed()){
-                    switch ((slotData.hasItem,hasItem))
+                    switch ((DragData.hasItem,hasItem))
                     {
                     case (true, true):
-                        if (thisItem.ITEM_ID == slotData.dragItem.ITEM_ID){ //puottaa yhen
+                        if (thisItem.ITEM_ID == DragData.item.ITEM_ID){ //puottaa yhen
                             thisItem.ITEM_QUANTITY--;
                             if (thisItem.ITEM_QUANTITY <= 0){
                                 inventory.InventoryItems[index] = null;
                             }
-                            slotData.dragItem.ITEM_QUANTITY ++;
+                            DragData.item.ITEM_QUANTITY ++;
                         }
                         inventory.EmitSignal("InventoryChanged");
                         break;
@@ -107,20 +107,20 @@ public partial class InventorySlot : Panel
                     case (false, true):
                         if (thisItem.ITEM_QUANTITY > 1){
                             thisItem.ITEM_QUANTITY -= 1;
-                            slotData.GrabSlotData((Item)thisItem.Duplicate()); //ottaa yhen;
-                            slotData.dragItem.ITEM_QUANTITY = 1;
+                            DragData.GrabDragData((Item)thisItem.Duplicate()); //ottaa yhen;
+                            DragData.item.ITEM_QUANTITY = 1;
                             inventory.EmitSignal("InventoryChanged");
                         }
 
                         break;
                     case (true,false):
-                        if (slotData.dragItem.ITEM_QUANTITY > 1){
-                            slotData.dragItem.ITEM_QUANTITY --; //puottaa yhen
-                            inventory.InventoryItems[index] = (Item)slotData.dragItem.Duplicate();
+                        if (DragData.item.ITEM_QUANTITY > 1){
+                            DragData.item.ITEM_QUANTITY --; //puottaa yhen
+                            inventory.InventoryItems[index] = (Item)DragData.item.Duplicate();
                             inventory.InventoryItems[index].ITEM_QUANTITY = 1;
                         }
                         else {
-                            inventory.InventoryItems[index] = slotData.DropSlotData();
+                            inventory.InventoryItems[index] = DragData.DropDragData();
                         }
                         inventory.EmitSignal("InventoryChanged");
                         break;

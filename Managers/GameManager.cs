@@ -17,12 +17,12 @@ public partial class GameManager : Node2D
     [Signal]
     public delegate void PlantWateredEventHandler(Vector2I tilepos);
     public TileMap tileMap;
-    public SlotData slotData;
+    public DragData DragData;
 
     public override void _Ready()
     {
-        slotData = GetTree().GetFirstNodeInGroup("SlotData") as SlotData;
-        GD.Print("God Slot data as ", slotData);
+        DragData = GetTree().GetFirstNodeInGroup("DragData") as DragData;
+        GD.Print("God Slot data as ", DragData);
     }
 
     public void SetTileMap(TileMap map){

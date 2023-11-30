@@ -13,7 +13,7 @@
 [ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="10_ko0my"]
 [ext_resource type="Script" path="res://StateMachine/States/Fishing.cs" id="11_31v8l"]
 [ext_resource type="PackedScene" uid="uid://doyknce8kp68n" path="res://Player/PlayerInventory/Hotbar.tscn" id="13_5hng8"]
-[ext_resource type="PackedScene" uid="uid://bskxfdnfkggpb" path="res://Iventory/SlotData.tscn" id="14_ue4or"]
+[ext_resource type="PackedScene" uid="uid://bskxfdnfkggpb" path="res://Iventory/DragData.tscn" id="14_7dgc3"]
 
 [sub_resource type="Resource" id="Resource_3b75t"]
 script = ExtResource("2_38yod")
@@ -178,7 +178,7 @@ player = NodePath("../..")
 entity = NodePath("../..")
 equippedItem = NodePath("../../EquippedItem")
 
-[node name="SlotData" parent="UI" instance=ExtResource("14_ue4or")]
+[node name="DragData" parent="UI" instance=ExtResource("14_7dgc3")]
 
 [connection signal="DamageTaken" from="HealthComponent" to="." method="_on_health_component_damage_taken"]
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]
