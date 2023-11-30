@@ -111,7 +111,6 @@ shape = SubResource("CapsuleShape2D_5g78q")
 label = NodePath("../UI/HealthLabel")
 
 [node name="HungerComponent" parent="." node_paths=PackedStringArray("healthComponent", "hLabel", "tLabel") instance=ExtResource("5_5rjth")]
-unique_name_in_owner = true
 healthComponent = NodePath("../HealthComponent")
 Food = 100
 Water = 100
@@ -174,11 +173,11 @@ offset_right = 1.0
 offset_bottom = -625.0
 player = NodePath("../..")
 
-[node name="Hotbar" parent="UI" node_paths=PackedStringArray("entity", "equippedItem") instance=ExtResource("13_5hng8")]
+[node name="Hotbar" parent="UI" node_paths=PackedStringArray("entity") instance=ExtResource("13_5hng8")]
 entity = NodePath("../..")
-equippedItem = NodePath("../../EquippedItem")
 
 [node name="DragData" parent="UI" instance=ExtResource("14_7dgc3")]
+visible = false
 
 [connection signal="DamageTaken" from="HealthComponent" to="." method="_on_health_component_damage_taken"]
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

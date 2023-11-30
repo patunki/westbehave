@@ -25,7 +25,6 @@ public partial class DragData : Node2D
 			}else{
 				label.Text = "";
 			}
-			GD.Print(item.ITEM_QUANTITY);
 		} else {
 			Hide();
 		}

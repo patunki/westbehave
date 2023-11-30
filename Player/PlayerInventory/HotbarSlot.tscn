@@ -16,11 +16,16 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_1b1ds")
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 7.0
-offset_top = 7.0
-offset_right = 57.0
+offset_right = 64.0
+offset_bottom = 64.0
+
+[node name="Color2" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 59.0
 offset_bottom = 59.0
-color = Color(1, 1, 0.137255, 1)
+color = Color(0.560784, 0.337255, 0.231373, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

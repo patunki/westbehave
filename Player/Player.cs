@@ -22,7 +22,7 @@ public partial class Player : Entity
 		sprite = GetNode<Sprite2D>(spritePath);
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
 		animationPlayer.Play("IdleAnimation");
-		hungerComponent = GetNode<HungerComponent>("%HungerComponent");
+		hungerComponent = GetNode<HungerComponent>("HungerComponent");
 		stateMachine = GetNode<StateMachine>("StateMachine");
 		
 	}

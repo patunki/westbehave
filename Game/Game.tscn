@@ -79,7 +79,7 @@ layer_4/tile_data = PackedInt32Array()
 position = Vector2(-2, 0)
 
 [node name="Zombie" parent="." instance=ExtResource("7_mxngg")]
-position = Vector2(40, 179)
+position = Vector2(-247, 66)
 
 [node name="Workbench" parent="." instance=ExtResource("9_ps17x")]
 position = Vector2(-121, 143)
@@ -89,6 +89,7 @@ visible = false
 color = Color(0.33708, 0.478317, 0.606587, 1)
 
 [node name="Player" parent="." instance=ExtResource("8_rfurq")]
+unique_name_in_owner = true
 position = Vector2(-60, 189)
 inventory = SubResource("Resource_c63wk")
 

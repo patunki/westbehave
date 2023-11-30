@@ -1,4 +1,4 @@
-res://Player/Player.tscn
+res://Iventory/DragData.tscn
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
 res://Items/Repo/ToolAxe.tres
@@ -6,11 +6,8 @@ res://Items/Repo/FoodCookedMeat.tres
 res://Items/Repo/FoodZombieMeat.tres
 res://Items/Repo/MaterialIronOre.tres
 res://Items/Repo/ToolWateringCan.tres
-res://Player/PlayerInventory/InventorySlot.tscn
-res://Player/PlayerInventory/SlotData.tscn
-res://Iventory/InventorySlot.tscn
-res://Iventory/SlotData.tscn
 res://Game/Game.tscn
+res://Player/Player.tscn
 res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WateringCan.tscn
 res://Scenes/Workbench.tscn
@@ -23,6 +20,7 @@ res://Player/PlayerInventory/Hotbar.tscn
 res://Player/PlayerInventory/HotbarSlot.tscn
 res://Scenes/DroppedItem.tscn
 res://Player/PlayerInventory/Inventory.tscn
+res://Iventory/InventorySlot.tscn
 res://Iventory/ExternalInventorySlot.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
@@ -49,11 +47,11 @@ res://Items/ItemScenes/SceneScripts/CampfireStruct.cs
 res://Items/ItemScenes/SceneScripts/FishingRod.cs
 res://Items/ItemScenes/SceneScripts/ShotgunScene.cs
 res://Items/ItemScenes/SceneScripts/WateringCan.cs
+res://Iventory/Classes/DragData.cs
 res://Iventory/Classes/ExternalInventory.cs
 res://Iventory/Classes/ExternalInventorySlot.cs
 res://Iventory/Classes/Inventory.cs
 res://Iventory/Classes/InventorySlot.cs
-res://Iventory/Classes/SlotData.cs
 res://Managers/GameManager.cs
 res://Managers/InteractionManager.cs
 res://Managers/ItemDatabase.cs
@@ -85,5 +83,3 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Iventory/DragData.tscn
-res://Iventory/Classes/DragData.cs

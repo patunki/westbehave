@@ -6,7 +6,7 @@ public partial class Hotbar : Control
     GridContainer gridContainer;
     [Export]
     Entity entity;
-    [Export]
+    //[Export]
     EquippedItem equippedItem;
     Inventory inventory;
     Godot.Collections.Array<Godot.Node> slots;
@@ -20,6 +20,7 @@ public partial class Hotbar : Control
         inventory = entity.inventory;
         inventory.InventoryChanged += UpdateHotbar;
         slots = gridContainer.GetChildren();
+        equippedItem = entity.GetNode<EquippedItem>("EquippedItem");
         SelectItem(0);
     }
 

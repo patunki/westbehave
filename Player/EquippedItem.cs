@@ -19,7 +19,7 @@ public partial class EquippedItem : Node2D
     public override void _Ready()
     {
         Game = GetNode<Node2D>("/root/Game");
-        hungerComponent = GetNode<HungerComponent>("%HungerComponent");
+        hungerComponent = entity.GetNode<HungerComponent>("HungerComponent");
         inventory = entity.inventory;
         equipTexture = GetNode<TextureRect>("EquipTexture");
         inventory.InventoryChanged += UpdateItem;
