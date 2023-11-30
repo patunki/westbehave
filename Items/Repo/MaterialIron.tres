@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dhawc8kora7lm"]
+
+[ext_resource type="Texture2D" uid="uid://el3ftpj7ldrd" path="res://Art/metalli.png" id="1_0exwe"]
+[ext_resource type="Script" path="res://Items/Classes/Material.cs" id="2_2qgnd"]
+
+[resource]
+script = ExtResource("2_2qgnd")
+ITEM_NAME = "Iron"
+ITEM_ID = 11
+CustomResourcePath = "res://Items/Repo/MaterialIronOre.tres"
+ITEM_TEXTURE = ExtResource("1_0exwe")
+IS_STACKABLE = true
+IS_CRAFTABLE = false
+HOVER_TEXT = "Useful Material"
+ITEM_QUANTITY = 1
+MAX_STACK = 1
+ITEM_TYPE = 5
+Action = ""
+DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""

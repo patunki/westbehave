@@ -15,7 +15,6 @@ public partial class InventorySlot : Panel
     private DragData DragData;
     private Item thisItem;   
     public int index;
-    private int originIndex;
     private Inventory inventory;
     bool hasItem;
 
@@ -29,7 +28,6 @@ public partial class InventorySlot : Panel
         label = GetNode<Label>("Label");
         gameManager = GetNode<GameManager>("/root/GameManager");
         richTextLabel = GetNode<RichTextLabel>("RichTextLabel");
-        gameManager.ItemLifted += GetOriginIndex;
         //Initialises the hover text and hides it.
         richTextLabel.Hide();
         if (thisItem != null){
@@ -41,12 +39,18 @@ public partial class InventorySlot : Panel
 
     }
 
-    public void GetOriginIndex(int source){
-        originIndex = source;
-    }
+
 
     void _on_gui_input(InputEvent @event){                      //mouse interaction logic
         if (@event is InputEventMouseButton mouseEvent){
+
+            ////Temporary for development
+            if (mouseEvent.ButtonIndex == MouseButton.Left && @event.IsPressed() && Input.IsActionPressed("shift")){
+                Player player = GetTree().GetFirstNodeInGroup("Player") as Player;
+                player.inventory.AddItem(thisItem,1);
+                return;
+            } 
+            ////
 
             if (thisItem == null){
                 hasItem = false;

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=30 format=3 uid="uid://cmwjr3ysqyvhq"]
 
 [ext_resource type="PackedScene" uid="uid://b1l3deayvp2gh" path="res://Maps/InitialTileMap.tscn" id="2_te56d"]
 [ext_resource type="PackedScene" uid="uid://bnph3rig8hw82" path="res://Scenes/Chest.tscn" id="3_vag8b"]
@@ -16,8 +16,9 @@
 [ext_resource type="Resource" uid="uid://ciliqbuohl6nr" path="res://Items/Repo/FoodRawFish.tres" id="13_uqlce"]
 [ext_resource type="Resource" uid="uid://c2ny56p74de4q" path="res://Items/Repo/FoodZombieMeat.tres" id="14_nptdp"]
 [ext_resource type="Resource" uid="uid://dmncox17jpo3y" path="res://Items/Repo/Lighter.tres" id="15_mpa2p"]
-[ext_resource type="Resource" uid="uid://dhawc8kora7lm" path="res://Items/Repo/MaterialIronOre.tres" id="16_7qext"]
+[ext_resource type="Texture2D" uid="uid://el3ftpj7ldrd" path="res://Art/metalli.png" id="16_7g7ih"]
 [ext_resource type="Resource" uid="uid://b525i34k4ot3c" path="res://Items/Repo/MaterialPlank.tres" id="17_6s8x6"]
+[ext_resource type="Script" path="res://Items/Classes/Material.cs" id="17_bsqut"]
 [ext_resource type="Texture2D" uid="uid://bpqkgny60myy6" path="res://Art/munakoisosiemen.png" id="18_i6ip4"]
 [ext_resource type="Script" path="res://Items/Classes/SeedEggplantSeed.cs" id="19_5evrw"]
 [ext_resource type="Resource" uid="uid://dhc1a6oacmy3w" path="res://Items/Repo/ToolFishingRod.tres" id="20_vovr7"]
@@ -28,6 +29,23 @@
 [sub_resource type="Resource" id="Resource_c63wk"]
 script = ExtResource("6_dlntj")
 InventoryItems = [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+
+[sub_resource type="Resource" id="Resource_gclfm"]
+script = ExtResource("17_bsqut")
+ITEM_NAME = "Iron"
+ITEM_ID = 11
+CustomResourcePath = "res://Items/Repo/MaterialIronOre.tres"
+ITEM_TEXTURE = ExtResource("16_7g7ih")
+IS_STACKABLE = true
+IS_CRAFTABLE = false
+HOVER_TEXT = "Useful Material"
+ITEM_QUANTITY = 10
+MAX_STACK = 1
+ITEM_TYPE = 5
+Action = ""
+DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""
 
 [sub_resource type="Resource" id="Resource_dcgge"]
 script = ExtResource("19_5evrw")
@@ -48,7 +66,7 @@ SCENE_PATH = ""
 
 [sub_resource type="Resource" id="Resource_wcdia"]
 script = ExtResource("6_dlntj")
-InventoryItems = [ExtResource("8_kpm75"), ExtResource("9_rwtqo"), ExtResource("10_mwj2a"), ExtResource("11_vf6lo"), ExtResource("12_38djj"), ExtResource("13_uqlce"), ExtResource("14_nptdp"), ExtResource("15_mpa2p"), ExtResource("16_7qext"), ExtResource("17_6s8x6"), SubResource("Resource_dcgge"), ExtResource("8_ps8vm"), ExtResource("20_vovr7"), ExtResource("21_tifgy"), ExtResource("22_3a2wb"), ExtResource("23_agy0p"), null, null]
+InventoryItems = [ExtResource("8_kpm75"), ExtResource("9_rwtqo"), ExtResource("10_mwj2a"), ExtResource("11_vf6lo"), ExtResource("12_38djj"), ExtResource("13_uqlce"), ExtResource("14_nptdp"), ExtResource("15_mpa2p"), SubResource("Resource_gclfm"), ExtResource("17_6s8x6"), SubResource("Resource_dcgge"), ExtResource("8_ps8vm"), ExtResource("20_vovr7"), ExtResource("21_tifgy"), ExtResource("22_3a2wb"), ExtResource("23_agy0p"), null, null]
 
 [node name="Game" type="Node2D"]
 y_sort_enabled = true

@@ -8,16 +8,13 @@ public partial class ExternalInventory : Control
     Inventory inventory;
     PackedScene inventorySlot;
     GridContainer gridContainer;
-    GameManager gameManager;
     bool isOpen = true;
 
 	public override void _Ready(){
         inventory = storage.inventory;
 	    inventorySlot = GD.Load<PackedScene>("res://Iventory/InventorySlot.tscn");
 	    gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
-        gameManager = GetNode<GameManager>("/root/GameManager");
-        //gameManager.ItemLanded += SetItem;
-	    //gameManager.ExternalInventory += GetExternal;
+		storage.inventory.InventoryChanged += UpdateInventory;
         PopulateInv(inventory.InventoryItems);
         UpdateInventory();
         Close();
