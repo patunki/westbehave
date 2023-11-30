@@ -8,6 +8,10 @@ public partial class EnemyIdle : State
     Entity enemy;
     int moveSpeed;
     Entity player;
+    [Export]
+    string triggerState = "EnemyFollow";
+    [Export]
+    int triggerDistance = 50;
 
 
 
@@ -37,8 +41,8 @@ public partial class EnemyIdle : State
         Vector2 direction = player.GlobalPosition - enemy.GlobalPosition;
         float distance = direction.Length();
 
-        if (distance < 50 && player.entityState == EntityState.Alive){
-            EmitSignal(SignalName.Transitioned, this,"EnemyFollow");
+        if (distance < triggerDistance && player.entityState == EntityState.Alive){
+            EmitSignal(SignalName.Transitioned, this,triggerState);
         }
     }
     public override void PhysicsUpdate(double delta){

@@ -12,6 +12,7 @@ public partial class ShotgunScene : Node2D
     PackedScene bullet;
     Node2D game;
     AudioStreamPlayer2D audio;
+    Entity entity;
 
     public override void _Ready()
     {
@@ -29,12 +30,14 @@ public partial class ShotgunScene : Node2D
 
     public override void _PhysicsProcess(double delta)
     {
-        radius.LookAt(GetGlobalMousePosition());
-        LookMouse();
+        if (entity is Player){
+            radius.LookAt(GetGlobalMousePosition());
+            LookMouse();
+        }
     }
 
-    public void MyItem(Item item, Entity entity){
-        GD.Print(item.ITEM_NAME);
+    public void MyItem(Item item, Entity _entity){
+        entity = _entity;
     }
 
     void LookMouse(){
@@ -69,6 +72,24 @@ public partial class ShotgunScene : Node2D
         else {
                 Rotation = 0;
             }
+    }
+
+    public void Shoot(Vector2 dir){
+            shotgunSprite.LookAt(dir);
+            radius.LookAt(dir);
+            Bullet instance = (Bullet)bullet.Instantiate();
+            instance.Position = barrel.GlobalPosition;
+            instance.velocity = dir;
+			game.AddChild(instance);
+            shotParticlesRed.Emitting = true;
+            shotParticlesWhite.Emitting = true;
+            muzzleFlash.Show();
+            audio.Playing = true;
+            Timer timer = new Timer();
+            AddChild(timer);
+            timer.Start(0.05);
+            timer.Timeout += muzzleFlash.Hide;
+            timer.Timeout += timer.QueueFree;
     }
 
 }

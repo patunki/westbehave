@@ -1,13 +1,14 @@
+res://StateMachine/States
+res://Scripts
+res://Scenes
 res://Player/PlayerInventory
 res://Items/Repo/
 res://
 res://Player
 res://Items/ItemScenes/SceneScripts
-res://Scripts
 /home/paulus/godotProjects/westbehave/Database/
 res://Scenes/
 res://Components
-res://Scenes
 res://Game
 res://Art
 res://Items/Repo
@@ -19,4 +20,3 @@ res://Iventory
 res://StateMachine
 res://Interaction
 res://Items/Classes
-res://Items/Classes/

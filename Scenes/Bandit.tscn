@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://ds8b8essbv06u"]
+
+[ext_resource type="Script" path="res://Scripts/Bandit.cs" id="1_1fhkl"]
+[ext_resource type="Texture2D" uid="uid://c52scfje8yvfp" path="res://Art/banditPlaceHolder.png" id="1_ocj1u"]
+[ext_resource type="Script" path="res://Iventory/Classes/Inventory.cs" id="2_s7qp0"]
+[ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="4_1aq0u"]
+[ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="5_tramu"]
+[ext_resource type="Script" path="res://StateMachine/States/EnemyShoot.cs" id="6_x0h85"]
+[ext_resource type="PackedScene" uid="uid://bkbjs36yr8tlb" path="res://Items/ItemScenes/Shotgun.tscn" id="7_bf7ya"]
+
+[sub_resource type="Resource" id="Resource_tgqkk"]
+script = ExtResource("2_s7qp0")
+InventoryItems = [null, null, null]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u102h"]
+size = Vector2(12, 3)
+
+[node name="Bandit" type="CharacterBody2D" node_paths=PackedStringArray("shotgun")]
+script = ExtResource("1_1fhkl")
+shotgun = NodePath("WeaponShotgun")
+EntityName = "Simo Mormont"
+entityType = 1
+entityGuild = 2
+entityBehavior = 1
+inventory = SubResource("Resource_tgqkk")
+
+[node name="BanditSprite" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, -13)
+scale = Vector2(0.0868156, 0.087536)
+texture = ExtResource("1_ocj1u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_u102h")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("initialState", "entity") instance=ExtResource("4_1aq0u")]
+initialState = NodePath("EnemyIdle")
+entity = NodePath("..")
+
+[node name="EnemyIdle" type="Node" parent="StateMachine"]
+script = ExtResource("5_tramu")
+triggerState = "Shoot"
+triggerDistance = 100
+
+[node name="Shoot" type="Node" parent="StateMachine"]
+script = ExtResource("6_x0h85")
+
+[node name="WeaponShotgun" parent="." instance=ExtResource("7_bf7ya")]
+position = Vector2(0, -11)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cmwjr3ysqyvhq"]
+[gd_scene load_steps=29 format=3 uid="uid://cmwjr3ysqyvhq"]
 
 [ext_resource type="PackedScene" uid="uid://b1l3deayvp2gh" path="res://Maps/InitialTileMap.tscn" id="2_te56d"]
 [ext_resource type="PackedScene" uid="uid://bnph3rig8hw82" path="res://Scenes/Chest.tscn" id="3_vag8b"]
@@ -24,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://7360gotmfs3h" path="res://Items/Repo/ToolHoe.tres" id="21_tifgy"]
 [ext_resource type="Resource" uid="uid://bhxcyh16b7lhp" path="res://Items/Repo/ToolWateringCan.tres" id="22_3a2wb"]
 [ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/WeaponShotgun.tres" id="23_agy0p"]
+[ext_resource type="PackedScene" uid="uid://ds8b8essbv06u" path="res://Scenes/Bandit.tscn" id="25_xko4e"]
 
 [sub_resource type="Resource" id="Resource_c63wk"]
 script = ExtResource("6_dlntj")
@@ -96,3 +97,6 @@ inventory = SubResource("Resource_c63wk")
 [node name="Chest" parent="." instance=ExtResource("3_vag8b")]
 position = Vector2(329, 103)
 inventory = SubResource("Resource_wcdia")
+
+[node name="Bandit" parent="." instance=ExtResource("25_xko4e")]
+position = Vector2(89, 165)

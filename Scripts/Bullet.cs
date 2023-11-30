@@ -4,12 +4,12 @@ using System;
 public partial class Bullet : CharacterBody2D
 {
 
-	Vector2 velocity;
+	public Vector2 velocity;
 	[Export]
 	int speed = 10;
 	public override void _Ready()
 	{
-		velocity = GetLocalMousePosition();
+		//velocity = GetLocalMousePosition();
 	}
 
 	public override void _PhysicsProcess(double delta)
