@@ -51,7 +51,7 @@ public partial class ShotgunScene : Node2D
 
     public override void _Input(InputEvent @event)
     {
-        if (Input.IsActionJustPressed("attack") && Input.IsActionPressed("r_click")){
+        if (Input.IsActionJustPressed("attack") && Input.IsActionPressed("r_click") && entity is Player){
             Bullet instance = (Bullet)bullet.Instantiate();
             instance.Position = barrel.GlobalPosition;
 			game.AddChild(instance);
@@ -65,7 +65,7 @@ public partial class ShotgunScene : Node2D
             timer.Timeout += muzzleFlash.Hide;
             timer.Timeout += timer.QueueFree;
         }
-        if (Input.IsActionPressed("r_click")){
+        if (Input.IsActionPressed("r_click") && entity is Player){
             LookAt(GetGlobalMousePosition());
 
         }
@@ -74,12 +74,11 @@ public partial class ShotgunScene : Node2D
             }
     }
 
-    public void Shoot(Vector2 dir){
+    public void Shoot(Vector2 dir){ //for ai
             shotgunSprite.LookAt(dir);
             radius.LookAt(dir);
             Bullet instance = (Bullet)bullet.Instantiate();
             instance.Position = barrel.GlobalPosition;
-            instance.velocity = dir;
 			game.AddChild(instance);
             shotParticlesRed.Emitting = true;
             shotParticlesWhite.Emitting = true;
