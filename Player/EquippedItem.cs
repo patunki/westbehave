@@ -38,7 +38,12 @@ public partial class EquippedItem : Node2D
 
 		if (equipItem != null && equipItem.HAS_SCENE && sceneAlive == false){
 			itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
-			itemInstance = itemScene.Instantiate() as Node2D;
+			try {
+				itemInstance = itemScene.Instantiate() as Node2D;
+			}catch{
+				GD.Print("seceneä ei voitu luoda");
+				return;
+			}
 			itemInstance.Call("MyItem",equipItem,entity);
 			AddChild(itemInstance);
 			sceneAlive = true;

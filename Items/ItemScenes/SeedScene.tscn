@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5vql0xigtjyd"]
+
+[ext_resource type="Script" path="res://Items/ItemScenes/SceneScripts/SeedScene.cs" id="1_2jcx8"]
+
+[node name="SeedScene" type="Node2D"]
+script = ExtResource("1_2jcx8")
+
+[node name="Item" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
