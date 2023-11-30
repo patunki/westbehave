@@ -30,11 +30,21 @@ public partial class ShotgunScene : Node2D
     public override void _PhysicsProcess(double delta)
     {
         radius.LookAt(GetGlobalMousePosition());
+        LookMouse();
     }
 
     public void MyItem(Item item, Entity entity){
         GD.Print(item.ITEM_NAME);
     }
+
+    void LookMouse(){
+		Vector2 dir = GlobalPosition.DirectionTo(GetGlobalMousePosition());
+		if (dir.X < 0 && Input.IsActionPressed("r_click")){
+            shotgunSprite.FlipV = true;
+        }else{
+            shotgunSprite.FlipV = false;
+        }
+	}
 
     public override void _Input(InputEvent @event)
     {

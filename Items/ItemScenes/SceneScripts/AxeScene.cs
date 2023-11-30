@@ -6,11 +6,26 @@ public partial class AxeScene : Node2D
     AnimationPlayer animationPlayer;
     Attack attack;
     ToolAxe axe;
+    Sprite2D axeAnim;
 
     public override void _Ready()
     {
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-        
+        axeAnim = GetNode<Sprite2D>("AxeAnim");
+    }
+
+    void LookMouse(){
+		Vector2 dir = GlobalPosition.DirectionTo(GetGlobalMousePosition());
+		if (dir.X < 0 && Input.IsActionPressed("r_click")){
+            axeAnim.FlipV = true;
+        }else{
+            axeAnim.FlipV = false;
+        }
+	}
+
+    public override void _Process(double delta)
+    {
+        LookMouse();
     }
 
     public void MyItem(Item item, Entity entity){
@@ -32,8 +47,14 @@ public partial class AxeScene : Node2D
 
     public override void _Input(InputEvent @event)
     {
-        if (Input.IsActionJustPressed("attack")){
+        if (Input.IsActionJustPressed("attack") && Input.IsActionPressed("r_click")){
             animationPlayer.Play("AxeHit");
+        }
+
+        if (Input.IsActionPressed("r_click")){
+            LookAt(GetGlobalMousePosition());
+        }else {
+            Rotation = 0;
         }
     }
 
