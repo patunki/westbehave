@@ -1,4 +1,4 @@
-res://Game/Game.tscn
+res://Player/Player.tscn
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
 res://Items/Repo/ToolAxe.tres
@@ -6,7 +6,11 @@ res://Items/Repo/FoodCookedMeat.tres
 res://Items/Repo/FoodZombieMeat.tres
 res://Items/Repo/MaterialIronOre.tres
 res://Items/Repo/ToolWateringCan.tres
-res://Player/Player.tscn
+res://Player/PlayerInventory/InventorySlot.tscn
+res://Player/PlayerInventory/SlotData.tscn
+res://Iventory/InventorySlot.tscn
+res://Iventory/SlotData.tscn
+res://Game/Game.tscn
 res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WateringCan.tscn
 res://Scenes/Workbench.tscn
@@ -19,7 +23,7 @@ res://Player/PlayerInventory/Hotbar.tscn
 res://Player/PlayerInventory/HotbarSlot.tscn
 res://Scenes/DroppedItem.tscn
 res://Player/PlayerInventory/Inventory.tscn
-res://Player/PlayerInventory/InventorySlot.tscn
+res://Iventory/ExternalInventorySlot.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -47,7 +51,9 @@ res://Items/ItemScenes/SceneScripts/ShotgunScene.cs
 res://Items/ItemScenes/SceneScripts/WateringCan.cs
 res://Iventory/Classes/ExternalInventory.cs
 res://Iventory/Classes/ExternalInventorySlot.cs
-res://Iventory/Inventory.cs
+res://Iventory/Classes/Inventory.cs
+res://Iventory/Classes/InventorySlot.cs
+res://Iventory/Classes/SlotData.cs
 res://Managers/GameManager.cs
 res://Managers/InteractionManager.cs
 res://Managers/ItemDatabase.cs
@@ -55,7 +61,6 @@ res://Player/EquippedItem.cs
 res://Player/Player.cs
 res://Player/PlayerInventory/Hotbar.cs
 res://Player/PlayerInventory/HotbarSlot.cs
-res://Player/PlayerInventory/InventorySlot.cs
 res://Player/PlayerInventory/InventoryUi.cs
 res://Scripts/Attack.cs
 res://Scripts/Bullet.cs
@@ -79,6 +84,3 @@ res://StateMachine/States/EnemyPunch.cs
 res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
-res://Database/ItemDB.json
-res://Player/PlayerInventory/SlotData.tscn
-res://Player/PlayerInventory/SlotData.cs

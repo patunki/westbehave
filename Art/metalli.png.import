@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwbd3npy6mgic"
-path="res://.godot/imported/workbenchminecraft.png-598e05a1a071da1abe96fd924ad28554.ctex"
+uid="uid://el3ftpj7ldrd"
+path="res://.godot/imported/metalli.png-5ae55d6e3b2324b6c2a3ad2b53dd5d4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/workbenchminecraft.png"
-dest_files=["res://.godot/imported/workbenchminecraft.png-598e05a1a071da1abe96fd924ad28554.ctex"]
+source_file="res://Art/metalli.png"
+dest_files=["res://.godot/imported/metalli.png-5ae55d6e3b2324b6c2a3ad2b53dd5d4e.ctex"]
 
 [params]
 

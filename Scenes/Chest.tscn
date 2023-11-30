@@ -2,12 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://du6so704q72n5" path="res://Art/veetiritard.png" id="1_55djk"]
 [ext_resource type="Script" path="res://Scripts/Chest.cs" id="1_sxx0p"]
-[ext_resource type="Script" path="res://Iventory/Inventory.cs" id="2_mqx48"]
+[ext_resource type="Script" path="res://Iventory/Classes/Inventory.cs" id="2_1ngnk"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="2_tsoul"]
 [ext_resource type="PackedScene" uid="uid://by8lovrluq1ry" path="res://Iventory/ExternalInventory.tscn" id="4_ah6qq"]
 
 [sub_resource type="Resource" id="Resource_i4ct7"]
-script = ExtResource("2_mqx48")
+script = ExtResource("2_1ngnk")
 InventoryItems = []
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bjq1p"]

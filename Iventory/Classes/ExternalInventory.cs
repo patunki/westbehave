@@ -13,7 +13,7 @@ public partial class ExternalInventory : Control
 
 	public override void _Ready(){
         inventory = storage.inventory;
-	    inventorySlot = GD.Load<PackedScene>("res://Player/PlayerInventory/InventorySlot.tscn");
+	    inventorySlot = GD.Load<PackedScene>("res://Iventory/InventorySlot.tscn");
 	    gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");
         //gameManager.ItemLanded += SetItem;

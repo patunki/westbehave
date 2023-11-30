@@ -30,6 +30,7 @@ script = ExtResource("2_b6whj")
 
 [node name="Label" type="Label" parent="."]
 z_index = 2
+layout_mode = 0
 offset_left = -2.0
 offset_top = 4.0
 offset_right = 17.0
@@ -58,6 +59,7 @@ stretch_mode = 4
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 visible = false
 z_index = 5
+layout_mode = 0
 offset_left = -69.0
 offset_right = 68.0
 offset_bottom = 87.0

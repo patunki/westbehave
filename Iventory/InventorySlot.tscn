@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://qawaqd2jpmio"]
 
 [ext_resource type="Texture2D" uid="uid://bmhtsg706ekhp" path="res://Art/invslot.png" id="1_aeck1"]
-[ext_resource type="Script" path="res://Player/PlayerInventory/InventorySlot.cs" id="2_mtwfi"]
+[ext_resource type="Script" path="res://Iventory/Classes/InventorySlot.cs" id="2_mtwfi"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ylou"]
 texture = ExtResource("1_aeck1")

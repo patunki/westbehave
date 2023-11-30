@@ -60,7 +60,7 @@ public partial class InventoryUi : Control
 
 	public override void _Ready(){
 		equippables = GetNode<GridContainer>("TextureRect/Equippables");
-		invetorySlot = GD.Load<PackedScene>("res://Player/PlayerInventory/InventorySlot.tscn");
+		invetorySlot = GD.Load<PackedScene>("res://Iventory/InventorySlot.tscn");
 		gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
         gameManager = GetNode<GameManager>("/root/GameManager");
 		mirror = GetNode<TextureRect>("Mirror");
