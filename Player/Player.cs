@@ -33,13 +33,12 @@ public partial class Player : Entity
 			MoveAndSlide();
 		}
 		LookMouse();
-		GD.Print("P: ",GlobalPosition);
 
 	}
 
 	void LookMouse(){
 		Vector2 dir = GlobalPosition.DirectionTo(GetGlobalMousePosition());
-		if (dir.Y+0.2 < 0 && Input.IsActionPressed("r_click")){
+		if (dir.Y+0.3 < 0 && Input.IsActionPressed("r_click")){
             animationPlayer.Play("IdleUp");
         }else{
             animationPlayer.Play("IdleAnimation");

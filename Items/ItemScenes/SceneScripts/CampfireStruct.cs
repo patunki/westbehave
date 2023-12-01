@@ -3,12 +3,12 @@ using System;
 
 public partial class CampfireStruct : Node2D
 {   
-    CampfireItem campFire;
+    Structure campFire;
     Inventory inventory;
     Entity entity;
 
     public void MyItem(Item item, Entity _entity){
-        campFire = (CampfireItem)item;
+        campFire = (Structure)item;
         entity = _entity;
         inventory = entity.inventory;
     }

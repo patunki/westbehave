@@ -58,9 +58,9 @@ public partial class Item : Resource
 
     }
 
-    public void DecQuant(){
+    public int DecQuant(){
         ITEM_QUANTITY--;
-        //return ITEM_QUANTITY;
+        return ITEM_QUANTITY;
     }
 
     public void MultiDec(int quant){

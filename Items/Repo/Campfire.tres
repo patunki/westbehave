@@ -1,14 +1,18 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://con5ed5weoxgv"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://con5ed5weoxgv"]
 
-[ext_resource type="Script" path="res://Items/Classes/CampfireItem.cs" id="1_afmhm"]
 [ext_resource type="Texture2D" uid="uid://cual4sdphn5hl" path="res://Art/nuotioded.png" id="1_o54nj"]
+[ext_resource type="Script" path="res://Items/Classes/Structure.cs" id="2_i4tii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j4lj"]
+atlas = ExtResource("1_o54nj")
+region = Rect2(7.21651, 15.73, 17.0264, 15.54)
 
 [resource]
-script = ExtResource("1_afmhm")
+script = ExtResource("2_i4tii")
 ITEM_NAME = "Campfire"
 ITEM_ID = 13
 CustomResourcePath = "res://Items/Repo/Campfire.tres"
-ITEM_TEXTURE = ExtResource("1_o54nj")
+ITEM_TEXTURE = SubResource("AtlasTexture_6j4lj")
 IS_STACKABLE = false
 IS_CRAFTABLE = true
 HOVER_TEXT = ""

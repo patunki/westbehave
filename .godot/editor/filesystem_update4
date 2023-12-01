@@ -91,3 +91,7 @@ res://Database/CSV/ItemDB.IS.translation
 res://Database/CSV/ItemDB.HOVER.translation
 res://Database/CSV/ItemDB.MAX.translation
 res://Database/CSV/ItemDB.Dev nodes.translation
+res://Items/Repo/Campfire.tres
+res://Items/ItemScenes/CampfireStruct.tscn
+res://Items/Repo/Lighter.tres
+res://Scenes/DroppedItem.tscn

@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ds8b8essbv06u"]
+[gd_scene load_steps=11 format=3 uid="uid://ds8b8essbv06u"]
 
 [ext_resource type="Script" path="res://Scripts/Bandit.cs" id="1_1fhkl"]
 [ext_resource type="Texture2D" uid="uid://c52scfje8yvfp" path="res://Art/banditPlaceHolder.png" id="1_ocj1u"]
+[ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/WeaponShotgun.tres" id="2_rvqdn"]
 [ext_resource type="Script" path="res://Iventory/Classes/Inventory.cs" id="2_s7qp0"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="4_1aq0u"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="5_tramu"]
@@ -18,6 +19,7 @@ size = Vector2(12, 3)
 [node name="Bandit" type="CharacterBody2D" node_paths=PackedStringArray("shotgun")]
 script = ExtResource("1_1fhkl")
 shotgun = NodePath("WeaponShotgun")
+item = ExtResource("2_rvqdn")
 EntityName = "Simo Mormont"
 entityType = 1
 entityGuild = 2

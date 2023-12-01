@@ -8,12 +8,16 @@ public partial class ShotgunScene : Node2D
     GpuParticles2D shotParticlesRed;
     Node2D radius;
     Marker2D barrel;
-    Sprite2D shotgunSprite;
+    Sprite2D weaponSprite;
     PackedScene bullet;
     Node2D game;
     AudioStreamPlayer2D audio;
     Entity entity;
     Weapon weapon;
+    Timer cooldown;
+
+    bool canShoot = false;
+
 
     public override void _Ready()
     {
@@ -22,11 +26,12 @@ public partial class ShotgunScene : Node2D
         muzzleFlash = GetNode<PointLight2D>("Radius/MuzzleFlash");
         barrel = GetNode<Marker2D>("Radius/Barrel");
         radius = GetNode<Node2D>("Radius");
-        shotgunSprite = GetNode<Sprite2D>("ShotgunSprite");
+        weaponSprite = GetNode<Sprite2D>("WeaponSprite");
         bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
         game = GetNode<Node2D>("/root/Game");
         audio = GetNode<AudioStreamPlayer2D>("Gunshot");
-        
+        cooldown = GetNode<Timer>("Cooldown");
+        canShoot = true;
 
     }
 
@@ -34,6 +39,7 @@ public partial class ShotgunScene : Node2D
     {
         if (entity is Player){
             radius.LookAt(GetGlobalMousePosition());
+            GetInput();
             LookMouse();
         }
     }
@@ -41,18 +47,23 @@ public partial class ShotgunScene : Node2D
     public void MyItem(Item item, Entity _entity){
         entity = _entity;
         weapon = (Weapon)item;
+        if (weaponSprite == null){
+            weaponSprite = GetNode<Sprite2D>("WeaponSprite");
+        }
+        weaponSprite.Texture = weapon.ITEM_TEXTURE;
+        
     }
 
     void LookMouse(){
 		Vector2 dir = GlobalPosition.DirectionTo(GetGlobalMousePosition());
 		if (dir.X < 0 && Input.IsActionPressed("r_click")){
-            shotgunSprite.FlipV = true;
+            weaponSprite.FlipV = true;
         }else{
-            shotgunSprite.FlipV = false;
+            weaponSprite.FlipV = false;
         }
 	}
 
-    public override void _Input(InputEvent @event)
+    public void GetInput()
     {
         if (Input.IsActionJustPressed("attack") && Input.IsActionPressed("r_click") && entity is Player){
             Shoot(GetGlobalMousePosition(),BulletTarget.Mouse);
@@ -67,7 +78,8 @@ public partial class ShotgunScene : Node2D
     }
 
     public void Shoot(Vector2 dir, BulletTarget target){ //for Ai
-            shotgunSprite.LookAt(dir);
+        if (canShoot){
+            weaponSprite.LookAt(dir);
             radius.LookAt(dir);
             Bullet instance = (Bullet)bullet.Instantiate();
             instance.target = target;
@@ -82,6 +94,11 @@ public partial class ShotgunScene : Node2D
             timer.Start(0.05);
             timer.Timeout += muzzleFlash.Hide;
             timer.Timeout += timer.QueueFree;
+        }
+    }
+
+    void Reloaded(){
+        canShoot = true;
     }
 
 }

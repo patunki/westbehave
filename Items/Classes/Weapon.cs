@@ -22,5 +22,9 @@ public partial class Weapon : Item
     public int singleBulletDamage;
     [Export]
     public int bulletSpeed;
+    [Export]
+    public int magazineSize;
+    [Export]
+    public int bulletsLeft;
 
 }

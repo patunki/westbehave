@@ -14,6 +14,8 @@ public partial class Bullet : CharacterBody2D
 	Player player;
 	[Export]
 	int speed = 10;
+	int damage = 5;
+
 	public override void _Ready()
 	{
 		if (target == BulletTarget.Mouse){

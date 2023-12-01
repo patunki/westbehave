@@ -5,9 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://cg0rrofao4u73" path="res://Art/shotgun1.png" id="2_xx2n8"]
 [ext_resource type="AudioStream" uid="uid://74w2id1ogufa" path="res://Audio/shotgun-firing-4-6746.mp3" id="4_j8h5e"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vqk7a"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jdq8"]
 atlas = ExtResource("2_xx2n8")
-region = Rect2(0, 0, 40.8986, 30.2127)
+region = Rect2(0, 0, 39.1887, 33.2432)
 
 [sub_resource type="Curve" id="Curve_kn60o"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.826484, 0), 0.0, 0.0, 0, 0]
@@ -51,13 +51,13 @@ scale_curve = SubResource("CurveTexture_o7xlq")
 color = Color(0.85098, 0.239216, 0, 1)
 hue_variation_max = 0.15
 
-[node name="WeaponShotgun" type="Node2D"]
+[node name="WeaponScene" type="Node2D"]
 script = ExtResource("1_ah835")
 
-[node name="ShotgunSprite" type="Sprite2D" parent="."]
+[node name="WeaponSprite" type="Sprite2D" parent="."]
 position = Vector2(4, -1.5)
 scale = Vector2(0.525, 0.633333)
-texture = SubResource("AtlasTexture_vqk7a")
+texture = SubResource("AtlasTexture_0jdq8")
 
 [node name="Radius" type="Node2D" parent="."]
 position = Vector2(-5, 0)
@@ -96,3 +96,5 @@ texture_scale = 0.4
 [node name="Gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_j8h5e")
 volume_db = -10.475
+
+[node name="Cooldown" type="Timer" parent="."]
