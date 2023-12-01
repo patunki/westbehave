@@ -8,6 +8,7 @@ public partial class Dead : State
     {
         entity.Velocity = new Vector2(0,0);
         entity.Modulate = new Color (1,0,0);
+        entity.canMove = false;
     }
     
 }

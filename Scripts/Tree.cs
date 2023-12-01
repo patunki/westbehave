@@ -18,7 +18,6 @@ public partial class Tree : StaticBody2D
             lootComponent.DropItems();
             lootComponent.QueueFree();
         }
-        GD.Print("tama myös pyöreii");
 
         hasLoot = false;
         Rotation = 90;

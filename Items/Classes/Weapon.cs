@@ -26,5 +26,7 @@ public partial class Weapon : Item
     public int magazineSize;
     [Export]
     public int bulletsLeft;
+    [Export]
+    public Item magazine;
 
 }

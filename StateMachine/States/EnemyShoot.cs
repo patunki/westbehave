@@ -8,22 +8,24 @@ public partial class EnemyShoot : State
     ShotgunScene shotgun;
     Vector2 dir;
     Player player;
-    CollisionShape2D sprite2D;
+
     public override void Enter(Entity _entity)
     {
         player = (Player)GetTree().GetFirstNodeInGroup("Player");
         entity = (Bandit)_entity;
-        sprite2D = player.GetNode<CollisionShape2D>("PlayerCollisionShape");
-        DelayMethod();
+        entity.Velocity = new Vector2(0,0);
     }
 
-    private async void DelayMethod(){
-        await Task.Delay(TimeSpan.FromSeconds(2));
-        Shit();
+    public override void Update(double delta)
+    {
+        entity.shotgun.Shoot(player.GlobalPosition,BulletTarget.Player);
+        Vector2 direction = player.GlobalPosition - entity.GlobalPosition;
+        float distance = direction.Length();
+
+        if (distance > 200 || player.entityState == EntityState.Dead){
+            EmitSignal(SignalName.Transitioned, this,"EnemyIdle");
+        }
     }
 
-    void Shit(){
-        entity.shotgun.Shoot(sprite2D.GlobalPosition,BulletTarget.Player);
-        DelayMethod();
-    }
+
 }

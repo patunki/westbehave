@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ds8b8essbv06u"]
+[gd_scene load_steps=15 format=3 uid="uid://ds8b8essbv06u"]
 
 [ext_resource type="Script" path="res://Scripts/Bandit.cs" id="1_1fhkl"]
 [ext_resource type="Texture2D" uid="uid://c52scfje8yvfp" path="res://Art/banditPlaceHolder.png" id="1_ocj1u"]
@@ -8,13 +8,19 @@
 [ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="5_tramu"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyShoot.cs" id="6_x0h85"]
 [ext_resource type="PackedScene" uid="uid://bkbjs36yr8tlb" path="res://Items/ItemScenes/Shotgun.tscn" id="7_bf7ya"]
+[ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="8_ekg6g"]
+[ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="9_l6exr"]
+[ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="10_8wgu0"]
 
-[sub_resource type="Resource" id="Resource_tgqkk"]
+[sub_resource type="Resource" id="Resource_10jd6"]
 script = ExtResource("2_s7qp0")
-InventoryItems = [null, null, null]
+InventoryItems = []
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u102h"]
 size = Vector2(12, 3)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mumpm"]
+radius = 5.0
 
 [node name="Bandit" type="CharacterBody2D" node_paths=PackedStringArray("shotgun")]
 script = ExtResource("1_1fhkl")
@@ -24,7 +30,7 @@ EntityName = "Simo Mormont"
 entityType = 1
 entityGuild = 2
 entityBehavior = 1
-inventory = SubResource("Resource_tgqkk")
+inventory = SubResource("Resource_10jd6")
 
 [node name="BanditSprite" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, -13)
@@ -48,5 +54,20 @@ triggerDistance = 100
 [node name="Shoot" type="Node" parent="StateMachine"]
 script = ExtResource("6_x0h85")
 
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("8_ekg6g")
+
 [node name="WeaponShotgun" parent="." instance=ExtResource("7_bf7ya")]
 position = Vector2(0, -11)
+
+[node name="HealthComponent" parent="." instance=ExtResource("9_l6exr")]
+
+[node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("10_8wgu0")]
+healthComponent = NodePath("../HealthComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBoxComponent"]
+visible = false
+position = Vector2(1, -12)
+shape = SubResource("CapsuleShape2D_mumpm")
+
+[connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

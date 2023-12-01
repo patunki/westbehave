@@ -13,8 +13,8 @@ public partial class Bullet : CharacterBody2D
 	public BulletTarget target;
 	Player player;
 	[Export]
-	int speed = 10;
-	int damage = 5;
+	public int speed = 10;
+	public int damage = 5;
 
 	public override void _Ready()
 	{

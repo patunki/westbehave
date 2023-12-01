@@ -1,9 +1,9 @@
+Node
+CollisionShape2D
 Timer
 TextureRect
-CollisionShape2D
 Sprite2D
 CharacterBody2D
-Node
 Node2D
 Bone2D
 Skeleton2D
@@ -12,4 +12,3 @@ CanvasLayer
 Control
 Label
 Panel
-GridContainer

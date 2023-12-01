@@ -8,9 +8,13 @@ public partial class ExternalInventory : Control
     Inventory inventory;
     PackedScene inventorySlot;
     GridContainer gridContainer;
+	Player player;
+	InventoryUi inventoryUi;
     bool isOpen = true;
 
 	public override void _Ready(){
+		player = GetTree().GetFirstNodeInGroup("Player") as Player;
+		inventoryUi = player.GetNode<InventoryUi>("UI/Inventory");
         inventory = storage.inventory;
 	    inventorySlot = GD.Load<PackedScene>("res://Iventory/InventorySlot.tscn");
 	    gridContainer = GetNode<GridContainer>("TextureRect/GridContainer");
@@ -49,12 +53,13 @@ public partial class ExternalInventory : Control
     public void Close (){
 		Visible = false;
 		isOpen = false;
+		inventoryUi.Close();
 	}
 
 	public void Open(){
 		Visible = true;
 		isOpen = true;
-
+		inventoryUi.Open();
 	}
 
     public void ToggleInventory()

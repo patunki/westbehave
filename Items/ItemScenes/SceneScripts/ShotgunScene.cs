@@ -16,7 +16,8 @@ public partial class ShotgunScene : Node2D
     Weapon weapon;
     Timer cooldown;
 
-    bool canShoot = false;
+    public bool canShoot = false;
+
 
 
     public override void _Ready()
@@ -31,6 +32,7 @@ public partial class ShotgunScene : Node2D
         game = GetNode<Node2D>("/root/Game");
         audio = GetNode<AudioStreamPlayer2D>("Gunshot");
         cooldown = GetNode<Timer>("Cooldown");
+        cooldown.Timeout += Reloaded;
         canShoot = true;
 
     }
@@ -79,11 +81,14 @@ public partial class ShotgunScene : Node2D
 
     public void Shoot(Vector2 dir, BulletTarget target){ //for Ai
         if (canShoot){
+            canShoot = false;
             weaponSprite.LookAt(dir);
             radius.LookAt(dir);
             Bullet instance = (Bullet)bullet.Instantiate();
             instance.target = target;
             instance.Position = barrel.GlobalPosition;
+            instance.damage = weapon.singleBulletDamage;
+            instance.speed = weapon.bulletSpeed;
 			game.AddChild(instance);
             shotParticlesRed.Emitting = true;
             shotParticlesWhite.Emitting = true;
@@ -94,11 +99,21 @@ public partial class ShotgunScene : Node2D
             timer.Start(0.05);
             timer.Timeout += muzzleFlash.Hide;
             timer.Timeout += timer.QueueFree;
+            //reload animation;
+            cooldown.Start(weapon.cooldown);
+            weapon.bulletsLeft--;
         }
     }
 
     void Reloaded(){
-        canShoot = true;
+        
+        if (weapon.bulletsLeft == 0){
+            canShoot = false;
+        }
+        else {
+            canShoot = true;
+        }
     }
 
 }
+//await Task.Delay(TimeSpan.FromSeconds(2));
