@@ -1,6 +1,7 @@
 ITEM_ID,ITEM_NAME,RESOURCE,IS_STACKABLE,HOVER_TEXT,ITEM_QUANTITY,MAX_SACK,ITEM_TYPE,Dev nodes
 9,Axe,res://Items/Repo/ToolHoe.tres,false,axe,1,1,TOOL,
 10,Planks,res://Items/Repo/MaterialPlank.tres,true,Useful material,1,1,MATERIAL,
+17,Stick,,true,,1,10,MATERIAL,
 3,Apple,res://Items/Repo/food_apple.tres,true,A nice looking apple,1,10,FOOD,
 8,Watering can,res://Items/Repo/ToolWateringCan.tres,false,Kastelukannu,1,1,TOOL,
 15,Raw Fish,res://Items/Repo/FoodRawFish.tres,true,,1,1,FOOD,Raw fish.

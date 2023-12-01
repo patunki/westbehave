@@ -34,16 +34,18 @@ public partial class ShotgunScene : Node2D
         cooldown = GetNode<Timer>("Cooldown");
         cooldown.Timeout += Reloaded;
         canShoot = true;
+        if (entity is not Player){
+            SetPhysicsProcess(false);
+        }
 
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        if (entity is Player){
-            radius.LookAt(GetGlobalMousePosition());
-            GetInput();
-            LookMouse();
-        }
+        radius.LookAt(GetGlobalMousePosition());
+        GetInput();
+        LookMouse();
+        
     }
 
     public void MyItem(Item item, Entity _entity){

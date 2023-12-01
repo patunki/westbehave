@@ -63,7 +63,7 @@ public partial class InventorySlot : Panel
                 switch ((DragData.hasItem,hasItem))
                 {
                     case (true, true):
-                        if (thisItem.ITEM_ID == DragData.item.ITEM_ID){
+                        if (thisItem.ITEM_ID == DragData.item.ITEM_ID && thisItem.IS_STACKABLE){
                             inventory.InventoryItems[index].ITEM_QUANTITY += DragData.item.ITEM_QUANTITY;
                             DragData.DropDragData();
                         }

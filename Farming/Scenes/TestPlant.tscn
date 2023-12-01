@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cyua0kinoksxl"]
 
 [ext_resource type="Script" path="res://Farming/Scenes/TestPlant.cs" id="1_2r77d"]
-[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/food_eggplant.tres" id="2_wu2i1"]
+[ext_resource type="Resource" uid="uid://di1u3y8lpbh4x" path="res://Items/Repo/FoodEggplant.tres" id="2_wu2i1"]
 [ext_resource type="Texture2D" uid="uid://bqcu6ecvimfbh" path="res://Art/veggv2.png" id="3_ldx5w"]
 [ext_resource type="PackedScene" uid="uid://x47loa4550de" path="res://Interaction/InteractionArea/InteractionArea.tscn" id="4_tkypk"]
 

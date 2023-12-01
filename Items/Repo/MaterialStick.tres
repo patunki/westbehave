@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://bvp36e14vvs7h"]
+
+[ext_resource type="Texture2D" uid="uid://cpyyje8qarnc1" path="res://Art/keppi.png" id="1_b6g24"]
+[ext_resource type="Script" path="res://Items/Classes/Material.cs" id="2_q4sx8"]
+
+[resource]
+script = ExtResource("2_q4sx8")
+ITEM_NAME = "Stick"
+ITEM_ID = 17
+CustomResourcePath = ""
+ITEM_TEXTURE = ExtResource("1_b6g24")
+IS_STACKABLE = true
+IS_CRAFTABLE = false
+HOVER_TEXT = ""
+ITEM_QUANTITY = 1
+MAX_STACK = 10
+ITEM_TYPE = 5
+Action = ""
+DevNotes = ""
+HAS_SCENE = false
+SCENE_PATH = ""

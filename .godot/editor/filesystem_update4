@@ -77,3 +77,11 @@ res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
 res://Iventory/ExternalInventory.tscn
+res://Items/Repo/MaterialStick.tres
+res://Database/CSV/ItemDB.ITEM.translation
+res://Database/CSV/ItemDB.RESOURCE.translation
+res://Database/CSV/ItemDB.IS.translation
+res://Database/CSV/ItemDB.HOVER.translation
+res://Database/CSV/ItemDB.MAX.translation
+res://Database/CSV/ItemDB.Dev nodes.translation
+res://Farming/Scenes/TestPlant.tscn

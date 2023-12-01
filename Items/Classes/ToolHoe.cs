@@ -6,6 +6,7 @@ public partial class ToolHoe : Tool
 {
     GameManager gameManager;
     TileMap tileMap;
+    Godot.Collections.Array<Godot.Vector2I> dirtTiles = new Godot.Collections.Array<Godot.Vector2I>();
 
     public ToolHoe(){
         var tree = (SceneTree)Engine.GetMainLoop();
@@ -21,15 +22,17 @@ public partial class ToolHoe : Tool
 
     public void OnInteract(Vector2 globalPosition){
         int groundLayer = 1;
-        int sceneId = 2;
+        //int sceneId = 2;
 
-        var tilePos = tileMap.LocalToMap(globalPosition);
+        Vector2I tilePos = tileMap.LocalToMap(globalPosition);
         var atlasCoord = new Vector2I(3,2);
         TileData tileData = tileMap.GetCellTileData(groundLayer, tilePos);
         
         if (tileData != null){
-
-            tileMap.SetCell(groundLayer,tilePos,sceneId,atlasCoord);
+            
+            dirtTiles.Add(tilePos);
+            tileMap.SetCellsTerrainConnect(groundLayer+1,dirtTiles,0,0,false);
+            //tileMap.SetCell(groundLayer,tilePos,sceneId,atlasCoord);
                 
         }
 
