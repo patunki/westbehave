@@ -1,15 +1,28 @@
 using Godot;
 using System;
 
+public enum BulletTarget {
+	Player,
+	Mouse
+}
+
 public partial class Bullet : CharacterBody2D
 {
 
 	Vector2 velocity;
+	public BulletTarget target;
+	Player player;
 	[Export]
 	int speed = 10;
 	public override void _Ready()
 	{
-		velocity = GetLocalMousePosition();
+		if (target == BulletTarget.Mouse){
+			velocity = GetLocalMousePosition();
+		}
+		else if (target == BulletTarget.Player){
+			player = GetTree().GetFirstNodeInGroup("Player") as Player;
+			velocity = player.GlobalPosition - GlobalPosition;
+		}
 	}
 
 	public override void _PhysicsProcess(double delta)

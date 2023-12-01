@@ -1,9 +1,9 @@
-res://StateMachine/States
 res://Scripts
+res://
+res://StateMachine/States
 res://Scenes
 res://Player/PlayerInventory
 res://Items/Repo/
-res://
 res://Player
 res://Items/ItemScenes/SceneScripts
 /home/paulus/godotProjects/westbehave/Database/

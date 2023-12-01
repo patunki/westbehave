@@ -13,6 +13,7 @@ public partial class ShotgunScene : Node2D
     Node2D game;
     AudioStreamPlayer2D audio;
     Entity entity;
+    Weapon weapon;
 
     public override void _Ready()
     {
@@ -25,6 +26,7 @@ public partial class ShotgunScene : Node2D
         bullet = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
         game = GetNode<Node2D>("/root/Game");
         audio = GetNode<AudioStreamPlayer2D>("Gunshot");
+        
 
     }
 
@@ -38,6 +40,7 @@ public partial class ShotgunScene : Node2D
 
     public void MyItem(Item item, Entity _entity){
         entity = _entity;
+        weapon = (Weapon)item;
     }
 
     void LookMouse(){
@@ -52,18 +55,7 @@ public partial class ShotgunScene : Node2D
     public override void _Input(InputEvent @event)
     {
         if (Input.IsActionJustPressed("attack") && Input.IsActionPressed("r_click") && entity is Player){
-            Bullet instance = (Bullet)bullet.Instantiate();
-            instance.Position = barrel.GlobalPosition;
-			game.AddChild(instance);
-            shotParticlesRed.Emitting = true;
-            shotParticlesWhite.Emitting = true;
-            muzzleFlash.Show();
-            audio.Playing = true;
-            Timer timer = new Timer();
-            AddChild(timer);
-            timer.Start(0.05);
-            timer.Timeout += muzzleFlash.Hide;
-            timer.Timeout += timer.QueueFree;
+            Shoot(GetGlobalMousePosition(),BulletTarget.Mouse);
         }
         if (Input.IsActionPressed("r_click") && entity is Player){
             LookAt(GetGlobalMousePosition());
@@ -74,10 +66,11 @@ public partial class ShotgunScene : Node2D
             }
     }
 
-    public void Shoot(Vector2 dir){ //for ai
+    public void Shoot(Vector2 dir, BulletTarget target){ //for Ai
             shotgunSprite.LookAt(dir);
             radius.LookAt(dir);
             Bullet instance = (Bullet)bullet.Instantiate();
+            instance.target = target;
             instance.Position = barrel.GlobalPosition;
 			game.AddChild(instance);
             shotParticlesRed.Emitting = true;

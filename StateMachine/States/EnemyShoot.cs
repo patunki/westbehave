@@ -23,7 +23,7 @@ public partial class EnemyShoot : State
     }
 
     void Shit(){
-        entity.shotgun.Shoot(sprite2D.GlobalPosition);
+        entity.shotgun.Shoot(sprite2D.GlobalPosition,BulletTarget.Player);
         DelayMethod();
     }
 }

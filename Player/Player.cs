@@ -21,7 +21,6 @@ public partial class Player : Entity
 	public override void _Ready(){
 		sprite = GetNode<Sprite2D>(spritePath);
 		animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
-		animationPlayer.Play("IdleAnimation");
 		hungerComponent = GetNode<HungerComponent>("HungerComponent");
 		stateMachine = GetNode<StateMachine>("StateMachine");
 		
@@ -33,7 +32,19 @@ public partial class Player : Entity
 		if (canMove){
 			MoveAndSlide();
 		}
+		LookMouse();
+		GD.Print("P: ",GlobalPosition);
 
+	}
+
+	void LookMouse(){
+		Vector2 dir = GlobalPosition.DirectionTo(GetGlobalMousePosition());
+		if (dir.Y+0.2 < 0 && Input.IsActionPressed("r_click")){
+            animationPlayer.Play("IdleUp");
+        }else{
+            animationPlayer.Play("IdleAnimation");
+        }
+		
 	}
 
 	void _on_health_component_health_depleted(){

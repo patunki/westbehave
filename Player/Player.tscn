@@ -1,10 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=24 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_uvi3w"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="2_6d3or"]
 [ext_resource type="Script" path="res://Iventory/Classes/Inventory.cs" id="2_38yod"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="3_vt0ww"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="4_5jm61"]
+[ext_resource type="Texture2D" uid="uid://bb5f8341mk3hk" path="res://Art/Idleanimaatio-export.png" id="4_iflvv"]
 [ext_resource type="PackedScene" uid="uid://bw7uui5vfbhud" path="res://Components/HungerComponent.tscn" id="5_5rjth"]
 [ext_resource type="PackedScene" uid="uid://dkaelgou8h2s4" path="res://Player/EquippedItem.tscn" id="7_ybf6e"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="8_wsld1"]
@@ -32,7 +33,6 @@ radius = 7.0
 
 [sub_resource type="Animation" id="Animation_vp0ho"]
 resource_name = "IdleAnimation"
-length = 1.7
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -41,10 +41,22 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+"values": [0, 1, 2, 3, 4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_vssut"]
@@ -61,10 +73,51 @@ tracks/0/keys = {
 "update": 1,
 "values": [1]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_6vnc3"]
+resource_name = "IdleUp"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [5, 6, 7, 8, 9]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:z_index")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2eogn"]
 _data = {
 "IdleAnimation": SubResource("Animation_vp0ho"),
+"IdleUp": SubResource("Animation_6vnc3"),
 "RESET": SubResource("Animation_vssut")
 }
 
@@ -83,9 +136,9 @@ visible = false
 texture = SubResource("AtlasTexture_wcyvp")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
-texture = ExtResource("2_6d3or")
-offset = Vector2(12, -16)
-hframes = 18
+texture = ExtResource("4_iflvv")
+offset = Vector2(0, -15)
+hframes = 10
 frame = 1
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
@@ -118,6 +171,7 @@ hLabel = NodePath("../UI/HungerLabel")
 tLabel = NodePath("../UI/ThirstLabel")
 
 [node name="EquippedItem" parent="." node_paths=PackedStringArray("entity", "hotbar") instance=ExtResource("7_ybf6e")]
+position = Vector2(0, -15)
 entity = NodePath("..")
 hotbar = NodePath("../UI/Hotbar")
 

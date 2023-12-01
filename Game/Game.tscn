@@ -99,4 +99,4 @@ position = Vector2(329, 103)
 inventory = SubResource("Resource_wcdia")
 
 [node name="Bandit" parent="." instance=ExtResource("25_xko4e")]
-position = Vector2(89, 165)
+position = Vector2(146, 28)

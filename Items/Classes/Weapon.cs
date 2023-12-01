@@ -1,14 +1,26 @@
 using Godot;
 using System;
 
+public enum WeaponType{
+    Shotgun,
+    Rifle,
+    Pistol,
+
+}
+
 public partial class Weapon : Item
 {
     [Export]
-    public bool IS_RANGED;
+    public WeaponType weaponType;
     [Export]
     PackedScene bullet;
- 
-
-
+    [Export]
+    public float cooldown;
+    [Export]
+    public int bulletCount;
+    [Export]
+    public int singleBulletDamage;
+    [Export]
+    public int bulletSpeed;
 
 }
