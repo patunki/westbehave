@@ -28,7 +28,7 @@ public partial class TestPlant : Node2D
         growTimer = GetNode<Timer>("GrowTimer");
         dryTimer = GetNode<Timer>("DryTimer");
         fruitTimer = GetNode<Timer>("FruitTimer");
-        sprite = GetNode<Sprite2D>("Sprite2D");
+        sprite = GetNode<Sprite2D>("PlantAnim");
         gameManager = GetNode<GameManager>("/root/GameManager");
         interactionArea = GetNode<InteractionArea>("InteractionArea");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnHarvest"));

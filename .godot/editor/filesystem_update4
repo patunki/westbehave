@@ -17,6 +17,9 @@ res://Scenes/Bandit.tscn
 res://Items/ItemScenes/CampfireStruct.tscn
 res://Scenes/DroppedItem.tscn
 res://Scenes/Bunny.tscn
+res://Items/ItemScenes/SeedScene.tscn
+res://Items/ItemScenes/HoeScene.tscn
+res://Scenes/Campfire.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -81,6 +84,9 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Items/ItemScenes/SeedScene.tscn
-res://Items/ItemScenes/HoeScene.tscn
-res://Scenes/Campfire.tscn
+res://Scenes/Zombie.tscn
+res://StateMachine/States/EntityIdle.cs
+res://StateMachine/States/EntityWonder.cs
+res://Game/DayNightCycle.cs
+res://Game/DayNightCycle.tscn
+res://Farming/Scenes/TestPlant.tscn

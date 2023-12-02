@@ -6,6 +6,8 @@ public partial class State : Node
 
     [Signal]
     public delegate void TransitionedEventHandler(State oldState, String newState);
+    [Export]
+    public string exitState = "Idle";
     public virtual void Enter(Entity entity){
 
     }

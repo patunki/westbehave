@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="2_xup87"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="3_n1efy"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="6_em8o0"]
-[ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="7_gmm76"]
+[ext_resource type="Script" path="res://StateMachine/States/EntityWonder.cs" id="7_favk3"]
 [ext_resource type="Script" path="res://StateMachine/States/BunnyScared.cs" id="8_rd7be"]
 [ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="9_wklfp"]
 
@@ -53,8 +53,8 @@ initialState = NodePath("Idle")
 entity = NodePath("..")
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource("7_gmm76")
-triggerState = "Scared"
+script = ExtResource("7_favk3")
+exitState = "Scared"
 
 [node name="Scared" type="Node" parent="StateMachine"]
 script = ExtResource("8_rd7be")

@@ -12,7 +12,8 @@ radius = 13.0384
 script = ExtResource("1_2r77d")
 yeld = ExtResource("2_wu2i1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlantAnim" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
 texture = ExtResource("3_ldx5w")
 hframes = 6
 
@@ -31,5 +32,5 @@ autostart = true
 actionName = "COLLECT"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
-position = Vector2(0, 3)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_mj7vd")

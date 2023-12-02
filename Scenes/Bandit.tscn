@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://bgc5kcge7nbxf" path="res://Items/Repo/WeaponShotgun.tres" id="2_rvqdn"]
 [ext_resource type="Script" path="res://Iventory/Classes/Inventory.cs" id="2_s7qp0"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="4_1aq0u"]
-[ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="5_tramu"]
+[ext_resource type="Script" path="res://StateMachine/States/EntityWonder.cs" id="6_8p4my"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyShoot.cs" id="6_x0h85"]
 [ext_resource type="PackedScene" uid="uid://bkbjs36yr8tlb" path="res://Items/ItemScenes/ShotgunScene.tscn" id="7_bf7ya"]
 [ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="8_ekg6g"]
@@ -43,16 +43,17 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_u102h")
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initialState", "entity") instance=ExtResource("4_1aq0u")]
-initialState = NodePath("EnemyIdle")
+initialState = NodePath("EnemyWonder")
 entity = NodePath("..")
 
-[node name="EnemyIdle" type="Node" parent="StateMachine"]
-script = ExtResource("5_tramu")
-triggerState = "Shoot"
+[node name="EnemyWonder" type="Node" parent="StateMachine"]
+script = ExtResource("6_8p4my")
 triggerDistance = 100
+exitState = "Shoot"
 
 [node name="Shoot" type="Node" parent="StateMachine"]
 script = ExtResource("6_x0h85")
+exitState = "EnemyWonder"
 
 [node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource("8_ekg6g")

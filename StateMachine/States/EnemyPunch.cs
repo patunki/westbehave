@@ -22,7 +22,7 @@ public partial class EnemyPunch : State
     }
 
     void Follow(){
-        EmitSignal(SignalName.Transitioned,this,"EnemyFollow");
+        EmitSignal(SignalName.Transitioned,this,exitState);
     }
 
 }

@@ -22,6 +22,7 @@ scale = Vector2(0.721389, 0.53)
 texture = ExtResource("2_m2s20")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_g5d8v")
 
@@ -29,6 +30,7 @@ shape = SubResource("RectangleShape2D_g5d8v")
 actionName = "CRAFT"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+visible = false
 position = Vector2(0, -3)
 shape = SubResource("CircleShape2D_e6u7l")
 

@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dh1tbtmge2pdi" path="res://Art/zombiemeat.png" id="6_mjhcu"]
 [ext_resource type="Script" path="res://Items/Classes/Food.cs" id="7_pckdk"]
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="8_k3bgx"]
-[ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="9_teojr"]
+[ext_resource type="Script" path="res://StateMachine/States/EntityWonder.cs" id="10_7kgm6"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyFollow.cs" id="10_dxt3d"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyPunch.cs" id="11_b2ikm"]
 [ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="12_fuvfb"]
@@ -151,19 +151,22 @@ shape = SubResource("CapsuleShape2D_odb3b")
 ItemsToDrop = Array[Resource]([SubResource("Resource_jtx56")])
 
 [node name="StateMachine" parent="." node_paths=PackedStringArray("initialState", "entity") instance=ExtResource("8_k3bgx")]
-initialState = NodePath("EnemyIdle")
+initialState = NodePath("EnemyWonder")
 entity = NodePath("..")
 
-[node name="EnemyIdle" type="Node" parent="StateMachine"]
-script = ExtResource("9_teojr")
+[node name="EnemyWonder" type="Node" parent="StateMachine"]
+script = ExtResource("10_7kgm6")
+exitState = "EnemyFollow"
 
 [node name="EnemyFollow" type="Node" parent="StateMachine"]
 script = ExtResource("10_dxt3d")
 moveSpeed = 100
+exitState = "EnemyPunch"
 
 [node name="EnemyPunch" type="Node" parent="StateMachine" node_paths=PackedStringArray("animationPlayer")]
 script = ExtResource("11_b2ikm")
 animationPlayer = NodePath("../../AnimationPlayer")
+exitState = "EnemyFollow"
 
 [node name="Dead" type="Node" parent="StateMachine"]
 script = ExtResource("12_fuvfb")

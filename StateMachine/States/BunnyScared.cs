@@ -23,7 +23,7 @@ public partial class BunnyScared : State
 
         time -= (float)delta;
         if (time <= 0){
-            EmitSignal(SignalName.Transitioned,this,"Idle");
+            EmitSignal(SignalName.Transitioned,this,exitState);
         }
     
     }

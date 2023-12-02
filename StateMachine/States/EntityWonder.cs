@@ -1,17 +1,16 @@
 using Godot;
 using System;
 
-public partial class EnemyIdle : State
+public partial class EntityWonder : State
 {
+    [Export]
+    int triggerDistance = 50;
     Vector2 moveDirection;
     float wanderTime;
     Entity enemy;
     int moveSpeed;
     Entity player;
-    [Export]
-    string triggerState = "EnemyFollow";
-    [Export]
-    int triggerDistance = 50;
+
 
 
 
@@ -42,7 +41,7 @@ public partial class EnemyIdle : State
         float distance = direction.Length();
 
         if (distance < triggerDistance && player.entityState == EntityState.Alive){
-            EmitSignal(SignalName.Transitioned, this,triggerState);
+            EmitSignal(SignalName.Transitioned, this,exitState);
         }
     }
     public override void PhysicsUpdate(double delta){

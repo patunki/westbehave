@@ -19,7 +19,7 @@ public partial class EnemyFollow : State
         float distance = direction.Length();
 
         if (distance > 120 || player.entityState == EntityState.Dead){
-            EmitSignal(SignalName.Transitioned,this,"EnemyIdle");
+            EmitSignal(SignalName.Transitioned,this,"EnemyWonder");
         }
 
         if (distance < 100 && distance > 20){
@@ -27,7 +27,7 @@ public partial class EnemyFollow : State
         }
 
         if (distance < 20){
-            EmitSignal(SignalName.Transitioned,this,"EnemyPunch");
+            EmitSignal(SignalName.Transitioned,this,exitState);
         }
 
     }

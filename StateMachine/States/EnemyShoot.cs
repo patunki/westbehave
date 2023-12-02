@@ -23,7 +23,7 @@ public partial class EnemyShoot : State
         float distance = direction.Length();
 
         if (distance > 200 || player.entityState == EntityState.Dead){
-            EmitSignal(SignalName.Transitioned, this,"EnemyIdle");
+            EmitSignal(SignalName.Transitioned, this,"EnemyWonder");
         }
     }
 

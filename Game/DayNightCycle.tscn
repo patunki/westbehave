@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdhk4fgldhsui"]
+
+[ext_resource type="Script" path="res://Game/DayNightCycle.cs" id="1_fl5ui"]
+
+[sub_resource type="Gradient" id="Gradient_xb60m"]
+offsets = PackedFloat32Array(0.320558, 0.501742, 0.745645)
+colors = PackedColorArray(0, 0, 0.392157, 1, 0.534324, 0.118783, 0.588831, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xe0wr"]
+gradient = SubResource("Gradient_xb60m")
+
+[node name="DayNightCycle" type="CanvasModulate"]
+script = ExtResource("1_fl5ui")
+gradient = SubResource("GradientTexture1D_xe0wr")
