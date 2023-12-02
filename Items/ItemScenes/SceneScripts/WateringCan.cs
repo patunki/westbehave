@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class WateringCan : Node2D
+public partial class WateringCan : ItemScene
 {
 
     Entity entity;
@@ -23,7 +23,7 @@ public partial class WateringCan : Node2D
         
     }
 
-    public void MyItem(Item item, Entity _entity){
+    public override void MyItem(Item item, Entity _entity){
         can = (ToolWateringCan)item;
         entity = _entity;
 

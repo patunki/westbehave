@@ -6,8 +6,8 @@ public partial class EquippedItem : Node2D
     [Export]
     Entity entity;
     Node2D Game;
-	PackedScene itemScene;
-	Node2D itemInstance;
+	PackedScene packedScene;
+	ItemScene itemInstance;
     HungerComponent hungerComponent;
     Inventory inventory;
     Item equipItem;
@@ -37,14 +37,14 @@ public partial class EquippedItem : Node2D
 		equipItem = inventory.InventoryItems[selected];
 
 		if (equipItem != null && equipItem.HAS_SCENE && sceneAlive == false){
-			itemScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
+			packedScene = GD.Load(equipItem.SCENE_PATH) as PackedScene;
 			try {
-				itemInstance = itemScene.Instantiate() as Node2D;
+				itemInstance = packedScene.Instantiate() as ItemScene;
 			}catch{
 				GD.Print("seceneä ei voitu luoda");
 				return;
 			}
-			itemInstance.Call("MyItem",equipItem,entity);
+			itemInstance.MyItem(equipItem,entity);
 			AddChild(itemInstance);
 			sceneAlive = true;
 		}
@@ -60,24 +60,6 @@ public partial class EquippedItem : Node2D
 
     public override void _Input(InputEvent @event)
     {
-        if (Input.IsActionJustPressed("interact") && equipItem != null && !equipItem.HAS_SCENE){
-			if (equipItem.ITEM_TYPE == ItemType.FOOD){
-				Food foodItem = (Food)equipItem;
-				int value = foodItem.Eat();
-				hungerComponent.FoodAdd(value);
-				value = foodItem.Drink();
-				hungerComponent.WaterAdd(value);
-
-				
-			}
-			else {
-				equipItem.Call("OnInteract", GlobalPosition);
-			}
-
-			inventory.NullItemCheck();
-			
-
-		}
 
 		if (Input.IsActionJustPressed("drop") && equipItem != null){
                 
@@ -89,12 +71,9 @@ public partial class EquippedItem : Node2D
                 Game.AddChild(instance);
 
                 equipItem.DecQuant();
+				
+		}
 
-                
-                
-
-
-        }
     }
 
     public override void _Process(double delta)

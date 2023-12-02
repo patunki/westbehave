@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class AxeScene : Node2D
+public partial class AxeScene : ItemScene
 {
     AnimationPlayer animationPlayer;
     Attack attack;
@@ -28,7 +28,7 @@ public partial class AxeScene : Node2D
         LookMouse();
     }
 
-    public void MyItem(Item item, Entity entity){
+    public override void MyItem(Item item, Entity entity){
         axe = (ToolAxe)item;
     }
 

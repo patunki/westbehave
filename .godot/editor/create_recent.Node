@@ -1,9 +1,9 @@
+TextureRect
+Sprite2D
 TileMap
 Node
 CollisionShape2D
 Timer
-TextureRect
-Sprite2D
 CharacterBody2D
 Node2D
 Bone2D

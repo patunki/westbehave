@@ -1,13 +1,13 @@
 using Godot;
 using System;
 
-public partial class CampfireStruct : Node2D
+public partial class CampfireStruct : ItemScene
 {   
     Structure campFire;
     Inventory inventory;
     Entity entity;
 
-    public void MyItem(Item item, Entity _entity){
+    public override void MyItem(Item item, Entity _entity){
         campFire = (Structure)item;
         entity = _entity;
         inventory = entity.inventory;

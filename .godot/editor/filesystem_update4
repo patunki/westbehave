@@ -1,4 +1,3 @@
-res://Game/Game.tscn
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
 res://Items/Repo/Campfire.tres
@@ -7,6 +6,8 @@ res://Items/Repo/FoodCookedMeat.tres
 res://Items/Repo/FoodZombieMeat.tres
 res://Items/Repo/ToolWateringCan.tres
 res://Items/Repo/WeaponShotgun.tres
+res://Items/ItemScenes/Food.tscn
+res://Game/Game.tscn
 res://Player/Player.tscn
 res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WateringCan.tscn
@@ -16,6 +17,8 @@ res://Items/ItemScenes/Shotgun.tscn
 res://Scenes/Bandit.tscn
 res://Items/ItemScenes/CampfireStruct.tscn
 res://Scenes/DroppedItem.tscn
+res://Iventory/ExternalInventory.tscn
+res://Farming/Scenes/TestPlant.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -36,6 +39,8 @@ res://Items/Classes/Weapon.cs
 res://Items/ItemScenes/SceneScripts/AxeScene.cs
 res://Items/ItemScenes/SceneScripts/CampfireStruct.cs
 res://Items/ItemScenes/SceneScripts/FishingRod.cs
+res://Items/ItemScenes/SceneScripts/FoodScene.cs
+res://Items/ItemScenes/SceneScripts/ItemScene.cs
 res://Items/ItemScenes/SceneScripts/SeedScene.cs
 res://Items/ItemScenes/SceneScripts/ShotgunScene.cs
 res://Items/ItemScenes/SceneScripts/WateringCan.cs
@@ -76,12 +81,7 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Iventory/ExternalInventory.tscn
-res://Items/Repo/MaterialStick.tres
-res://Database/CSV/ItemDB.ITEM.translation
-res://Database/CSV/ItemDB.RESOURCE.translation
-res://Database/CSV/ItemDB.IS.translation
-res://Database/CSV/ItemDB.HOVER.translation
-res://Database/CSV/ItemDB.MAX.translation
-res://Database/CSV/ItemDB.Dev nodes.translation
-res://Farming/Scenes/TestPlant.tscn
+res://Items/ItemScenes/FoodScene.tscn
+res://Items/Repo/FoodApple.tres
+res://Items/Repo/FoodCookedFish.tres
+res://Items/Repo/FoodRawFish.tres

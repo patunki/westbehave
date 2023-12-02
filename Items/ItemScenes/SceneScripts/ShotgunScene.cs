@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ShotgunScene : Node2D
+public partial class ShotgunScene : ItemScene
 {
     PointLight2D muzzleFlash;
     GpuParticles2D shotParticlesWhite;
@@ -48,7 +48,7 @@ public partial class ShotgunScene : Node2D
         
     }
 
-    public void MyItem(Item item, Entity _entity){
+    public override void MyItem(Item item, Entity _entity){
         entity = _entity;
         weapon = (Weapon)item;
         if (weaponSprite == null){

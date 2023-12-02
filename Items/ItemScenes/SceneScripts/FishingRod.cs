@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Drawing;
 
-public partial class FishingRod : Node2D
+public partial class FishingRod : ItemScene
 {
     Entity entity;
     Sprite2D koho;
@@ -24,7 +24,7 @@ public partial class FishingRod : Node2D
         animationPlayer = GetNode<AnimationPlayer>("AnimationPlayer");
     }
 
-    public void MyItem(Item item, Entity _entity){
+    public override void MyItem(Item item, Entity _entity){
         fishingRod = (ToolFishingRod)item;
         entity = _entity;
         rodEfficensy = fishingRod.Efficensy;

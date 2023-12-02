@@ -22,5 +22,5 @@ MAX_STACK = 1
 ITEM_TYPE = 0
 Action = ""
 DevNotes = "Raw fish."
-HAS_SCENE = false
-SCENE_PATH = ""
+HAS_SCENE = true
+SCENE_PATH = "res://Items/ItemScenes/FoodScene.tscn"

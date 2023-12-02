@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class SeedScene : Node2D
+public partial class SeedScene : ItemScene
 {
     public Seed seed;
     public Entity entity;
@@ -25,7 +25,7 @@ public partial class SeedScene : Node2D
         tileMap = map;
     }
 
-    public void MyItem(Item item, Entity _entity){
+    public override void MyItem(Item item, Entity _entity){
         if (itemTexture == null){
             itemTexture = GetNode<TextureRect>("Item");
         }

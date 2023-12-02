@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://1cp3ndo358vt"]
+
+[ext_resource type="Script" path="res://Items/ItemScenes/SceneScripts/FoodScene.cs" id="1_4g5ii"]
+
+[node name="Food" type="Node2D"]
+script = ExtResource("1_4g5ii")
+
+[node name="FoodTexture" type="TextureRect" parent="."]
+offset_left = -3.0
+offset_top = -5.0
+offset_right = 8.0
+offset_bottom = 5.0
+pivot_offset = Vector2(3, 5)
+expand_mode = 1
