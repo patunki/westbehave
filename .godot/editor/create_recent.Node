@@ -1,10 +1,10 @@
-TextureRect
-Sprite2D
-TileMap
 Node
 CollisionShape2D
-Timer
+Sprite2D
 CharacterBody2D
+TextureRect
+TileMap
+Timer
 Node2D
 Bone2D
 Skeleton2D

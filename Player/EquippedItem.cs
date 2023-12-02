@@ -52,10 +52,7 @@ public partial class EquippedItem : Node2D
 			equipTexture.Texture = equipItem.ITEM_TEXTURE;
 
 		}
-		else{
-
-			GD.Print("tyhjennä ");
-		}
+		
 	}
 
     public override void _Input(InputEvent @event)

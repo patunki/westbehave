@@ -31,4 +31,4 @@ ITEM_TYPE = 1
 Action = ""
 DevNotes = ""
 HAS_SCENE = true
-SCENE_PATH = "res://Items/ItemScenes/Shotgun.tscn"
+SCENE_PATH = "res://Items/ItemScenes/ShotgunScene.tscn"

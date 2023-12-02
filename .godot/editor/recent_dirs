@@ -1,8 +1,8 @@
-res://Items/Repo/
-res://Scripts
-res://
 res://StateMachine/States
+res://Scripts
 res://Scenes
+res://Items/Repo/
+res://
 res://Player/PlayerInventory
 res://Player
 res://Items/ItemScenes/SceneScripts

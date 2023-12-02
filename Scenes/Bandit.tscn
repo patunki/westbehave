@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="4_1aq0u"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="5_tramu"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyShoot.cs" id="6_x0h85"]
-[ext_resource type="PackedScene" uid="uid://bkbjs36yr8tlb" path="res://Items/ItemScenes/Shotgun.tscn" id="7_bf7ya"]
+[ext_resource type="PackedScene" uid="uid://bkbjs36yr8tlb" path="res://Items/ItemScenes/ShotgunScene.tscn" id="7_bf7ya"]
 [ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="8_ekg6g"]
 [ext_resource type="PackedScene" uid="uid://cf5yy4jrc6ku7" path="res://Components/health_component.tscn" id="9_l6exr"]
 [ext_resource type="PackedScene" uid="uid://xftd1kk3ohcn" path="res://Components/HurtBoxComponent.tscn" id="10_8wgu0"]

@@ -1,3 +1,4 @@
+res://Game/Game.tscn
 res://Items/Repo/FoodEggplant.tres
 res://Scripts/LootComponent.cs
 res://Items/Repo/Campfire.tres
@@ -6,19 +7,18 @@ res://Items/Repo/FoodCookedMeat.tres
 res://Items/Repo/FoodZombieMeat.tres
 res://Items/Repo/ToolWateringCan.tres
 res://Items/Repo/WeaponShotgun.tres
-res://Items/ItemScenes/Food.tscn
-res://Game/Game.tscn
 res://Player/Player.tscn
 res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WateringCan.tscn
 res://Scenes/Workbench.tscn
 res://Maps/InitialTileMap.tscn
-res://Items/ItemScenes/Shotgun.tscn
+res://Items/ItemScenes/ShotgunScene.tscn
 res://Scenes/Bandit.tscn
 res://Items/ItemScenes/CampfireStruct.tscn
 res://Scenes/DroppedItem.tscn
 res://Iventory/ExternalInventory.tscn
 res://Farming/Scenes/TestPlant.tscn
+res://Items/ItemScenes/FoodScene.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -81,7 +81,6 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Items/ItemScenes/FoodScene.tscn
-res://Items/Repo/FoodApple.tres
-res://Items/Repo/FoodCookedFish.tres
-res://Items/Repo/FoodRawFish.tres
+res://Scenes/Bunny.tscn
+res://Scripts/Bunny.cs
+res://StateMachine/States/BunnyScared.cs
