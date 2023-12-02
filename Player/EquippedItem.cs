@@ -10,7 +10,7 @@ public partial class EquippedItem : Node2D
 	ItemScene itemInstance;
     HungerComponent hungerComponent;
     Inventory inventory;
-    Item equipItem;
+    public Item equipItem;
     TextureRect equipTexture;
 	[Export]
 	Hotbar hotbar;
@@ -57,6 +57,9 @@ public partial class EquippedItem : Node2D
 
     public override void _Input(InputEvent @event)
     {
+		if (equipItem != null && !equipItem.HAS_SCENE && Input.IsActionJustPressed("interact")){
+			equipItem.Call("OnInteract",GlobalPosition);
+		}
 
 		if (Input.IsActionJustPressed("drop") && equipItem != null){
                 

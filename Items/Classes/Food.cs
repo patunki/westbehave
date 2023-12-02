@@ -11,7 +11,7 @@ public partial class Food : Item
     [Export]
     public bool CanCook;
     [Export]
-    Item CookedItem;
+    public Item CookedItem;
 
     public int Eat(){
         DecQuant();

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ergcepj21ecc"]
+[gd_scene load_steps=13 format=3 uid="uid://ergcepj21ecc"]
 
 [ext_resource type="Script" path="res://Scripts/Bunny.cs" id="1_cpfth"]
 [ext_resource type="Texture2D" uid="uid://chr7bj0vivn3v" path="res://Art/bunny.png" id="1_gr8oo"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://qwybbfw03jv1" path="res://StateMachine/StateMachine.tscn" id="6_em8o0"]
 [ext_resource type="Script" path="res://StateMachine/States/EnemyIdle.cs" id="7_gmm76"]
 [ext_resource type="Script" path="res://StateMachine/States/BunnyScared.cs" id="8_rd7be"]
+[ext_resource type="Script" path="res://StateMachine/States/Dead.cs" id="9_wklfp"]
 
 [sub_resource type="Resource" id="Resource_fhtaq"]
 script = ExtResource("2_xo562")
@@ -58,3 +59,8 @@ triggerState = "Scared"
 [node name="Scared" type="Node" parent="StateMachine"]
 script = ExtResource("8_rd7be")
 speed = 4
+
+[node name="Dead" type="Node" parent="StateMachine"]
+script = ExtResource("9_wklfp")
+
+[connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

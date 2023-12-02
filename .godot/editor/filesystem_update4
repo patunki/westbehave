@@ -16,9 +16,7 @@ res://Items/ItemScenes/ShotgunScene.tscn
 res://Scenes/Bandit.tscn
 res://Items/ItemScenes/CampfireStruct.tscn
 res://Scenes/DroppedItem.tscn
-res://Iventory/ExternalInventory.tscn
-res://Farming/Scenes/TestPlant.tscn
-res://Items/ItemScenes/FoodScene.tscn
+res://Scenes/Bunny.tscn
 res://Components/HealthComponent.cs
 res://Components/HungerComponent.cs
 res://Components/HurtBoxComponent.cs
@@ -59,6 +57,7 @@ res://Player/PlayerInventory/InventoryUi.cs
 res://Scripts/Attack.cs
 res://Scripts/Bandit.cs
 res://Scripts/Bullet.cs
+res://Scripts/Bunny.cs
 res://Scripts/Campfire.cs
 res://Scripts/Chest.cs
 res://Scripts/DroppedItem.cs
@@ -72,6 +71,7 @@ res://Scripts/Tree.cs
 res://Scripts/Workbench.cs
 res://Scripts/Zombie.cs
 res://StateMachine/StateMachine.cs
+res://StateMachine/States/BunnyScared.cs
 res://StateMachine/States/Dead.cs
 res://StateMachine/States/EnemyFollow.cs
 res://StateMachine/States/EnemyIdle.cs
@@ -81,6 +81,6 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
-res://Scenes/Bunny.tscn
-res://Scripts/Bunny.cs
-res://StateMachine/States/BunnyScared.cs
+res://Items/ItemScenes/SeedScene.tscn
+res://Items/ItemScenes/HoeScene.tscn
+res://Scenes/Campfire.tscn

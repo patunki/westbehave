@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "c4+IfBie0aVy8IJaokFWMcCcoG9JcVX+a42PCXR6IKunl+idbdrSoB+vyXBsBo3XRuxeFKJWUyEbl6zc7HS+dw==",
+  "dgSpecHash": "yHO4vJQdZYBOHqf+NHlcuTSAnUnQlbgb2Hdco3YEMSjBahD9Zq/qs2exPSLKVI3Ee+FquHSSqEMJheuZIccWWg==",
   "success": true,
   "projectFilePath": "/home/paulus/godotProjects/Project Westbehave/Demo 1.csproj",
   "expectedPackageFiles": [
     "/home/paulus/.nuget/packages/godot.sourcegenerators/4.2.0-dev.5/godot.sourcegenerators.4.2.0-dev.5.nupkg.sha512",
     "/home/paulus/.nuget/packages/godotsharp/4.2.0-dev.5/godotsharp.4.2.0-dev.5.nupkg.sha512",
     "/home/paulus/.nuget/packages/godotsharpeditor/4.2.0-dev.5/godotsharpeditor.4.2.0-dev.5.nupkg.sha512",
-    "/home/paulus/.nuget/packages/microsoft.netcore.app.ref/6.0.24/microsoft.netcore.app.ref.6.0.24.nupkg.sha512",
-    "/home/paulus/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.24/microsoft.aspnetcore.app.ref.6.0.24.nupkg.sha512"
+    "/home/paulus/.nuget/packages/microsoft.netcore.app.ref/6.0.25/microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "/home/paulus/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.25/microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }

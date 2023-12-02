@@ -219,3 +219,4 @@
 /home/paulus/godotProjects/Project Westbehave/.godot/mono/temp/obj/Debug/Demo 1.pdb
 /home/paulus/godotProjects/Project Westbehave/.godot/mono/temp/obj/Debug/Demo 1.genruntimeconfig.cache
 /home/paulus/godotProjects/Project Westbehave/.godot/mono/temp/obj/Debug/ref/Demo 1.dll
+/home/paulus/godotProjects/Project Westbehave/.godot/mono/temp/obj/Debug/Demo 1.sourcelink.json

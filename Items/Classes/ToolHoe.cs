@@ -25,13 +25,13 @@ public partial class ToolHoe : Tool
         //int sceneId = 2;
 
         Vector2I tilePos = tileMap.LocalToMap(globalPosition);
-        var atlasCoord = new Vector2I(3,2);
+        //var atlasCoord = new Vector2I(3,2);
         TileData tileData = tileMap.GetCellTileData(groundLayer, tilePos);
         
         if (tileData != null){
             
             dirtTiles.Add(tilePos);
-            tileMap.SetCellsTerrainConnect(groundLayer+1,dirtTiles,0,0,false);
+            tileMap.SetCellsTerrainConnect(groundLayer,dirtTiles,0,0,false);
             //tileMap.SetCell(groundLayer,tilePos,sceneId,atlasCoord);
                 
         }
