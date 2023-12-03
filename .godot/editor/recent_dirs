@@ -1,3 +1,4 @@
+res://Art
 res://Scenes
 res://Game
 res://StateMachine/States
@@ -10,7 +11,6 @@ res://Items/ItemScenes/SceneScripts
 /home/paulus/godotProjects/westbehave/Database/
 res://Scenes/
 res://Components
-res://Art
 res://Items/Repo
 res://Maps
 res://Farming/Scenes
