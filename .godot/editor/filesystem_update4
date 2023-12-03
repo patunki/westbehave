@@ -90,3 +90,7 @@ res://StateMachine/States/EntityWonder.cs
 res://Game/DayNightCycle.cs
 res://Game/DayNightCycle.tscn
 res://Farming/Scenes/TestPlant.tscn
+res://Scripts/Waiter.cs
+res://Scenes/Chest.tscn
+res://Scenes/House1.tscn
+res://Scenes/Teltta.tscn

@@ -59,7 +59,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.3, 0.7, 1, 1.4, 1.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [0.74, 0.48, 0.31, 0.65, 0.52, 0.15]
+"values": [0.74, 0.79, 0.72, 0.65, 0.62, 0.77]
 }
 
 [sub_resource type="Animation" id="Animation_n6pov"]
@@ -128,11 +128,12 @@ script = ExtResource("1_ydd7y")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(-1, -2.00001)
 scale = Vector2(0.658203, 0.59375)
-color = Color(0.646249, 0.163317, 0, 1)
+color = Color(0.905882, 0.521569, 0.00784314, 1)
 energy = 0.0
 shadow_enabled = true
 shadow_item_cull_mask = 1023
 texture = ExtResource("2_to7g2")
+texture_scale = 2.76
 
 [node name="Out" type="Sprite2D" parent="."]
 position = Vector2(1, -14)

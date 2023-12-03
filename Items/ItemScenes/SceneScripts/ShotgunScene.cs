@@ -15,6 +15,7 @@ public partial class ShotgunScene : ItemScene
     Entity entity;
     Weapon weapon;
     Timer cooldown;
+    Waiter waiter = new Waiter();
 
     public bool canShoot = false;
 
@@ -81,7 +82,7 @@ public partial class ShotgunScene : ItemScene
             }
     }
 
-    public void Shoot(Vector2 dir, BulletTarget target){ //for Ai
+    public async void Shoot(Vector2 dir, BulletTarget target){ //for Ai
         if (canShoot){
             canShoot = false;
             weaponSprite.LookAt(dir);
@@ -96,12 +97,9 @@ public partial class ShotgunScene : ItemScene
             shotParticlesWhite.Emitting = true;
             muzzleFlash.Show();
             audio.Playing = true;
-            Timer timer = new Timer();
-            AddChild(timer);
-            timer.Start(0.05);
-            timer.Timeout += muzzleFlash.Hide;
-            timer.Timeout += timer.QueueFree;
+            await waiter.DelayMethod(0.05f);
             //reload animation;
+            muzzleFlash.Hide();
             cooldown.Start(weapon.cooldown);
             weapon.bulletsLeft--;
         }

@@ -13,7 +13,7 @@ public partial class Chest : Storage
 
     public override void _Ready()
     {   
-        externalInventory = GetNode<ExternalInventory>("ExternalInventory");
+        externalInventory = GetNode<ExternalInventory>("CanvasLayer/ExternalInventory");
         interactionArea = GetNode<InteractionArea>("InteractionArea");
         interactionArea.callable = Callable.From(() => interactionArea.Interact(this, "OnInteract"));
         spriteClosed = GetNode<Sprite2D>("ChestClosed");

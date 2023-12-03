@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://d1d3ju81qjhuv"]
+[gd_scene load_steps=25 format=3 uid="uid://d1d3ju81qjhuv"]
 
 [ext_resource type="Script" path="res://Player/Player.cs" id="1_uvi3w"]
 [ext_resource type="Texture2D" uid="uid://5su6tm6ody27" path="res://Art/idle sheet-Sheet.png" id="2_6d3or"]
@@ -121,6 +121,9 @@ _data = {
 "RESET": SubResource("Animation_vssut")
 }
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ykjk6"]
+polygon = PackedVector2Array(-7, 1, 7, 1, 7, 0, -7, 0)
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(0, -1)
 motion_mode = 1
@@ -147,7 +150,8 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_to5rj")
 
 [node name="PlayerCamera" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
 
 [node name="HurtBoxComponent" parent="." node_paths=PackedStringArray("healthComponent") instance=ExtResource("3_vt0ww")]
 position = Vector2(0, -8)
@@ -159,6 +163,7 @@ healthComponent = NodePath("../HealthComponent")
 visible = false
 position = Vector2(1, -4)
 shape = SubResource("CapsuleShape2D_5g78q")
+disabled = true
 
 [node name="HealthComponent" parent="." node_paths=PackedStringArray("label") instance=ExtResource("4_5jm61")]
 label = NodePath("../UI/HealthLabel")
@@ -232,6 +237,9 @@ entity = NodePath("../..")
 
 [node name="DragData" parent="UI" instance=ExtResource("14_7dgc3")]
 visible = false
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_ykjk6")
 
 [connection signal="DamageTaken" from="HealthComponent" to="." method="_on_health_component_damage_taken"]
 [connection signal="HealthDepleted" from="HealthComponent" to="." method="_on_health_component_health_depleted"]

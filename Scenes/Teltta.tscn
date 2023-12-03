@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://fukyr1cckdwm"]
+
+[ext_resource type="Texture2D" uid="uid://b3j8o6nqlf3c6" path="res://Art/teltta.png" id="1_l5qnf"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kbmir"]
+polygon = PackedVector2Array(-16, -23, 14, -23, 31, 0, 0, 0)
+
+[node name="Teltta" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_l5qnf")
+offset = Vector2(-1, -15)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_kbmir")
+occluder_light_mask = 1023

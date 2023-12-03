@@ -50,10 +50,13 @@ visible = false
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_n2q1d")
 
-[node name="ExternalInventory" parent="." node_paths=PackedStringArray("storage") instance=ExtResource("4_ah6qq")]
-visible = false
-offset_left = -65.0
-offset_top = -89.0
-offset_right = 67.0
-offset_bottom = -24.0
-storage = NodePath("..")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ExternalInventory" parent="CanvasLayer" node_paths=PackedStringArray("storage") instance=ExtResource("4_ah6qq")]
+offset_left = 1548.0
+offset_top = 657.0
+offset_right = 1680.0
+offset_bottom = 722.0
+scale = Vector2(4.4835, 5.32667)
+pivot_offset = Vector2(64, 30)
+storage = NodePath("../..")
