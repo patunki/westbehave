@@ -8,11 +8,11 @@ res://Items/Repo/FoodZombieMeat.tres
 res://Items/Repo/ToolWateringCan.tres
 res://Items/Repo/WeaponShotgun.tres
 res://Game/Grass.gdshader
-res://Maps/InitialTileMap.tscn
 res://Player/Player.tscn
 res://Scenes/Bullet.tscn
 res://Items/ItemScenes/WateringCan.tscn
 res://Scenes/Workbench.tscn
+res://Maps/InitialTileMap.tscn
 res://Items/ItemScenes/ShotgunScene.tscn
 res://Scenes/Bandit.tscn
 res://Items/ItemScenes/CampfireStruct.tscn
@@ -89,3 +89,6 @@ res://StateMachine/States/Fishing.cs
 res://StateMachine/States/Idle.cs
 res://StateMachine/States/State.cs
 res://Database/ItemDB.json
+res://Items/ItemScenes/HoeScene.tscn
+res://Items/Repo/ToolHoe.tres
+res://Items/ItemScenes/SceneScripts/HoeScene.cs

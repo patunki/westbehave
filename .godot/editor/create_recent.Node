@@ -1,5 +1,6 @@
-TileMap
+AnimationPlayer
 TextureRect
+TileMap
 Sprite2D
 ShaderGlobalsOverride
 LightOccluder2D
