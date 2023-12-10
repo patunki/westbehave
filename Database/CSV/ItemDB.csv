@@ -1,18 +1,18 @@
 ITEM_ID,ITEM_NAME,RESOURCE,IS_STACKABLE,HOVER_TEXT,ITEM_QUANTITY,MAX_SACK,ITEM_TYPE,Dev nodes
+5,Eggplant seed,res://Items/Repo/SeedEggplant.tres,true,Can be used to plant eggplants.,1,19,SEED,
+11,Iron,res://Items/Repo/MaterialIronOre.tres,true,Useful Material,1,1,MATERIAL,
 9,Axe,res://Items/Repo/ToolHoe.tres,false,axe,1,1,TOOL,
-10,Planks,res://Items/Repo/MaterialPlank.tres,true,Useful material,1,1,MATERIAL,
-17,Stick,,true,,1,10,MATERIAL,
-3,Apple,res://Items/Repo/food_apple.tres,true,A nice looking apple,1,10,FOOD,
+7,Hoe,res://Items/Repo/ToolHoe.tres,false,A useful tool,1,1,TOOL,
 8,Watering can,res://Items/Repo/ToolWateringCan.tres,false,Kastelukannu,1,1,TOOL,
-15,Raw Fish,res://Items/Repo/FoodRawFish.tres,true,,1,1,FOOD,Raw fish.
+13,Campfire,res://Items/Repo/Campfire.tres,false,,1,1,STRUCTURE,
+4,Shotgun,res://Items/Repo/WeaponShotgun.tres,false,,1,1,WEAPON,
+17,Stick,,true,,1,10,MATERIAL,
+16,Cooked Fish,res://Items/Repo/FoodCookedFish.tres,true,,1,1,FOOD,A cooked fish
 12,Lighter,res://Items/Repo/Lighter.tres,false,,1,1,TOOL,
 1,Zombie meat,res://Items/Repo/food_zombie_meat.tres,true,Some Tasty Meat,1,1,FOOD,
-2,Cooked meat,res://Items/Repo/food_cooked_meat.tres,true,Cooked meat you can eat,1,5,FOOD,
-13,Campfire,res://Items/Repo/Campfire.tres,false,,1,1,STRUCTURE,
 6,Eggplant,res://Items/Repo/food_eggplant.tres,true,A tasty eggplant,1,10,FOOD,
-5,Eggplant seed,res://Items/Repo/SeedEggplant.tres,true,Can be used to plant eggplants.,1,19,SEED,
 14,Fishing Rod,res://Items/Repo/ToolFishingRod.tres,false,,1,1,TOOL,
-11,Iron,res://Items/Repo/MaterialIronOre.tres,true,Useful Material,1,1,MATERIAL,
-7,Hoe,res://Items/Repo/ToolHoe.tres,false,A useful tool,1,1,TOOL,
-4,Shotgun,res://Items/Repo/WeaponShotgun.tres,false,,1,1,WEAPON,
-16,Cooked Fish,res://Items/Repo/FoodCookedFish.tres,true,,1,1,FOOD,A cooked fish
+3,Apple,res://Items/Repo/food_apple.tres,true,A nice looking apple,1,10,FOOD,
+2,Cooked meat,res://Items/Repo/food_cooked_meat.tres,true,Cooked meat you can eat,1,5,FOOD,
+10,Planks,res://Items/Repo/MaterialPlank.tres,true,Useful material,1,1,MATERIAL,
+15,Raw Fish,res://Items/Repo/FoodRawFish.tres,true,,1,1,FOOD,Raw fish.
