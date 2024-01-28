@@ -1,5 +1,6 @@
 # Project Westbehave
 This is a personal project made in godot-mono using C#. The goal is to make a 2D top-down zombie survival game. 
+![ksnip_20240123-025355](https://github.com/patunki/westbehave/assets/96471980/571447bd-d23c-4dca-bb80-d2cd8c2f6893)
 
 # Info
 I have tried to abstract as much of the code as possible using a mix of composition and inheritance. Most features also utilize godots exported variables which makes it incredibly simple to reuse code. 
