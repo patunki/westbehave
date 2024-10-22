@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "kiSORB9ZXT7yIomdktopngAXbFr+DY6evFZ+BerTAQGB3TjW5Jh6AbBAVNvHbCu7s17A6hF+All55I3wxzbVJw==",
+  "dgSpecHash": "hyTLWWLNKldCpjXB3TLQ88+qGOiA2+7jTaKLoFWgGZjI/HXvnVbv5zvBIovyeof5qAYIu+47f6Dcigo8bwBLsg==",
   "success": true,
-  "projectFilePath": "/home/paulus/godotProjects/clone/westbehave/Demo 1.csproj",
+  "projectFilePath": "/home/paulus/GodotProjects/westbehave/Demo 1.csproj",
   "expectedPackageFiles": [
-    "/home/paulus/.nuget/packages/godot.sourcegenerators/4.2.0/godot.sourcegenerators.4.2.0.nupkg.sha512",
-    "/home/paulus/.nuget/packages/godotsharp/4.2.0/godotsharp.4.2.0.nupkg.sha512",
-    "/home/paulus/.nuget/packages/godotsharpeditor/4.2.0/godotsharpeditor.4.2.0.nupkg.sha512",
-    "/home/paulus/.nuget/packages/microsoft.netcore.app.ref/6.0.25/microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
-    "/home/paulus/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.25/microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512"
+    "/home/paulus/.nuget/packages/godot.sourcegenerators/4.3.0/godot.sourcegenerators.4.3.0.nupkg.sha512",
+    "/home/paulus/.nuget/packages/godotsharp/4.3.0/godotsharp.4.3.0.nupkg.sha512",
+    "/home/paulus/.nuget/packages/godotsharpeditor/4.3.0/godotsharpeditor.4.3.0.nupkg.sha512",
+    "/home/paulus/.nuget/packages/microsoft.netcore.app.ref/6.0.33/microsoft.netcore.app.ref.6.0.33.nupkg.sha512",
+    "/home/paulus/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.33/microsoft.aspnetcore.app.ref.6.0.33.nupkg.sha512"
   ],
   "logs": []
 }

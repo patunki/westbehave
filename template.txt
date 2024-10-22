@@ -341,6 +341,3 @@ OLD EQUIPITEM
 				droppedItem.AddChild(sprite2D);
 				droppedItem.Position = GlobalPosition;
 				GetParent().GetParent().GetParent().AddChild(droppedItem);*/
-
-
-
