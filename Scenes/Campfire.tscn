@@ -157,6 +157,7 @@ libraries = {
 }
 
 [node name="InteractionArea" parent="." instance=ExtResource("5_fkgtt")]
+visible = false
 actionName = "LIGHT/KILL"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

@@ -6,7 +6,8 @@ public partial class SeedScene : ItemScene
     public Seed seed;
     public Entity entity;
     GameManager gameManager;
-    TileMap tileMap;
+    TileMapLayer tileMap;
+    TileMapLayer plantLayer;
     TextureRect itemTexture;
 
     int groundLayer = 1;
@@ -19,9 +20,10 @@ public partial class SeedScene : ItemScene
         gameManager = GetNode<GameManager>("/root/GameManager");
         tileMap = gameManager.tileMap;
         gameManager.HasTileMap += GetTileMap;
+
     }
 
-    void GetTileMap(TileMap map){
+    void GetTileMap(TileMapLayer map){
         tileMap = map;
     }
 
@@ -38,16 +40,17 @@ public partial class SeedScene : ItemScene
     public override void _Input(InputEvent @event)
     {
         if (Input.IsActionJustPressed("interact")){
-
+        plantLayer = tileMap.GetNode<TileMapLayer>("Plants");
         var tilePos = tileMap.LocalToMap(GlobalPosition);
         var atlasCoord = new Vector2I(0,0);
-        TileData tileData = tileMap.GetCellTileData(groundLayer, tilePos);
-        var hasPlant = tileMap.GetCellAlternativeTile(flowerLayer,tilePos);
+        TileData tileData = tileMap.GetCellTileData(tilePos);
+        var hasPlant = plantLayer.GetCellAlternativeTile(tilePos);
+        GD.Print(tileData.GetCustomData("CanPlant"));
         if (tileData != null && hasPlant == -1){
             bool canPlant = (bool)tileData.GetCustomData("CanPlant");
                 if (canPlant){
                     
-                    tileMap.SetCell(flowerLayer,tilePos,sceneId,atlasCoord,1);
+                    plantLayer.SetCell(tilePos,sceneId,atlasCoord,1);
                     seed.DecQuant();
                 }
             

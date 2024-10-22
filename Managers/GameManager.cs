@@ -11,12 +11,12 @@ public partial class GameManager : Node2D
     [Signal]
     public delegate void SlotClickedEventHandler(Item item);
     [Signal]
-    public delegate void HasTileMapEventHandler(TileMap tileMap);
+    public delegate void HasTileMapEventHandler(TileMapLayer tileMap);
     [Signal]
     public delegate void ExternalInventoryRecieveEventHandler(ExternalInventory inv, Item item, int quant);
     [Signal]
     public delegate void PlantWateredEventHandler(Vector2I tilepos);
-    public TileMap tileMap;
+    public TileMapLayer tileMap;
     public DragData DragData;
 
     public override void _Ready()
@@ -25,7 +25,7 @@ public partial class GameManager : Node2D
         GD.Print("God Slot data as ", DragData);
     }
 
-    public void SetTileMap(TileMap map){
+    public void SetTileMap(TileMapLayer map){
         tileMap = map;
         EmitSignal(SignalName.HasTileMap,tileMap);
     }

@@ -7,7 +7,7 @@ public partial class WateringCan : ItemScene
     Entity entity;
     ToolWateringCan can;
     GameManager gameManager;
-    TileMap tileMap;
+    TileMapLayer tileMap;
     AnimationPlayer animationPlayer;
 
     public override void _Ready()
@@ -29,7 +29,7 @@ public partial class WateringCan : ItemScene
 
     }
 
-    void GetTileMap(TileMap _tileMap){
+    void GetTileMap(TileMapLayer _tileMap){
         tileMap = _tileMap;
     }
 
@@ -37,15 +37,14 @@ public partial class WateringCan : ItemScene
     {
         if (Input.IsActionJustPressed("interact")){
         var tilePos = tileMap.LocalToMap(GlobalPosition);
-        int groundLayer = 1;
-        int flowerLayer = 4;
-        var isWater = tileMap.GetCellTileData(groundLayer,tilePos);
+        var isWater = tileMap.GetCellTileData(tilePos);
         if (isWater == null){
             can.waterLevel = 1;
             animationPlayer.Play("RESET");
             return;
         }
-        var hasPlant = tileMap.GetCellAlternativeTile(flowerLayer,tilePos);
+        //fix for plant layer
+        var hasPlant = tileMap.GetCellAlternativeTile(tilePos);
         if (hasPlant != -1){
 
             if (can.waterLevel > 0){

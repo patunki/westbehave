@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class InitialTileMap : TileMap
+public partial class InitialTileMap : TileMapLayer
 {
     GameManager gameManager;
 

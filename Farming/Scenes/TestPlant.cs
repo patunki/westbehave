@@ -20,7 +20,7 @@ public partial class TestPlant : Node2D
     public PlantState state;
     InteractionArea interactionArea;
     Player nearestPlayer;
-    TileMap tileMap;
+    TileMapLayer tileMap;
     GameManager gameManager;
 
 
@@ -35,7 +35,7 @@ public partial class TestPlant : Node2D
         interactionArea.actionName = "HARVEST";
         state = PlantState.seed;
         interactionArea.PlayerEntered += GetPlayer;
-        tileMap = GetParent<TileMap>();
+        tileMap = GetParent<TileMapLayer>();
         interactionArea.Monitoring = false;
         gameManager.PlantWatered += WaterPlant;
         growTimer.Timeout += GrowPlant;
@@ -80,7 +80,6 @@ public partial class TestPlant : Node2D
     //Add && has plant
     private void OnHarvest(){
         
-        int plantLayer = 4;
 
         if (state == PlantState.ripe){
             nearestPlayer.inventory.AddItem(yeld, 2);
@@ -92,7 +91,7 @@ public partial class TestPlant : Node2D
         }
         if (state == PlantState.dead){
             Vector2I tilePos = tileMap.LocalToMap(GlobalPosition);
-            tileMap.EraseCell(plantLayer,tilePos);
+            tileMap.EraseCell(tilePos);
         }
             
             //tileMap.EraseCell(0,tilePos);
