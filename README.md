@@ -11,6 +11,7 @@ Features added so far:
 ```
 -Inventory system.
 -Item system.
+-Storage
 -Finite state machine for enemies and npcs.
 -Crafting system
 -Farming system
